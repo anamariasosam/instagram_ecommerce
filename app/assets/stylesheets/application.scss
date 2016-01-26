@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require normalize-rails
+ *= require font-awesome
+ *= require lightbox
+ *= footable.core.min.css
+ */
+@import "helpers/colors.scss";
+@import "flipBook/style.scss";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "theme.scss";
+
+@import "helpers/footer.scss";
+@import "helpers/menu.scss";
+@import "helpers/modal-search.scss";
+
+
+@import "components/home/intro.scss";
+@import "components/home/about.scss";
+@import "components/home/partners.scss";
+
+@import "components/catalog/products.scss";
+@import "components/catalog/catalog.scss";
+@import "components/catalog/book.scss";
+
+@import "components/users/dashboard.scss";
+@import "components/users/list.scss";
+
+@import "lightbox2.scss";
+
+.app {
+
+    &__container {
+      width: 100%;
+      padding: 0;
+    }
+}
+.alert {
+  color: $menu-color;
+  font-weight: bold;
+  text-align: left;
+}

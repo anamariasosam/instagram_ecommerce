@@ -1,0 +1,11 @@
+/*
+  This file fix the problem with
+  the lightbox plugin that generated
+  extra border in the top of the lightbox container
+*/
+
+.lightbox {
+  padding: 0;
+  height: 0 !important;
+  margin: 0;
+}

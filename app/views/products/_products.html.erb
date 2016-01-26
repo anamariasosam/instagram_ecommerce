@@ -1,0 +1,32 @@
+<% @products.each do |product| %>
+  <tr class="app__list-values" data-expanded="true">
+    <td>
+
+        <a href="<%= product.instagram_image %>" data-lightbox="image-1" data-title="<%= product.product_name %>" >
+            <img src="<%= product.instagram_image %>" alt="" class="app__list-image">
+        </a>
+    </td>
+    <td>
+        <%= product.product_name %>
+    </td>
+    <td><%= number_to_currency product.price, precision:0 %></td>
+    <td><%= product.quantity %></td>
+    <td><%= product.description %></td>
+    <td><%= product.shortened_urls.last.unique_key %></td>
+    <td>
+        <%= link_to product do %>
+            <i class="app__list-action fa fa-eye"></i>
+        <% end %>
+    </td>
+    <td>
+        <%= link_to edit_product_path(product) do %>
+            <i class="app__list-action fa fa-pencil"></i>
+        <% end %>
+    </td>
+    <td>
+        <%= link_to product, method: :delete, data: { confirm: '¿Está seguro que desea eliminarlo?' } do%>
+            <i class="app__list-action fa fa-trash-o"></i>
+        <% end %>
+    </td>
+  </tr>
+<% end %>

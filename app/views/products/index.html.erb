@@ -1,0 +1,33 @@
+<section id="six" class="section app__list-container wrapper special">
+  <div class="inner">
+    <header class="major">
+      <h2 class="app__list-headline">Mis productos</h2>
+    </header>
+      <table class="table table-striped table-hover footable toggle-arrow" >
+        <thead>
+          <tr class="app__list-fields">
+            <th></th>
+            <th>Nombre</th>
+            <th data-hide="phone">Precio</th>
+            <th >Cantidad</th>
+            <th  data-hide="phone,tablet">Descripción</th>
+            <th data-hide="phone">Código</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody id="products">
+          <%= render "products" %>
+        </tbody>
+      </table>
+      <%= javascript_include_tag 'footable/footable.js' %>
+      <script>
+          jQuery(function($){
+            $('.table').footable({
+                phone: 480
+            });
+          });
+      </script>
+
+  </div>
+</section>

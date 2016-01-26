@@ -1,0 +1,53 @@
+.book {
+
+  &__admin-action--container {
+    margin-top: -18px;
+        font-size: 35px;
+  }
+
+  &__page{
+    &_gallery{
+      &-title {
+        text-align: center;
+      }
+      &-caption{
+        text-align: left;
+        margin-left: 55px;
+        width: 80%;
+      }
+    }
+  }
+  &__container {
+    width:100%;
+    margin-top: 10%;
+    padding: 0 40px;
+  }
+
+  &__cover {
+    &-container {
+      margin-left: 20px;
+    }
+
+    &-images {
+      margin-left: -9px;
+      margin-bottom: -41px;
+    }
+  }
+
+  &__deck {
+    font-size: 1.4em;
+  }
+
+  &__title {
+    color: #FA6900;
+    font-size: 5em;
+    padding-top: 100px;
+  }
+
+  &__thumbnail {
+    padding: 0;
+    border: none;
+  }
+
+
+}

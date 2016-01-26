@@ -1,0 +1,36 @@
+.app__about {
+  &-container{
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  &-catalog--btn {
+    margin: 15px;
+  }
+
+  &_start--text {
+    font-size: 1.16em;
+    margin: 30px 0;
+
+  }
+
+  &_suggested--container {
+    margin-bottom: 20px !important;
+  }
+
+
+  &-video {
+    margin: 20px auto;
+    margin-bottom: 50px;
+  }
+
+  &-quote {
+    font-size: 1.2em;
+    font-style: italic;
+    margin: 0 auto;
+    padding: 0 22px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+}

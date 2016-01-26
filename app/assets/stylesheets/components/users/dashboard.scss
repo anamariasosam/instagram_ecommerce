@@ -1,0 +1,35 @@
+.app__dashboard{
+  &-container {
+
+  }
+  &_gallery-img {
+    position: relative;
+  }
+
+
+
+  &_gallery {
+
+    &-thumbnail {
+
+      border: none !important;
+    }
+
+    &-new {
+      color: transparent;
+      font-size: 40px;
+      height: 100%;
+      left: 0;
+      padding-left: 15%;
+      padding-top: 24%;
+      position: absolute;
+      top: 0;
+      width: 89%;
+    }
+
+    &-new:hover {
+      cursor: pointer;
+      color: $primary-color;
+    }
+  }
+}

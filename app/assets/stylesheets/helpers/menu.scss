@@ -1,0 +1,88 @@
+.app__menu {
+
+  &_dropdown-item {
+    color: #fff;
+  }
+
+  &-right {
+
+    &--container {
+      padding-right: 35px;
+    }
+    &--search {
+      color: #fff !important;
+    }
+
+    &--dropmenu,
+    &--dropmenu:hover {
+      background-color: $menu-color-active;
+      margin-top: -1px !important;
+
+
+      & li a {
+        color: #fff !important;
+
+      }
+    }
+  }
+
+  &_nav {
+
+    &--container {
+      padding: 0;
+    }
+
+
+    & {
+      background-color: transparent;
+      border-color: transparent;
+      will-change: top;
+    }
+
+    &-items {
+      width: 100%;
+      background-color: $menu-color;
+      margin: 0 !important;
+
+
+      & ul {
+        margin: 0;
+      }
+    }
+
+    &-item a{
+      color: #fff !important;
+    }
+    &-hamburguer {
+
+      &--btn,
+      &--btn:hover
+      {
+        border-radius: 50% !important;
+        height: 44px !important;
+        border-color: transparent !important;
+        background-color: $menu-color !important;
+
+        & span {
+          background-color: $secondary-color !important;
+        }
+      }
+
+      &--container {
+        padding-left: 29px;
+        padding-top: 14px;
+      }
+    }
+  }
+}
+
+
+.navbar-default .navbar-nav > .active,
+.navbar-default .navbar-nav > .open > ,
+{
+  & a,
+  & a:hover,
+  & a:focus {
+    background: $menu-color-active;
+  }
+}

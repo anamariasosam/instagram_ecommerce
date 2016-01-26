@@ -1,0 +1,14 @@
+<section id="eight" class="section app__edit-container wrapper special">
+  <div class="inner">
+    <% if session[:access_token] %>
+      <h1>Editing Product</h1>
+      <%= render 'form' %>
+    <% else %>
+      <header class="major">
+        <h2 class="app__edit_title">Debes iniciar con tu cuenta de instagram</h2>
+    </header>
+    <% end %>
+  </div>
+</section>
+
+

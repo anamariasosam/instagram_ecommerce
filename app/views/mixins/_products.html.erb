@@ -1,0 +1,21 @@
+<section id="one" class="wrapper special">
+  <div class="inner">
+    <header class="major">
+      <h2>Los productos más buscados</h2>
+    </header>
+    <div class="features">
+      <% @products.each do |product| %>
+        <div class="feature">
+          <img src="<%= product.instagram_image %>" class="img-responsive" alt=""></td>
+          <h3 class="product_name"><%= product.product_name %></h3>
+          <p>
+            <%= number_to_currency product.price, precision:0 %>
+          </p>
+          <a href="<%= root_path + product.shortened_urls.last.unique_key %> "class="button special fit small">
+            Más información
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+.app__list {
+  &-action {
+     color: $primary-color;
+     font-size: 1.4em;
+  }
+
+  &-container {
+    margin: 20px 0px;
+  }
+  &-image {
+    width: 40px;
+  }
+  &-fields th, &-values {
+    text-align: center;
+  }
+
+  &-values td{
+    vertical-align: middle !important;
+  }
+
+   &-fields th{
+    color: $menu-color;
+  }
+
+
+}
+.footable-row-detail-inner{
+  padding-left: 5px;
+  text-align: left;
+
+
+}
+.footable-row-detail-name{
+    color: $menu-color;
+  }

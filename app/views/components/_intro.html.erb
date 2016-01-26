@@ -1,0 +1,14 @@
+<section id="banner" class="app__intro-container">
+  <h2><strong>Catlog</strong> es tu catálogo virtual</h2>
+  <p>Los productos de instagram en un sólo lugar</p>
+  <ul class="actions">
+    <li>
+      <%= link_to "Ver catálogo", catalog_view_path, class: "button special" %>
+    </li>
+    <li>
+      <%= link_to "Crear catálogo", sessions_connect_path, class: "button special" %>
+    </li>
+
+  </ul>
+</section>
+<%= render "mixins/products"  %>
