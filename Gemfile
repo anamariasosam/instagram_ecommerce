@@ -20,9 +20,6 @@ gem 'coffee-rails', '~> 4.1.0'
 # Instagram
 gem 'instagram'
 
-# Editor
-gem 'ckeditor'
-
 gem 'shortener'
 
 # Paginator
