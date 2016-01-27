@@ -1,43 +1,40 @@
 .app__catalog {
-  &_link-book {
-    margin-top: 30px;
-  }
-
-  &-container {
-
-  }
-
-  &-headline {
-    font-size: 2.8em;
-    margin-top: 47px;
-
-  }
   &_gallery{
+
+    &-caption {
+      text-align: left;
+    }
+
+    &-img {
+      position: relative;
+      text-align: center;
+    }
 
     &-thumbnail {
       margin: 20px 0;
     }
 
-    &-img {
-      text-align: center;
-      position: relative;
-    }
-    &-caption {
-      text-align: left;
-    }
     &-zoom {
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      width: 26px;
-      height: 26px;
-      font-size: 17px;
-      border-radius: 50px;
       background-color: rgba(0, 0, 0, 0.67);
+      border-radius: 50px;
       color: #fff;
+      font-size: 17px;
+      height: 26px;
       padding: 0px 5px;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      width: 26px;
     }
+  }
 
+  &-headline {
+    font-size: 2.8em;
+    margin-top: 47px;
+  }
+
+  &_link-book {
+    margin-top: 30px;
   }
 
   &-paginator {
@@ -45,4 +42,3 @@
   }
 
 }
-

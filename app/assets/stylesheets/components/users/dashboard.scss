@@ -1,17 +1,11 @@
 .app__dashboard{
-  &-container {
-
-  }
-  &_gallery-img {
-    position: relative;
-  }
-
-
-
   &_gallery {
 
-    &-thumbnail {
+    &-img {
+      position: relative;
+    }
 
+    &-thumbnail {
       border: none !important;
     }
 
@@ -28,8 +22,8 @@
     }
 
     &-new:hover {
-      cursor: pointer;
       color: $primary-color;
+      cursor: pointer;
     }
   }
 }

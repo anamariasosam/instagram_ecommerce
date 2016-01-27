@@ -1,36 +1,33 @@
 .app__about {
+  &-catalog--btn {
+    margin: 15px;
+  }
+
   &-container{
     margin-top: 0;
     padding-top: 0;
   }
 
-  &-catalog--btn {
-    margin: 15px;
+  &-quote {
+    font-size: 1.2em;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 0 22px;
+    text-align: center;
   }
 
   &_start--text {
     font-size: 1.16em;
     margin: 30px 0;
-
   }
 
   &_suggested--container {
     margin-bottom: 20px !important;
   }
 
-
   &-video {
-    margin: 20px auto;
     margin-bottom: 50px;
+    margin: 20px auto;
   }
-
-  &-quote {
-    font-size: 1.2em;
-    font-style: italic;
-    margin: 0 auto;
-    padding: 0 22px;
-    text-align: center;
-    line-height: 1.5;
-  }
-
 }

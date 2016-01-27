@@ -1,31 +1,12 @@
 .app__footer {
   &-container {
-    width: 100%;
     clear: both;
+    margin-top: 100px;
+    width: 100%;
   }
 
   &_text {
     font-size: 1.1em;
     text-align: center;
-  }
-  &_social {
-    &-container{
-      text-align: center;
-      border-radius: 50px;
-      background-color: crimson;
-      width: 163px;
-      margin: 0 auto;
-      margin-bottom: 10px;
-    }
-
-    &-item,
-    &-item:visited,
-    &-item:hover
-
-    {
-      color: #fff;
-      font-size: 26px;
-      margin: 0 5px;
-    }
   }
 }

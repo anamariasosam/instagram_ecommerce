@@ -28,22 +28,23 @@
 
   &_nav {
 
-    &--container {
-      padding: 0;
-    }
-
-
     & {
       background-color: transparent;
       border-color: transparent;
       will-change: top;
     }
 
-    &-items {
-      width: 100%;
-      background-color: $menu-color;
-      margin: 0 !important;
+    &--container {
+      padding: 0;
+    }
 
+    &-items {
+
+      & {
+        background-color: $menu-color;
+        margin: 0 !important;
+        width: 100%;
+      }
 
       & ul {
         margin: 0;
@@ -58,10 +59,10 @@
       &--btn,
       &--btn:hover
       {
+        background-color: $menu-color !important;
+        border-color: transparent !important;
         border-radius: 50% !important;
         height: 44px !important;
-        border-color: transparent !important;
-        background-color: $menu-color !important;
 
         & span {
           background-color: $secondary-color !important;

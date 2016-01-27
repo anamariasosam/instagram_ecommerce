@@ -1,35 +1,35 @@
 .app__list {
   &-action {
-     color: $primary-color;
-     font-size: 1.4em;
+    color: $primary-color;
+    font-size: 1.4em;
   }
 
   &-container {
     margin: 20px 0px;
   }
-  &-image {
-    width: 40px;
+
+  &-fields th{
+    color: $menu-color;
   }
+
   &-fields th, &-values {
     text-align: center;
+  }
+
+  &-image {
+    width: 40px;
   }
 
   &-values td{
     vertical-align: middle !important;
   }
-
-   &-fields th{
-    color: $menu-color;
-  }
-
-
 }
+
+// Footable plugin improvements
 .footable-row-detail-inner{
   padding-left: 5px;
   text-align: left;
-
-
 }
 .footable-row-detail-name{
-    color: $menu-color;
-  }
+  color: $menu-color;
+}

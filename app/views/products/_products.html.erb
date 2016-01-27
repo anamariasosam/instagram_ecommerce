@@ -11,7 +11,7 @@
     </td>
     <td><%= number_to_currency product.price, precision:0 %></td>
     <td><%= product.quantity %></td>
-    <td><%= product.description %></td>
+    <td><%= product.description.html_safe %></td>
     <td><%= product.shortened_urls.last.unique_key %></td>
     <td>
         <%= link_to product do %>

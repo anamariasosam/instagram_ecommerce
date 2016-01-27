@@ -14,7 +14,7 @@
  *= require font-awesome
  *= require lightbox
  *= footable.core.min.css
- *= trix.css
+ *= require trix
  */
 @import "helpers/colors.scss";
 @import "flipBook/style.scss";
@@ -26,7 +26,6 @@
 @import "helpers/footer.scss";
 @import "helpers/menu.scss";
 @import "helpers/modal-search.scss";
-
 
 @import "components/home/intro.scss";
 @import "components/home/about.scss";
@@ -42,14 +41,8 @@
 @import "lightbox2.scss";
 
 .app {
-
-    &__container {
-      width: 100%;
-      padding: 0;
-    }
-}
-.alert {
-  color: $menu-color;
-  font-weight: bold;
-  text-align: left;
+  &__container {
+    width: 100%;
+    padding: 0;
+  }
 }

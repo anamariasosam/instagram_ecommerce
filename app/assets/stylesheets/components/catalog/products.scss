@@ -4,37 +4,36 @@
 .app__product {
 
   &-action {
+
     &--container {
       display: inline-block;
     }
+
     &--item,
     &--item:hover {
       color: $menu-color;
-      margin-right: 10px;
       font-size: 2em;
+      margin-right: 10px;
       text-decoration: none !important;
     }
   }
 
   &-caption {
     text-align:left;
-
   }
 
   &-container {
-    margin-top: 60px;
     height: 100vh;
+    margin-top: 60px;
   }
 
   &_form {
+
     &-container {
       clear: both;
       text-align: left;
     }
 
-    &-fields {
-
-    }
     @media (min-width: 768px) {
       &-description {
         padding-top: 20px;
@@ -44,6 +43,28 @@
 
     &-image {
       margin: 0 auto;
+    }
+
+    &--textarea-trix {
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: rgba(144, 144, 144, 0.075);
+      border-radius: 0;
+      border: solid 1px #e3e3e3;
+      color: inherit;
+      display: block;
+      height: 20vh;
+      outline: 0;
+      padding: 0 1em;
+      text-decoration: none;
+      width: 100%;
+
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 0 1px $primary-color;
+      }
     }
   }
 
@@ -57,9 +78,8 @@
   &_notice {
     text-align: center !important;
   }
+
   &-subtitle {
     font-weight: bold;
   }
-
-
 }

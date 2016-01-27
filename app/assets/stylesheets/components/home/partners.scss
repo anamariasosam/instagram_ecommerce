@@ -1,26 +1,22 @@
 .app__partners {
+
+  &-caption {
+    background-color: $secondary-color;
+    margin-left: 5%;
+    width: 89%;
+  }
+
   &-container {
     margin-top: 0;
   }
 
-  &-caption {
-    background-color: $secondary-color;
-    width: 89%;
-    margin-left: 5%;
-
-  }
-
   &-figure {
-    position: relative;
     margin: 20px 0;
-        padding: 0;
+    padding: 0;
+    position: relative;
   }
   &-img {
     height: 130px;
     width: 130px;
   }
-
-  &_title {
-  }
-
 }

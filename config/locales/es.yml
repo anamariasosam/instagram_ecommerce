@@ -10,6 +10,13 @@ es:
               blank: El precio no puede estar vacío
               not_a_number: El precio debe ser númerico
             description:
-              blank: El precio no puede estar vacío
+              blank: La descripción no puede estar vacía
             quantity:
               not_a_number: La cantidad debe ser númerica
+
+  views:
+    pagination:
+      previous: "Anterior"
+      next: "Siguiente"
+      first: "Primera"
+      last: "Última"

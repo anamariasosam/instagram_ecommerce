@@ -47,9 +47,8 @@
 
     <div class="form-group app__product_form-description col-md-12 col-sm-12 col-xs-12 col-lg-12">
       <%= f.label "Descripción" %>
-      <trix-editor input="x"></trix-editor>
-      <%= f.text_area :description, id: "x", class: "hidden", name:"content"%>
 
+      <%= f.trix_editor :description, class: "app__product_form--textarea-trix"%>
     </div>
     <!--  The magic code will be generated before the creating -->
     <div class="actions text-center">
