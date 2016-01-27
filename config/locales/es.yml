@@ -9,6 +9,7 @@ es:
             price:
               blank: El precio no puede estar vacío
               not_a_number: El precio debe ser númerico
+              too_short: El precio debe ser mayor a $1.000
             description:
               blank: La descripción no puede estar vacía
             quantity:
