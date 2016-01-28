@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'legal/privacy_policy'
+
   get 'catalog/view'
 
   get 'home/index'

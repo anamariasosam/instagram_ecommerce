@@ -1,0 +1,13 @@
+.app__legal{
+  &_container{
+    text-align: justify !important;
+  }
+
+  &_title{
+    margin-bottom: 0;
+  }
+
+  &_subtitle{
+    font-weight: bold;
+  }
+}
