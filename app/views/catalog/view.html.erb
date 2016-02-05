@@ -25,6 +25,10 @@
             <p class="app__catalog-quantity ">
               <span class="app__product-subtitle">Disponibles:</span> <%=  product.quantity %>
             </p>
+            <p class="app__product-store_owner">
+              <span class="app__product-subtitle" id="store_owner">Tienda:</span>
+              <a href="https://www.instagram.com/<%= product.store_owner %>" target="_blank"><%= product.store_owner %></a>
+            </p>
             <p class="app__product-description">
               <span class="app__product-subtitle">Descripción:</span> <br> <%=  product.description.html_safe %>
             </p>
