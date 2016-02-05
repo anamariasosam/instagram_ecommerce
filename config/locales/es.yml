@@ -12,8 +12,15 @@ es:
               too_short: El precio debe ser mayor a $1.000
             description:
               blank: La descripción no puede estar vacía
+              too_long: La descripción debe ser menor a 140 caracteres
             quantity:
               not_a_number: La cantidad debe ser númerica
+        user:
+          attributes:
+            email:
+              blank: "El correo no puede estár vacío"
+            password:
+              blank: "La contraseña no puede estár vacío"
 
   views:
     pagination:

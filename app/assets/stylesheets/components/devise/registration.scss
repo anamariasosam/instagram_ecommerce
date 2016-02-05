@@ -1,0 +1,19 @@
+.app__registration {
+  &_container {
+    margin-top: 50px;
+  }
+  &_form {
+    max-width: 370px;
+    margin: 0 auto;
+  }
+
+  &_form-group {
+    & label {
+      text-align: left;
+    }
+  }
+
+  &_message {
+    text-align: left;
+  }
+}

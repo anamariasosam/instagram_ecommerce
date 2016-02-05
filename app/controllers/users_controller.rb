@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+before_filter :authenticate_user!, :only => [:index, :new]
 
 def dashboard
   if session[:access_token]
@@ -8,14 +9,10 @@ def dashboard
 
     @recent_media_items = client.user_recent_media
 
-    @user = User.create(
-      instagram_id:   client.user.id,
+    current_user.update(instagram_id:   client.user.id,
       store_name:     client.user.username,
       delivery_info:  client.user.bio,
-      store_image:    client.user.profile_picture
-    )
-
-    @user.update(store_image: client.user.profile_picture )
+      store_image:    client.user.profile_picture)
 
   else
     redirect_to :controller => 'sessions', :action => 'connect'

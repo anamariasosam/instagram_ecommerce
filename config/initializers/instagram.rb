@@ -5,4 +5,4 @@ Instagram.configure do |config|
   #config.client_ips = '<Comma separated list of IPs>'
 end
 
-CALLBACK_URL = "http://catlog.herokuapp.com/sessions/callback"
+CALLBACK_URL = "http://localhost:3000/sessions/callback"

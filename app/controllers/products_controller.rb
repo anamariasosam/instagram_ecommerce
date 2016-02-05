@@ -1,12 +1,13 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-
+  before_filter :authenticate_user!, :only => [:index, :new]
   # GET /products
   # GET /products.json
   def index
     if session[:access_token]
-      @products = Product.all
+
+      @products = current_user.products
     else
       redirect_to :controller => 'sessions', :action => 'connect'
     end
@@ -37,7 +38,8 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
+    @product.user_id = current_user.id
+    @product.store_owner = current_user.store_name
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'El producto ha sido creado exitosamente'}
@@ -86,6 +88,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:product_name, :price, :quantity, :instagram_image, :description, :magic_code, :likes)
+      params.require(:product).permit(:product_name, :user_id,:price, :quantity, :instagram_image, :description, :magic_code, :likes, :store_owner)
     end
 end

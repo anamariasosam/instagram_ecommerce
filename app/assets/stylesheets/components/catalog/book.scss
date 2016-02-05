@@ -1,8 +1,10 @@
 .book {
 
   &__admin-action--container {
-    font-size: 35px;
-    margin-top: -18px;
+    font-size: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
   }
 
   &__container {

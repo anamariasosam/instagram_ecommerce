@@ -1,0 +1,42 @@
+<section class="app__registration_container section wrapper special">
+  <div class="inner">
+    <header class="major">
+      <h2>Crear Cuenta</h2>
+    </header>
+
+    <div class="app__registration_form">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="form-group app__registration_form-group">
+          <%= f.label "Correo Electrónico" %>
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+
+        <div class="form-group app__registration_form-group">
+          <%= f.label "Contraseña" %>
+          <% if @minimum_password_length %>
+          <p class="help-block app__registration_message">(Mínimo <%= @minimum_password_length %> caractéres)</p>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <div class="form-group app__registration_form-group">
+          <%= f.label "Confirma Contraseña" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+
+
+        <div class="actions">
+          <%= f.submit "Crear y autorizar a Instagram", class: "button special col-md-12 col-sm-12 col-xs-12 col-lg-12" %>
+        </div>
+
+        <%= link_to "Política de Privacidad", legal_privacy_policy_path %>
+      <% end %>
+    </div>
+
+
+
+
+  </div>
+</section>

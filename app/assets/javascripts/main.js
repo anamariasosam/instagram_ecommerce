@@ -3,6 +3,13 @@ function find_product(event) {
   window.location.href = "/"  + $('.app__search-input').val();
 }
 
+function description_text (argument) {
+  if ($('.app__product-description')) {
+    $('.app__product-description').next().css( "word-wrap", "break-word" );
+  }
+
+}
+
 // Set modal in the center of the view
 function reposition() {
   var modal = $(this),
@@ -28,6 +35,8 @@ function add_class_active () {
 
 $(document).on('ready page:change', function() {
   add_class_active();
+
+  description_text();
 
   $('.app__search-btn').on('click', find_product);
 

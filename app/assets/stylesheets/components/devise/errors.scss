@@ -1,0 +1,23 @@
+#error_explanation {
+  & h2 {
+    font-size: 20px;
+    text-transform: none;
+    margin-bottom: 0;
+  }
+
+  ul {
+      list-style: none;
+      padding:0;
+      margin:0;
+  }
+
+  li {
+      padding-left: 1em;
+      text-indent: -.7em;
+  }
+
+  li:before {
+      content: "• ";
+      color: $menu-color;
+  }
+}

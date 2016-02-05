@@ -17,19 +17,15 @@
   <div class="app__product_form-container">
     <div class="form-group ">
       <% if @photo %>
-        <img src="<%=@photo%>" alt="" class="img-responsive app__product_form-image col-lg-6 col-md-6 col-sm-6 ">
+        <img src="<%=@photo%>" alt="" class="img-responsive app__product_form-image col-lg-6 col-md-7 col-sm-12 ">
         <%= f.text_field :instagram_image, value: @photo, class: "hidden" %>
       <% else %>
-        <img src= <%= @product.instagram_image %> alt="" class="img-responsive app__product_form-image col-lg-6 col-md-6 col-sm-6">
+        <figure class="col-lg-6 col-md-7 col-sm-12 ">
+          <img src= <%= @product.instagram_image %> alt="" class="img-responsive app__product_form-image">
+        </figure>
       <% end %>
     </div>
-    <div class="app_product_form-fields col-lg-6 col-md-6 col-sm-6 ">
-      <% if !@photo %>
-        <div class="form-group">
-          <%= f.label "Url de la imagen" %>
-          <%= f.text_field :instagram_image%>
-        </div>
-      <% end %>
+    <div class="app_product_form-fields col-lg-6 col-md-5 col-sm-12 ">
       <div class="form-group">
         <%= f.label "Nombre del producto" %>
         <%= f.text_field :product_name %>
@@ -42,17 +38,23 @@
         <%= f.label "Cantidad" %>
         <%= f.number_field :quantity %>
       </div>
+      <div class="form-group app__product_form-description ">
+        <%= f.label "Descripción" %>
+
+        <%= f.trix_editor :description, class: "app__product_form--textarea-trix"%>
+
+      </div>
+
+
 
     </div>
 
-    <div class="form-group app__product_form-description col-md-12 col-sm-12 col-xs-12 col-lg-12">
-      <%= f.label "Descripción" %>
 
-      <%= f.trix_editor :description, class: "app__product_form--textarea-trix"%>
-    </div>
+
     <!--  The magic code will be generated before the creating -->
-    <div class="actions text-center">
-      <%= f.submit 'Guardar', :class => 'button special col-md-12 col-sm-12 col-xs-12 col-lg-12'  %>
-    </div>
+
+      <%= f.submit 'Guardar', :class => 'app__product_save button special col-md-6 col-md-offset-3 col-sm-offset-3 col-sm-6  col-xs-offset-3 col-xs-6 '  %>
+
+
   </div>
 <% end %>

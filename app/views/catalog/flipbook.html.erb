@@ -110,22 +110,20 @@
                             <p class="book__page-quantity">
                               <b>Disponibles:</b> <%=  product.quantity %>
                             </p>
-                            <p class="book__page-description">
+                            <p class="app__product-description">
                               <b>Descripción:</b> <br> <%=  product.description.html_safe %>
                             </p>
-                            <% if session[:access_token] %>
-
-
+                            <% if current_user.id == product.user_id %>
                               <div class="book__admin-action--container text-right">
-                                <%= link_to  edit_product_path(product) do %>
-                                   <i class=" book__admin-action--item fa fa-pencil"></i>
-                                <% end %>
-
-                                <%= link_to product, method: :delete, data: { confirm: '¿Está seguro que desea eliminarlo?' } do%>
-                                    <i class=" book__admin-action--item fa fa-trash-o"></i>
-                                <% end %>
+                                  <%= link_to edit_product_path(product) do %>
+                                    <i class=" book__admin-action--item fa fa-pencil"></i>
+                                 <% end %>
+                                 <%= link_to product, method: :delete, data: { confirm: '¿Está seguro que desea eliminarlo?' } do%>
+                                     <i class=" book__admin-action--item fa fa-trash-o"></i>
+                                 <% end %>
                               </div>
                             <% end %>
+
                           </div>
                         </div>
 

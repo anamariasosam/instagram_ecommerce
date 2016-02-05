@@ -26,17 +26,26 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="app__menu_dropdown-item fa fa-user "></i> <span class="app__menu_dropdown-item caret"></span></a>
               <ul class="dropdown-menu app__menu-right--dropmenu">
                 <li>
-                  <% if session[:access_token] %>
+                  <%  if user_signed_in?  %>
                     <%= link_to "Crear producto", users_dashboard_path %>
                   <% else %>
-                    <%= link_to "Crear catálogo", sessions_connect_path %>
+                    <%= link_to "Crear catálogo", new_user_registration_path%>
                   <% end %>
                 </li>
-                <% if session[:access_token] %>
+                <%  if user_signed_in?  %>
                   <li>
                     <%= link_to "Mis productos", products_path %>
                   </li>
+                  <li>
+                    <%= link_to('Cerrar Sesión', destroy_user_session_path, :method => :delete) %>
+                  </li>
+                <% else %>
+                  <li>
+                   <%= link_to('Iniciar Sesión', new_user_session_path)  %>
+                   </li>
                 <% end %>
+
+
               </ul>
             </li>
           </ul>

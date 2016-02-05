@@ -15,33 +15,19 @@
             <span class="app__catalog_gallery-zoom"><i class="fa fa-search-plus"></i></span>
           </a>
           <div class="app__catalog_gallery-caption caption">
-            <h3 class="product_name"><%= product.product_name %></h3>
-            <p class="app__catalog-price">
+            <h3 class="app__product_name app__product-subtitle"><%= product.product_name %></h3>
+            <p class="app__catalog-price app__product-subtitle">
               Precio:
             </p>
             <p class="app_catalog-price--val">
               <%= number_to_currency product.price, precision:0 %>
             </p>
-            <p class="app__catalog-quantity">
-              Disponibles: <%=  product.quantity %>
+            <p class="app__catalog-quantity ">
+              <span class="app__product-subtitle">Disponibles:</span> <%=  product.quantity %>
             </p>
-            <p class="app__catalog-description">
-              Descripción: <br> <%=  product.description.html_safe %>
+            <p class="app__product-description">
+              <span class="app__product-subtitle">Descripción:</span> <br> <%=  product.description.html_safe %>
             </p>
-            <% if session[:access_token] %>
-
-
-              <div class="book__admin-action--container text-right">
-                <%= link_to  edit_product_path(product) do %>
-
-                   <i class=" book__admin-action--item fa fa-pencil"></i>
-                <% end %>
-
-                <%= link_to product, method: :delete, data: { confirm: '¿Está seguro que desea eliminarlo?' } do%>
-                    <i class=" book__admin-action--item fa fa-trash-o"></i>
-                <% end %>
-              </div>
-            <% end %>
           </div>
         </div>
       <% end %>

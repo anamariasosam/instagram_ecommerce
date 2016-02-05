@@ -1,0 +1,34 @@
+
+<section class="app__registration_container section wrapper special">
+  <div class="inner">
+    <header class="major">
+      <h2>Iniciar Sesión</h2>
+    </header>
+    <div class="app__registration_form">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group app__registration_form-group">
+          <%= f.label "Correo Electrónico" %>
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+
+        <div class="form-group app__registration_form-group">
+          <%= f.label "Contraseña" %>
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="form-group app__registration_form-group">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me, "Recordarme" %>
+          </div>
+        <% end -%>
+
+        <div class="actions">
+          <%= f.submit "Entrar" %>
+        </div>
+      <% end %>
+    </div>
+
+<%= render "devise/shared/links" %>
+  </div>
+</section>
