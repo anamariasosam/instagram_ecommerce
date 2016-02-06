@@ -23,22 +23,25 @@
         <span class="app__product-subtitle" id="store_owner">Tienda:</span>
         <a href="https://www.instagram.com/<%= @product.store_owner %>" target="_blank"><%= @product.store_owner %></a>
       </p>
-      <% if current_user.id == @product.user_id %>
-        <p class="app__product-code">
-          Comparte este código en tu post de instagram:
-          <span class="app__product-subtitle">
-            <%= @product.shortened_urls.last.unique_key %>
-          </span>
-        </p>
-        <div class="app__product-action--container text-right">
-            <%= link_to edit_product_path(@product) do %>
-              <i class=" app__product-action--item fa fa-pencil"></i>
-           <% end %>
-           <%= link_to @product, method: :delete, data: { confirm: '¿Está seguro que desea eliminarlo?' } do%>
-               <i class=" app__product-action--item fa fa-trash-o"></i>
-           <% end %>
-        </div>
+      <% if current_user %>
+        <% if current_user.id == @product.user_id %>
+          <p class="app__product-code">
+            Comparte este código en tu post de instagram:
+            <span class="app__product-subtitle">
+              <%= @product.shortened_urls.last.unique_key %>
+            </span>
+          </p>
+          <div class="app__product-action--container text-right">
+              <%= link_to edit_product_path(@product) do %>
+                <i class=" app__product-action--item fa fa-pencil"></i>
+             <% end %>
+             <%= link_to @product, method: :delete, data: { confirm: '¿Está seguro que desea eliminarlo?' } do%>
+                 <i class=" app__product-action--item fa fa-trash-o"></i>
+             <% end %>
+          </div>
+        <% end %>
       <% end %>
+
     </div>
   </div>
   <div id="notice" class="alert col-xs-12 col-sm-12 col-md-12 col-lg-12 app__product_notice">
