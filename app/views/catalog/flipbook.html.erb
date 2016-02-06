@@ -118,16 +118,19 @@
                             <p class="app__product-description">
                               <b>Descripción:</b> <br> <%=  product.description.html_safe %>
                             </p>
-                            <% if current_user.id == product.user_id %>
-                              <div class="book__admin-action--container text-right">
-                                  <%= link_to edit_product_path(product) do %>
-                                    <i class=" book__admin-action--item fa fa-pencil"></i>
-                                 <% end %>
-                                 <%= link_to product, method: :delete, data: { confirm: '¿Está seguro que desea eliminarlo?' } do%>
-                                     <i class=" book__admin-action--item fa fa-trash-o"></i>
-                                 <% end %>
-                              </div>
+                            <% if current_user %>
+                              <% if current_user.id == product.user_id %>
+                                <div class="book__admin-action--container text-right">
+                                    <%= link_to edit_product_path(product) do %>
+                                      <i class=" book__admin-action--item fa fa-pencil"></i>
+                                   <% end %>
+                                   <%= link_to product, method: :delete, data: { confirm: '¿Está seguro que desea eliminarlo?' } do%>
+                                       <i class=" book__admin-action--item fa fa-trash-o"></i>
+                                   <% end %>
+                                </div>
+                              <% end %>
                             <% end %>
+
 
                           </div>
                         </div>
