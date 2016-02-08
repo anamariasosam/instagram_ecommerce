@@ -6,6 +6,8 @@ gem 'rails', '4.2.5'
 
 gem 'devise'
 
+gem 'rename'
+
 # Use SCSS for stylesheets
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
