@@ -51,7 +51,9 @@ $(document).on('ready page:change', function() {
 
   $('#logout').on('click', function(event) {
       event.preventDefault();
-      window.open("https://www.instagram.com/accounts/logout/");
+      var win = window.open("https://www.instagram.com/accounts/logout/", '1366002941508','width=500,height=200,left=375,top=330');
+
+      setTimeout(function () { win.close();}, 3000);
   });
 
 
