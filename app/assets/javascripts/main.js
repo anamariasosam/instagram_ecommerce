@@ -51,8 +51,7 @@ $(document).on('ready page:change', function() {
 
   $('#logout').on('click', function(event) {
       event.preventDefault();
-      alert('safs')
-      window.open("https://www.instagram.com/accounts/logout/").close();
+      window.open("https://www.instagram.com/accounts/logout/");
   });
 
 
