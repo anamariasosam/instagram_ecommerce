@@ -6,6 +6,7 @@ es:
           attributes:
             product_name:
               blank: El nombre del producto no puede estar vacío
+              too_long: La descripción debe ser menor a 20 caracteres
             price:
               blank: El precio no puede estar vacío
               not_a_number: El precio debe ser númerico

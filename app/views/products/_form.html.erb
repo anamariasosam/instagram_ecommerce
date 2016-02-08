@@ -22,6 +22,7 @@
       <% else %>
         <figure class="col-lg-6 col-md-7 col-sm-12 ">
           <img src= <%= @product.instagram_image %> alt="" class="img-responsive app__product_form-image">
+          <%= f.text_field :instagram_image, value: @product.instagram_image, class: "hidden" %>
         </figure>
       <% end %>
     </div>
