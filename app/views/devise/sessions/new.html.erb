@@ -4,8 +4,21 @@
     <header class="major">
       <h2>Iniciar Sesión</h2>
     </header>
+    <div class="error-login__container">
+      <% flash.each do |name, msg| %>
+        <% if msg.class == Array %>
+          <% msg.each do |message| %>
+            <%= content_tag :div, message, :id => "flash_#{name}" %>
+          <% end %>
+        <% else %>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end %>
+      <% end %>
+      <br>
+    </div>
     <div class="app__registration_form">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
         <div class="form-group app__registration_form-group">
           <%= f.label "Correo Electrónico" %>
           <%= f.email_field :email, autofocus: true %>

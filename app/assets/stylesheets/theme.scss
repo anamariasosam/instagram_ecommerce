@@ -1979,7 +1979,8 @@ button,
   button.special,
   .button.special {
     background-color: $primary-color;
-    color: #ffffff !important;
+    color: #fff !important;
+    font-size: 14px;
   }
 
     input[type="submit"].special:hover,
@@ -2250,7 +2251,7 @@ input[type="checkbox"]:checked + label:before,
 input[type="radio"]:checked + label:before {
   background-color: $primary-color;
   border-color: $primary-color;
-  color: #ffffff;
+  color: #fff;
 }
 
 input[type="checkbox"]:focus + label:before,
@@ -2779,11 +2780,11 @@ table.alt tbody tr td {
 
   .wrapper.style1 {
     background-color: $primary-color;
-    color: #ffffff;
+    color: #fff;
   }
 
     .wrapper.style1 input, .wrapper.style1 select, .wrapper.style1 textarea {
-      color: #ffffff;
+      color: #fff;
     }
 
     .wrapper.style1 a {
@@ -2791,11 +2792,11 @@ table.alt tbody tr td {
     }
 
     .wrapper.style1 strong, .wrapper.style1 b {
-      color: #ffffff;
+      color: #fff;
     }
 
     .wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 h4, .wrapper.style1 h5, .wrapper.style1 h6 {
-      color: #ffffff;
+      color: #fff;
     }
 
     .wrapper.style1 blockquote {
@@ -2847,7 +2848,7 @@ table.alt tbody tr td {
       .wrapper.style1 .button.alt {
         background-color: transparent;
         box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
-        color: #ffffff !important;
+        color: #fff !important;
       }
 
         .wrapper.style1 input[type="submit"].alt:hover,
@@ -2900,7 +2901,7 @@ table.alt tbody tr td {
         }
 
     .wrapper.style1 label {
-      color: #ffffff;
+      color: #fff;
     }
 
     .wrapper.style1 input[type="text"],
@@ -2929,7 +2930,7 @@ table.alt tbody tr td {
 
     .wrapper.style1 input[type="checkbox"] + label,
     .wrapper.style1 input[type="radio"] + label {
-      color: #ffffff;
+      color: #fff;
     }
 
       .wrapper.style1 input[type="checkbox"] + label:before,
@@ -2942,7 +2943,7 @@ table.alt tbody tr td {
     .wrapper.style1 input[type="radio"]:checked + label:before {
       background-color: $primary-color;
       border-color: $primary-color;
-      color: #ffffff;
+      color: #fff;
     }
 
     .wrapper.style1 input[type="checkbox"]:focus + label:before,
@@ -2992,7 +2993,7 @@ table.alt tbody tr td {
       }
 
     .wrapper.style1 table th {
-      color: #ffffff;
+      color: #fff;
     }
 
     .wrapper.style1 table thead {
@@ -3102,7 +3103,7 @@ table.alt tbody tr td {
       .wrapper.style2 button.special,
       .wrapper.style2 .button.special {
         background-color: $primary-color;
-        color: #ffffff !important;
+        color: #fff !important;
       }
 
         .wrapper.style2 input[type="submit"].special:hover,
@@ -3164,7 +3165,7 @@ table.alt tbody tr td {
     .wrapper.style2 input[type="radio"]:checked + label:before {
       background-color: $primary-color;
       border-color: $primary-color;
-      color: #ffffff;
+      color: #fff;
     }
 
     .wrapper.style2 input[type="checkbox"]:focus + label:before,
@@ -3340,7 +3341,7 @@ table.alt tbody tr td {
       .wrapper.style3 button.special,
       .wrapper.style3 .button.special {
         background-color: $primary-color;
-        color: #ffffff !important;
+        color: #fff !important;
       }
 
         .wrapper.style3 input[type="submit"].special:hover,
@@ -3401,7 +3402,7 @@ table.alt tbody tr td {
     .wrapper.style3 input[type="radio"]:checked + label:before {
       background-color: $primary-color;
       border-color: $primary-color;
-      color: #ffffff;
+      color: #fff;
     }
 
     .wrapper.style3 input[type="checkbox"]:focus + label:before,
@@ -3526,13 +3527,13 @@ table.alt tbody tr td {
 
 #banner {
   background-color: $primary-color;
-  color: #ffffff;
+  color: #fff;
   padding: 8em 0 6em 0;
   text-align: center;
 }
 
   #banner input, #banner select, #banner textarea {
-    color: #ffffff;
+    color: #fff;
   }
 
   #banner a {
@@ -3540,11 +3541,11 @@ table.alt tbody tr td {
   }
 
   #banner strong, #banner b {
-    color: #ffffff;
+    color: #fff;
   }
 
   #banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
-    color: #ffffff;
+    color: #fff;
   }
 
   #banner blockquote {
@@ -3592,7 +3593,7 @@ table.alt tbody tr td {
     #banner .button.alt {
       background-color: transparent;
       box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
-      color: #ffffff !important;
+      color: #fff !important;
     }
 
       #banner input[type="submit"].alt:hover,

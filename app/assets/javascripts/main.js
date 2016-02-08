@@ -33,10 +33,29 @@ function add_class_active () {
   }
 }
 
+// Collapse menu on click
+$(".navbar-nav li a").click(function (event) {
+  var toggle = $(".navbar-toggle").is(":visible");
+  if (toggle) {
+    $(".navbar-collapse").collapse('hide');
+  }
+});
+
+
+
+
 $(document).on('ready page:change', function() {
   add_class_active();
 
   description_text();
+
+  $('#logout').on('click', function(event) {
+      event.preventDefault();
+      alert('safs')
+      window.open("https://www.instagram.com/accounts/logout/").close();
+  });
+
+
 
   $('.app__search-btn').on('click', find_product);
 

@@ -1,11 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-  before_filter :authenticate_user!, :only => [:index, :new]
+  before_filter :authenticate_user!, :only => [:index, :new, :edit]
+
   # GET /products
   # GET /products.json
   def index
-    if session[:access_token]
+    if current_user.user_token
 
       @products = current_user.products
     else
@@ -20,7 +21,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    if session[:access_token]
+    if current_user.user_token
       params.inspect
       @photo = params[:photo]
 
@@ -54,7 +55,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
-    if session[:access_token]
+    if current_user.user_token
       respond_to do |format|
         if @product.update(product_params)
           format.html { redirect_to @product, notice: 'El producto ha sido actualizado exitosamente' }
@@ -88,6 +89,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:product_name, :user_id,:price, :quantity, :instagram_image, :description, :magic_code, :likes, :store_owner)
+      params.require(:product).permit(:product_name, :user_id,:price, :quantity, :instagram_image, :description, :likes, :store_owner)
     end
 end

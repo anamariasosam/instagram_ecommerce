@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :authenticate_user!
+
   def connect
     redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL)
   end
@@ -6,6 +8,10 @@ class SessionsController < ApplicationController
   def callback
     response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
     session[:access_token] = response.access_token
+
+    current_user.update(user_token: response.access_token)
+
     redirect_to "/users/dashboard"
   end
+
 end

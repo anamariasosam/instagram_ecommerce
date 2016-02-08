@@ -6,7 +6,6 @@ one:
   quantity: 1
   instagram_image: MyString
   description: MyText
-  magic_code: MyString
 
 two:
   product_name: MyString
@@ -14,4 +13,3 @@ two:
   quantity: 1
   instagram_image: MyString
   description: MyText
-  magic_code: MyString

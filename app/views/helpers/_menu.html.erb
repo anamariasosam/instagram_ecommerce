@@ -37,15 +37,13 @@
                     <%= link_to "Mis productos", products_path %>
                   </li>
                   <li>
-                    <%= link_to('Cerrar Sesión', destroy_user_session_path, :method => :delete) %>
+                    <%= link_to('Cerrar Sesión', destroy_user_session_path, :method => :delete, :id => "logout") %>
                   </li>
                 <% else %>
                   <li>
                    <%= link_to('Iniciar Sesión', new_user_session_path)  %>
                    </li>
                 <% end %>
-
-
               </ul>
             </li>
           </ul>
