@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :authenticate_user!
 
   def connect
     redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL)
