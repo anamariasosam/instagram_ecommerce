@@ -26,4 +26,12 @@
       cursor: pointer;
     }
   }
+
+  &_username {
+    @media (max-width: 350px) {
+      & {
+        font-size: 20px;
+      }
+    }
+  }
 }
