@@ -1,9 +1,16 @@
 .app__partners {
 
   &-caption {
-    background-color: $secondary-color;
     margin-left: 5%;
     width: 89%;
+
+    & a {
+      color: #000;
+    }
+
+    & a:hover {
+      color: #000;
+    }
   }
 
   &-container {
