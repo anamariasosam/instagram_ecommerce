@@ -1,6 +1,6 @@
 function find_product(event) {
   event.preventDefault();
-  window.location.href = "/"  + $('.app__search-input').val();
+  window.location.href = "/"  + $('.app__search-input').val().toLowerCase();
 }
 
 function description_text (argument) {
