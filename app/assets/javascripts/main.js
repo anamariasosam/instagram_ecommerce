@@ -7,11 +7,10 @@ function description_text (argument) {
   if ($('.app__product-description')) {
     $('.app__product-description').next().css( "word-wrap", "break-word" );
   }
-
 }
 
 // Set modal in the center of the view
-function reposition() {
+function center_modal() {
   var modal = $(this),
       dialog = modal.find('.modal-dialog');
   modal.css('display', 'block');
@@ -42,28 +41,20 @@ $(".navbar-nav li a").click(function (event) {
 });
 
 
+$('#logout').on('click', function(event) {
+    event.preventDefault();
+    window.open("https://www.instagram.com/accounts/logout/");
+});
 
+$('.app__search-btn').on('click', find_product);
+
+$('.modal').on('show.bs.modal', center_modal);
+
+$(window).on('resize', function() {
+    $('.modal:visible').each(center_modal);
+});
 
 $(document).on('ready page:change', function() {
   add_class_active();
-
   description_text();
-
-  $('#logout').on('click', function(event) {
-      event.preventDefault();
-      window.open("https://www.instagram.com/accounts/logout/");
-
-
-  });
-
-
-
-  $('.app__search-btn').on('click', find_product);
-
-  $('.modal').on('show.bs.modal', reposition);
-
-  $(window).on('resize', function() {
-      $('.modal:visible').each(reposition);
-  });
-
 });

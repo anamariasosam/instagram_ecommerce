@@ -85,8 +85,8 @@
   }
 
   &_name {
-    text-align: center;
     color: $primary-color;
+    text-align: center;
     word-wrap: break-word;
 
     @media (max-width: 320px) {
