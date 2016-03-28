@@ -1,8 +1,3 @@
-function find_product(event) {
-  event.preventDefault();
-  window.location.href = "/"  + $('.app__search-input').val().toLowerCase();
-}
-
 function description_text (argument) {
   if ($('.app__product-description')) {
     $('.app__product-description').next().css( "word-wrap", "break-word" );
@@ -40,21 +35,18 @@ $(".navbar-nav li a").click(function (event) {
   }
 });
 
-
-$('#logout').on('click', function(event) {
-    event.preventDefault();
-    window.open("https://www.instagram.com/accounts/logout/");
-});
-
-$('.app__search-btn').on('click', find_product);
-
-$('.modal').on('show.bs.modal', center_modal);
-
-$(window).on('resize', function() {
-    $('.modal:visible').each(center_modal);
-});
-
-$(document).on('ready page:change', function() {
+$(document).on('ready page:change page:load', function() {
   add_class_active();
   description_text();
+
+  $('.modal').on('show.bs.modal', center_modal);
+
+  $(window).on('resize', function() {
+      $('.modal:visible').each(center_modal);
+  });
+
+  $('#logout').on('click', function(event) {
+    event.preventDefault();
+    window.open("https://www.instagram.com/accounts/logout/");
+  });
 });

@@ -1,11 +1,3 @@
-$(document).on('ready page:change', function() {
-  catalogSize();
-  $(window).on('resize', catalogSize);
-  if (!$('.book__container').hasClass('hidden')) {
-
-  }
-});
-
 function catalogSize () {
   if (window.matchMedia("(min-width: 1000px)").matches){
     $('.book__container').removeClass('hidden');
@@ -15,3 +7,8 @@ function catalogSize () {
     $('.small__catalog').removeClass('hidden');
   }
 }
+
+$(document).on('ready page:change page:load', function() {
+  catalogSize();
+  $(window).on('resize', catalogSize);
+});
