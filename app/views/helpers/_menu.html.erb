@@ -29,7 +29,7 @@
                   <%  if user_signed_in?  %>
                     <%= link_to "Crear producto", users_dashboard_path %>
                   <% else %>
-                    <%= link_to "Crear catálogo", new_user_registration_path%>
+                    <%= link_to "Crear catálogo", sessions_connect_path%>
                   <% end %>
                 </li>
                 <%  if user_signed_in?  %>

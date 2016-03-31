@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     end
 
     def after_sign_up_path_for(resource)
-      sessions_connect_path
+      users_dashboard_path
     end
 
     protected
