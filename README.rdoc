@@ -2,7 +2,8 @@
 
 Catlog is an web app, where you can show all the information from your instagram's products photos.
 
-[![homepage](https://photos-3.dropbox.com/t/2/AAAP68vVeR8VthW5icjnmrP2yEZR8dTIcUFiZTHKT0nNQg/12/127516638/png/32x32/3/1459666800/0/2/Screenshot%202016-04-02%2021.59.27.png/EPqZl2IYg4QWIAcoBw/irK4uUSkxA3NrEMyb2GYXeH9b-kc6kHx4MURiF1ADUw?size_mode=3&size=1024x768)](http://catlog.herokuapp.com/)
+[![homepage](https://dl.dropboxusercontent.com/u/127516638/Screenshot%202016-04-02%2021.59.27.png)](http://catlog.herokuapp.com/)
 
 * Ruby version: 2.2.1p85
 * Postgress db
+* Instagram API
