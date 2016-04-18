@@ -13,22 +13,22 @@
             <span class="app__catalog_gallery-zoom"><i class="fa fa-search-plus"></i></span>
           </a>
           <div class="app__catalog_gallery-caption caption">
-            <h3 class="app__product_name app__product-subtitle"><%= product.product_name %></h3>
-            <p class="app__catalog-price app__product-subtitle">
+            <h3 class="app__product_name app__bold-text"><%= product.product_name %></h3>
+            <p class="app__catalog-price app__bold-text">
               Precio:
             </p>
             <p class="app_catalog-price--val">
               <%= number_to_currency product.price, precision:0 %>
             </p>
             <p class="app__catalog-quantity ">
-              <span class="app__product-subtitle">Disponibles:</span> <%=  product.quantity %>
+              <span class="app__bold-text">Disponibles:</span> <%=  product.quantity %>
             </p>
             <p class="app__product-store_owner">
-              <span class="app__product-subtitle" id="store_owner">Tienda:</span>
+              <span class="app__bold-text" id="store_owner">Tienda:</span>
               <a href="https://www.instagram.com/<%= product.store_owner %>" target="_blank"><%= product.store_owner %></a>
             </p>
             <p class="app__product-description">
-              <span class="app__product-subtitle">Descripción:</span> <br> <%=  product.description.html_safe %>
+              <span class="app__bold-text">Descripción:</span> <br> <%=  product.description.html_safe %>
             </p>
           </div>
         </div>

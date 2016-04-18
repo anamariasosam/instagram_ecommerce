@@ -8,29 +8,30 @@
         <h2><%= @product.product_name %></h2>
       </header>
       <p class="app__product-price">
-        <span class="app__product-subtitle">Precio:</span>
+        <span class="app__bold-text">Precio:</span>
         <%= number_to_currency @product.price, precision:0 %>
       </p>
       <p class="app__product-quantity">
-        <span class="app__product-subtitle">Disponibles:</span>
+        <span class="app__bold-text">Disponibles:</span>
         <%=  @product.quantity %>
       </p>
       <p class="app__product-description">
-        <span class="app__product-subtitle" id="description">Descripción:</span>
+        <span class="app__bold-text" id="description">Descripción:</span>
         <%=  @product.description.html_safe %>
       </p>
       <p class="app__product-store_owner">
-        <span class="app__product-subtitle" id="store_owner">Tienda:</span>
-        <a href="https://www.instagram.com/<%= @product.store_owner %>" target="_blank"><%= @product.store_owner %></a>
+        <span class="app__bold-text" id="store_owner">Información de la tienda:</span>
+        <%= link_to  "a", stores_show_path(id: @product.user_id) %>
       </p>
       <% if current_user %>
         <% if current_user.id == @product.user_id %>
           <p class="app__product-code">
             Comparte este código en tu post de instagram:
-            <span class="app__product-subtitle">
+            <span class="app__bold-text">
               <%= @product.shortened_urls.last.unique_key %>
             </span>
           </p>
+
           <div class="app__product-action--container text-right">
               <%= link_to edit_product_path(@product) do %>
                 <i class=" app__product-action--item fa fa-pencil"></i>
