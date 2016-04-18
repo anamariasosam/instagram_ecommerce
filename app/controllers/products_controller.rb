@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user_id = current_user.id
-    @product.store_owner = current_user.store_name
+    @product.store_owner = current_user.store_account
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'El producto ha sido creado exitosamente'}
@@ -84,7 +84,11 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      if Product.count > 0
+        @product = Product.find(params[:id])
+      else
+        redirect_to "/404"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
