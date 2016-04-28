@@ -7,8 +7,10 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if current_user.user_token
-
       @products = current_user.products
+      if @products.count == 0
+        flash[:notice] = "Aún no tienes productos, crea tus productos <a href='/users/dashboard'>aquí</a>".html_safe
+      end
     else
       redirect_to :controller => 'sessions', :action => 'connect'
     end
