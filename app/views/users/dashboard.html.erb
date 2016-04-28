@@ -6,15 +6,22 @@
   <div class="app__dashboard-gallery ">
     <p>Haz clic en la que desees convertir en producto</p>
     <% @recent_media_items.each do |media| %>
-      <div class=" thumbnail app__dashboard_gallery-thumbnail col-xs-4 col-sm-3 col-md-2 col-lg-3">
-        <%= link_to new_product_path(photo: media.images.standard_resolution.url)  do %>
-          <img src='<%= media.images.thumbnail.url %>' class="app__dashboard_gallery-img img-responsive" alt="product">
-          <p class="app__dashboard_gallery-new">
-            <i class="fa fa-shopping-bag"></i>
-          </p>
-        <% end %>
 
-      </div>
+        <div class=" thumbnail app__dashboard_gallery-thumbnail col-xs-4 col-sm-3 col-md-2 col-lg-3">
+          <%= link_to new_product_path(photo: media.images.standard_resolution.url)  do %>
+            <img src='<%= media.images.thumbnail.url %>' class="app__dashboard_gallery-img img-responsive" alt="product">
+            <p class="app__dashboard_gallery-new">
+              <i class="fa fa-shopping-bag"></i>
+            </p>
+          <% end %>
+        </div>
     <% end %>
   </div>
+  <%- #if !@recent_media_items.last.id.nil? -%>
+    <%- #link_to "Ver más" , users_dashboard_path(max_id: @recent_media_items.last.id)  -%>
+    <%- # end -%>
+
+
+
+
 </section>
