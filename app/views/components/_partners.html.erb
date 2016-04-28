@@ -6,10 +6,10 @@
       <div class="app__partners_logos clearfix">
           <% @users.each do |user| %>
             <figure class="app__partners-figure col-xs-6 col-sm-4 col-lg-6 col-md-4 ">
-
-                <a href="https://www.instagram.com/<%= user.store_account %>" target="_blank">
+              <%= link_to  stores_show_path(id: user.id) do %>
                   <img src="<%= user.store_image %>" class="img-circle app__partners-img" alt="">
-                </a>
+
+              <% end %>
 
             </figure>
           <% end %>
