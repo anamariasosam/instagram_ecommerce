@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
     if current_user.user_token
       params.inspect
       @photo = params[:photo]
+      @photo_id = params[:photo_id]
 
       @product = Product.new
     else
@@ -95,6 +96,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:product_name, :user_id,:price, :quantity, :instagram_image, :description, :likes, :store_owner)
+      params.require(:product).permit(:product_name, :user_id,:price, :quantity, :instagram_image, :description, :likes, :store_owner, :photo_id)
     end
 end

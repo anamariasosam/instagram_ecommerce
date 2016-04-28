@@ -19,6 +19,7 @@
       <% if @photo %>
         <img src="<%=@photo%>" alt="" class="img-responsive app__product_form-image col-lg-6 col-md-7 col-sm-12 ">
         <%= f.text_field :instagram_image, value: @photo, class: "hidden" %>
+        <%= f.text_field :photo_id, value: @photo_id, class: "hidden" %>
       <% else %>
         <figure class="col-lg-6 col-md-7 col-sm-12 ">
           <img src= <%= @product.instagram_image %> alt="" class="img-responsive app__product_form-image">

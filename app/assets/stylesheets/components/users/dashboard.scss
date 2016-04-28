@@ -1,6 +1,11 @@
 .app__dashboard{
   &_gallery {
 
+    &-blur {
+      opacity: 0.1;
+      filter: alpha(opacity=40);
+    }
+
     &-img {
       position: relative;
     }

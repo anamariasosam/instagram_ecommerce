@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160418021148) do
+ActiveRecord::Schema.define(version: 20160428032440) do
 
   create_table "products", force: :cascade do |t|
     t.string   "product_name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160418021148) do
     t.datetime "updated_at",      null: false
     t.integer  "user_id"
     t.string   "store_owner"
+    t.string   "photo_id"
   end
 
   create_table "shortened_urls", force: :cascade do |t|
