@@ -24,8 +24,8 @@
               <span class="app__bold-text">Disponibles:</span> <%=  product.quantity %>
             </p>
             <p class="app__product-store_owner">
-              <span class="app__bold-text" id="store_owner">Tienda:</span>
-              <a href="https://www.instagram.com/<%= product.store_owner %>" target="_blank"><%= product.store_owner %></a>
+              <span class="app__bold-text" id="store_owner">Información de la tienda:</span>
+              <%= link_to  product.store_owner, stores_show_path(id: product.user_id) %>
             </p>
             <p class="app__product-description">
               <span class="app__bold-text">Descripción:</span> <br> <%=  product.description.html_safe %>
