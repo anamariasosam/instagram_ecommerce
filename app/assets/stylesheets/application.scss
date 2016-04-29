@@ -1,8 +1,14 @@
+// Gems
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "normalize-rails";
+@import "font-awesome";
+@import "trix";
+@import "lightbox";
+
 @import "helpers/colors.scss";
 @import "flipBook/style.scss";
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
 @import "theme.scss";
 
 @import "helpers/footer.scss";
@@ -26,6 +32,9 @@
 @import "components/devise/errors.scss";
 
 @import "lightbox2.scss";
+
+// Vendor
+@import "footable/footable.core.min.css";
 
 .app {
   &__container {
