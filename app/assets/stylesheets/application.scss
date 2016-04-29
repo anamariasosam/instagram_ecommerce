@@ -6,14 +6,14 @@
 @import "trix";
 @import "lightbox";
 
-@import "helpers/colors.scss";
+@import "base/variables.scss";
 @import "flipBook/style.scss";
 
 @import "theme.scss";
 
-@import "helpers/footer.scss";
-@import "helpers/menu.scss";
-@import "helpers/modal-search.scss";
+@import "layout/footer.scss";
+@import "layout/menu.scss";
+@import "layout/modal-search.scss";
 
 @import "components/home/intro.scss";
 @import "components/home/about.scss";
