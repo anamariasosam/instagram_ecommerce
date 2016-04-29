@@ -16,7 +16,7 @@ function center_modal() {
 }
 
 // Add class active to menu
-function add_class_active () {
+function add_class_active() {
   var path = window.location.pathname
   if( path == "/catalog/view" || path == "/catalog/flipbook" ){
     $("#home_path").removeClass('active')
@@ -24,6 +24,16 @@ function add_class_active () {
   } else if ( path == "" ){
     $("#home_path").addClass('active')
     $("#catalog_path").removeClass('active')
+  }
+}
+
+function validate_search_req( event ) {
+  var $input = $(".app__search-input");
+  if ( !$input.val() ) {
+    event.preventDefault();
+    $input
+      .attr("placeholder", "Recuerda escribir el código de producto")
+      .addClass("error");
   }
 }
 
@@ -49,4 +59,7 @@ $(document).on('ready page:change page:load', function() {
     event.preventDefault();
     window.open("https://www.instagram.com/accounts/logout/");
   });
+
+  // Validate search product box
+  $("#app__search-product").on('submit', validate_search_req);
 });
