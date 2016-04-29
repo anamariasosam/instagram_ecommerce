@@ -1,31 +1,19 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require normalize-rails
- *= require font-awesome
- *= require lightbox
- *= footable.core.min.css
- *= require trix
- */
-@import "helpers/colors.scss";
-@import "flipBook/style.scss";
-
+// Gems
+@import "normalize-rails";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+@import "trix";
+@import "lightbox";
+
+@import "base/variables.scss";
+@import "flipBook/style.scss";
+
 @import "theme.scss";
 
-@import "helpers/footer.scss";
-@import "helpers/menu.scss";
-@import "helpers/modal-search.scss";
+@import "layout/footer.scss";
+@import "layout/menu.scss";
+@import "layout/modal-search.scss";
 
 @import "components/home/intro.scss";
 @import "components/home/about.scss";
@@ -44,6 +32,9 @@
 @import "components/devise/errors.scss";
 
 @import "lightbox2.scss";
+
+// Vendor
+@import "footable/footable.core.min.css";
 
 .app {
   &__container {
