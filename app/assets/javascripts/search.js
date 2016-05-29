@@ -1,4 +1,4 @@
-var initialLoad = true;
+localStorage.setItem('initialLoad', true);
 // Set modal in the center of the view
 function center_modal() {
   var modal = $(this),
@@ -26,9 +26,9 @@ function validate_search_req( event ) {
 
 // Open the modal on first page load
 function openModalFirstTime() {
-  if (initialLoad) {
+  if (localStorage.getItem('initialLoad') == 'true' && window.location.pathname == "/") {
     $('#searchModal').modal('show');
-     initialLoad = false;
+     localStorage.setItem('initialLoad', false);
   }
 }
 
