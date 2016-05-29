@@ -21,7 +21,7 @@ describe "The search", :type => :feature do
 
   it "goes to 404 when products doenst exist" do
     visit '/'
-    within("#myModal") do
+    within("#searchModal") do
       fill_in 'search', :with => 'kzklyasf'
     end
     click_button 'Buscar'
@@ -30,7 +30,7 @@ describe "The search", :type => :feature do
 
   it "goes to home whithout search params" do
     visit '/'
-    within("#myModal") do
+    within("#searchModal") do
       fill_in 'search', :with => ''
     end
     click_button 'Buscar'
@@ -39,7 +39,7 @@ describe "The search", :type => :feature do
 
   it "goes to product page" do
     visit '/'
-    within("#myModal") do
+    within("#searchModal") do
       fill_in 'search', :with => @prod.shortened_urls.last.unique_key
     end
     click_button 'Buscar'
@@ -47,4 +47,3 @@ describe "The search", :type => :feature do
   end
 
 end
-

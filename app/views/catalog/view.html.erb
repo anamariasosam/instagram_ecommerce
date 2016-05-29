@@ -1,2 +1,41 @@
-<%= render "small_catalog" %>
-<%= render "flipbook" %>
+<section id="two" class="section app__catalog-container small__catalog wrapper special">
+  <div class="inner">
+    <header class="major">
+      <h2 class="app__catalog-headline">Catálogo</h2>
+    </header>
+    <div class="app__catalog-gallery ">
+
+      <% @catalog_products.each do |product| %>
+        <div class=" thumbnail app__catalog_gallery-thumbnail col-xs-12 col-sm-4 col-md-3 col-lg-4">
+          <a href="<%= product.instagram_image %>" data-lightbox="image-1" data-title="<%= product.product_name %> - Valor: <%= number_to_currency product.price, precision:0 %>">
+            <img src="<%= product.instagram_image %>" class="app__catalog_gallery-img img-responsive" alt="product">
+            <span class="app__catalog_gallery-zoom"><i class="fa fa-search-plus"></i></span>
+          </a>
+          <div class="app__catalog_gallery-caption caption">
+            <h3 class="app__product_name app__bold-text">
+            <%= link_to product.product_name , product %>
+            </h3>
+            <span class="app__catalog-price app__bold-text">
+              Precio:
+            </span>
+            <p class="app_catalog-price--val">
+              <%= number_to_currency product.price, precision: 0 %>
+            </p>
+            <p class="app__catalog-quantity ">
+              <span class="app__bold-text">Disponibles:</span> <%=  product.quantity %>
+            </p>
+            <p class="app__product-store_owner">
+              <span class="app__bold-text" id="store_owner">Información de la tienda:</span>
+              <br>
+              <%= link_to  product.store_owner, stores_show_path(id: product.user_id) %>
+            </p>
+            <%= link_to "Ver más", product, class: "button special fit small " %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="app__catalog-paginator text-center">
+      <%= paginate @catalog_products %>
+    </div>
+  </div>
+</section>
