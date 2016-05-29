@@ -17,7 +17,7 @@ function add_class_active() {
 }
 
 // Collapse menu on click
-$(".navbar-nav li a").click(function (event) {
+$(".navbar-nav li a").click(function () {
   var toggle = $(".navbar-toggle").is(":visible");
   if (toggle) {
     $(".navbar-collapse").collapse('hide');
@@ -29,8 +29,7 @@ $(document).on('ready page:change page:load', function() {
   description_text();
 
 
-  $('#logout').on('click', function(event) {
-    event.preventDefault();
+  $('#logout').on('click', function() {
     window.open("https://www.instagram.com/accounts/logout/");
   });
 });
