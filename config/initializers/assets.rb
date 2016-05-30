@@ -4,6 +4,7 @@
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( lightbox/* )
 Rails.application.config.assets.precompile += %w( footable/footable.js )
+Rails.application.config.assets.precompile += %w( cookie/cookie.js )
 Rails.application.config.assets.precompile += %w( trix/trix.js )
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path

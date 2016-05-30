@@ -19,11 +19,3 @@
       padding: 0 10px !important;
   }
 }
-
-// Search placeholder responsive
-input.large { display: block !important; }
-input.small { display: none !important; }
-@media (max-width: 405px) {
-  input.large { display: none !important; }
-  input.small { display: block !important; }
-}

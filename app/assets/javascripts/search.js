@@ -1,4 +1,3 @@
-localStorage.setItem('initialLoad', true);
 // Set modal in the center of the view
 function center_modal() {
   var modal = $(this),
@@ -17,18 +16,15 @@ function validate_search_req( event ) {
     event.preventDefault();
     $input
       .attr("placeholder", "Recuerda escribir el código de producto");
-
-    $input
-      .parent()
-      .addClass("has-error");
   }
 }
 
 // Open the modal on first page load
 function openModalFirstTime() {
-  if (localStorage.getItem('initialLoad') == 'true' && window.location.pathname == "/") {
+
+  if (Cookies.get('modal_shown') == null) {
+    Cookies.set('modal_shown', 'yes', { expires: 1, path: '/' });
     $('#searchModal').modal('show');
-     localStorage.setItem('initialLoad', false);
   }
 }
 

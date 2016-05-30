@@ -14,8 +14,9 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require cookie/cookie.js
 //= require lightbox
 //= require trix
 //= require footable/footable.js
 //= require responsive-paginate/responsive-paginate.js
+//= require_tree .
