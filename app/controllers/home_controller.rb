@@ -3,6 +3,6 @@ class HomeController < ApplicationController
     @users = User.limit(6)
     @products =  Product.limit(3)
 
-    redirect_to "/#{@par}" if @par = params[:search]
+    redirect_to "/#{@par.downcase}" if @par = params[:search]
   end
 end

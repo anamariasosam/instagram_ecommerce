@@ -34,11 +34,11 @@
       </div>
       <div class="form-group">
         <%= f.label "Precio" %>
-        <%= f.number_field :price %>
+        <%= f.number_field :price, min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number" %>
       </div>
       <div class="form-group">
         <%= f.label "Cantidad" %>
-        <%= f.number_field :quantity %>
+        <%= f.number_field :quantity , min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number"%>
       </div>
       <div class="form-group app__product_form-description ">
         <%= f.label "Descripción" %>
