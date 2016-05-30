@@ -20,6 +20,11 @@ es:
           attributes:
             store_name:
               taken: "La cuenta de Instagram ya está conectada"
+              blank: "El nombre de la tienda no puede estar vacío"
+            phone_number:
+              blank: "El teléfono no puede estár vacío"
+            address:
+              blank: "La dirección no puede estár vacía"
             email:
               blank: "El correo no puede estár vacío"
               taken: "Ya tienes una cuenta con nosotros"

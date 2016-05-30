@@ -11,8 +11,7 @@ describe "The search", :type => :feature do
       :price => '32000',
       :quantity => '10',
       :instagram_image => 'IMAGE',
-      :description => 'DESCRIPTION PROD',
-      :store_owner => '@user'
+      :description => 'DESCRIPTION PROD'
     )
 
 

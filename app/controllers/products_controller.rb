@@ -43,7 +43,6 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user_id = current_user.id
-    @product.store_owner = current_user.store_account
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'El producto ha sido creado exitosamente'}
@@ -96,6 +95,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:product_name, :user_id,:price, :quantity, :instagram_image, :description, :likes, :store_owner, :photo_id)
+      params.require(:product).permit(:product_name, :user_id,:price, :quantity, :instagram_image, :description, :likes, :photo_id)
     end
 end

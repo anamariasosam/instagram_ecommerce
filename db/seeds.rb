@@ -13,7 +13,6 @@ for i in 0..9
   product = Product.create(
       instagram_image: 'http://lorempixel.com/400/400',
       price: rand(1000..1000000),
-      store_owner: 'La zapatería',
       user_id: 1,
       quantity: 2,
       description: 'Lorem ipsum dolor sit amet doloribus, minus repellat quo optio asperiores ullam aliquam.',

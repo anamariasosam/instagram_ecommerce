@@ -25,21 +25,23 @@
             <li class="dropdown ">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="app__menu_dropdown-item fa fa-user "></i> <span class="app__menu_dropdown-item caret"></span></a>
               <ul class="dropdown-menu app__menu-right--dropmenu">
-                <li>
-                  <%  if user_signed_in?  %>
-                    <%= link_to "Crear producto", users_dashboard_path %>
-                  <% else %>
-                    <%= link_to "Conectarse con Instagram", sessions_connect_path%>
-                  <% end %>
-                </li>
                 <%  if user_signed_in?  %>
                   <li>
-                    <%= link_to "Mis productos", products_path %>
+                    <%= link_to "Crear un producto", users_dashboard_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Ver mis productos", products_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Editar mi información", edit_user_registration_path %>
                   </li>
                   <li>
                     <%= link_to('Cerrar Sesión', destroy_user_session_path, :method => :delete, :id => "logout") %>
                   </li>
                 <% else %>
+                  <li>
+                    <%= link_to "Conectarse con Instagram", sessions_connect_path%>
+                  </li>
                   <li>
                    <%= link_to('Ingresar', new_user_session_path)  %>
                    </li>

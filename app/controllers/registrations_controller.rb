@@ -2,8 +2,6 @@ class RegistrationsController < Devise::RegistrationsController
 
   def new
     @user = User.new
-    client = Instagram.client(:access_token => session[:access_token])
-    @user_info = client.user
   end
 
   private
@@ -16,4 +14,3 @@ class RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:store_name, :store_account, :email, :phone_number, :address, :delivery_info, :password, :password_confirmation, :current_password)
   end
 end
-

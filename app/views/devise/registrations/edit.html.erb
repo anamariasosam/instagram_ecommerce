@@ -1,39 +1,67 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<section class="app__registration_container section wrapper special">
+  <div class="inner">
+    <header class="major">
+      <h2>Editar Mi Información</h2>
+    </header>
   </div>
+  <div class="app__registration_form">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+      <div class="form-group app__registration_form-group">
+        <%= f.label "Nombre de la Tienda" %>
+        <%= f.text_field :store_name %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+      <div class="form-group app__registration_form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <div class="form-group app__registration_form-group">
+        <%= f.label "Información de domicilio" %>
+        <%= f.text_area :address %>
+      </div>
+
+      <div class="form-group app__registration_form-group">
+        <%= f.label "Celular" %>
+        <%= f.number_field :phone_number %>
+      </div>
+
+      <div class="form-group app__registration_form-group">
+        <%= f.label "Información adicional" %>
+        <%= f.text_area :delivery_info, rows: 6 %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="form-group app__registration_form-group">
+        <%= f.label "Nueva Contraseña" %> <i>(déjala en blanco si no deseas cambiarla)</i>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="form-group app__registration_form-group">
+        <%= f.label "Confirma tu Contraseña" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="form-group app__registration_form-group">
+        <%= f.label "Contraseña Actual" %> <i>(necesitamos tu contraseña para guardar los cambios)</i><br />
+        <%= f.password_field :current_password, autocomplete: "on" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Actualizar", class: "button special col-md-12 col-sm-12 col-xs-12 col-lg-12" %>
+      </div>
+      <br>
+    <% end %>
+
+
+    <%= button_to "Eliminar mi cuenta", registration_path(resource_name),
+    data: { confirm: "¿Estás seguro? Esta acción no se puede deshacer" }, method: :delete,
+     class: "button special col-md-12 col-sm-12 col-xs-12 col-lg-12"%>
+
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</section>
