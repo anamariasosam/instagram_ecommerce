@@ -14,7 +14,7 @@
         <%= devise_error_messages! %>
         <div class="form-group app__registration_form-group">
           <%= f.label "Nombre de la Tienda" %>
-          <%= f.text_field :store_name, value: @user_info.full_name %>
+          <%= f.text_field :store_name, value: @user_info.full_name, autofocus: true %>
         </div>
 
         <div class="form-group app__registration_form-group">
