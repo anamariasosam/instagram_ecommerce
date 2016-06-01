@@ -1,7 +1,12 @@
-<p>Hello <%= @resource.email %>!</p>
-
-<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
-
-<p>Click the link below to unlock your account:</p>
-
-<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
+<section class="app__registration_container section wrapper special">
+  <div class="inner">
+    <header class="major">
+      <h2>¡Hola <%= @resource.email %>!</h2>
+    </header>
+  </div>
+  <div>
+    <p>Tu cuenta ha sido bloqueada por excesivos intentos fallidos de iniciar sesión </p>
+    <p>Haz clic en el siguiente link para desbloquear tu cuenta</p>
+    <p><%= link_to 'Desbloquear Cuenta', unlock_url(@resource, unlock_token: @token) %></p>
+  </div>
+</section>

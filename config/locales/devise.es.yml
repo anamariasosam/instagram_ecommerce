@@ -24,6 +24,8 @@ es:
       signed_in: 'Iniciaste sesión correctamente.'
       signed_out: ''
     passwords:
+      user:
+        no_token: "No has solicitado el cambio de contraseña"
       send_instructions: 'Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos.'
       updated: 'Tu contraseña fue cambiada correctamente. Has iniciado sesión.'
       updated_not_active: 'Tu contraseña fue cambiada correctamente.'
