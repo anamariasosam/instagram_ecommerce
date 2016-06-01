@@ -10,7 +10,7 @@
       <%= f.hidden_field :reset_password_token %>
 
       <div class="form-group app__registration_form_group">
-        <%= f.label :password, "New password" %><br />
+        <%= f.label :password, "Contraseña nueva:" %>
         <% if @minimum_password_length %>
         <p class="help-block app__registration_message">
           (Mínimo <%= @minimum_password_length %> caractéres)
@@ -20,7 +20,7 @@
       </div>
 
       <div class="form-group app__registration_form_group">
-        <%= f.label :password_confirmation, "Confirm new password" %><br />
+        <%= f.label :password_confirmation, "Confirma tu nueva contraseña" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
