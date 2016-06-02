@@ -18,3 +18,4 @@
 
 .env
 Procfile
+/config/initializers/instagram.rb
