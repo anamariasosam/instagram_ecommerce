@@ -13,7 +13,7 @@ es:
               too_short: El precio debe ser mayor a $1.000
             description:
               blank: La descripción no puede estar vacía
-              too_long: La descripción debe ser menor a 140 caracteres
+              too_long: La descripción debe ser menor a 500 caractéres
             quantity:
               not_a_number: La cantidad debe ser númerica
         user:
@@ -23,6 +23,7 @@ es:
               blank: "El nombre de la tienda no puede estar vacío"
             phone_number:
               blank: "El teléfono no puede estár vacío"
+              too_short: "El número de celular debe ser mínimo de 10 dígitos"
             address:
               blank: "La dirección no puede estár vacía"
             email:
