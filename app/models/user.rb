@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :products, dependent: :destroy
   validates_presence_of :phone_number, :address, :store_name
+  validates :phone_number , length: { minimum: 10 }
 end

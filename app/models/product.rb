@@ -8,6 +8,7 @@ class Product < ActiveRecord::Base
                         :product_name
   validates_numericality_of :price, :quantity
   validates :price, length: { minimum: 4 }
+  validates :description, length: { maximum: 500 }
   validates_length_of :product_name, :maximum => 20
   private
     def magic

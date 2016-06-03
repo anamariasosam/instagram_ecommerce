@@ -20,7 +20,9 @@
 
   <div class="container app__container">
     <%= render "helpers/menu" %>
-    <%= yield %>
+    <div class="app__content clearfix">
+      <%= yield %>
+    </div>
     <%= render "helpers/footer" %>
   </div>
 

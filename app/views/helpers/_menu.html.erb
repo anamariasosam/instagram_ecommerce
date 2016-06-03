@@ -27,16 +27,24 @@
               <ul class="dropdown-menu app__menu-right--dropmenu">
                 <%  if user_signed_in?  %>
                   <li>
-                    <%= link_to "Crear un producto", users_dashboard_path %>
+                    <%= link_to users_dashboard_path do %>
+                      <span class="glyphicon glyphicon-plus"></span> Crear un producto
+                    <% end %>
                   </li>
                   <li>
-                    <%= link_to "Ver mis productos", products_path %>
+                    <%= link_to products_path do %>
+                      <span class="glyphicon glyphicon-eye-open"></span> Ver mis productos
+                    <% end %>
                   </li>
                   <li>
-                    <%= link_to "Editar mi información", edit_user_registration_path %>
+                    <%= link_to edit_user_registration_path do %>
+                      <span class="glyphicon glyphicon-pencil"></span> Editar mi información
+                    <% end %>
                   </li>
                   <li>
-                    <%= link_to('Cerrar Sesión', destroy_user_session_path, :method => :delete, :id => "logout") %>
+                    <%= link_to(destroy_user_session_path, :method => :delete, :id => "logout") do %>
+                      <span class="glyphicon glyphicon-off"></span> Cerrar Sesión
+                    <% end %>
                   </li>
                 <% else %>
                   <li>
