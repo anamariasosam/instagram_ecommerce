@@ -2581,13 +2581,13 @@ header {
   }
 
   header.major {
-    margin-bottom: 4em;
+    margin-bottom: 1em;
   }
 
   @media screen and (max-width: 1280px) {
 
     header.major {
-      margin-bottom: 2em;
+      margin-bottom: 1em;
     }
 
   }
@@ -2595,7 +2595,7 @@ header {
   @media screen and (max-width: 736px) {
 
     header.major {
-      margin-bottom: 1.5em;
+      margin-bottom: 0.5em;
     }
 
   }
@@ -2603,7 +2603,7 @@ header {
   @media screen and (max-width: 480px) {
 
     header.major {
-      margin-bottom: 1em;
+      margin-bottom: 0.5em;
     }
 
   }

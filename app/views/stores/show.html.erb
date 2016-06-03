@@ -1,16 +1,12 @@
 <section class="section app__product-container wrapper special">
-
-  <div class="inner row-height">
+  <header class="major">
+    <h2 class="app__list-headline"><%= @user.store_name %></h2>
+  </header>
+  <div class="inner row-height clearfix">
     <div class=" col-xs-12 col-md-6 col-lg-6 col-sm-6 col-height">
       <img src="<%= @user.store_image %>" class="stores-img" alt="<%=  @user.store_name %>">
-
     </div>
-
-    <div class="app__product-caption caption col-xs-12 col-md-6 col-lg-6 col-sm-6 col-height ">
-      <header class="major app__product-headline">
-        <h2><%= @user.store_name %></h2>
-      </header>
-
+    <div class="app__product-caption caption col-xs-12 col-md-6 col-lg-6 col-sm-6 col-height store__info_container">
       <p>
         <span class="app__bold-text"> Correo Electrónico:</span>
         <%= mail_to @user.email %>
@@ -37,6 +33,34 @@
         <span class="app__bold-text">Cuenta de Instagram:</span>
         <a href="https://www.instagram.com/<%= @user.store_account %>" target="_blank"><%= @user.store_account %></a>
       </p>
+    </div>
+
+    <% if @products.count > 0 %>
+      <header class="major">
+        <h2>productos</h2>
+      </header>
+      <div class="app__catalog-gallery ">
+        <% @products.each do |product| %>
+          <div class=" thumbnail app__catalog_gallery-thumbnail col-xs-12 col-sm-4 col-md-3 col-lg-4">
+            <%= link_to product do %>
+              <img src="<%= product.instagram_image %>" class="app__catalog_gallery-img img-responsive" alt="product">
+            <% end %>
+
+            <div class="app__catalog_gallery-caption caption">
+              <h3 class="app__product_name app__bold-text">
+                <%= link_to product do %>
+                  <%= number_to_currency product.price, precision: 0 %>
+                <% end %>
+              </h3>
+              <%= link_to "Ver más", product, class: "button special fit small " %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    
+    <div class="app__catalog-paginator text-center">
+      <%= paginate @products %>
     </div>
   </div>
 </section>
