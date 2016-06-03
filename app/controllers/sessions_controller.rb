@@ -12,9 +12,9 @@ class SessionsController < ApplicationController
 
     if  User.exists?(:instagram_id => client.user.id)
       flash[:notice] = "@#{client.user.username } Ya tienes una cuenta con nosotros. Inicia sesión con tus datos"
-      redirect_to "/users/sign_in"
+      redirect_to "/login"
     else
-      redirect_to "/users/sign_up"
+      redirect_to "/sign_up"
     end
   end
 

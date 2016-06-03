@@ -7,8 +7,7 @@
           <% @users.each do |user| %>
             <figure class="app__partners-figure col-xs-6 col-sm-4 col-lg-6 col-md-4 ">
               <%= link_to  stores_show_path(id: user.id) do %>
-                  <img src="<%= user.store_image %>" class="img-circle app__partners-img" alt="">
-
+                  <img src="<%= user.store_image %>" class="img-circle app__partners-img" alt="catlog, aliados, <%= user.store_name%>">
               <% end %>
 
             </figure>
