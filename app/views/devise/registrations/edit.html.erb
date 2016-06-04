@@ -37,27 +37,11 @@
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
 
-      <div class="form-group app__registration_form-group">
-        <%= f.label "Nueva Contraseña" %> <i>(déjala en blanco si no deseas cambiarla)</i>
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-
-      <div class="form-group app__registration_form-group">
-        <%= f.label "Confirma tu Contraseña" %>
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
-
-      <div class="form-group app__registration_form-group">
-        <%= f.label "Contraseña Actual" %> <i>(necesitamos tu contraseña para guardar los cambios)</i><br />
-        <%= f.password_field :current_password, autocomplete: "on" %>
-      </div>
-
       <div class="actions">
         <%= f.submit "Actualizar", class: "button special col-md-12 col-sm-12 col-xs-12 col-lg-12" %>
       </div>
       <br>
     <% end %>
-
 
     <%= button_to "Eliminar mi cuenta", registration_path(resource_name),
     data: { confirm: "¿Estás seguro? Esta acción no se puede deshacer" }, method: :delete,

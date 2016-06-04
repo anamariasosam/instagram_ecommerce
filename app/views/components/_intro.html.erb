@@ -6,7 +6,11 @@
       <%= link_to "Ver catálogo", catalog_view_path, class: "button special" %>
     </li>
     <li>
-      <%= link_to "Conectarse con Instagram", sessions_connect_path, class: "button special" %>
+      <% if signed_in? %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign in with Instagram", user_omniauth_authorize_path(:instagram) %>
+      <% end %>
     </li>
   </ul>
 </section>
@@ -15,6 +19,6 @@
     <header class="major">
       <h2>Los productos más buscados</h2>
     </header>
-    <%= render "mixins/products"  %>    
+    <%= render "mixins/products"  %>
   </div>
 </section>

@@ -42,16 +42,14 @@
                     <% end %>
                   </li>
                   <li>
-                    <%= link_to(destroy_user_session_path, :method => :delete, :id => "logout") do %>
+                    <%= link_to(destroy_user_session_path, method: :delete) do %>
                       <span class="glyphicon glyphicon-off"></span> Cerrar Sesión
                     <% end %>
                   </li>
                 <% else %>
                   <li>
-                    <%= link_to "Conectarse con Instagram", sessions_connect_path%>
-                  </li>
+                    <%= link_to "Sign in with Instagram", user_omniauth_authorize_path(:instagram) %>                  </li>
                   <li>
-                   <%= link_to('Ingresar', login_path)  %>
                    </li>
                 <% end %>
               </ul>
