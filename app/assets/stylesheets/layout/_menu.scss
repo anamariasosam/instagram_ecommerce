@@ -40,11 +40,9 @@
 
     &-items {
 
-      & {
-        background-color: $menu-color;
-        margin: 0 !important;
-        width: 100%;
-      }
+      background-color: $menu-color;
+      margin: 0 !important;
+      width: 100%;
 
       & ul {
         margin: 0;
