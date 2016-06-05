@@ -23,7 +23,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Instagram
-
+gem 'instagram'
 gem 'omniauth-instagram'
 
 gem 'shortener'
