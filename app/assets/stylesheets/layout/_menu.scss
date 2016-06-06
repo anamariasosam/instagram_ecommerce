@@ -1,5 +1,9 @@
 .menu {
   height: 50px;
+  li > a.dropdown-toggle {
+    color: #fff;
+  }
+
   &_dropdown-item {
     color: #fff;
   }
