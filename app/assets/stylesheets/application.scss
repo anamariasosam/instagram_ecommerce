@@ -6,31 +6,32 @@
 @import "trix";
 @import "lightbox";
 
-@import "base/variables.scss";
+@import "base/variables";
 
-@import "theme.scss";
+@import "theme";
 
-@import "layout/footer.scss";
-@import "layout/menu.scss";
-@import "layout/modal-search.scss";
+@import "layout/footer";
+@import "layout/flash_notices";
+@import "layout/menu";
+@import "layout/modal-search";
 
-@import "components/home/intro.scss";
-@import "components/home/about.scss";
-@import "components/home/partners.scss";
+@import "components/home/intro";
+@import "components/home/about";
+@import "components/home/partners";
 
-@import "components/catalog/products.scss";
-@import "components/catalog/catalog.scss";
+@import "components/catalog/products";
+@import "components/catalog/catalog";
 
-@import "components/users/dashboard.scss";
-@import "components/users/list.scss";
-@import "components/users/stores.scss";
+@import "components/users/dashboard";
+@import "components/users/list";
+@import "components/users/stores";
 
-@import "components/legal/privacy.scss";
+@import "components/legal/privacy";
 
-@import "components/devise/registration.scss";
-@import "components/devise/errors.scss";
+@import "components/devise/registration";
+@import "components/devise/errors";
 
-@import "lightbox2.scss";
+@import "lightbox2";
 
 // Vendor
 @import "footable/footable.core.min.css";

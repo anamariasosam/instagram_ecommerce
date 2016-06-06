@@ -1,5 +1,5 @@
-.app__menu {
-
+.menu {
+  height: 50px;
   &_dropdown-item {
     color: #fff;
   }
@@ -13,15 +13,21 @@
       color: #fff !important;
     }
 
-    &--dropmenu,
-    &--dropmenu:hover {
+    &--dropmenu {
       background-color: $menu-color-active;
       margin-top: -1px !important;
 
+      li {
 
-      & li a {
-        color: #fff !important;
+        padding-left: 0;
 
+        a {
+          color: #fff;
+
+          &:hover {
+            color: #555;
+          }
+        }
       }
     }
   }
