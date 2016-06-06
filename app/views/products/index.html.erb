@@ -3,16 +3,16 @@
     <header class="major">
       <h2 class="app__list-headline">Mis productos</h2>
     </header>
-      <p id="notice"><%= notice %></p>
+
     <% if @products.count > 0 %>
-      <table class="table table-striped table-hover footable toggle-arrow" >
+      <table class="app_table table table-striped table-hover footable toggle-arrow" >
         <thead>
           <tr class="app__list-fields">
             <th></th>
             <th>Nombre</th>
             <th data-hide="phone">Precio</th>
-            <th >Cantidad</th>
-            <th  data-hide="phone,tablet">Descripción</th>
+            <th>Cantidad</th>
+            <th data-hide="phone,tablet">Descripción</th>
             <th data-hide="phone">Código</th>
             <th colspan="3"></th>
           </tr>
@@ -21,14 +21,13 @@
         <tbody id="products">
           <%= render "products" %>
         </tbody>
+
       </table>
     <% end %>
     <script>
-        jQuery(function($){
-          $('.table').footable({
-              phone: 480
-          });
-        });
+      jQuery(function($){
+        $('.app_table').footable({ phone: 480 });
+      });
     </script>
 
   </div>

@@ -1,57 +1,80 @@
-<div class="app__menu_container">
-  <nav class="navbar navbar-default app__menu_nav  navbar-fixed-top">
-    <div class="container-fluid app__menu_nav--container">
-      <div class="navbar-header app__menu_nav-hamburguer--container pull-left">
-        <button type="button" class="app__menu_nav-hamburguer--btn navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+<div class="menu">
+  <nav class="navbar navbar-default menu_nav  navbar-fixed-top">
+    <div class="container-fluid menu_nav--container">
+      <div class="navbar-header menu_nav-hamburguer--container pull-left">
+        <button type="button" class="menu_nav-hamburguer--btn navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
       </div>
-      <div class="collapse navbar-collapse app__menu_nav-items" id="bs-example-navbar-collapse-1">
+
+      <div class="collapse navbar-collapse menu_nav-items" id="bs-example-navbar-collapse-1">
+
         <ul class="nav navbar-nav">
-          <li class="active app__menu_nav-item" id="home_path">
+          <li class="active menu_nav-item" id="home_path">
             <%= link_to root_url  do%>
               Home <span class="sr-only">(current)</span></a>
             <% end %>
-          <li class="app__menu_nav-item" id="catalog_path"><%= link_to "Catálogo", catalog_view_path %></li>
+          </li>
+
+          <li class="menu_nav-item" id="catalog_path">
+            <%= link_to "Catálogo", catalog_view_path %>
+          </li>
         </ul>
-        <div class="app__menu-right--container ">
+
+        <div class="menu-right--container ">
           <ul class="nav navbar-nav navbar-right">
+
             <li>
-              <a href="#searchModal" role="button" class="app__menu-right--search" data-toggle="modal">Buscar Producto</a>
+              <a href="#searchModal" role="button" class="menu-right--search" data-toggle="modal">
+                Buscar Producto
+              </a>
             </li>
+
             <li class="dropdown ">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="app__menu_dropdown-item fa fa-user "></i> <span class="app__menu_dropdown-item caret"></span></a>
-              <ul class="dropdown-menu app__menu-right--dropmenu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="menu_dropdown-item fa fa-user "></i>
+                <span class="menu_dropdown-item caret"></span>
+              </a>
+
+              <ul class="dropdown-menu menu-right--dropmenu">
                 <%  if user_signed_in?  %>
                   <li>
                     <%= link_to users_dashboard_path do %>
-                      <span class="glyphicon glyphicon-plus"></span> Crear un producto
+                      <span class="glyphicon glyphicon-plus"></span>
+                      Crear un producto
                     <% end %>
                   </li>
+
                   <li>
                     <%= link_to products_path do %>
-                      <span class="glyphicon glyphicon-eye-open"></span> Ver mis productos
+                      <span class="glyphicon glyphicon-eye-open"></span>
+                      Ver mis productos
                     <% end %>
                   </li>
+
                   <li>
                     <%= link_to edit_user_registration_path do %>
-                      <span class="glyphicon glyphicon-pencil"></span> Editar mi información
+                      <span class="glyphicon glyphicon-pencil"></span>
+                      Editar mi información
                     <% end %>
                   </li>
+
                   <li>
                     <%= link_to(destroy_user_session_path, method: :delete) do %>
-                      <span class="glyphicon glyphicon-off"></span> Cerrar Sesión
+                      <span class="glyphicon glyphicon-off"></span>
+                      Cerrar Sesión
                     <% end %>
                   </li>
+
                 <% else %>
                   <li>
-                    <%= link_to "Sign in with Instagram", user_omniauth_authorize_path(:instagram) %>                  </li>
-                  <li>
-                   </li>
+                    <%= link_to "Sign in with Instagram", user_omniauth_authorize_path(:instagram) %>
+                  </li>
                 <% end %>
+
               </ul>
             </li>
           </ul>
