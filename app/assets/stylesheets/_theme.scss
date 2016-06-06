@@ -3746,8 +3746,9 @@ table.alt tbody tr td {
 
 #footer {
   background-color: #f7f7f7;
+  border-top: 1px solid #ddd;
   color: #444;
-  padding: 5em 0 4em 0;
+  padding: 3em 0 4em 0;
   position: relative;
 }
 
@@ -3778,16 +3779,6 @@ table.alt tbody tr td {
 
   #footer hr {
     border-bottom-color: #ddd;
-  }
-
-  #footer:before {
-    background-color: #ddd;
-    content: '';
-    height: 1px;
-    left: 30%;
-    position: absolute;
-    top: 0;
-    width: 40%;
   }
 
   #footer .copyright {
