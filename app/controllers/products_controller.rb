@@ -6,9 +6,6 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = current_user.products
-    if @products.count == 0
-      flash[:notice] = "Aún no tienes productos, crea tus productos <a href='/users/dashboard'>aquí</a>".html_safe
-    end
   end
 
   # GET /products/1

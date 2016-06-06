@@ -1,17 +1,17 @@
 <section id="six" class="section app__list-container wrapper special">
   <div class="inner">
     <header class="major">
-      <h2 class="app__list-headline">Mis productos</h2>
+      <h2 class="list-headline">Mis productos</h2>
     </header>
 
     <% if @products.count > 0 %>
       <table class="app_table table table-striped table-hover footable toggle-arrow" >
         <thead>
-          <tr class="app__list-fields">
-            <th></th>
+          <tr class="list-fields">
+            <th>Imagen</th>
             <th>Nombre</th>
-            <th data-hide="phone">Precio</th>
-            <th>Cantidad</th>
+            <th>Precio</th>
+            <th data-hide="phone">Cantidad</th>
             <th data-hide="phone,tablet">Descripción</th>
             <th data-hide="phone">Código</th>
             <th colspan="3"></th>
@@ -23,12 +23,16 @@
         </tbody>
 
       </table>
+
+      <script>
+        jQuery(function($){ $('.app_table').footable({ phone: 480 }); });
+      </script>
+    <% else %>
+      <p>Actualemnte no tienes productos, convierte algunos desde tu
+        <%= link_to 'Tablero', users_dashboard_path %>
+      </p>
     <% end %>
-    <script>
-      jQuery(function($){
-        $('.app_table').footable({ phone: 480 });
-      });
-    </script>
+
 
   </div>
 </section>
