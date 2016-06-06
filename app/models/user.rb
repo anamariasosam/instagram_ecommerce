@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
           omniauth_providers: [:instagram]
 
   has_many :products, dependent: :destroy
+  validates :email, uniqueness: true, allow_blank: true, allow_nil: true
 
   private
     def capitalize_store_name
@@ -19,17 +20,9 @@ class User < ActiveRecord::Base
     end
 
     def self.from_omniauth(auth)
-      where(provider: auth.provider, uid: auth.uid).take
-    end
-
-    def self.new_with_session(params, session)
-      super.tap do |user|
-        if data = session["devise.instagram_data"]
-          user.uid = data["uid"]
-          user.provider = data["provider"]
-          user.password = Devise.friendly_token
-        end
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+        user.email = auth.info.email
+        user.password = Devise.friendly_token[0,20]
       end
     end
-
 end

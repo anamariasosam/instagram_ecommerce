@@ -7,8 +7,8 @@ class UsersController < ApplicationController
       if current_user.user_token
         client = Instagram.client(:access_token => current_user.user_token)
       else
-        client = Instagram.client(:access_token => session["devise.instagram_data"]["credentials"]["token"])
-        current_user.update( user_token: session["devise.instagram_data"]["credentials"]["token"])
+        client = Instagram.client(:access_token => session['super_token'])
+        current_user.update( user_token: session['super_token'])
       end
 
       @recent_media_items = client.user_recent_media
