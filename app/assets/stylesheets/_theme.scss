@@ -2627,11 +2627,6 @@ table {
   width: 100%;
 }
 
-  table tbody tr {
-    border: solid 1px;
-    border-left: 0;
-    border-right: 0;
-  }
 
   table td {
     padding: 0.75em 0.75em;
@@ -2677,14 +2672,6 @@ table {
     table.alt tfoot {
       border-top: 0;
     }
-
-table tbody tr {
-  border-color: #e3e3e3;
-}
-
-  table tbody tr:nth-child(2n + 1) {
-    background-color: rgba(144, 144, 144, 0.075);
-  }
 
 table th {
   color: #555;
