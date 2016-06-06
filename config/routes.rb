@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks",
     registrations: 'registrations'
-   }
+  }
 
   resources :products
 
@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   get 'catalog/view'
   get 'home/index'
   get 'legal/privacy_policy'
-  get 'stores/show'
   get 'stores/index'
+  get 'stores/show'
   get 'users/dashboard'
 
   post 'products/new'
