@@ -1,26 +1,28 @@
 <section id="five" class="section app__dashboard-container wrapper special">
 
-  <header class="major">
-    <h2 class="app__dashboard-headline">
-      Bienvenido
+  <div class="inner">
+    <header class="major">
+      <h2 class="app__dashboard-headline">
+        Bienvenido
 
-      <span class="app__dashboard_username">
-        <%= current_user.store_name  %>
-      </span>
-    </h2>
+        <span class="app__dashboard_username">
+          <%= current_user.store_name  %>
+        </span>
+      </h2>
 
-    <p>Es hora de convertir tus imagenes en productos</p>
-  </header>
+      <p>Es hora de convertir tus imagenes en productos</p>
+    </header>
 
-  <div class="dashboard-gallery ">
-    <p>Haz <strong>clic</strong> en la imagen que desees convertir en producto.</p>
+    <div class="dashboard-gallery">
+      <p>Haz <strong>clic</strong> en la imagen que desees convertir en producto.</p>
 
-    <div class="container">
+      <div class="row">
+        <% @recent_media_items.each do |media| %>
+          <%= render partial: 'users/media_item', locals: { media: media } %>
+        <% end %>
+      </div>
 
-      <% @recent_media_items.each do |media| %>
-        <%= render partial: 'users/media_item', locals: { media: media } %>
-      <% end %>
     </div>
-
+    
   </div>
 </section>
