@@ -54,19 +54,18 @@
     }
 
     &--textarea-trix {
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -webkit-appearance: none;
+
       appearance: none;
       background-color: rgba(144, 144, 144, 0.075);
       border-radius: 0;
       border: solid 1px #e3e3e3;
       color: inherit;
       display: block;
+      min-height: 200px;
+      max-width: 100%;
       outline: 0;
       padding: 0 1em;
       text-decoration: none;
-      max-width: 100%;
 
       &:focus {
         border-color: $primary-color;
@@ -94,10 +93,6 @@
         font-size: 15px;
       }
     }
-  }
-
-  &_notice {
-    text-align: center !important;
   }
 
   &_save {

@@ -1,7 +1,7 @@
 <div class="features clearfix">
   <% @products.each do |product| %>
     <div class="feature">
-      <img src="<%= product.instagram_image %>" class="img-responsive" alt="catlog, productos, <%= product.user.store_name%>"></td>
+      <img src="<%= product.instagram_image %>" class="img-responsive" alt="catlog, productos"></td>
       <h3 class="product_name"><%= product.product_name %></h3>
       <p>
         <%= number_to_currency product.price, precision:0 %>

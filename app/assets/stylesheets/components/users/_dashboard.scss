@@ -1,4 +1,16 @@
-.app__dashboard{
+.dashboard{
+
+  &_icon {
+    color: $primary-color;
+    font-size: 2.35em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    user-select: none;
+    display: none;
+  }
+
   &_gallery {
 
     &-blur {
@@ -6,24 +18,32 @@
       filter: alpha(opacity=40);
     }
 
+
     &-img {
       position: relative;
+      margin: auto;
     }
 
     &-thumbnail {
-      border: none !important;
+      display: block;
+      position: relative;
+      margin-bottom: 20px;
+
+      @media (min-width: 768px) {
+        & {
+          padding: 10px;
+        }
+      }
+
+      &:hover {
+        background-color: #f0f0f0;
+        .dashboard_icon {
+          display: block;
+        }
+      }
     }
 
     &-new {
-      color: transparent;
-      font-size: 40px;
-      height: 100%;
-      left: 0;
-      padding-left: 15%;
-      padding-top: 24%;
-      position: absolute;
-      top: 0;
-      width: 89%;
     }
 
     &-new:hover {

@@ -30,15 +30,15 @@
     <div class="app_product_form-fields col-lg-6 col-md-5 col-sm-12 ">
       <div class="form-group">
         <%= f.label "Nombre del producto" %>
-        <%= f.text_field :product_name %>
+        <%= f.text_field :product_name, placeholder: "Ej: Bikini 3 piezas" %>
       </div>
       <div class="form-group">
         <%= f.label "Precio" %>
-        <%= f.number_field :price, min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number" %>
+        <%= f.number_field :price, min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number", placeholder: "$0 pesos" %>
       </div>
       <div class="form-group">
-        <%= f.label "Cantidad" %>
-        <%= f.number_field :quantity , min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number"%>
+        <%= f.label "Unidades que tienes para vender" %>
+        <%= f.number_field :quantity , min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number", placeholder: "0 unidades"%>
       </div>
       <div class="form-group app__product_form-description ">
         <%= f.label "Descripción" %>
