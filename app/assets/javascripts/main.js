@@ -1,3 +1,9 @@
+var auto_close_alerts = function () {
+  var $alertElement = $(".alert-dismissible")
+    .fadeTo(6000, 500)
+    .slideUp(500, function(){ $alertElement.alert('close'); });
+}
+
 function description_text () {
   if ($('.app__product-description')) {
     $('.app__product-description').next().css( "word-wrap", "break-word" );
@@ -16,6 +22,7 @@ function add_class_active() {
   }
 }
 
+
 // Collapse menu on click
 $(".navbar-nav li a").click(function () {
   var toggle = $(".navbar-toggle").is(":visible");
@@ -24,10 +31,11 @@ $(".navbar-nav li a").click(function () {
   }
 });
 
+
 $(document).on('ready page:change page:load', function() {
   add_class_active();
   description_text();
-
+  auto_close_alerts();
 
   $('#logout').on('click', function() {
     window.open("https://www.instagram.com/accounts/logout/");

@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Catlog</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="description" content="Catlog: Catálogo virutal de las tiendas de Instagram. Sabrás los precios, descripciones y disponibilidad de tus productos favoritos">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,11 +19,28 @@
 <body>
 
   <div class="container app__container">
+
     <%= render "helpers/menu" %>
+
     <div class="app__content clearfix">
+
+      <div class="flashNotices">
+        <% flash.each do |name, msg| %>
+          <div class="alert alert-info alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <%= msg %>
+          </div>
+        <% end %>
+      </div>
+
       <%= yield %>
+
     </div>
+
     <%= render "helpers/footer" %>
+
   </div>
 
   <%= render "mixins/search" %>
@@ -33,7 +50,6 @@
     window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
     ga('create', 'UA-73455151-1', 'auto');
     ga('send', 'pageview');
-
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 

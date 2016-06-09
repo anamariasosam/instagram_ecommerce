@@ -1,19 +1,11 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
   before_filter :authenticate_user!, :only => [:index, :new, :edit]
 
   # GET /products
   # GET /products.json
   def index
-    if current_user.user_token
-      @products = current_user.products
-      if @products.count == 0
-        flash[:notice] = "Aún no tienes productos, crea tus productos <a href='/users/dashboard'>aquí</a>".html_safe
-      end
-    else
-      redirect_to :controller => 'sessions', :action => 'connect'
-    end
+    @products = current_user.products
   end
 
   # GET /products/1

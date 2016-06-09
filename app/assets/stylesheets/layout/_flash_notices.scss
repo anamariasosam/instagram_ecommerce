@@ -1,0 +1,17 @@
+.flashNotices {
+  max-width: 980px;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+// overwrite bootstrap close alert position
+.alert-dismissable .close, .alert-dismissible .close {
+  top: -26px;
+}
+
+.alert-info {
+  color: #31708f !important;
+}
