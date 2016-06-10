@@ -35,15 +35,13 @@
         }
       }
 
-      &:hover {
-        background-color: #f0f0f0;
-        .dashboard_icon {
-          display: block;
-        }
-      }
     }
 
-    &-new {
+    &-active:hover {
+      background-color: #f0f0f0;
+      .dashboard_icon {
+        display: block;
+      }
     }
 
     &-new:hover {
