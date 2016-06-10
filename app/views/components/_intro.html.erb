@@ -6,7 +6,7 @@
       <%= link_to "Ver catálogo", catalog_view_path, class: "button special" %>
     </li>
     <%  unless user_signed_in?  %>
-      <li> <%= link_to "Inicia con Instagram",
+      <li> <%= link_to "Ingresar con Instagram",
                     user_omniauth_authorize_path(:instagram),
                     class: "button special" %>
       </li>
