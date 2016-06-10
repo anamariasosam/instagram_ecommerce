@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  # before_save :capitalize_store_name
+  before_update :capitalize_store_name
   devise  :database_authenticatable,
           :registerable,
           # :recoverable,
@@ -13,8 +13,12 @@ class User < ActiveRecord::Base
 
   has_many :products, dependent: :destroy
   validates :email, uniqueness: true, allow_blank: true, allow_nil: true
+  validates_presence_of :store_name, :email, :address, :phone_number,  :on => :update
+  validates :phone_number, length: { minimum: 10 },  :on => :update
+  validates_numericality_of :phone_number,  :on => :update
 
   private
+
     def capitalize_store_name
       self.store_name = store_name.capitalize
     end
