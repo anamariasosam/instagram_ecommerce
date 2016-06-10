@@ -1,10 +1,17 @@
 .flashNotices {
-  max-width: 980px;
+  max-width: 600px;
   position: absolute;
   top: 60px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
+  width: 60%;
+
+  @media (max-width: 600px) {
+    & {
+      width: 92%;
+    }
+  }
 }
 
 // overwrite bootstrap close alert position
@@ -14,4 +21,5 @@
 
 .alert-info {
   color: #31708f !important;
+  text-align: center;
 }
