@@ -1,5 +1,4 @@
 .menu {
-  height: 50px;
   li > a.dropdown-toggle {
     color: #fff !important;
   }
@@ -17,7 +16,7 @@
     }
 
     &--dropmenu {
-      background-color: $menu-color-active;
+      background-color: $menu-color;
       margin-top: -1px !important;
 
       li {
@@ -25,10 +24,9 @@
         padding-left: 0;
 
         a {
-          color: #fff;
-
+          color: #fff !important;
           &:hover {
-            background-color: $menu-color;
+            background-color: $menu-color-active !important;
             color: #fff;
           }
         }
@@ -84,7 +82,6 @@
     }
   }
 }
-
 
 .navbar-default .navbar-nav > .active,
 .navbar-default .navbar-nav > .open > ,
