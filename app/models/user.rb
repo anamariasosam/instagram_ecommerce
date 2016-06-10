@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  before_update :capitalize_store_name
   devise  :database_authenticatable,
           :registerable,
           # :recoverable,
@@ -18,10 +17,6 @@ class User < ActiveRecord::Base
   validates_numericality_of :phone_number,  :on => :update
 
   private
-
-    def capitalize_store_name
-      self.store_name = store_name.capitalize
-    end
 
     def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
