@@ -1,7 +1,7 @@
 .menu {
   height: 50px;
   li > a.dropdown-toggle {
-    color: #fff;
+    color: #fff !important;
   }
 
   &_dropdown-item {
@@ -9,7 +9,6 @@
   }
 
   &-right {
-
     &--container {
       padding-right: 35px;
     }
@@ -29,7 +28,8 @@
           color: #fff;
 
           &:hover {
-            color: #555;
+            background-color: $menu-color;
+            color: #fff;
           }
         }
       }
@@ -92,6 +92,6 @@
   & a,
   & a:hover,
   & a:focus {
-    background: $menu-color-active;
+    background-color: $menu-color-active;
   }
 }

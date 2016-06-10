@@ -36,8 +36,4 @@ $(document).on('ready page:change page:load', function() {
   add_class_active();
   description_text();
   auto_close_alerts();
-
-  $('#logout').on('click', function() {
-    window.open("https://www.instagram.com/accounts/logout/");
-  });
 });

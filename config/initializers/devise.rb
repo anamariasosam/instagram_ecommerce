@@ -239,7 +239,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :instagram, "7ddf0e3089e849b7a829099ef0c63459", "0e1c6658b3514d4e884536e949f6fa67", scope: 'public_content'
+  config.omniauth :instagram, "9b7a7c0bb3c24fb6b7ae1cc5b77603c8", "784947d737dd46f580b804116a2504fa", scope: 'public_content'
 
 
   # ==> Warden configuration
