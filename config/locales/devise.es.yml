@@ -39,7 +39,7 @@ es:
       signed_up_but_unconfirmed: 'Te hemos enviado un email con instrucciones para que confirmes tu cuenta.'
       signed_up_but_inactive: 'Te has registrado correctamente, pero tu cuenta aun no ha sido activada.'
       signed_up_but_locked: 'Te has registrado correctamente, pero tu cuenta está bloqueada.'
-      updated: 'Actualizaste tu cuenta correctamente.'
+      updated: 'Tus datos han sido guardados correctamente.'
       update_needs_confirmation: "Actualizaste tu cuenta correctamente, pero tenemos que revalidar tu email. Revisa tu correo para confirmar la dirección."
       destroyed: 'Adiós, tu cuenta ha sido eliminada. Esperamos verte de vuelta pronto!'
     unlocks:
