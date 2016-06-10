@@ -3,13 +3,13 @@
     <header class="major">
       <h2>Añade la información adicional</h2>
     </header>
-  </div>
+
 
   <div class="registration_form">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
 
-      <table>
+      <table class="registration_table">
         <tr>
           <td>
             <div class="form-group registration_form-group">
@@ -68,6 +68,6 @@
     <!-- <%= button_to "Eliminar mi cuenta", registration_path(resource_name),
     data: { confirm: "¿Estás seguro? Esta acción no se puede deshacer" }, method: :delete,
      class: "button special col-md-12 col-sm-12 col-xs-12 col-lg-12"%> -->
-
+  </div>
   </div>
 </section>

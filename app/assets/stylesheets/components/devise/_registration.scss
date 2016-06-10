@@ -21,4 +21,14 @@
   &_message {
     text-align: left;
   }
+
+    @media (max-width: 656px)  {
+      &_table {
+        width: 80%;
+        margin: 0 auto;
+        & tr td {
+          display: block;
+        }
+      }
+    }
 }
