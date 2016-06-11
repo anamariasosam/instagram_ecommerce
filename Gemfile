@@ -8,6 +8,8 @@ gem 'devise'
 
 gem 'rename'
 
+gem 'phonelib'
+
 # Style plugins
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
