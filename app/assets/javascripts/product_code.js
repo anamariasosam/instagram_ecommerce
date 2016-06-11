@@ -1,7 +1,7 @@
 function addLink() {
     //Get the selected text and append the extra info
     var selection = window.getSelection(),
-        copytext = "Búscame con este código en Catlog: " + selection,
+        copytext = "🔎 Búscame con este código en Catlog: " + selection,
         newdiv = document.createElement('div');
 
     //hide the newly created container
