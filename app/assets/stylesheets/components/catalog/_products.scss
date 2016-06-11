@@ -77,6 +77,10 @@
   &-headline {
     text-align: center;
     margin-bottom: 0 !important;
+
+    & h2 {
+      margin-top: 0;
+    }
   }
 
   &-img {
