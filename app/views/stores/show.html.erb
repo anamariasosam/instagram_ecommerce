@@ -14,7 +14,7 @@
 
       <p>
         <span class="app__bold-text">Celular:</span>
-        <%= @user.phone_number %>
+        <a href="whatsapp://send?text=Me interesa este producto" data-action="share/whatsapp/share"><%= @user.phone_number %></a>
       </p>
 
       <p>
@@ -58,7 +58,7 @@
         <% end %>
       </div>
     <% end %>
-    
+
     <div class="app__catalog-paginator text-center">
       <%= paginate @products %>
     </div>
