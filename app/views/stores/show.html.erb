@@ -14,7 +14,9 @@
 
       <p>
         <span class="app__bold-text">Celular:</span>
-        <a href="whatsapp://send?text=Me interesa este producto" data-action="share/whatsapp/share"><%= @user.phone_number %></a>
+        <span id="phone_number">
+          <%= @user.phone_number %>
+        </span>
       </p>
 
       <p>
