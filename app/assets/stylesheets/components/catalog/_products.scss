@@ -24,7 +24,6 @@
 
   &-container {
     height: 100vh;
-    margin-top: 60px;
   }
 
   &-description {
@@ -104,4 +103,10 @@
     margin-top: 20px;
   }
 
+}
+
+//  Footable improvement
+.footable-toggle {
+  vertical-align: top !important;
+  color: $menu-color !important
 }
