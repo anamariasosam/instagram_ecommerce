@@ -13,12 +13,17 @@ function description_text () {
 // Add class active to menu
 function add_class_active() {
   var path = window.location.pathname
+  $("#catalog_path").removeClass('active')
+  $("#home_path").removeClass('active')
+  $("#user_path").removeClass('active')
   if( path == "/catalog/view" ){
-    $("#home_path").removeClass('active')
+
     $("#catalog_path").addClass('active')
-  } else if ( path == "" ){
+  } else if ( path == "/" ||  path == ""  ){
     $("#home_path").addClass('active')
-    $("#catalog_path").removeClass('active')
+  } else {
+
+    $("#user_path").addClass('active')
   }
 }
 
