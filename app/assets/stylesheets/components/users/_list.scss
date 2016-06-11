@@ -27,6 +27,13 @@
 }
 
 // Footable plugin improvements
+
+.footable-toggle {
+  vertical-align: top !important;
+  color: $menu-color !important;
+  font-size: 12px;
+}
+
 .footable-row-detail-inner{
   padding-left: 5px;
   text-align: left;
