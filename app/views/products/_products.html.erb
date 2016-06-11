@@ -10,7 +10,11 @@
     <td><%= product.quantity %></td>
     <td><%= truncate(product.description, escape: false) %></td>
     <td oncopy="addLink()"><%= product.shortened_urls.last.unique_key %></td>
-    <td> <%= link_to product do %> <i class="list-action fa fa-eye"></i> <% end %> </td>
+    <td>
+      <%= link_to product do %>
+        <i class="list-action fa fa-eye"></i>
+      <% end %>
+    </td>
     <td>
       <%= link_to edit_product_path(product) do %>
         <i class="list-action fa fa-pencil"></i>

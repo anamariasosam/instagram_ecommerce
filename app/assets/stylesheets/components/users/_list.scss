@@ -10,6 +10,7 @@
 
   &-fields th{
     color: $menu-color;
+    padding-left: 0;
   }
 
   &-fields th, &-values {
@@ -17,7 +18,7 @@
   }
 
   &-image {
-    width: 120px;
+    width: 58px;
   }
 
   &-values td{
