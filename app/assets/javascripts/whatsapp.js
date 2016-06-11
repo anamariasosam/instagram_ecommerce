@@ -6,7 +6,7 @@ function changeToAnchor() {
     $('#phone_number').replaceWith(function() {
       var url = $.trim($(this).text());
       return '<a '
-                + 'href="intent://send/573155533098#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end">'
+                + 'href="intent://send/573155533091#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end">'
                 + url
                 + '</a>';
     });
