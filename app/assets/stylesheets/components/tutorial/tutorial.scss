@@ -1,0 +1,23 @@
+// Place all the styles related to the tutorial controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.tutorial {
+  &__container {
+    margin-top: 50px;
+  }
+  &__instructions {
+    &_headline {
+      font-weight: bold;
+      @media (min-width: 992px) {
+        & {
+          text-align: left;
+        }
+      }
+    }
+
+    &_text {
+      text-align: left;
+    }
+  }
+
+}
