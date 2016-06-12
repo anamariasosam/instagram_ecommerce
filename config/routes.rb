@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'stores/index'
   get 'stores/show'
   get 'users/dashboard'
+  get 'tutorial/index'
 
   post 'products/new'
 
