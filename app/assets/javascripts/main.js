@@ -17,12 +17,12 @@ function add_class_active() {
   $("#home_path").removeClass('active')
   $("#user_path").removeClass('active')
   if( path == "/catalog/view" ){
-
     $("#catalog_path").addClass('active')
   } else if ( path == "/" ||  path == ""  ){
     $("#home_path").addClass('active')
+  } else if (path == "/tutorial/index") {
+    $("#tutorial_path").addClass('active')
   } else {
-
     $("#user_path").addClass('active')
   }
 }
