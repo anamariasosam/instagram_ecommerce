@@ -8,16 +8,21 @@
   &__instructions {
     &_headline {
       font-weight: bold;
-      @media (min-width: 992px) {
-        & {
-          text-align: left;
-        }
-      }
+      margin-bottom: 20px;
     }
 
     &_text {
       text-align: left;
     }
+
+    &_subtitle {
+      text-align: left;
+      margin-top: 20px;
+    }
+  }
+
+  &__headline {
+    font-size: 2.1em;
   }
 
   &__video_container {
