@@ -6,7 +6,26 @@
     margin-top: 50px;
   }
   &__instructions {
+    &_container {
+
+      @media (min-width: 640px) {
+        & {
+          position: relative;
+          min-height: 1px;
+          padding-left: 5%;
+          padding-right: 5%;
+          float: right;
+          width: 50%;
+        }
+      }
+      @media (min-width: 640px) {
+        &.even {
+          float: left;
+        }
+      }
+    }
     &_headline {
+      text-transform: inherit;
       font-weight: bold;
       margin-bottom: 20px;
     }
@@ -16,7 +35,10 @@
     }
 
     &_subtitle {
+      font-weight: bold;
+      text-transform: inherit;
       text-align: left;
+      font-size: 1.15em;
       margin-top: 20px;
     }
   }
@@ -26,7 +48,23 @@
   }
 
   &__video_container {
-    padding: 0;
+
+
+    @media (min-width: 640px) {
+      & {
+        float: left;
+        width: 50%;
+        position: relative;
+        min-height: 1px;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+      @media (min-width: 640px) {
+        &.even {
+          float: right;
+        }
+      }
+    }
   }
 
 }
