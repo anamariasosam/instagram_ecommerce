@@ -38,7 +38,7 @@ $(document).on('ready page:change page:load', function() {
     $(".app__search-input").parent().removeClass('has-error')
   });
 
-  openModalFirstTime();
+  // openModalFirstTime();
 
   // Validate search product box
   $("#app__search-product").on('submit', validate_search_req);
