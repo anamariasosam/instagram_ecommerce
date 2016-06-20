@@ -8,16 +8,14 @@ Rails.application.routes.draw do
   }
 
   resources :products
+  resources :stores, :only => [:show]
 
   get '/:id' => "shortener/shortened_urls#show"
   get 'catalog/view'
   get 'home/index'
   get 'legal/privacy_policy'
-  get 'stores/index'
-  get 'stores/show'
   get 'users/dashboard'
   get 'tutorial/index'
-
   post 'products/new'
 
 end

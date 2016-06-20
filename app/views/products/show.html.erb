@@ -25,7 +25,7 @@
 
       <p class="app__product-store_owner">
         <span class="app__bold-text" id="store_owner">Información de la tienda:</span>
-        <%= link_to  @product.user.store_name, stores_show_path(id: @product.user_id) %>
+        <%= link_to @product.user.store_name, store_path(@product.user_id) %>
       </p>
 
       <% if current_user %>
