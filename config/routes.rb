@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   }
 
   resources :products
-  resources :stores, :only => [:show]
-
+  resources :users, :path => 'stores', :only => [:show]
+  
   get '/:id' => "shortener/shortened_urls#show"
   get 'catalog/view'
   get 'home/index'
