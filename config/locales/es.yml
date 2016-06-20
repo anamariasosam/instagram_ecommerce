@@ -22,6 +22,7 @@ es:
               taken: "La cuenta de Instagram ya está conectada"
               blank: "El nombre de la tienda no puede estar vacío"
             phone_number:
+              invalid: "El número de celular ingresado es inválido"
               not_a_number: "El celular sólo debe contener números"
               blank: "El teléfono no puede estár vacío"
               too_short: "El número de celular debe ser mínimo de 10 dígitos"
