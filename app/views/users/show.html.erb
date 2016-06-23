@@ -30,11 +30,13 @@
       </p>
 
       <p>
-        <span class="app__bold-text">Dirección:</span>
-        <%= @user.address %>
+        <% if @user.address? %>
+          <span class="app__bold-text">Dirección:</span>
+          <%= @user.address %>
+        <% end %>
       </p>
 
-      <% if @user.delivery_info %>
+      <% if @user.delivery_info? %>
         <p>
           <span class="app__bold-text">Información adicional:</span>
           <%= @user.delivery_info%>
