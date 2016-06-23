@@ -64,5 +64,9 @@ $(document).on('ready page:change page:load', function() {
   add_class_active();
   description_text();
   auto_close_alerts();
-  countdown_for_product_name()
+  
+  if ($('.major h2').text() == "Editar Producto") {
+    countdown_for_product_name();
+  }
+
 });
