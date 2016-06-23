@@ -1,12 +1,15 @@
 <div class="features clearfix">
   <% @products.each do |product| %>
-    <div class="feature">
-      <img src="<%= product.instagram_image %>" class="img-responsive" alt="catlog, productos"></td>
-      <h3 class="product_name"><%= product.product_name %></h3>
-      <p>
-        <%= number_to_currency product.price, precision:0 %>
-      </p>
-      <%= link_to "Más información", product, class:"button special fit small" %>
+    <div class="product feature">
+      <figure class="product__figure">
+        <img src="<%= product.instagram_image %>" alt="catlog, productos" class="product__image img-responsive" >
+        <figcaption class="product__caption">
+          <h3 class="product__headline"><%= truncate(product.product_name, length: 30) %></h3>
+          <p class="product__text"><%= number_to_currency product.price, precision:0 %></p>
+          <a href="" class=""></a>
+          <%= link_to "Más información", product, class:"button special fit small product__link" %>
+        </figcaption>
+      </figure>
     </div>
   <% end %>
 </div>

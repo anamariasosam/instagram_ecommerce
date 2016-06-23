@@ -1,3 +1,5 @@
+<% content_for :title, "Catálogo - " +  %>
+
 <section id="two" class="section app__catalog-container small__catalog wrapper special">
   <div class="inner">
     <header class="major">
@@ -14,8 +16,8 @@
             <span class="app__catalog_gallery-zoom"><i class="fa fa-search-plus"></i></span>
           </a>
           <div class="app__catalog_gallery-caption caption">
-            <h3 class="app__product_name app__bold-text">
-            <%= link_to product.product_name , product %>
+            <h3 class="product_name app__bold-text">
+            <%= link_to truncate(product.product_name, length: 30), product %>
             </h3>
             <span class="app__catalog-price app__bold-text">
               Precio:
@@ -26,10 +28,10 @@
             <p class="app__catalog-quantity ">
               <span class="app__bold-text">Disponibles:</span> <%=  product.quantity %>
             </p>
-            <p class="app__product-store_owner">
-              <span class="app__bold-text" id="store_owner">Información de la tienda:</span>
+            <p class="product-store_owner">
+              <span class="app__bold-text" id="store_owner">Tienda:</span>
               <br>
-              <%= link_to  product.user.store_name, user_path(product.user_id) %>
+              <%= link_to product.user.store_name, user_path(product.user_id) %>
             </p>
             <%= link_to "Ver más", product, class: "button special fit small " %>
           </div>
