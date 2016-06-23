@@ -7,8 +7,10 @@
 
       <% @catalog_products.each do |product| %>
         <div class=" thumbnail app__catalog_gallery-thumbnail col-xs-12 col-sm-4 col-md-3 col-lg-4">
-          <a href="<%= product.instagram_image %>" data-lightbox="image-1" data-title="<%= product.product_name %> - Valor: <%= number_to_currency product.price, precision:0 %>">
+          <%= link_to product do %>
             <img src="<%= product.instagram_image %>" class="app__catalog_gallery-img img-responsive" alt="product">
+          <% end %>
+          <a href="<%= product.instagram_image %>" data-lightbox="image-1" data-title="<%= product.product_name %> - Valor: <%= number_to_currency product.price, precision:0 %>">
             <span class="app__catalog_gallery-zoom"><i class="fa fa-search-plus"></i></span>
           </a>
           <div class="app__catalog_gallery-caption caption">
