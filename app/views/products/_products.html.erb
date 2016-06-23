@@ -5,7 +5,7 @@
         <img src="<%= product.instagram_image %>" alt="catlog, productos, <%= product.user.store_name%>" class="list-image">
       </a>
     </td>
-    <td> <%= product.product_name %> </td>
+    <td><%= product.product_name %></td>
     <td><%= number_to_currency product.price, precision:0 %></td>
     <td><%= product.quantity %></td>
     <td><%= truncate(product.description, escape: false) %></td>
