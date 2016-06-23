@@ -11,7 +11,16 @@ class UsersController < ApplicationController
 
       if current_user.user_token?
         client = Instagram.client(:access_token => current_user.user_token)
-        @recent_media_items = client.user_recent_media
+
+        @options = { count: 40}
+        @options[:max_id] = params[:max_id] if params[:max_id]
+
+        @recent_media_items = client.user_recent_media("self", @options)
+
+        if @recent_media_items.last.nil?
+          @recent_media_items = client.user_recent_media
+        end
+
         current_user.update(
           instagram_id:   client.user.id,
           store_image:    client.user.profile_picture,
@@ -22,13 +31,6 @@ class UsersController < ApplicationController
       end
 
 
-      # @options = { count: 20}
-      # @options[:max_id] = params[:max_id] if params[:max_id]
 
-      # @recent_media_items = client.user_recent_media("self", @options)
-
-      # if @recent_media_items.last.nil?
-      #   @recent_media_items = client.user_recent_media
-      # end
   end
 end

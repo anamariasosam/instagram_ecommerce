@@ -21,8 +21,11 @@
           <%= render partial: 'users/media_item', locals: { media: media } %>
         <% end %>
       </div>
-
     </div>
-    
+    <%= link_to users_dashboard_path(max_id: @recent_media_items.last.id),
+          :class => 'button special col-md-6 col-md-offset-3 col-sm-offset-3
+                       col-sm-6  col-xs-offset-3 col-xs-6' do %>
+      Siguiente &#x2192;
+    <% end %>
   </div>
 </section>
