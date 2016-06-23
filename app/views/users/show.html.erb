@@ -1,4 +1,4 @@
-<section class="section app__product-container wrapper special">
+<section class="section product-container wrapper special">
   <header class="major">
     <h2 class="app__list-headline">
       <%= @user.store_name %>
@@ -16,7 +16,7 @@
     <div class=" col-xs-12 col-md-6 col-lg-6 col-sm-6 col-height">
       <img src="<%= @user.store_image %>" class="stores-img" alt="<%=  @user.store_name %>">
     </div>
-    <div class="app__product-caption caption col-xs-12 col-md-6 col-lg-6 col-sm-6 col-height store__info_container">
+    <div class="product-caption caption col-xs-12 col-md-6 col-lg-6 col-sm-6 col-height store__info_container">
       <p>
         <span class="app__bold-text"> Correo Electrónico:</span>
         <%= mail_to @user.email %>
@@ -59,7 +59,7 @@
             <% end %>
 
             <div class="app__catalog_gallery-caption caption">
-              <h3 class="app__product_name app__bold-text">
+              <h3 class="product_name app__bold-text">
                 <%= link_to product do %>
                   <%= number_to_currency product.price, precision: 0 %>
                 <% end %>
