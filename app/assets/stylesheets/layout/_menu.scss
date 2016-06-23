@@ -25,6 +25,10 @@
 
         a {
           color: #fff !important;
+          font-size: 17px;
+          padding-bottom: 10px;
+          padding-top: 10px;
+
           &:hover {
             background-color: $menu-color-active !important;
             color: #fff;
@@ -36,36 +40,18 @@
 
   &_nav {
 
-    & {
-      background-color: transparent;
-      border-color: transparent;
-      will-change: top;
-    }
+    background-color: transparent;
+    border-color: transparent;
+    will-change: top;
 
     &--container {
       padding: 0;
     }
 
-    &-items {
-
-      background-color: $menu-color;
-      margin: 0 !important;
-      width: 100%;
-
-      & ul {
-        margin: 0;
-        margin-right: -6px;
-      }
-    }
-
-    &-item a{
-      color: #fff !important;
-    }
     &-hamburguer {
 
       &--btn,
-      &--btn:hover
-      {
+      &--btn:hover {
         background-color: $menu-color !important;
         border-color: transparent !important;
         border-radius: 50% !important;
@@ -77,9 +63,46 @@
       }
 
       &--container {
-        padding-left: 29px;
-        padding-top: 14px;
+        @include respond-to(xs) {
+          padding-left: 29px;
+          padding-top: 14px;
+        }
+        @include respond-to(s) {
+          padding-left: 29px;
+          padding-top: 14px;
+        }
       }
+    }
+
+    &-items {
+
+      background-color: $menu-color;
+      margin: 0 !important;
+      width: 100%;
+
+      @include respond-to(xl) {
+        padding-left: 30px !important;
+        padding-right: 35px !important;
+      }
+
+      @include respond-to(l) {
+        padding-left: 30px !important;
+        padding-right: 35px !important;
+      }
+
+      @include respond-to(m) {
+        padding-right: 10px !important;
+      }
+
+
+      & ul {
+        margin: 0;
+        margin-right: -6px;
+      }
+    }
+
+    &-item a {
+      color: #fff !important;
     }
   }
 }

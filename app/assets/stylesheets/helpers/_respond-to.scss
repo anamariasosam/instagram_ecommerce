@@ -1,0 +1,41 @@
+// https://gist.githubusercontent.com/alexrqs/4d5cfc8967287ba13c33b82295707cb5/raw/5080169ee4763500ea026b9b6d66c7c2450dc334/_respond-to.scss
+$screen-xs: 480px;
+$screen-s: 768px;
+$screen-m: 992px;
+$screen-l: 1200px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: #{$screen-xs}) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == s {
+    @media (min-width: #{$screen-xs + 1}) and (max-width: #{$screen-s - 1}) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == m {
+    // respond to medium and small
+    @media (min-width: #{$screen-s}) and (max-width: #{$screen-m - 1}) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == l {
+    // respond to medium and bigweb
+    @media (min-width: #{$screen-m}) and (max-width: #{$screen-l - 1}) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == xl {
+    // respond to medium and bigweb
+    @media (min-width: #{$screen-l}) {
+      @content;
+    }
+  }
+
+}
