@@ -37,7 +37,8 @@ class ProductsController < ApplicationController
     @product.user_id = current_user.id
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'El producto ha sido creado exitosamente'}
+        format.html { redirect_to @product, notice: "El producto ha sido creado exitosamente.<br>
+          <a href='/users/dashboard' class='app__product_link'>Agregar otro producto</a>"}
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
