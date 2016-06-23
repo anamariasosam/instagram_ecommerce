@@ -14,11 +14,10 @@ class UsersController < ApplicationController
 
         @options = { count: 40}
         @options[:max_id] = params[:max_id] if params[:max_id]
+        @media = client.user_recent_media("self", @options)
 
-        @recent_media_items = client.user_recent_media("self", @options)
-
-        if @recent_media_items.last.nil?
-          @recent_media_items = client.user_recent_media
+        if @media.last.nil?
+          @media = client.user_recent_media
         end
 
         current_user.update(
