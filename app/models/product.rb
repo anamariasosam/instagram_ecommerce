@@ -9,7 +9,7 @@ class Product < ActiveRecord::Base
   validates_numericality_of :price, :quantity
   validates :price, length: { minimum: 4 }
   validates :description, length: { maximum: 500 }
-  validates_length_of :product_name, :maximum => 20
+  validates_length_of :product_name, :maximum => 40
 
   def to_param
     "#{id}-#{product_name}-#{user.store_name}".parameterize
