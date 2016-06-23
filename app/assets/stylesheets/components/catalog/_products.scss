@@ -1,7 +1,7 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.app__product {
+.product {
 
   &-action {
 
@@ -91,6 +91,11 @@
     color: $primary-color;
     text-align: center;
     word-wrap: break-word;
+    height: 50px;
+
+    &-countdown {
+      font-size: 16px;
+    }
 
     @media (max-width: 320px) {
       & {
@@ -114,4 +119,30 @@
 .footable-toggle {
   vertical-align: top !important;
   color: $menu-color !important
+}
+
+.product {
+
+  &__figure {
+  }
+
+  &__image {
+  }
+
+  &__caption {
+    padding-top: 10px;
+  }
+
+  &__headline {
+    color: $primary-color;
+    text-align: center;
+    word-wrap: break-word;
+    height: 50px;
+  }
+
+  &__text {
+  }
+
+  &__link {
+  }
 }

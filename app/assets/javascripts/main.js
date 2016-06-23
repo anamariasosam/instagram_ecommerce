@@ -37,8 +37,32 @@ $(".navbar-nav li a").click(function () {
 });
 
 
+function countdown_for_product_name() {
+  var $field = $('.js_countdown_product_name');
+  var isInput = $field.prev().is(':input');
+  var $input = isInput ? $field.prev() : $field.prev().children('input');
+  var remain = $input.val().length;
+  $field.text(parseInt(40 - remain, 10));
+  addColor(remain);
+
+  $input.on('keyup', function(event) {
+    event.preventDefault();
+    remain = $input.val().length;
+    $field.text(parseInt(40 - remain, 10));
+    addColor(remain);
+  });
+}
+
+function addColor(remain) {
+  if (remain < 40) {
+    $('#basic-addon2').css('color', '#4cae4c');
+  } else {
+    $('#basic-addon2').css('color', '#c9302c');
+  }
+}
 $(document).on('ready page:change page:load', function() {
   add_class_active();
   description_text();
   auto_close_alerts();
+  countdown_for_product_name()
 });
