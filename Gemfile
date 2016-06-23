@@ -65,6 +65,7 @@ end
 group :development do
   gem 'sqlite3'
   gem 'better_errors'
+  gem 'quiet_assets'
   gem 'guard-livereload', require: false
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -74,7 +75,7 @@ group :development do
 end
 
 gem 'pg'
-gem 'puma'
+gem 'puma', group: :production
 gem 'rails_12factor', group: :production
 
 gem 'lightbox2-rails'
