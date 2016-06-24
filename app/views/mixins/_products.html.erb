@@ -2,11 +2,14 @@
   <% @products.each do |product| %>
     <div class="product feature">
       <figure class="product__figure">
-        <img src="<%= product.instagram_image %>" alt="catlog, productos" class="product__image img-responsive" >
+        <%= link_to product do %>
+          <img src="<%= product.instagram_image %>" alt="catlog, productos" class="product__image img-responsive" >
+        <% end %>
         <figcaption class="product__caption">
-          <h3 class="product__headline"><%= truncate(product.product_name, length: 30) %></h3>
+          <%= link_to product do %>
+            <h3 class="product__headline"><%= truncate(product.product_name, length: 30) %></h3>
+          <% end %>
           <p class="product__text"><%= number_to_currency product.price, precision:0 %></p>
-          <a href="" class=""></a>
           <%= link_to "Más información", product, class:"button special fit small product__link" %>
         </figcaption>
       </figure>

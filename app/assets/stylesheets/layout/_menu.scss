@@ -3,8 +3,18 @@
     color: #fff !important;
   }
 
-  &_dropdown-item {
-    color: #fff;
+  &_dropdown {
+    &-item {
+      color: #fff;
+    }
+
+    &-caret {
+      border-top: 6px dashed;
+      border-right: 6px solid transparent;
+      border-left: 5px solid transparent;
+      transform: rotate(270deg);
+      margin-bottom: 2px;
+    }
   }
 
   &-right {
@@ -25,13 +35,24 @@
 
         a {
           color: #fff !important;
-          font-size: 17px;
+
           padding-bottom: 10px;
           padding-top: 10px;
 
           &:hover {
             background-color: $menu-color-active !important;
             color: #fff;
+          }
+
+          @include respond-to(xs) {
+            font-size: 15px;
+            padding-bottom: 13px !important;
+            padding-top: 13px !important;
+          }
+          @include respond-to(s) {
+            font-size: 14px;
+            padding-bottom: 11px !important;
+            padding-top: 11px !important;
           }
         }
       }
@@ -114,6 +135,7 @@
 #user_path.active,
 .navbar-default .navbar-nav > .active,
 .navbar-default .navbar-nav > .open > ,
+.menu_nav .navbar-nav .open .dropdown-menu > .active
 {
   & a,
   & a:hover,
