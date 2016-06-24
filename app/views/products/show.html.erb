@@ -67,6 +67,12 @@
               width="80" height="20" style="border:none;overflow:hidden"
               scrolling="no" frameborder="0" allowTransparency="true">
           </iframe>
+
+          <a
+            data-pin-do="buttonPin"
+            href="https://www.pinterest.com/pin/create/button/?url=http://catlog.co/<%= @product.shortened_urls.last.unique_key %>&media=<%= @product.instagram_image %>&description=<%= strip_tags(@product.description.html_safe) %>"
+            data-pin-color="red">
+          </a>
       </p>
 
       <% if current_user %>
@@ -121,3 +127,9 @@
 
   return t;
 }(document, "script", "twitter-wjs"));</script>
+
+<script
+    type="text/javascript"
+    async defer
+    src="//assets.pinterest.com/js/pinit.js"
+></script>
