@@ -55,6 +55,7 @@
         <a
           class="twitter-share-button"
           href="https://twitter.com/intent/tweet"
+<<<<<<< HEAD
           data-hashtags="LoEncontreEnCatlog"
           data-url="http://catlog.co/<%= @product.shortened_urls.last.unique_key %>"
           data-via="catlog_co"
@@ -73,6 +74,14 @@
             href="https://www.pinterest.com/pin/create/button/?url=http://catlog.co/<%= @product.shortened_urls.last.unique_key %>&media=<%= @product.instagram_image %>&description=<%= strip_tags(@product.description.html_safe) %>"
             data-pin-color="red">
           </a>
+=======
+          data-hashtags="loviencatlog.co"
+          data-url="http://catlog.co/<%= @product.shortened_urls.last.unique_key %>"
+          data-via="catlog.co"
+          data-text="<%= @product.product_name %> de la tienda <%= @product.user.store_name %>,"
+          >
+          Tweet</a>
+>>>>>>> add twitter share button for products
       </p>
 
       <% if current_user %>
@@ -100,7 +109,6 @@
     </div>
   </div>
 </section>
-
 
 <script>
   // jQuery(function($){
