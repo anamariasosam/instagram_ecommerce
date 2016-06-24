@@ -19,4 +19,5 @@
 //= require trix
 //= require footable/footable.js
 //= require responsive-paginate/responsive-paginate.js
+//= require elevatezoom/jquery.elevateZoom-3.0.8.min.js
 //= require_tree .

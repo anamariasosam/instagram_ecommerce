@@ -2,7 +2,13 @@
 <section id="seven" class="section product-container wrapper special">
 
   <div class="inner">
-    <img src="<%= @product.instagram_image %>" class="product-img img-responsive col-xs-12 col-md-6 col-lg-6 col-sm-6" alt="catlog, productos, <%= @product.user.store_name%>">
+    <img
+        src="<%= @product.instagram_image %>"
+        class="product-img img-responsive col-xs-12 col-md-6 col-lg-6 col-sm-6"
+        alt="catlog, productos, <%= @product.user.store_name%>"
+        data-zoom-image="<%= @product.instagram_image %>"
+        id="instagram_image"
+        >
 
     <div class="product-caption caption col-xs-12 col-md-6 col-lg-6 col-sm-6 ">
       <header class="major product-headline">
@@ -54,3 +60,5 @@
     </div>
   </div>
 </section>
+
+<script> $("#instagram_image").elevateZoom(); </script>
