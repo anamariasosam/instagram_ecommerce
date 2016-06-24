@@ -1,4 +1,20 @@
 <% content_for :title, @product.product_name + " - " %>
+<% content_for :meta_tags do %>
+  <meta property="og:url"                  content="<%= request.original_url %>" />
+  <meta property="og:type"                 content="product" />
+  <meta property="og:title"                content="<%= @product.product_name %>" />
+  <meta property="og:description"          content="<%= strip_tags(@product.description.html_safe) %>" />
+  <meta property="og:image"                content="<%= @product.instagram_image %>" />
+  <meta property="product:price:amount"    content="<%= number_to_currency @product.price, precision:0 %>" />
+  <meta property="product:price:currency"  content="COP" />
+
+  <meta name="twitter:card"         content="summary" />
+  <meta name="twitter:site"         content="@catlog.co" />
+  <meta name="twitter:title"        content="<%= @product.product_name %>" />
+  <meta name="twitter:description"  content="<%= @product.product_name %> de <%= @product.user.store_name %> ahora en http://catlog.co" />
+  <meta name="twitter:image"        content="<%= @product.instagram_image %>" />
+<% end %>
+
 <section id="seven" class="section product-container wrapper special">
 
   <div class="inner">
