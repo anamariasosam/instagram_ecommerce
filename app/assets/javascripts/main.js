@@ -84,29 +84,7 @@ function menuCaret() {
    });
 }
 
-var hideMobileMenuOnScroll = function () {
-  var $menuBtn = $('.hamburger__button');
-
-  function hideMenuOnScroll(event){
-    $menuBtn.trigger('click');
-    console.log('scrolling', event.currentTarget);
-    $(window).off('scroll', hideMenuOnScroll);
-  }
-
-  $menuBtn.on('click', function () {
-    var $target = $(event.currentTarget)
-
-    if ($target.hasClass('collapsed')) {
-      $(window).on('scroll', hideMenuOnScroll)
-    }
-    else {
-      $(window).off('scroll', hideMenuOnScroll);
-    }
-  })
-}
-
 $(document).on('ready page:change page:load', function() {
-  hideMobileMenuOnScroll();
   add_class_active();
   description_text();
   auto_close_alerts();
