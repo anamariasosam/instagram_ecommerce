@@ -54,7 +54,7 @@
             <ul class="dropdown-menu menu-right--dropmenu">
               <%  if user_signed_in?  %>
                 <li class="menu_nav-item" id="add__product_path">
-                  <%= link_to users_dashboard_path do %>
+                  <%= link_to users_dashboard_path, class: 'js_addNewProduct' do %>
                     <span class="glyphicon glyphicon-plus"></span>
                     Crear un producto
                   <% end %>
