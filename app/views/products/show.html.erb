@@ -9,7 +9,7 @@
   <meta property="product:price:currency"  content="COP" />
 
   <meta name="twitter:card"         content="summary" />
-  <meta name="twitter:site"         content="@catlog.co" />
+  <meta name="twitter:site"         content="@catlog_co" />
   <meta name="twitter:title"        content="<%= @product.product_name %>" />
   <meta name="twitter:description"  content="<%= @product.product_name %> de <%= @product.user.store_name %> ahora en http://catlog.co" />
   <meta name="twitter:image"        content="<%= @product.instagram_image %>" />
@@ -49,9 +49,9 @@
         <a
           class="twitter-share-button"
           href="https://twitter.com/intent/tweet"
-          data-hashtags="loviencatlog.co"
+          data-hashtags="LoEncontreEnCatlog"
           data-url="http://catlog.co/<%= @product.shortened_urls.last.unique_key %>"
-          data-via="catlog.co"
+          data-via="catlog_co"
           data-text="<%= @product.product_name %> de la tienda <%= @product.user.store_name %>,"
           >
           Tweet</a>
