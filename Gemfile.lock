@@ -147,6 +147,7 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    modernizr-rails (2.7.1)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -306,6 +307,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   lightbox2-rails
+  modernizr-rails
   normalize-rails
   omniauth-instagram
   pg

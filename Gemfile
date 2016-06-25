@@ -79,3 +79,4 @@ gem 'puma', group: :production
 gem 'rails_12factor', group: :production
 
 gem 'lightbox2-rails'
+gem 'modernizr-rails'
