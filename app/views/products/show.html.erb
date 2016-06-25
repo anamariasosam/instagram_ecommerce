@@ -1,4 +1,20 @@
 <% content_for :title, @product.product_name + " - " %>
+<% content_for :meta_tags do %>
+  <meta property="og:url"                  content="<%= request.original_url %>" />
+  <meta property="og:type"                 content="product" />
+  <meta property="og:title"                content="<%= @product.product_name %>" />
+  <meta property="og:description"          content="<%= strip_tags(@product.description.html_safe) %>" />
+  <meta property="og:image"                content="<%= @product.instagram_image %>" />
+  <meta property="product:price:amount"    content="<%= number_to_currency @product.price, precision:0 %>" />
+  <meta property="product:price:currency"  content="COP" />
+
+  <meta name="twitter:card"         content="summary" />
+  <meta name="twitter:site"         content="@catlog_co" />
+  <meta name="twitter:title"        content="<%= @product.product_name %>" />
+  <meta name="twitter:description"  content="<%= @product.product_name %> de <%= @product.user.store_name %> ahora en http://catlog.co" />
+  <meta name="twitter:image"        content="<%= @product.instagram_image %>" />
+<% end %>
+
 <section id="seven" class="section product-container wrapper special">
 
   <div class="inner">
@@ -35,6 +51,30 @@
         <%= link_to @product.user.store_name, user_path(@product.user_id) %>
       </p>
 
+      <p>
+        <a
+          class="twitter-share-button"
+          href="https://twitter.com/intent/tweet"
+          data-hashtags="LoEncontreEnCatlog"
+          data-url="http://catlog.co/<%= @product.shortened_urls.last.unique_key %>"
+          data-via="catlog_co"
+          data-text="<%= @product.product_name %> de la tienda <%= @product.user.store_name %>,"
+          >
+          Tweet</a>
+
+          <iframe
+              src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fcatlog.co%2F<%= @product.shortened_urls.last.unique_key %>&layout=button&mobile_iframe=true&width=80&height=20&appId"
+              width="80" height="20" style="border:none;overflow:hidden"
+              scrolling="no" frameborder="0" allowTransparency="true">
+          </iframe>
+
+          <a
+            data-pin-do="buttonPin"
+            href="https://www.pinterest.com/pin/create/button/?url=http://catlog.co/<%= @product.shortened_urls.last.unique_key %>&media=<%= @product.instagram_image %>&description=<%= strip_tags(@product.description.html_safe) %>"
+            data-pin-color="red">
+          </a>
+      </p>
+
       <% if current_user %>
         <% if current_user.id == @product.user_id %>
           <p class="product-code">
@@ -67,6 +107,27 @@
   //     $("#instagram_image").elevateZoom();
   //   }
   // });
-
-
 </script>
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+<script
+    type="text/javascript"
+    async defer
+    src="//assets.pinterest.com/js/pinit.js"
+></script>
