@@ -61,4 +61,9 @@
   </div>
 </section>
 
-<script> $("#instagram_image").elevateZoom(); </script>
+<script>
+  if ( $('body').hasClass('no-touch') ) {
+    $("#instagram_image").elevateZoom();
+  }
+
+</script>
