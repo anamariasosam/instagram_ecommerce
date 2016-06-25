@@ -13,7 +13,7 @@ gem 'phonelib'
 # Style plugins
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'normalize-rails'
 
 
@@ -80,3 +80,4 @@ gem 'rails_12factor', group: :production
 
 gem 'lightbox2-rails'
 gem 'modernizr-rails'
+gem 'activeadmin', '~> 1.0.0.pre2'
