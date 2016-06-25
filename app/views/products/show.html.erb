@@ -75,8 +75,7 @@
           </a>
       </p>
 
-      <% if current_user %>
-        <% if current_user.id == @product.user_id %>
+        <% if current_user and current_user.id == @product.user_id %>
           <p class="product-code">
             Comparte este código en tu post de instagram:
 
@@ -94,7 +93,18 @@
               <i class=" product-action--item fa fa-trash-o"></i>
             <% end %>
           </div>
-        <% end %>
+      <% else %>
+
+        <button class="btn btn-primary">Comprar</button>
+        <div class="sellerInfo hide">
+          <p>
+            <b>Cel:</b> <a href="tel:<%= number_to_phone(@product.user.phone_number) %>"><%= number_to_phone(@product.user.phone_number) %></a>
+            <br>
+            <%= t "product.purchase" %>
+          </p>
+
+        </div>
+
       <% end %>
 
     </div>
