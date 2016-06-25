@@ -85,11 +85,14 @@ function menuCaret() {
 }
 
 function loader() {
-  $('.js_addNewProduct').on('click', function () {
+  function addLoaderClass() {
     $('.loader')
       .removeClass('loader--running')
       .addClass('loader--running');
-  })
+  }
+  
+  $('.js_addNewProduct').on('click', addLoaderClass);
+  $('.js_nextOnDash').on('click', addLoaderClass);
 }
 
 $(document).on('ready page:change page:load', function() {
