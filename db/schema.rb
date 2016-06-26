@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20160625235336) do
     t.datetime "updated_at",                  null: false
     t.string   "photo_id"
     t.integer  "user_id"
-    t.integer  "category_id",     default: 3
+    t.integer  "category_id",     default: 1
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id"
