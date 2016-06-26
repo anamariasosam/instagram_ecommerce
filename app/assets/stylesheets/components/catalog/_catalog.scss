@@ -1,71 +1,68 @@
-.app__catalog {
-  &_gallery{
+.catalog {
 
-    &-caption {
-      text-align: left;
-    }
-
-    &-img {
-      position: relative;
-      text-align: center;
-    }
-
-    &-thumbnail {
-      margin: 20px 0;
-    }
-
-    &-zoom {
-      background-color: rgba(0, 0, 0, 0.67);
-      border-radius: 50px;
-      color: #fff;
-      font-size: 20px;
-      height: 35px;
-      padding: 3px 8px;
-      position: absolute;
-      right: 5px;
-      top: 5px;
-      width: 35px;
-
-      @include respond-to(xs) {
-        font-size: 30px;
-        height: 45px;
-        padding: 1px 8px;
-        width: 45px;
-      }
-      @include respond-to(s) {
-        font-size: 30px;
-        height: 45px;
-        padding: 1px 8px;
-        width: 45px;
-      }
-      @include respond-to(m) {
-        font-size: 27px;
-        height: 40px;
-        padding: 1px 8px;
-        width: 40px;
-      }
-      @include respond-to(l) {
-        font-size: 27px;
-        height: 40px;
-        padding: 1px 8px;
-        width: 40px;
-      }
-    }
-  }
-
-  &-headline {
+  &__headline {
     font-size: 2.1em;
   }
 
-  &_link-book {
-    margin-top: 30px;
-  }
-
-  &-paginator {
-    clear: both;
-  }
-
 }
+
+.gallery{
+
+  &-caption {
+    text-align: left;
+  }
+
+  &-img {
+    position: relative;
+    text-align: center;
+  }
+
+  &-thumbnail {
+    margin: 20px 0;
+  }
+
+  &-zoom {
+    background-color: rgba(0, 0, 0, 0.67);
+    border-radius: 50px;
+    color: #fff;
+    font-size: 20px;
+    height: 35px;
+    padding: 3px 8px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 35px;
+
+    @include respond-to(xs) {
+      font-size: 30px;
+      height: 45px;
+      padding: 1px 8px;
+      width: 45px;
+    }
+    @include respond-to(s) {
+      font-size: 30px;
+      height: 45px;
+      padding: 1px 8px;
+      width: 45px;
+    }
+    @include respond-to(m) {
+      font-size: 27px;
+      height: 40px;
+      padding: 1px 8px;
+      width: 40px;
+    }
+    @include respond-to(l) {
+      font-size: 27px;
+      height: 40px;
+      padding: 1px 8px;
+      width: 40px;
+    }
+  }
+}
+
 .pagination {
   display: block !important;
+}
+.paginator {
+  clear: both;
 }

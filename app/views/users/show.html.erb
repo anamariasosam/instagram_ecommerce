@@ -1,4 +1,5 @@
 <section class="section product-container wrapper special">
+
   <header class="major">
     <h2 class="app__list-headline">
       <%= @user.store_name %>
@@ -9,72 +10,24 @@
           <% end %>
         <% end %>
       <% end %>
-
     </h2>
   </header>
+
   <div class="inner row-height clearfix">
+
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-height">
       <img src="<%= @user.store_image %>" class="stores-img" alt="<%=  @user.store_name %>">
     </div>
+
     <div class="product-caption caption col-xs-12 col-md-6 col-lg-6 col-sm-6 col-height store__info_container">
-      <p>
-        <span class="app__bold-text"> Correo Electrónico:</span>
-        <%= mail_to @user.email %>
-      </p>
-
-      <p>
-        <span class="app__bold-text">Celular:</span>
-        <span id="phone_number">
-          <%= @user.phone_number %>
-        </span>
-      </p>
-
-      <p>
-        <% if @user.address? %>
-          <span class="app__bold-text">Dirección:</span>
-          <%= @user.address %>
-        <% end %>
-      </p>
-
-      <% if @user.delivery_info? %>
-        <p>
-          <span class="app__bold-text">Información adicional:</span>
-          <%= @user.delivery_info%>
-        </p>
-      <% end %>
-
-      <p>
-        <span class="app__bold-text">Cuenta de Instagram:</span>
-        <a href="https://www.instagram.com/<%= @user.store_account %>" target="_blank"><%= @user.store_account %></a>
-      </p>
+      <%= render 'users/info' # store information (location, phone..) %>
     </div>
 
-    <% if @products.count > 0 %>
-      <header class="major">
-        <h2>productos</h2>
-      </header>
-      <div class="app__catalog-gallery ">
-        <% @products.each do |product| %>
-          <div class=" thumbnail app__catalog_gallery-thumbnail col-xs-12 col-sm-4 col-md-3 col-lg-3">
-            <%= link_to product do %>
-              <img src="<%= product.instagram_image %>" class="app__catalog_gallery-img img-responsive" alt="product">
-            <% end %>
+    <%= render 'users/products' # store products %>
 
-            <div class="app__catalog_gallery-caption caption">
-              <h3 class="product_name app__bold-text">
-                <%= link_to product do %>
-                  <%= number_to_currency product.price, precision: 0 %>
-                <% end %>
-              </h3>
-              <%= link_to "Ver más", product, class: "button special fit small " %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-
-    <div class="app__catalog-paginator text-center">
+    <div class="paginator text-center">
       <%= paginate @products %>
     </div>
   </div>
+
 </section>

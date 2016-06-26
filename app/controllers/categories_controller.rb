@@ -1,8 +1,8 @@
-class CatalogController < ApplicationController
-  def view
+class CategoriesController < ApplicationController
+  def show
+    @category = Category.find(params[:id])
     @categories = Category.all.order('name ASC')
-
-    @catalog_products = Product
+    @catalog_products = @category.products
                           .page(params[:page])
                           .per(8)
                           .order('user_id asc')

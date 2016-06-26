@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   resources :products
   resources :users, :path => 'stores', :only => [:show]
-  
+
+  get 'categories/:id', to: 'categories#show', as: 'category'
   get '/:id' => "shortener/shortened_urls#show"
   get 'catalog/view'
   get 'home/index'
