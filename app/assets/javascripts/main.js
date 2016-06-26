@@ -69,8 +69,11 @@ function countdown_for_product_name() {
 
 function addColor(remain) {
   if (remain < 40) {
-    $('#basic-addon2').addClass('success')
+    $('#basic-addon2').removeClass('error')
+    $('#basic-addon2').addClass('success');
+
   } else {
+    $('#basic-addon2').removeClass('success');
     $('#basic-addon2').addClass('error');
   }
 }
@@ -90,7 +93,7 @@ function loader() {
       .removeClass('loader--running')
       .addClass('loader--running');
   }
-  
+
   $('.js_addNewProduct').on('click', addLoaderClass);
   $('.js_nextOnDash').on('click', addLoaderClass);
 }
