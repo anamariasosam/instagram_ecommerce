@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
   after_create :magic
   has_shortened_urls
   belongs_to :user
+  belongs_to :category
   validates_presence_of :instagram_image,
                         :price,
                         :description,
