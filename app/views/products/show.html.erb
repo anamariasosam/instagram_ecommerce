@@ -26,11 +26,6 @@
         data-zoom-image="<%= @product.instagram_image %>"
         id="instagram_image"
         >
-      <% unless @product.category.name == 'Sin Categoría' %>
-        <p class="align-left">
-          <b>Categoría:</b> <%= @product.category.name %>
-        </p>
-      <% end %>
     </div>
 
     <div class="product-caption caption col-xs-12 col-md-6 col-lg-6 col-sm-6 ">
@@ -55,7 +50,16 @@
 
       <p class="product-store_owner">
         <span class="app__bold-text" id="store_owner">Tienda:</span>
-        <%= link_to @product.user.store_name, user_path(@product.user_id) %>
+        <b><%= link_to @product.user.store_name, user_path(@product.user_id) %></b>
+      </p>
+
+      <p>
+        <% unless @product.category.name == 'Sin Categoría' %>
+          <p class="align-left">
+            <b>Categoría:</b>
+            <%= link_to @product.category.name, @product.category, class: "category__link" %>
+          </p>
+        <% end %>
       </p>
 
       <p>

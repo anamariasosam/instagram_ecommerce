@@ -1,0 +1,38 @@
+<% @catalog_products.each do |product| %>
+  <div class="thumbnail gallery-thumbnail col-xs-12 col-sm-4 col-md-3 col-lg-3">
+
+    <%= link_to product do %>
+      <img src="<%= product.instagram_image %>" class="gallery-img img-responsive" alt="product">
+    <% end %>
+
+    <a href="<%= product.instagram_image %>" data-lightbox="image-1" data-title="<%= product.product_name %> - Valor: <%= number_to_currency product.price, precision:0 %>">
+      <span class="gallery-zoom"><i class="fa fa-search-plus"></i></span>
+    </a>
+
+    <div class="gallery-caption caption">
+      <h3 class="product_name">
+        <b><%= link_to truncate(product.product_name, length: 30), product %></b>
+      </h3>
+
+
+      <p class="">
+        <span><b> Precio: </b></span>
+        <%= number_to_currency product.price, precision: 0 %>
+      </p>
+
+      <p class="">
+        <span><b>Disponibles:</b></span>
+        <%=  product.quantity %>
+      </p>
+
+      <p class="product-store_owner">
+        <span class="app__bold-text" id="store_owner">Tienda:</span>
+        <br>
+        <%= link_to product.user.store_name, user_path(product.user_id) %>
+      </p>
+
+      <%= link_to "Ver más", product, class: "button special fit small" %>
+
+    </div>
+  </div>
+<% end %>

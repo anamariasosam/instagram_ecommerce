@@ -1,0 +1,17 @@
+<div class="category">
+  <ul class="category__list">
+
+    <li class="category__item">
+      <%= link_to "Todo", catalog_view_path, class: "category__link" %>
+    </li>
+
+    <% @categories.each do |category| %>
+      <% unless category.isDefault? %>
+        <li class="category__item">
+          <%= link_to category.name, category, class: "category__link" %>
+        </li>
+      <% end %>
+    <% end %>
+
+  </ul>
+</div>
