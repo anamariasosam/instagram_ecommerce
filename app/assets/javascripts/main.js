@@ -84,29 +84,19 @@ function menuCaret() {
    });
 }
 
-var hideMobileMenuOnScroll = function () {
-  var $menuBtn = $('.hamburger__button');
-
-  function hideMenuOnScroll(event){
-    $menuBtn.trigger('click');
-    console.log('scrolling', event.currentTarget);
-    $(window).off('scroll', hideMenuOnScroll);
+function loader() {
+  function addLoaderClass() {
+    $('.loader')
+      .removeClass('loader--running')
+      .addClass('loader--running');
   }
-
-  $menuBtn.on('click', function () {
-    var $target = $(event.currentTarget)
-
-    if ($target.hasClass('collapsed')) {
-      $(window).on('scroll', hideMenuOnScroll)
-    }
-    else {
-      $(window).off('scroll', hideMenuOnScroll);
-    }
-  })
+  
+  $('.js_addNewProduct').on('click', addLoaderClass);
+  $('.js_nextOnDash').on('click', addLoaderClass);
 }
 
 $(document).on('ready page:change page:load', function() {
-  hideMobileMenuOnScroll();
+  loader();
   add_class_active();
   description_text();
   auto_close_alerts();

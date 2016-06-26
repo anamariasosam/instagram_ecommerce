@@ -1,0 +1,25 @@
+.loader {
+  background-color: $primary-color;
+  box-shadow: 1px 1px 3px darken($primary-color, 40%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  z-index: 99999;
+
+  &--running {
+    animation: loader 3500ms ease;
+  }
+
+  @at-root {
+    @keyframes loader {
+      from {
+        width: 0
+      }
+      to {
+        width: 100%;
+      }
+    }
+  }
+}

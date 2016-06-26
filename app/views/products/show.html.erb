@@ -75,8 +75,7 @@
           </a>
       </p>
 
-      <% if current_user %>
-        <% if current_user.id == @product.user_id %>
+        <% if current_user and current_user.id == @product.user_id %>
           <p class="product-code">
             Comparte este código en tu post de instagram:
 
@@ -94,20 +93,27 @@
               <i class=" product-action--item fa fa-trash-o"></i>
             <% end %>
           </div>
-        <% end %>
+      <% else %>
+
+        <button class="btn btn-primary js_togglePurchaseBtn" class="track" data-track='comprar'>Comprar</button>
+        <div class="sellerInfo hide">
+          <p>
+            <b>Cel:</b>
+            <a href="tel:<%= number_to_phone(@product.user.phone_number) %>" class="track" data-track='tel'>
+              <%= number_to_phone(@product.user.phone_number) %>
+            </a>
+            <br>
+            <%= t "product.purchase" %>
+          </p>
+
+        </div>
+
       <% end %>
 
     </div>
   </div>
 </section>
 
-<script>
-  // jQuery(function($){
-  //   if ( $('html').hasClass('no-touch') ) {
-  //     $("#instagram_image").elevateZoom();
-  //   }
-  // });
-</script>
 
 <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
@@ -124,7 +130,29 @@
   };
 
   return t;
-}(document, "script", "twitter-wjs"));</script>
+}(document, "script", "twitter-wjs"));
+
+// jQuery(function($){
+//   if ( $('html').hasClass('no-touch') ) {
+//     $("#instagram_image").elevateZoom();
+//   }
+// });
+
+
+$('#seven').on('click', '.track', function(event){
+  $element = $(event.currentTarget);
+  data = $element.data('track');
+  ga('send', 'event', '<%= @product.user.store_name %>', data, '<%= @product.product_name %>');
+});
+
+$('.js_togglePurchaseBtn').on('click', function(event){
+  $(event.currentTarget)
+    .addClass('hide')
+    .next()
+    .removeClass('hide');
+});
+
+</script>
 
 <script
     type="text/javascript"
