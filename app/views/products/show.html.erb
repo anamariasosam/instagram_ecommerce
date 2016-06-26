@@ -18,13 +18,20 @@
 <section id="seven" class="section product-container wrapper special">
 
   <div class="inner">
-    <img
+    <div class="col-xs-12 col-md-6 col-lg-6 col-sm-6">
+      <img
         src="<%= @product.instagram_image %>"
-        class="product-img img-responsive col-xs-12 col-md-6 col-lg-6 col-sm-6"
+        class="product-img img-responsive"
         alt="catlog, productos, <%= @product.user.store_name%>"
         data-zoom-image="<%= @product.instagram_image %>"
         id="instagram_image"
         >
+      <% unless @product.category.name == 'Sin Categoría' %>
+        <p class="align-left">
+          <b>Categoría:</b> <%= @product.category.name %>
+        </p>
+      <% end %>
+    </div>
 
     <div class="product-caption caption col-xs-12 col-md-6 col-lg-6 col-sm-6 ">
       <header class="major product-headline">

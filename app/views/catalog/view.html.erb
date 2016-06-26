@@ -4,6 +4,19 @@
   <div class="inner">
     <header class="major">
       <h2 class="app__catalog-headline">Catálogo</h2>
+      <div class="category">
+
+        <ul class="category__list">
+          <li class="category__item">
+            <a href="">Todo</a>
+          </li>
+          <% @categories.each do |category| %>
+            <li class="category__item">
+              <%= link_to category.name, category %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </header>
     <div class="app__catalog-gallery ">
 
