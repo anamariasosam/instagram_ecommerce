@@ -8,28 +8,28 @@ class UsersController < ApplicationController
   end
 
   def dashboard
+    if current_user.user_token?
+      client = Instagram.client(:access_token => current_user.user_token)
 
-      if current_user.user_token?
-        client = Instagram.client(:access_token => current_user.user_token)
+      response = client.user_recent_media
+      album = [].concat(response)
+      max_id = response.pagination.next_max_id
 
-        @options = { count: 40}
-        @options[:max_id] = params[:max_id] if params[:max_id]
-        @media = client.user_recent_media("self", @options)
-
-        if @media.last.nil?
-          @media = client.user_recent_media
-        end
-
-        current_user.update(
-          instagram_id:   client.user.id,
-          store_image:    client.user.profile_picture,
-          store_account:  client.user.username
-        )
-      else
-        redirect_to edit_user_registration_path
+      while !(max_id.to_s.empty?) do
+          response = client.user_recent_media(:max_id => max_id)
+          max_id = response.pagination.next_max_id
+          album.concat(response)
       end
 
+      @media = Kaminari.paginate_array(album).page(params[:page]).per(40)
 
-
+      current_user.update(
+        instagram_id:   client.user.id,
+        store_image:    client.user.profile_picture,
+        store_account:  client.user.username
+      )
+    else
+      redirect_to edit_user_registration_path
+    end
   end
 end

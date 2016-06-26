@@ -59,6 +59,7 @@ es:
       next: "Siguiente"
       first: "Primera"
       last: "Última"
+      truncate: "..."
 
   date:
     abbr_day_names:

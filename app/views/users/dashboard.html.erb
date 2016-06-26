@@ -1,5 +1,4 @@
 <section id="five" class="section app__dashboard-container wrapper special">
-
   <div class="inner">
     <header class="major">
       <h2 class="app__dashboard-headline">
@@ -9,23 +8,31 @@
           <%= current_user.store_name  %>
         </span>
       </h2>
-
       <p>Es hora de convertir tus imagenes en productos</p>
     </header>
 
     <div class="dashboard-gallery">
-      <p>Haz <strong>clic</strong> en la imagen que desees convertir en producto.</p>
+      <% if @media.empty? %>
+        <p>Pero primero  debes tener <strong>imágenes agregadas a Instagram.</strong></p>
+      <% else %>
+        <p>Haz <strong>clic</strong> en la imagen que desees convertir en producto.</p>
 
-      <div class="row">
-        <% @media.each do |media| %>
-          <%= render partial: 'users/media_item', locals: { media: media } %>
-        <% end %>
-      </div>
+        <div class="row">
+          <% @media.each do |media| %>
+            <%= render partial: 'users/media_item', locals: { media: media } %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
-    <%= link_to users_dashboard_path(max_id: @media.last.id),
-          :class => 'js_nextOnDash button special col-md-6 col-md-offset-3 col-sm-offset-3
-                       col-sm-6 col-xs-offset-3 col-xs-6' do %>
-      Siguiente &#x2192;
-    <% end %>
+
+    <div class="paginator text-center" id="js_dashboard_media">
+      <%= paginate @media%>
+    </div>
   </div>
 </section>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#js_dashboard_media .pagination li").addClass('js_nextOnDash')
+  });
+</script>
