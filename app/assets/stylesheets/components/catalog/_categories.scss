@@ -1,0 +1,25 @@
+.category {
+  text-align: left;
+
+  &__item {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  &__link {
+    background-color: #dedede;
+    border-radius: 2px;
+    color: #666;
+    font-family: sans-serif, Arial;
+    padding: 5px 15px;
+
+    &:hover {
+      background-color: #ededed;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+}
