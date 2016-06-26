@@ -6,7 +6,7 @@
     </li>
 
     <% @categories.each do |category| %>
-      <% unless category.isDefault? %>
+      <% unless category.isDefault? or category.products.count < 1 %>
         <li class="category__item">
           <%= link_to category.name, category, class: "category__link" %>
         </li>
