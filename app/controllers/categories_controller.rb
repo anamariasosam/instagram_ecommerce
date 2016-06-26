@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
     @categories = Category.all.order('name ASC')
     @catalog_products = @category.products
                           .page(params[:page])
-                          .per(6)
+                          .per(8)
                           .order('user_id asc')
                           .order('created_at DESC')
   end

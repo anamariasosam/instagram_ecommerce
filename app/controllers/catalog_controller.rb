@@ -4,7 +4,7 @@ class CatalogController < ApplicationController
 
     @catalog_products = Product
                           .page(params[:page])
-                          .per(6)
+                          .per(8)
                           .order('user_id asc')
                           .order('created_at DESC')
   end
