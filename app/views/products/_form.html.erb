@@ -16,16 +16,18 @@
 
   <div class="product_form-container">
     <div class="form-group ">
-      <% if @photo %>
-        <img src="<%=@photo%>" alt="catlog, productos, instagram" class="img-responsive product_form-image col-lg-6 col-md-7 col-sm-12 ">
-        <%= f.text_field :instagram_image, value: @photo, class: "hidden" %>
-        <%= f.text_field :photo_id, value: @photo_id, class: "hidden" %>
-      <% else %>
-        <figure class="col-lg-6 col-md-7 col-sm-12 ">
-          <img src="<%= @product.instagram_image %>" alt="catlog, productos, instagram" class="img-responsive product_form-image">
-          <%= f.text_field :instagram_image, value: @product.instagram_image, class: "hidden" %>
-        </figure>
-      <% end %>
+      <div class="col-lg-6 col-md-7 col-sm-12">
+        <% if @photo %>
+          <img src="<%= @photo %>" alt="catlog, productos, instagram" class="img-responsive product_form-image">
+          <%= f.text_field :instagram_image, value: @photo, class: "hidden" %>
+          <%= f.text_field :photo_id, value: @photo_id, class: "hidden" %>
+        <% else %>
+          <figure class="">
+            <img src="<%= @product.instagram_image %>" alt="catlog, productos, instagram" class="img-responsive product_form-image">
+            <%= f.text_field :instagram_image, value: @product.instagram_image, class: "hidden" %>
+          </figure>
+        <% end %>
+      </div>
     </div>
     <div class="app_product_form-fields col-lg-6 col-md-5 col-sm-12 ">
       <div class="form-group">
@@ -43,6 +45,10 @@
       <div class="form-group">
         <%= f.label "Unidades que tienes para vender" %>
         <%= f.number_field :quantity , min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number", placeholder: "0 unidades"%>
+      </div>
+      <div class="form-group">
+        <%= f.label :category %>
+        <%= f.select :category_id, Category.all.map { |c| [c.name, c.id] } %>
       </div>
       <div class="form-group product_form-description ">
         <%= f.label "Descripción" %>
