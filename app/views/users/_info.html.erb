@@ -1,10 +1,10 @@
 <p>
-  <span class="app__bold-text"> Correo Electrónico:</span>
+  <span class="app__bold-text"> Correo Electrónico:</span> <br>
   <%= mail_to @user.email %>
 </p>
 
 <p>
-  <span class="app__bold-text">Celular:</span>
+  <span class="app__bold-text">Celular:</span> <br>
   <span id="phone_number">
     <%= @user.phone_number %>
   </span>
@@ -12,19 +12,19 @@
 
 <p>
   <% if @user.address? %>
-    <span class="app__bold-text">Dirección:</span>
+    <span class="app__bold-text">Dirección:</span> <br>
     <%= @user.address %>
   <% end %>
 </p>
 
 <% if @user.delivery_info? %>
   <p>
-    <span class="app__bold-text">Información adicional:</span>
+    <span class="app__bold-text">Información adicional:</span> <br>
     <%= @user.delivery_info%>
   </p>
 <% end %>
 
 <p>
-  <span class="app__bold-text">Cuenta de Instagram:</span>
+  <span class="app__bold-text">Cuenta de Instagram:</span> <br>
   <a href="https://www.instagram.com/<%= @user.store_account %>" target="_blank"><%= @user.store_account %></a>
 </p>

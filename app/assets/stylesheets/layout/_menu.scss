@@ -55,6 +55,9 @@
   font-weight: bold;
   margin-top: 5px;
   padding: 10px 20px !important;
+
+  &:active,
+  &:focus,
   &:hover {
     background-color: $menu-color-active !important;
     background: -webkit-linear-gradient(30deg, darken($menu-color, 10%),darken(#E54327, 5%));

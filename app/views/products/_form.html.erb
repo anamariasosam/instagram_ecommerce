@@ -1,7 +1,6 @@
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
 
-
     <div class="alert alert-danger alert-dismissible alert alert-danger alert-dismissible col-xs-12 col-sm-12 col-md-12 col-lg-12" role="alert"  id="error_explanation">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Error:
@@ -29,6 +28,7 @@
         <% end %>
       </div>
     </div>
+
     <div class="app_product_form-fields col-lg-6 col-md-5 col-sm-12 ">
       <div class="form-group">
           <%= f.label "Nombre del producto" %>
@@ -39,16 +39,16 @@
 
       </div>
       <div class="form-group">
-        <%= f.label "Precio" %>
-        <%= f.number_field :price, min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number", placeholder: "$0 pesos" %>
+        <%= f.label "Precio" %> <br>
+        <%= f.number_field :price, min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number", placeholder: "$0 pesos", class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label "Unidades que tienes para vender" %>
-        <%= f.number_field :quantity , min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number", placeholder: "0 unidades"%>
+        <%= f.label "Unidades que tienes para vender" %> <br>
+        <%= f.number_field :quantity , min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number", placeholder: "0 unidades", class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :category %>
-        <%= f.select :category_id, Category.all.map { |c| [c.name, c.id] } %>
+        <%= f.label :category %> <br>
+        <%= f.select :category_id, Category.all.map { |c| [c.name, c.id] }, {}, {class: 'form-control'} %>
       </div>
       <div class="form-group product_form-description ">
         <%= f.label "Descripción" %>
@@ -59,8 +59,9 @@
     </div>
 
     <!--  The magic code will be generated before the creating -->
-
-    <%= f.submit 'Guardar', :class => 'product_save button special col-md-6 col-md-offset-3 col-sm-offset-3 col-sm-6  col-xs-offset-3 col-xs-6 '  %>
+    <p>
+      <%= f.submit 'Guardar', :class => 'btn btn-primary col-md-6 col-md-offset-3 col-sm-offset-3 col-sm-6 col-xs-offset-3 col-xs-6'  %>
+    </p>
 
 
   </div>

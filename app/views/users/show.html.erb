@@ -1,33 +1,36 @@
-<section class="section product-container wrapper special">
+<header class="hero">
+  <div class="container">
+    <div class="row">
 
-  <header class="major">
-    <h2 class="app__list-headline">
-      <%= @user.store_name %>
-      <% if current_user %>
-        <% if current_user.id == @user.id %>
-          <%= link_to edit_user_registration_path do %>
-            <i class="stores__edit_pencil fa fa-pencil"></i>
+      <div class="col-sm-6">
+        <img src="<%= @user.store_image %>" class="" alt="<%=  @user.store_name %>">
+        <h2 class="app__list-headline">
+          <%= @user.store_name %>
+          <% if current_user %>
+            <% if current_user.id == @user.id %>
+              <%= link_to edit_user_registration_path do %>
+                <i class="stores__edit_pencil fa fa-pencil"></i>
+              <% end %>
+            <% end %>
           <% end %>
-        <% end %>
-      <% end %>
-    </h2>
-  </header>
+        </h2>
+      </div>
 
-  <div class="inner row-height clearfix">
-
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-height">
-      <img src="<%= @user.store_image %>" class="stores-img" alt="<%=  @user.store_name %>">
+      <div class="col-sm-6">
+        <%= render 'users/info'%>
+      </div>
     </div>
+  </div>
+</header>
+<br>
+<section class="container">
 
-    <div class="product-caption caption col-xs-12 col-md-6 col-lg-6 col-sm-6 col-height store__info_container">
-      <%= render 'users/info'%>
-    </div>
+  <div class="row">
+    <%= render @products %>
+  </div>
 
-    <%= render 'users/products'%>
-
-    <div class="paginator text-center">
-      <%= paginate @products %>
-    </div>
+  <div class="paginator text-center">
+    <%= paginate @products %>
   </div>
 
 </section>
