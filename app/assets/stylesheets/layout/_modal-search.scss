@@ -7,9 +7,12 @@
 }
 
 .modal-backdrop.in {
+  background: #7474BF;
+  background: -webkit-linear-gradient(-45deg, #7474BF, #348AC7);
+  background: -o-linear-gradient(-45deg, #7474BF, #348AC7);
+  background: -moz-linear-gradient(-45deg, #7474BF, #348AC7);
+  background: linear-gradient(-45deg, #7474BF, #348AC7);
   opacity: 0.78;
-  filter: alpha(opacity=70);
-  background-color: #a7dbd8;
 }
 
 .app__search-btn {
