@@ -123,6 +123,11 @@
 
 .product {
 
+  &__avalability {
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #ccc;
+  }
+
   &__figure {
   }
 
@@ -140,9 +145,121 @@
     height: 50px;
   }
 
+  &__link {
+  }
+
+  &__name {
+    font-size: 22px;
+    margin-top: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  &__price {
+    border-bottom: 1px dotted #ccc;
+    color: $primary-color;
+    font-weight: bold;
+    font-size: 32px;
+    padding-bottom: 20px;
+  }
+
+  &__store {
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #ccc;
+  }
+
   &__text {
   }
 
+}
+.social {
+  display: inline-block;
+  height: 50px;
+
+  &:nth-child(2) {
+    position: relative;
+    top: -12px;
+  }
+}
+
+.productList {
+  padding: 0;
+  border-color: #eee;
+  &:hover {
+    .productList__actions {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  &__actions {
+    background-color: #ffffff;
+    box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    display: table;
+    padding: 15px 0;
+    position: absolute;
+    margin-left: 4%;
+    opacity: 0;
+    top: 50%;
+    text-align: center;
+    width: 80%;
+    transform: translateY(50%);
+    transition: opacity 400ms ease, transform 300ms ease;
+  }
+
+  &__by {
+    color: #999;
+    text-align: right;
+  }
+
   &__link {
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    white-space: nowrap;
+    width: 100%;
+
+    @include respond-to(l) {
+      font-size: 14px;
+    };
+  }
+
+  &__price {
+    color: #404040;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__store {
+    color: #999;
+    font-style: italic;
+    border-bottom: 1px dotted #ccc;
+
+    &:hover {
+      color: #666;
+      text-decoration: none;
+      border-bottom: 1px solid #777;
+    }
+  }
+
+  &__separator {
+    color: #ccc;
+  }
+
+  &__zoom,
+  &__more {
+    color: #404040;
+    font-weight: bold;
+    padding: 5% 14%;
   }
 }
