@@ -1,8 +1,8 @@
-<header class="hero">
+<header class="storeHero">
   <div class="container">
     <div class="row">
 
-      <div class="col-sm-6">
+      <div class="col-sm-5 col-sm-offset-1">
         <img src="<%= @user.store_image %>" class="" alt="<%=  @user.store_name %>">
         <h2 class="app__list-headline">
           <%= @user.store_name %>
@@ -15,14 +15,23 @@
           <% end %>
         </h2>
       </div>
-
-      <div class="col-sm-6">
-        <%= render 'users/info'%>
+      <div class="col-md-5">
+        <% if @user.delivery_info? %>
+          <div class="store__description">
+            <%= @user.delivery_info%>
+          </div>
+        <% end %>
       </div>
+
     </div>
   </div>
 </header>
-<br>
+<div class="container">
+
+<div class="row">
+    <%= render 'users/info'%>
+</div>
+</div>
 <section class="container">
 
   <div class="row">

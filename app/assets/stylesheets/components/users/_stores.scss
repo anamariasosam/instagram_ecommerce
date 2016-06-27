@@ -1,6 +1,50 @@
 // Place all the styles related to the stores controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.storeHero {
+  background: #5f2c82;
+  background: -webkit-linear-gradient(45deg, #4776E6, #8E54E9);
+  background: -o-linear-gradient(45deg, #4776E6, #8E54E9);
+  background: -moz-linear-gradient(45deg, #4776E6, #8E54E9);
+  background: linear-gradient(45deg, #4776E6, #8E54E9);
+
+
+    color: #fff;
+
+    margin-bottom: 30px;
+
+    padding-top: 30px;
+    padding-bottom: 60px;
+
+    &__headline {
+      line-height: 1;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+
+    &__link {
+      color: #fff;
+      &:hover {
+        color: #fff;
+      }
+    }
+
+}
+
+.store {
+  &__description {
+    margin-top: 50px;
+  }
+
+  &__info {
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(10,10,10, .3);
+    margin-top: -60px;
+    margin-bottom: 40px;
+    padding: 10px 0;
+  }
+}
+
 .stores-img {
   margin: 20px 0;
 }
