@@ -3,7 +3,7 @@
     <div class="productList__actions">
       <a class="productList__zoom" href="<%= product.instagram_image %>" data-lightbox="image-1" data-title="<%= product.product_name %> - Valor: <%= number_to_currency product.price, precision:0 %>" >Zoom</a>
       <span class="productList__separator">|</span>
-      <%= link_to 'Ver Mas', product, class: "productList__more" %>
+      <%= link_to 'Ver Más', product, class: "productList__more" %>
     </div>
     <%= link_to product do %>
       <img src="<%= product.instagram_image %>" class="img-responsive" alt="product">
