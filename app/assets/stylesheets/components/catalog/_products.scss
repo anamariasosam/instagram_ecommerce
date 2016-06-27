@@ -112,10 +112,36 @@
     border-bottom: 1px dotted #ccc;
   }
 
+  &__caption {
+    @include respond-to(xl) {
+      margin-top: 9%;
+    };
+    @include respond-to(l) {
+      margin-top: 5%;
+    };
+    @include respond-to(m) {
+      margin-top: 0%;
+    };
+    @include respond-to(s) {
+      margin-top: 3%;
+    };
+    @include respond-to(xs) {
+      margin-top: 3%;
+    };
+  }
+
+  &__description {
+    font-family: Serif;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
   &__figure {
   }
 
   &__image {
+    border: 15px solid white;
+    box-shadow: 0 2px 3px rgba(10,10,10, 0.1);
   }
 
   &__caption {

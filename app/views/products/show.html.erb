@@ -28,14 +28,14 @@
     <div class="col-xs-12 col-sm-6">
       <img
         src="<%= @product.instagram_image %>"
-        class="product-img img-responsive"
+        class="product__image img-responsive"
         alt="catlog, productos, <%= @product.user.store_name%>"
         data-zoom-image="<%= @product.instagram_image %>"
         id="instagram_image"
         >
     </div>
 
-    <div class="product-caption caption col-xs-12 col-sm-6 ">
+    <div class="product__caption caption col-xs-12 col-sm-6 ">
 
       <header >
         <h1 class="product__name">
@@ -50,11 +50,6 @@
       <p class="product__avalability">
         <span class="app__bold-text">Disponibles:</span>
         <%=  @product.quantity %>
-      </p>
-
-      <p class="app__product-description">
-        <span class="app__bold-text" id="description">Descripción:</span>
-        <%=  @product.description.html_safe %>
       </p>
 
       <p>
@@ -127,6 +122,11 @@
 
     </div>
   </div>
+  <h3 class="app__bold-text" id="description">Descripción:</h3> <br>
+  <div class="product__description">
+    <%=  @product.description.html_safe %>
+  </div>
+
 </section>
 
 <script>
