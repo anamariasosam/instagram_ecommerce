@@ -33,22 +33,6 @@
 
   &_form {
 
-    &-container {
-      clear: both;
-      text-align: left;
-
-      @media (max-width: 991px) {
-        & {
-          max-width: 350px;
-          margin: 0 auto;
-        }
-      }
-    }
-
-    @media (min-width: 768px) {
-
-    }
-
     &-image {
       margin: 0 auto;
     }
