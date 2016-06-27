@@ -15,6 +15,13 @@ class User < ActiveRecord::Base
   validates_presence_of :store_name, :email, :phone_number, :on => :update
   validates :phone_number, phone: { possible: true, types: :mobile } , :on => :update
 
+  extend FriendlyId
+  friendly_id :store_account, use: :slugged
+
+  def should_generate_new_friendly_id?
+   new_record? || slug.nil? || slug.blank? # you can add more condition here
+  end
+
   private
 
     def self.from_omniauth(auth)
