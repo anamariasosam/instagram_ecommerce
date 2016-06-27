@@ -205,6 +205,10 @@
     width: 80%;
     transform: translateY(50%);
     transition: opacity 400ms ease, transform 300ms ease;
+
+    @include touch {
+      display: none;
+    };
   }
 
   &__by {
