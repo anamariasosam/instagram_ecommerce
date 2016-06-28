@@ -36,4 +36,55 @@
   a {
     font-weight: bold;
   }
+
+  h1 {
+    font-size: 4em;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  @include respond-to(xl) {
+    & {
+      padding: 7em 0;
+    }
+  }
+  @include respond-to(l) {
+    & {
+      padding: 6em 0;
+    }
+  }
+
+  @include respond-to(m) {
+    & {
+      padding: 4em 2em;
+    }
+  }
+
+  @include respond-to(s) {
+    & {
+      padding: 3em 1.5em;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+
+  @include respond-to(xs) {
+    & {
+      padding: 3em 1em;
+    }
+    h1 {
+      font-size: 2.75em;
+    }
+    p {
+      font-size: 17px;
+    }
+
+  }
+
 }
