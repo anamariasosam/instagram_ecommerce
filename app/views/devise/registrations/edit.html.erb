@@ -10,7 +10,7 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
 
-      <table class="table">
+      <table class="table stores__form">
         <tr>
           <td>
             <div class="form-group">
@@ -64,7 +64,7 @@
       <p class="help-block">(*) Campos obligatorios</p>
 
       <div class="actions">
-        <%= f.submit 'Guardar', :class => 'btn btn-primary col-md-offset-3 col-sm-offset-3 col-sm-6  col-xs-offset-3 col-xs-6 '  %>
+        <%= f.submit 'Guardar', :class => 'btn btn-primary sectionHero-btn col-md-offset-3 col-sm-offset-3 col-sm-6  col-xs-offset-3 col-xs-6 '  %>
       </div>
       <br>
     <% end %>
