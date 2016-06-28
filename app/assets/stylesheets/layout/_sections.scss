@@ -12,6 +12,7 @@
   {
     @extend .background-purple;
     border-color: $primary-color;
+    margin-top: 20px;
 
     &:hover {
       @extend .background-purple-invert;
