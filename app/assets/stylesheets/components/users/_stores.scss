@@ -45,33 +45,27 @@
   }
 }
 
-.stores-img {
-  margin: 20px 0;
-}
-
-.stores__form {
-  @include respond-to(s) {
-    & td {
-      display: block;
+.stores{
+  &__form {
+    @include respond-to(s) {
+      & td {
+        display: block;
+      }
+    }
+    @include respond-to(xs) {
+      & td {
+        display: block;
+      }
     }
   }
-  @include respond-to(xs) {
-    & td {
-      display: block;
+
+  &__edit_pencil,
+  {
+    color: #fff !important;
+
+    &:hover {
+      color: $menu-color !important;
     }
   }
 
-}
-
-@media (min-width:768px) {
-  .stores-img {
-    margin: 20px 0;
-  }
-  .store__info_container {
-    margin-bottom: 50px;
-  }
-}
-.stores__edit_pencil,
-.stores__edit_pencil:hover {
-  color: $menu-color;
 }
