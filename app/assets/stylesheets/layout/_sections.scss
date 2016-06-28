@@ -8,6 +8,17 @@
   padding-top: 20px;
   padding-bottom: 20px;
 
+  &-btn
+  {
+    @extend .background-purple;
+    border-color: $primary-color;
+
+    &:hover {
+      @extend .background-purple-invert;
+      border-color: $primary-color;
+    }
+  }
+
   &__headline {
     line-height: 1;
     margin-top: 0;
@@ -17,7 +28,7 @@
   &__link {
     color: #fff;
     &:hover {
-      color: #fff;
+      color: #fff !important;
     }
   }
 }
