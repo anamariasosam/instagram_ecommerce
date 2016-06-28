@@ -3,12 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .hero {
-  // background-color: $primary-color;
-  background: #7474BF;
-  background: -webkit-linear-gradient(-45deg, #7474BF, #348AC7);
-  background: -o-linear-gradient(-45deg, #7474BF, #348AC7);
-  background: -moz-linear-gradient(-45deg, #7474BF, #348AC7);
-  background: linear-gradient(-45deg, #7474BF, #348AC7);
+  @extend .background-purple;
   color: #fff;
   padding-bottom: 40px;
   padding-top: 40px;
@@ -36,4 +31,54 @@
   a {
     font-weight: bold;
   }
+
+  h1 {
+    font-size: 4em;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  @include respond-to(xl) {
+    & {
+      padding: 7em 0;
+    }
+  }
+  @include respond-to(l) {
+    & {
+      padding: 6em 0;
+    }
+  }
+
+  @include respond-to(m) {
+    & {
+      padding: 4em 2em;
+    }
+  }
+
+  @include respond-to(s) {
+    & {
+      padding: 3em 1.5em;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+
+  @include respond-to(xs) {
+    & {
+      padding: 3em 1em;
+    }
+    h1 {
+      font-size: 2.75em;
+    }
+    p {
+      font-size: 17px;
+    }
+  }
+
 }

@@ -15,6 +15,12 @@
   opacity: 0.78;
 }
 
+.app__search-btn {
+  border-radius: 0 8px 8px 0 !important;
+  border: 0.4px solid #ccc !important;
+  height: 39px !important;
+}
+
 @media screen and (max-width: 480px) {
   .app__search-btn {
       padding: 0 10px !important;

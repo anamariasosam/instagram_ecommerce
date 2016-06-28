@@ -2,10 +2,18 @@
 .hamburger {
 
   &__button {
+    width: 45px;
+    height: 45px;
+    &:hover,
+    &:focus
+    {
+      background-color: #fff !important;
+    }
 
     .icon-bar {
       visibility: hidden;
       background-color: $secondary-color !important;
+
     }
 
     &.collapsed .icon-bar {
@@ -13,13 +21,12 @@
     }
 
     i {
-      display: inline;
-      color: #fff;
+      top: -10px;
+      display: inline-block;
       position: relative;
-      top: -23px;
-      right: 47px;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: lighter;
+      color: $secondary-color;
     }
 
     &.collapsed i {
@@ -70,6 +77,34 @@
 
 .navbar {
   background-color: #fff;
+
+  &-right {
+    & .open > a,
+    & .open > a:hover,
+    & .open > a:focus {
+      border-color: $menu-color;
+    }
+  }
+
+  &__admin_item a{
+    
+    @include respond-to(l) {
+      line-height: 25px !important;
+    };
+
+    @include respond-to(m) {
+      line-height: 25px !important;
+    };
+
+    @include respond-to(s) {
+      line-height: 27px !important;
+    };
+
+    @include respond-to(xs) {
+      line-height: 30px !important;
+    };
+  }
+
   .active {
     border-bottom: 4px solid coral;
     a {

@@ -38,23 +38,7 @@
     }
 
     &--textarea-trix {
-
-      appearance: none;
-      background-color: rgba(144, 144, 144, 0.075);
-      border-radius: 0;
-      border: solid 1px #e3e3e3;
-      color: inherit;
-      display: block;
       min-height: 200px;
-      max-width: 100%;
-      outline: 0;
-      padding: 0 1em;
-      text-decoration: none;
-
-      &:focus {
-        border-color: $primary-color;
-        box-shadow: 0 0 0 1px $primary-color;
-      }
     }
   }
 
@@ -208,7 +192,7 @@
     display: table;
     padding: 15px 0;
     position: absolute;
-    margin-left: 4%;
+    margin-left: 7%;
     opacity: 0;
     top: 50%;
     text-align: center;
@@ -218,6 +202,17 @@
 
     @include touch {
       display: none;
+    };
+    @include respond-to(m) {
+      margin-left: 4%;
+    };
+
+    @include respond-to(l) {
+      margin-left: 4%;
+    };
+
+    @include respond-to(xl) {
+      margin-left: 5%;
     };
   }
 
@@ -230,6 +225,10 @@
     color: #666;
     font-size: 14px;
     font-weight: bold;
+
+    &:hover {
+      color: $secondary-color;
+    }
   }
 
   &__name {
@@ -274,6 +273,10 @@
   &__more {
     color: #404040;
     font-weight: bold;
-    padding: 5% 13%;
+    padding: 5% 14%;
+
+    &:hover {
+      color: $secondary-color;
+    }
   }
 }
