@@ -9,7 +9,7 @@
 .modal-backdrop.in {
   opacity: 0.78;
   filter: alpha(opacity=70);
-  background-color: #a7dbd8;
+  background-color: $primary-color;
 }
 
 .app__search-btn {
