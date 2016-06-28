@@ -1,33 +1,32 @@
 // Place all the styles related to the stores controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.stores-img {
-  margin: 20px 0;
-}
-
-.stores__form {
-  @include respond-to(s) {
-    & td {
-      display: block;
+.stores{
+  &__form {
+    @include respond-to(s) {
+      & td {
+        display: block;
+      }
+    }
+    @include respond-to(xs) {
+      & td {
+        display: block;
+      }
     }
   }
-  @include respond-to(xs) {
-    & td {
-      display: block;
+
+  &__edit_pencil,
+  {
+    color: #fff !important;
+
+    &:hover {
+      color: $menu-color !important;
     }
   }
 
-}
-
-@media (min-width:768px) {
-  .stores-img {
-    margin: 20px 0;
+  &__text,
+  &__text a {
+    font-weight: 100 !important;
+    color: #fff !important;
   }
-  .store__info_container {
-    margin-bottom: 50px;
-  }
-}
-.stores__edit_pencil,
-.stores__edit_pencil:hover {
-  color: $menu-color;
 }

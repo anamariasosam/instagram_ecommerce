@@ -87,11 +87,7 @@
   }
 
   &__admin_item a{
-    &:hover {
-      & .glyphicon {
-        color: $primary-color;
-      }
-    }
+    
     @include respond-to(l) {
       line-height: 25px !important;
     };
