@@ -13,8 +13,11 @@
     font-style: italic;
     line-height: 1.5;
     margin: 0 auto;
-    padding: 0 22px;
+    padding: 22px;
     text-align: center;
+    @extend .background-purple;
+    color: #fff;
+    letter-spacing: 1px
   }
 
   &_start--text {

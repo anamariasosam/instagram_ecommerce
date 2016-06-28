@@ -3,12 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .hero {
-  // background-color: $primary-color;
-  background: #7474BF;
-  background: -webkit-linear-gradient(-45deg, #7474BF, #348AC7);
-  background: -o-linear-gradient(-45deg, #7474BF, #348AC7);
-  background: -moz-linear-gradient(-45deg, #7474BF, #348AC7);
-  background: linear-gradient(-45deg, #7474BF, #348AC7);
+  @extend .background-purple;
   color: #fff;
   padding-bottom: 40px;
   padding-top: 40px;
