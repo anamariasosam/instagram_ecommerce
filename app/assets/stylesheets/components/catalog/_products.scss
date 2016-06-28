@@ -198,13 +198,27 @@
     display: table;
     padding: 15px 0;
     position: absolute;
-    margin-left: 4%;
+    margin-left: 7%;
     opacity: 0;
     top: 50%;
     text-align: center;
     width: 80%;
     transform: translateY(50%);
     transition: opacity 400ms ease, transform 300ms ease;
+
+    @include respond-to(m) {
+      margin-left: 4%;
+    };
+
+    @include respond-to(l) {
+      margin-left: 4%;
+    };
+
+    @include respond-to(xl) {
+      margin-left: 5%;
+    };
+
+
   }
 
   &__by {
@@ -216,6 +230,10 @@
     color: #666;
     font-size: 14px;
     font-weight: bold;
+
+    &:hover {
+      color: $secondary-color;
+    }
   }
 
   &__name {
@@ -261,5 +279,9 @@
     color: #404040;
     font-weight: bold;
     padding: 5% 14%;
+
+    &:hover {
+      color: $secondary-color;
+    }
   }
 }
