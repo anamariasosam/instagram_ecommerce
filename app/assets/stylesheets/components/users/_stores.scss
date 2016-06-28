@@ -49,6 +49,20 @@
   margin: 20px 0;
 }
 
+.stores__form {
+  @include respond-to(s) {
+    & td {
+      display: block;
+    }
+  }
+  @include respond-to(xs) {
+    & td {
+      display: block;
+    }
+  }
+
+}
+
 @media (min-width:768px) {
   .stores-img {
     margin: 20px 0;
