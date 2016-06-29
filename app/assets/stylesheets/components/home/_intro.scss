@@ -1,7 +1,39 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.intro {
-  padding-bottom: 30px !important;
-  padding-top: 90px !important;
+
+.hero {
+  // background-color: $primary-color;
+  background: #7474BF;
+  background: -webkit-linear-gradient(-45deg, #7474BF, #348AC7);
+  background: -o-linear-gradient(-45deg, #7474BF, #348AC7);
+  background: -moz-linear-gradient(-45deg, #7474BF, #348AC7);
+  background: linear-gradient(-45deg, #7474BF, #348AC7);
+  color: #fff;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  position: relative;
+  margin-bottom: 30px;
+
+  &__actions {
+  }
+
+  .btn-transparent {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+    transition: background 1s, box-shadow 500ms;
+    &:hover {
+      background: rgba(255,255,255, 0.1);
+      box-shadow: 0 1px 2px rgba(10, 10, 10, .5);
+    }
+  }
+
+  .stores__edit_pencil {
+    color: darken($primary-color, 30%);
+  }
+
+  a {
+    font-weight: bold;
+  }
 }

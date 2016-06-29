@@ -1,57 +1,58 @@
-<section class="registration_container section wrapper special">
-  <div class="inner">
-    <header class="major">
-      <h2>Añade la información adicional</h2>
-    </header>
+<header class="sectionHero">
+  <div class="container">
+    <h2>Información adicional</h2>
+  </div>
+</header>
 
+<section class="container">
 
   <div class="registration_form">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
 
-      <table class="registration_table">
+      <table class="table">
         <tr>
           <td>
-            <div class="form-group registration_form-group">
-              <%= f.label "Nombre de la Tienda*" %>
-              <%= f.text_field :store_name, autofocus: true %>
+            <div class="form-group">
+              <%= f.label "Nombre de la Tienda*" %> <br>
+              <%= f.text_field :store_name, autofocus: true, class: 'form-control' %>
             </div>
           </td>
 
           <td>
-            <div class="form-group registration_form-group">
-              <%= f.label "Correo*" %>
-              <%= f.email_field :email %>
+            <div class="form-group">
+              <%= f.label "Correo*" %> <br>
+              <%= f.email_field :email, class: 'form-control' %>
             </div>
           </td>
         </tr>
 
         <tr>
           <td>
-            <div class="form-group registration_form-group">
+            <div class="form-group">
               <%= f.label "Dirección" %>
-              <%= f.text_area :address %>
+              <%= f.text_area :address, class: 'form-control' %>
 
             </div>
           </td>
           <td rowspan="2">
-            <div class="form-group registration_form-group">
-              <%= f.label "Información adicional" %>
-              <%= f.text_area :delivery_info, rows: 7 %>
+            <div class="form-group">
+              <%= f.label "Información adicional" %> <br>
+              <%= f.text_area :delivery_info, rows: 7, class: 'form-control' %>
             </div>
           </td>
         </tr>
 
         <tr>
           <td>
-            <div class="form-group registration_form-group">
-              <%= f.label "Celular*" %>
-              <%= f.telephone_field :phone_number %>
+            <div class="form-group">
+              <%= f.label "Celular*" %> <br>
+              <%= f.telephone_field :phone_number, class: 'form-control' %>
             </div>
           </td>
         </tr>
         <!-- User token -->
-        <% if session['super_token'] %>
+        <% if session['super_token'] %> <br>
           <%= f.hidden_field :user_token, value: session['super_token'] %>
         <% end %>
       </table>
@@ -63,7 +64,7 @@
       <p class="help-block">(*) Campos obligatorios</p>
 
       <div class="actions">
-        <%= f.submit 'Guardar', :class => 'product_save button special col-md-6 col-md-offset-3 col-sm-offset-3 col-sm-6  col-xs-offset-3 col-xs-6 '  %>
+        <%= f.submit 'Guardar', :class => 'btn btn-primary col-md-offset-3 col-sm-offset-3 col-sm-6  col-xs-offset-3 col-xs-6 '  %>
       </div>
       <br>
     <% end %>
@@ -71,6 +72,5 @@
     <!-- <%= button_to "Eliminar mi cuenta", registration_path(resource_name),
     data: { confirm: "¿Estás seguro? Esta acción no se puede deshacer" }, method: :delete,
      class: "button special col-md-12 col-sm-12 col-xs-12 col-lg-12"%> -->
-  </div>
   </div>
 </section>

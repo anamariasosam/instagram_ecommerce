@@ -11,7 +11,7 @@ function center_modal() {
 
 // Validates the input value is not empty
 function validate_search_req( event ) {
-  var $input = $(".app__search-input");
+  var $input = $(".js_search-input");
   if ( !$input.val() ) {
     event.preventDefault();
     $input
@@ -41,5 +41,5 @@ $(document).on('ready page:change page:load', function() {
   openModalFirstTime();
 
   // Validate search product box
-  $("#app__search-product").on('submit', validate_search_req);
+  $(".js_search-product").on('submit', validate_search_req);
 });

@@ -3,6 +3,13 @@ es:
   product:
     purchase: Actualmente puedes contactar el vendedor con su número de teléfono.
   activerecord:
+    attributes:
+      product:
+        category: Categoría
+        description: Descripción
+        product_name: Nombre del producto
+        price: Precio
+        quantity: Cantidad
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

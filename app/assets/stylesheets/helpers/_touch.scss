@@ -1,0 +1,5 @@
+@mixin touch {
+  .touch & {
+    @content;
+  }
+}

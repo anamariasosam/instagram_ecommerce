@@ -1,25 +1,21 @@
-<section id="banner" class="intro">
-  <h1><strong>Catlog</strong> es tu catálogo virtual</h1>
-  <p>Los productos de instagram en un sólo lugar</p>
-  <ul class="actions">
-    <li>
-      <%= link_to "Ver catálogo", catalog_view_path, class: "button special" %>
-    </li>
-    <%  unless user_signed_in?  %>
-      <li> <%= link_to "Ingresar con Instagram",
-                    user_omniauth_authorize_path(:instagram),
-                    class: "button special" %>
-      </li>
-    <% end %>
+<header class="hero">
+  <section class="container">
+    <h1><strong>Catlog</strong> es tu catálogo virtual</h1>
+    <p>Los productos de instagram en un sólo lugar</p>
+    <form action="/" class="row js_search-product">
 
-  </ul>
-</section>
-
-<section id="one" class="wrapper special">
-  <div class="inner">
-
-    <header class="major"> <h2>Agregados Recientemente</h2> </header>
-    <%= render "mixins/products"  %>
-
-  </div>
-</section>
+      <div class="col-sm-3">
+        <div class="input-group">
+          <input type="text" class="js_search-input form-control" placeholder="Buscar con código" name="search" autofocus="autofocus">
+          <span class="input-group-btn">
+            <input type="submit" class="btn btn-default"  value="Go!">
+          </span>
+        </div>
+      </div>
+    </form>
+    <br>
+    <div class="hero__actions">
+      <%= link_to "Ver catálogo", catalog_view_path, class: "btn btn-default btn-lg btn-transparent" %>
+    </div>
+  </section>
+</header>
