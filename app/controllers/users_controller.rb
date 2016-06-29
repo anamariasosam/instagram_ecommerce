@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, :only => [:dashboard]
 
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @products = @user.products.page(params[:page]).per(6).order('created_at DESC')
   end
 
@@ -23,13 +23,11 @@ class UsersController < ApplicationController
         current_user.update(
           instagram_id:   client.user.id,
           store_image:    client.user.profile_picture,
-          store_account:  client.user.username
+          store_account:  client.user.username,
+          slug:           client.user.username
         )
       else
         redirect_to edit_user_registration_path
       end
-
-
-
   end
 end
