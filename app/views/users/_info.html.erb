@@ -1,34 +1,30 @@
+<p>
+  <span class="app__bold-text"> Correo Electrónico:</span>
+  <%= mail_to @user.email %>
+</p>
 
-<div class="col-sm-3 text-center">
-  <div class="store__info">
-    <span class="app__bold-text"> Correo Electrónico:</span> <br>
-    <%= mail_to @user.email %>
-  </div>
-</div>
+<p>
+  <span class="app__bold-text">Celular:</span>
+  <span id="phone_number">
+    <%= @user.phone_number %>
+  </span>
+</p>
 
-<div class="col-sm-3 text-center">
-  <div class="store__info">
-    <span class="app__bold-text">Celular:</span> <br>
-    <span id="phone_number">
-      <a href="tel:<%= number_to_phone(@user.phone_number) %>" class="track" data-track='tel'>
-        <%= number_to_phone(@user.phone_number) %>
-      </a>
-    </span>
-  </div>
-</div>
+<p>
+  <% if @user.address? %>
+    <span class="app__bold-text">Dirección:</span>
+    <%= @user.address %>
+  <% end %>
+</p>
 
-<div class="col-sm-3 text-center">
-  <div class="store__info">
-    <% if @user.address? %>
-      <span class="app__bold-text">Dirección:</span> <br>
-      <%= @user.address %>
-    <% end %>
-  </div>
-</div>
+<% if @user.delivery_info? %>
+  <p>
+    <span class="app__bold-text">Información adicional:</span>
+    <%= @user.delivery_info%>
+  </p>
+<% end %>
 
-<div class="col-sm-3 text-center">
-  <div class="store__info">
-    <span class="app__bold-text">Cuenta de Instagram:</span> <br>
-    <a href="https://www.instagram.com/<%= @user.store_account %>" target="_blank"><%= @user.store_account %></a>
-  </div>
-</div>
+<p>
+  <span class="app__bold-text">Cuenta de Instagram:</span>
+  <a href="https://www.instagram.com/<%= @user.store_account %>" target="_blank"><%= @user.store_account %></a>
+</p>

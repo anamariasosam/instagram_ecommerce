@@ -1,24 +1,23 @@
 // Gems
-// @import "normalize-rails";
+@import "normalize-rails";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "trix";
+@import "lightbox";
 
 @import "base/variables";
-@import "base/document";
 
-// @import "theme";
-// @import "overwrite";
+@import "theme";
+@import "overwrite";
 
 @import "helpers/respond-to";
-@import "helpers/touch";
 
 @import "layout/flash_notices";
 @import "layout/footer";
 @import "layout/loader";
 @import "layout/menu";
 @import "layout/modal-search";
-@import "layout/sections";
 
 @import "components/home/intro";
 @import "components/home/about";
@@ -39,12 +38,10 @@
 
 @import "components/tutorial/tutorial";
 
+@import "lightbox2";
 
 // Vendor
 @import "footable/footable.core.min.css";
-@import "trix";
-@import "lightbox";
-@import "lightbox2";
 
 .app {
   &__container {

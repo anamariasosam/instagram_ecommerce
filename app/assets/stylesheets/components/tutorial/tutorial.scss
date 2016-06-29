@@ -5,35 +5,29 @@
   &__container {
     margin-top: 50px;
   }
-
   &__instructions {
-    @media (min-width: 640px) {
-      position: relative;
-      min-height: 1px;
-      float: right;
-      width: 50%;
-    }
+    &_container {
 
-    &.invisble {
-      opacity: 0;
+      @media (min-width: 640px) {
+        & {
+          position: relative;
+          min-height: 1px;
+          padding-left: 5%;
+          padding-right: 5%;
+          float: right;
+          width: 50%;
+        }
+      }
+      @media (min-width: 640px) {
+        &.even {
+          float: left;
+        }
+      }
     }
-
-    &.visible {
-      animation: tutorialFade 800ms 100ms backwards;
-    }
-
     &_headline {
       text-transform: inherit;
       font-weight: bold;
       margin-bottom: 20px;
-
-      &.invisble {
-        opacity: 0;
-      }
-
-      &.visible {
-        animation: tutorialFade 400ms;
-      }
     }
 
     &_text {
@@ -55,14 +49,16 @@
 
   &__video_container {
 
-    @media (min-width: 640px) {
-      float: left;
-      width: 50%;
-      position: relative;
-      min-height: 1px;
-      padding-left: 5%;
-      padding-right: 5%;
 
+    @media (min-width: 640px) {
+      & {
+        float: left;
+        width: 50%;
+        position: relative;
+        min-height: 1px;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
       @media (min-width: 640px) {
         &.even {
           float: right;
@@ -71,38 +67,4 @@
     }
   }
 
-  &__video {
-    &.even {
-      @include respond-to(xl){
-        float: right;
-      };
-
-      @include respond-to(l){
-        float: right;
-      };
-
-      @include respond-to(m){
-        float: right;
-      };
-    }
-    &.invisble {
-      opacity: 0;
-    }
-
-    &.visible {
-      animation: tutorialFade 600ms;
-    }
-  }
-
-}
-
-@keyframes tutorialFade {
-  from {
-    opacity: 0;
-    transform: translateY(30%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0%);
-  }
 }

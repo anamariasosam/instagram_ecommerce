@@ -1,6 +1,6 @@
 <div class="menu">
-  <nav class="navbar navbar-default navbar-fixed-top navbar">
-    <div class="container-fluid">
+  <nav class="navbar navbar-default menu_nav  navbar-fixed-top">
+    <div class="container-fluid menu_nav--container">
       <div class="navbar-header hamburger pull-right">
         <button type="button"
           class="hamburger__button navbar-toggle collapsed"
@@ -17,20 +17,20 @@
         </button>
       </div>
 
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse menu_nav-items" id="bs-example-navbar-collapse-1">
 
         <ul class="nav navbar-nav navbar-left">
-          <li class="" id="home_path">
+          <li class="active menu_nav-item" id="home_path">
             <%= link_to root_url  do%>
               Home <span class="sr-only">(current)</span></a>
             <% end %>
           </li>
 
-          <li class="" id="catalog_path">
+          <li class="menu_nav-item" id="catalog_path">
             <%= link_to "Catálogo", catalog_view_path %>
           </li>
 
-          <li class="" id="tutorial_path">
+          <li class="menu_nav-item" id="tutorial_path">
             <%= link_to "¿Cómo funciona?", tutorial_index_path %>
           </li>
         </ul>
@@ -39,33 +39,35 @@
         <ul class="nav navbar-nav navbar-right">
 
           <li>
-            <a href="#searchModal" role="button" class="search_btn" data-toggle="modal" id="search_path">
+            <a href="#searchModal" role="button" class="menu-right--search" data-toggle="modal" id="search_path">
               <i class="glyphicon glyphicon-search"></i> Buscar Producto
             </a>
           </li>
 
-          <%  if user_signed_in?  %>
           <li class="dropdown" >
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="user_path">
-              <i class="fa fa-user" aria-hidden="true"></i> Opciones
+              <span class="fa fa-bars"></span> Menú
+              <span class="menu_dropdown-item"></span>
+              <span class="caret menu_dropdown-caret" id="app__menu_caret"></span>
             </a>
 
-            <ul class="dropdown-menu">
-                <li class="" id="add__product_path">
+            <ul class="dropdown-menu menu-right--dropmenu">
+              <%  if user_signed_in?  %>
+                <li class="menu_nav-item" id="add__product_path">
                   <%= link_to users_dashboard_path, class: 'js_addNewProduct' do %>
                     <span class="glyphicon glyphicon-plus"></span>
                     Crear un producto
                   <% end %>
                 </li>
 
-                <li class="" id="product_path">
+                <li class="menu_nav-item" id="product_path">
                   <%= link_to products_path do %>
                     <span class="glyphicon glyphicon-eye-open"></span>
                     Ver mis productos
                   <% end %>
                 </li>
 
-                <li class="" id="edit_user_path">
+                <li class="menu_nav-item" id="edit_user_path">
                   <%= link_to edit_user_registration_path do %>
                     <span class="glyphicon glyphicon-pencil"></span>
                     Editar mi información
@@ -79,15 +81,14 @@
                   <% end %>
                 </li>
 
-              </ul>
-            </li>
-          <% else %>
-          <li>
-            <%= link_to user_omniauth_authorize_path(:instagram) do %>
-            <i class="fa fa-instagram" aria-hidden="true"></i> Ingresar con Instagram
-            <% end %>
+              <% else %>
+                <li>
+                  <%= link_to "Ingresar con Instagram", user_omniauth_authorize_path(:instagram) %>
+                </li>
+              <% end %>
+
+            </ul>
           </li>
-          <% end %>
         </ul>
 
       </div>

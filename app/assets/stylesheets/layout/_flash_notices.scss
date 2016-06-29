@@ -1,7 +1,7 @@
 .flashNotices {
   max-width: 600px;
   position: absolute;
-  top: -20px;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
@@ -12,6 +12,11 @@
       width: 92%;
     }
   }
+}
+
+// overwrite bootstrap close alert position
+.alert-dismissable .close, .alert-dismissible .close {
+  top: -26px;
 }
 
 .alert-info {

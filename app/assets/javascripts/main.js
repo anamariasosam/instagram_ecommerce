@@ -98,20 +98,6 @@ function loader() {
   $('.js_nextOnDash').on('click', addLoaderClass);
 }
 
-function loadFiraFont() {
-  WebFontConfig = {
-  google: { families: [ 'Open+Sans:400,700' ] }
-};
-(function() {
-  var wf = document.createElement('script');
-  wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-  wf.type = 'text/javascript';
-  wf.async = 'true';
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(wf, s);
-})();
-}
-
 $(document).on('ready page:change page:load', function() {
   loader();
   add_class_active();
@@ -121,5 +107,4 @@ $(document).on('ready page:change page:load', function() {
   if ($('.major h2').text() == "Editar Producto" || $('.major h2').text() == "Nuevo Producto") {
     countdown_for_product_name();
   }
-  loadFiraFont();
 });
