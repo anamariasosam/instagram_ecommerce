@@ -3,16 +3,7 @@
 
   &__item {
     display: inline-block;
-    margin-bottom: 10px;
-    transition: margin 400ms ease;
-
-    @include respond-to(s) {
-      margin-bottom: 20px;
-    };
-
-    @include respond-to(xs) {
-      margin-bottom: 20px;
-    };
+    margin-bottom: 5px;
   }
 
   &__link {
@@ -21,15 +12,6 @@
     color: #666;
     font-family: sans-serif, Arial;
     padding: 5px 15px;
-    transition: padding 400ms ease;
-
-    @include respond-to(s) {
-      padding: 10px 15px;
-    };
-
-    @include respond-to(xs) {
-      padding: 10px 15px;
-    };
 
     &:hover {
       background-color: #ededed;

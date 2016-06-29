@@ -1,7 +1,149 @@
+.menu {
+  li > a.dropdown-toggle {
+    color: #fff !important;
+  }
+
+  &_dropdown {
+    &-item {
+      color: #fff;
+    }
+
+    &-caret {
+      border-top: 6px dashed;
+      border-right: 6px solid transparent;
+      border-left: 5px solid transparent;
+      transform: rotate(270deg);
+      margin-bottom: 2px;
+    }
+  }
+
+  &-right {
+    &--container {
+      padding-right: 35px;
+    }
+    &--search {
+      color: #fff !important;
+    }
+
+    &--dropmenu {
+      background-color: $menu-color;
+      margin-top: -1px !important;
+
+      li {
+
+        padding-left: 0;
+
+        a {
+          color: #fff !important;
+
+          padding-bottom: 10px;
+          padding-top: 10px;
+
+          &:hover {
+            background-color: $menu-color-active !important;
+            color: #fff;
+          }
+
+          @include respond-to(xs) {
+            font-size: 15px;
+            padding-bottom: 13px !important;
+            padding-top: 13px !important;
+          }
+          @include respond-to(s) {
+            font-size: 14px;
+            padding-bottom: 11px !important;
+            padding-top: 11px !important;
+          }
+        }
+      }
+    }
+  }
+
+  &_nav {
+
+    background-color: transparent;
+    border-color: transparent;
+    will-change: top;
+
+    &--container {
+      padding: 0;
+
+      @include respond-to(s) {
+        background-color: $menu-color;
+      }
+
+      @include respond-to(xs) {
+        background-color: $menu-color;
+      }
+    }
+
+    &-items {
+      background-color: $menu-color;
+      margin: 0 !important;
+      width: 100%;
+
+      @include respond-to(xl) {
+        padding-left: 30px !important;
+        padding-right: 35px !important;
+      }
+
+      @include respond-to(l) {
+        padding-left: 30px !important;
+        padding-right: 35px !important;
+      }
+
+      @include respond-to(m) {
+        padding-right: 10px !important;
+      }
+
+      & ul {
+        margin: 0;
+        margin-right: -6px;
+      }
+    }
+
+    &-item a {
+      color: #fff !important;
+    }
+  }
+}
+
+#user_path.active {
+  background-color: $menu-color-active ;
+}
+
+#user_path.active,
+.navbar-default .navbar-nav > .active,
+.navbar-default .navbar-nav > .open > ,
+.menu_nav .navbar-nav .open .dropdown-menu > .active
+{
+  & a,
+  & a:hover,
+  & a:focus {
+    background-color: $menu-color-active ;
+  }
+}
 
 .hamburger {
 
+  @include respond-to(xs) {
+    padding-right: 15px;
+    padding-top: 5px;
+  }
+
+  @include respond-to(s) {
+    padding-right: 15px;
+    padding-top: 5px;
+  }
+
   &__button {
+    background-color: $menu-color !important;
+    border-color: transparent !important;
+    border-radius: 50% !important;
+    padding-top: 14px;
+    height: 44px !important;
+    width: 44px;
+    box-shadow: 1px 1px 4px darken($menu-color, 10%);
 
     .icon-bar {
       visibility: hidden;
@@ -39,42 +181,11 @@
   }
 
   &__word {
+    color: #fff;
+    font-weight: bold;
+    left: -60px;
+    position: relative;
+    top: -27px;
   }
 
-}
-.search_btn {
-  // background-color: $menu-color;
-  background: $menu-color;
-  background: -webkit-linear-gradient(45deg, $menu-color, #E543273);
-  background: -o-linear-gradient(45deg, $menu-color, #E543273);
-  background: -moz-linear-gradient(45deg, $menu-color, #E543273);
-  background: linear-gradient(45deg, $menu-color, #E543273);
-
-  border-radius: 2px;
-  color: #fff !important;
-  font-weight: bold;
-  margin-top: 7px;
-  padding: 10px 20px !important;
-
-  &:active,
-  &:focus,
-  &:hover {
-    background-color: $menu-color-active !important;
-    background: -webkit-linear-gradient(30deg, darken($menu-color, 10%),darken(#E54327, 5%));
-    background: -o-linear-gradient(30deg, darken($menu-color, 10%),darken(#E54327, 5%));
-    background: -moz-linear-gradient(30deg, darken($menu-color, 10%),darken(#E54327, 5%));
-    background: linear-gradient(30deg, darken($menu-color, 10%),darken(#E54327, 5%));
-
-  }
-}
-
-.navbar {
-  background-color: #fff;
-  .active {
-    border-bottom: 4px solid coral;
-    a {
-      color: #777 !important;
-      background-color: transparent !important;
-    }
-  }
 }

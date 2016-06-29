@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @products = @user.products.page(params[:page]).per(24).order('created_at DESC')
+    @products = @user.products.page(params[:page]).per(6).order('created_at DESC')
   end
 
   def dashboard

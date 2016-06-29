@@ -3,8 +3,9 @@
   <% if Product.exists?(:photo_id => media.id) %>
     <div class="dashboard_gallery-thumbnail">
       <img  src='<%= media.images.thumbnail.url %>'
-            class="dashboard_gallery-blur img-responsive" alt="product" >
+            class="dashboard_gallery-blur dashboard_gallery-img img-responsive" alt="product" >
     </div>
+
 
   <% else %>
 
@@ -14,10 +15,7 @@
             class="dashboard_gallery-img img-responsive"
             alt="product" >
 
-      <div class="dashboard__actions">
-        <i class="fa fa-shopping-bag dashboard_icon"></i>
-      </div>
-
+      <i class="fa fa-shopping-bag dashboard_icon"></i>
     <% end %>
   <% end %>
 

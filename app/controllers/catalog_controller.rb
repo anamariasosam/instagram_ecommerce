@@ -2,9 +2,9 @@ class CatalogController < ApplicationController
   def view
     @categories = Category.all.order('name ASC')
 
-    @products = Product
+    @catalog_products = Product
                           .page(params[:page])
-                          .per(12)
+                          .per(8)
                           .order('user_id asc')
                           .order('created_at DESC')
   end
