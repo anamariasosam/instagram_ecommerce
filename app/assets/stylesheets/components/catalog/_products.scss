@@ -199,20 +199,10 @@
     width: 80%;
     transform: translateY(50%);
     transition: opacity 400ms ease, transform 300ms ease;
-
+    margin-left: 4%;
+    
     @include touch {
       display: none;
-    };
-    @include respond-to(m) {
-      margin-left: 4%;
-    };
-
-    @include respond-to(l) {
-      margin-left: 4%;
-    };
-
-    @include respond-to(xl) {
-      margin-left: 5%;
     };
   }
 
