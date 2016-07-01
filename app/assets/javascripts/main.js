@@ -118,14 +118,14 @@ $(document).on('ready page:change page:load', function() {
   description_text();
   auto_close_alerts();
   menuCaret();
+  loadFiraFont();
 
   if ($('.container h2').text() == "Editar Producto" || $('.container h2').text() == "Nuevo Producto") {
     countdown_for_product_name();
   }
 
-  if ($(".pagination")) {
+  if ($(".pagination").length) {
     $(".pagination").rPage();
   }
   
-  loadFiraFont();
 });
