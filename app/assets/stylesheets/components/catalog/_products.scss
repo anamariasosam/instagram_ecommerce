@@ -200,7 +200,7 @@
     transform: translateY(50%);
     transition: opacity 400ms ease, transform 300ms ease;
     margin-left: 4%;
-    
+
     @include touch {
       display: none;
     };
@@ -263,7 +263,7 @@
   &__more {
     color: #404040;
     font-weight: bold;
-    padding: 5% 14%;
+    padding: 5% 13%;
 
     &:hover {
       color: $secondary-color;
