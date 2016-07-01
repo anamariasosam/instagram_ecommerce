@@ -48,12 +48,12 @@
 .stores{
   &__form {
     @include respond-to(s) {
-      & td {
+      &-data {
         display: block;
       }
     }
     @include respond-to(xs) {
-      & td {
+      &-data {
         display: block;
       }
     }
