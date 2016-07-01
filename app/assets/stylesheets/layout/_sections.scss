@@ -8,18 +8,6 @@
   padding-top: 20px;
   padding-bottom: 20px;
 
-  &-btn
-  {
-    @extend .background-purple;
-    border-color: $primary-color;
-    margin-top: 20px;
-
-    &:hover {
-      @extend .background-purple-invert;
-      border-color: $primary-color;
-    }
-  }
-
   &__headline {
     line-height: 1;
     margin-top: 0;

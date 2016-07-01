@@ -87,7 +87,7 @@
     }
   }
 
-  &__admin-item {
+  &__adminItem {
 
     @include respond-to(l) {
       line-height: 25px !important;
