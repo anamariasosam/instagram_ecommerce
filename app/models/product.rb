@@ -12,8 +12,12 @@ class Product < ActiveRecord::Base
   validates :description, length: { maximum: 500 }
   validates_length_of :product_name, :maximum => 40
 
+  def slug
+    user.store_account.downcase.gsub(" ", "-") + "_"  + product_name.downcase.gsub(" ", "-")
+  end
+
   def to_param
-    "#{id}-#{product_name}-#{user.store_name}".parameterize
+    "#{id}-#{slug}"
   end
 
   private

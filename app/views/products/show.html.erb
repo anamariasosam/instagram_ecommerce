@@ -18,7 +18,7 @@
 <header class="sectionHero">
   <div class="container">
     <h5>Producto de:</h5>
-    <h3 class="sectionHero__headline"><%= link_to @product.user.store_name, user_path(@product.user_id), class: 'sectionHero__link' %></h3>
+    <h3 class="sectionHero__headline"><%= link_to @product.user.store_name, user_path(@product.user), class: 'sectionHero__link' %></h3>
   </div>
 </header>
 

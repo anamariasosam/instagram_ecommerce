@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
   validates_presence_of :store_name, :email, :phone_number, :on => :update
   validates :phone_number, phone: { possible: true, types: :mobile } , :on => :update
 
+  def to_param
+    slug
+  end
+
   private
 
     def self.from_omniauth(auth)
