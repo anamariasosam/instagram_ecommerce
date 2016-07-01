@@ -53,15 +53,9 @@
       </div>
     </div>
 
-      <div class="form-group product_form-description ">
-        <%= f.label "Descripción" %>
-        <%= f.trix_editor :description, class: "product_form--textarea-trix form-control"%>
-      </div>
-
-
     <div class="form-group product_form-description col-sm-12 col-lg-6">
       <%= f.label :description %> <br>
-      <%= f.trix_editor :description, class: "product_form--textarea-trix"%>
+      <%= f.trix_editor :description, class: "product_form--textarea-trix form-control"%>
     </div>
 
     <!--  The magic code will be generated before the creating -->
