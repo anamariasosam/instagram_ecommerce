@@ -4,6 +4,7 @@
   &__button {
     width: 45px;
     height: 45px;
+
     &:hover,
     &:focus
     {
@@ -21,12 +22,12 @@
     }
 
     i {
-      top: -10px;
+      color: $secondary-color;
       display: inline-block;
-      position: relative;
       font-size: 18px;
       font-weight: lighter;
-      color: $secondary-color;
+      position: relative;
+      top: -10px;
     }
 
     &.collapsed i {
@@ -86,8 +87,8 @@
     }
   }
 
-  &__admin_item a{
-    
+  &__admin-item {
+
     @include respond-to(l) {
       line-height: 25px !important;
     };

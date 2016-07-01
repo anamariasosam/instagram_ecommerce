@@ -50,28 +50,28 @@
             </a>
 
             <ul class="dropdown-menu">
-                <li class="navbar__admin_item" id="add__product_path">
-                  <%= link_to users_dashboard_path, class: 'js_addNewProduct' do %>
+                <li id="add__product_path">
+                  <%= link_to users_dashboard_path, class: 'js_addNewProduct navbar__admin-item' do %>
                     <span class="glyphicon glyphicon-plus"></span>
                     Crear un producto
                   <% end %>
                 </li>
 
-                <li class="navbar__admin_item" id="product_path">
-                  <%= link_to products_path do %>
+                <li id="product_path">
+                  <%= link_to products_path, class: "navbar__admin-item" do %>
                     <span class="glyphicon glyphicon-eye-open"></span>
                     Ver mis productos
                   <% end %>
                 </li>
 
-                <li class="navbar__admin_item" id="edit_user_path">
-                  <%= link_to edit_user_registration_path do %>
+                <li id="edit_user_path">
+                  <%= link_to edit_user_registration_path, class: "navbar__admin-item"  do %>
                     <span class="glyphicon glyphicon-pencil"></span>
                     Editar mi información
                   <% end %>
                 </li>
 
-                <li class="navbar__admin_item">
+                <li>
                   <%= link_to(destroy_user_session_path, method: :delete) do %>
                     <span class="glyphicon glyphicon-off"></span>
                     Cerrar Sesión
