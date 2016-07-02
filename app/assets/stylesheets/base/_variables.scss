@@ -23,11 +23,3 @@ $title-color: #4776E6;
   background: -moz-linear-gradient(45deg, $title-color, $primary-color);
   background: linear-gradient(45deg, $title-color, $primary-color);
 }
-
-.background-purple-invert {
-  background: $primary-color;
-  background: -webkit-linear-gradient(45deg, $primary-color, $title-color);
-  background: -o-linear-gradient(45deg, $primary-color, $title-color);
-  background: -moz-linear-gradient(45deg, $primary-color, $title-color);
-  background: linear-gradient(45deg, $primary-color, $title-color);
-}
