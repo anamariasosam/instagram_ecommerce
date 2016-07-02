@@ -31,8 +31,8 @@
       padding: 10px 15px;
     };
 
-    &:hover, &:focus
-    {
+    &:hover,
+    &:focus {
       background-color: #ededed;
       color: $title-color;
     }
