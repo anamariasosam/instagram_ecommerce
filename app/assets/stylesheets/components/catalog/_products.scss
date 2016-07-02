@@ -179,10 +179,12 @@
 .productList {
   padding: 0;
   border-color: #eee;
+  position: relative;
+
   &:hover {
     .productList__actions {
       opacity: 1;
-      transform: translateY(0%);
+      transform: translate(-50%, 0);
     }
   }
 
@@ -192,12 +194,12 @@
     display: table;
     padding: 15px 0;
     position: absolute;
-    margin-left: 4%;
     opacity: 0;
     top: 50%;
+    left: 50%;
     text-align: center;
-    width: 80%;
-    transform: translateY(50%);
+    width: 90%;
+    transform: translate(-50%, 50%);
     transition: opacity 400ms ease, transform 300ms ease;
 
     @include touch {
