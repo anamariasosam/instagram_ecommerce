@@ -19,15 +19,6 @@ function validate_search_req( event ) {
   }
 }
 
-// Open the modal on first page load
-function openModalFirstTime() {
-
-  if (Cookies.get('modal_shown') == null) {
-    Cookies.set('modal_shown', 'yes', { expires: 1, path: '/' });
-    $('#searchModal').modal('show');
-  }
-}
-
 $(document).on('ready page:change page:load', function() {
   $('#searchModal').on('show.bs.modal', center_modal);
   $(window).on('resize', function() {
@@ -37,8 +28,6 @@ $(document).on('ready page:change page:load', function() {
   $('#searchModal').on('hidden.bs.modal', function () {
     $(".app__search-input").parent().removeClass('has-error')
   });
-
-  openModalFirstTime();
 
   // Validate search product box
   $(".js_search-product").on('submit', validate_search_req);
