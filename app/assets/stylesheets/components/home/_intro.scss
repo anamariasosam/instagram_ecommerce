@@ -10,6 +10,26 @@
   position: relative;
   margin-bottom: 30px;
 
+  @include respond-to(xl) {
+    padding: 7em 0;
+  }
+
+  @include respond-to(l) {
+    padding: 6em 0;
+  }
+
+  @include respond-to(m) {
+    padding: 4em 2em;
+  }
+
+  @include respond-to(s) {
+    padding: 3em 1.5em;
+  }
+
+  @include respond-to(xs) {
+    padding: 3em 1em;
+  }
+
   &__actions {
   }
 
@@ -18,6 +38,7 @@
     border-color: #fff;
     color: #fff;
     transition: background 1s, box-shadow 500ms;
+
     &:hover {
       background: rgba(255,255,255, 0.1);
       box-shadow: 0 1px 2px rgba(10, 10, 10, .5);
@@ -34,51 +55,25 @@
 
   &__headline {
     font-size: 4em;
+
+    @include respond-to(s) {
+      font-size: 3em;
+    }
+
+    @include respond-to(xs) {
+      font-size: 2.75em;
+    }
   }
 
   &__deck {
     font-size: 24px;
-  }
 
-  @include respond-to(xl) {
-    & {
-      padding: 7em 0;
-    }
-  }
-  @include respond-to(l) {
-    & {
-      padding: 6em 0;
-    }
-  }
-
-  @include respond-to(m) {
-    & {
-      padding: 4em 2em;
-    }
-  }
-
-  @include respond-to(s) {
-    & {
-      padding: 3em 1.5em;
-    }
-    &__headline {
-      font-size: 3em;
-    }
-    &__deck {
+    @include respond-to(s) {
       font-size: 18px;
     }
-  }
 
-  @include respond-to(xs) {
-    & {
-      padding: 3em 1em;
-    }
-    &__headline {
-      font-size: 2.75em;
-    }
-    &__deck {
+    @include respond-to(xs) {
       font-size: 17px;
     }
   }
-
 }
