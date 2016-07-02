@@ -13,7 +13,6 @@
 <section class="container">
 
   <header class="major">
-    <p>Es hora de convertir tus imagenes en productos</p>
     <p>Haz <strong>clic</strong> en la imagen que desees convertir en producto.</p>
   </header>
 
@@ -24,7 +23,7 @@
   </div>
 
   <%= link_to users_dashboard_path(max_id: @media.last.id),
-          :class => 'js_nextOnDash btn btn-primary col-md-6 col-md-offset-3 col-sm-offset-3
+          :class => 'js_nextOnDash btn btn-primary   col-md-6 col-md-offset-3 col-sm-offset-3
                        col-sm-6 col-xs-offset-3 col-xs-6' do %>
       Siguiente &#x2192;
     <% end %>

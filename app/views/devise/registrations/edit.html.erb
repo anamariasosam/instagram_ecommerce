@@ -10,16 +10,16 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
 
-      <table class="table">
+      <table class="table stores__form">
         <tr>
-          <td>
+          <td class="stores__form-data">
             <div class="form-group">
               <%= f.label "Nombre de la Tienda*" %> <br>
               <%= f.text_field :store_name, autofocus: true, class: 'form-control' %>
             </div>
           </td>
 
-          <td>
+          <td class="stores__form-data">
             <div class="form-group">
               <%= f.label "Correo*" %> <br>
               <%= f.email_field :email, class: 'form-control' %>
@@ -28,14 +28,14 @@
         </tr>
 
         <tr>
-          <td>
+          <td class="stores__form-data">
             <div class="form-group">
               <%= f.label "Dirección" %>
               <%= f.text_area :address, class: 'form-control' %>
 
             </div>
           </td>
-          <td rowspan="2">
+          <td rowspan="2" class="stores__form-data">
             <div class="form-group">
               <%= f.label "Información adicional" %> <br>
               <%= f.text_area :delivery_info, rows: 7, class: 'form-control' %>
@@ -44,7 +44,7 @@
         </tr>
 
         <tr>
-          <td>
+          <td class="stores__form-data">
             <div class="form-group">
               <%= f.label "Celular*" %> <br>
               <%= f.telephone_field :phone_number, class: 'form-control' %>
@@ -64,7 +64,7 @@
       <p class="help-block">(*) Campos obligatorios</p>
 
       <div class="actions">
-        <%= f.submit 'Guardar', :class => 'btn btn-primary col-md-offset-3 col-sm-offset-3 col-sm-6  col-xs-offset-3 col-xs-6 '  %>
+        <%= f.submit 'Guardar', :class => 'btn btn-primary   col-md-offset-3 col-sm-offset-3 col-sm-6  col-xs-offset-3 col-xs-6 '  %>
       </div>
       <br>
     <% end %>

@@ -38,23 +38,7 @@
     }
 
     &--textarea-trix {
-
-      appearance: none;
-      background-color: rgba(144, 144, 144, 0.075);
-      border-radius: 0;
-      border: solid 1px #e3e3e3;
-      color: inherit;
-      display: block;
       min-height: 200px;
-      max-width: 100%;
-      outline: 0;
-      padding: 0 1em;
-      text-decoration: none;
-
-      &:focus {
-        border-color: $primary-color;
-        box-shadow: 0 0 0 1px $primary-color;
-      }
     }
   }
 
@@ -230,6 +214,10 @@
     color: #666;
     font-size: 14px;
     font-weight: bold;
+
+    &:hover {
+      color: $secondary-color;
+    }
   }
 
   &__name {
@@ -275,5 +263,9 @@
     color: #404040;
     font-weight: bold;
     padding: 5% 13%;
+
+    &:hover {
+      color: $secondary-color;
+    }
   }
 }

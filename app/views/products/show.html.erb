@@ -17,8 +17,10 @@
 
 <header class="sectionHero">
   <div class="container">
+
     <h5>Producto de:</h5>
     <h3 class="sectionHero__headline"><%= link_to @product.user.store_name, user_path(@product.user), class: 'sectionHero__link' %></h3>
+
   </div>
 </header>
 
@@ -82,7 +84,7 @@
       <% else %>
         <div>
           <br>
-          <button class="btn btn-primary btn-block btn-lg js_togglePurchaseBtn" class="track" data-track='comprar'>Comprar</button>
+          <button class="btn btn-primary   btn-block btn-lg js_togglePurchaseBtn" class="track" data-track='comprar'>Comprar</button>
           <div class="sellerInfo hide">
             <p>
               <b>Cel:</b>
@@ -136,7 +138,6 @@
 //     $("#instagram_image").elevateZoom();
 //   }
 // });
-
 
 
 $('#seven').on('click', '.track', function(event){

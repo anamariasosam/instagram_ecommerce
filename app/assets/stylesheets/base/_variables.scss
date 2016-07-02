@@ -2,9 +2,9 @@
 
 $menu-color : #FF512F;
 $menu-color-active : #F38630;
-
-$primary-color: #52bad7;
-$secondary-color: #E0E4CC;
+$primary-color: #8E54E9;
+$secondary-color: #7d7d7d;
+$title-color: #4776E6;
 
 
 //  Validation
@@ -14,4 +14,9 @@ $secondary-color: #E0E4CC;
 
 .error {
   color: #c9302c;
+}
+
+.background-purple {
+  background: $primary-color;
+  background: linear-gradient(45deg, $title-color, $primary-color);
 }

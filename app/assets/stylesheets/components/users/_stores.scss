@@ -45,19 +45,23 @@
   }
 }
 
-.stores-img {
-  margin: 20px 0;
-}
+.stores{
+  &__form-data {
+    @include respond-to(s) {
+      display: block;
+    }
+    @include respond-to(xs) {
+      display: block;
+    }
+  }
 
-@media (min-width:768px) {
-  .stores-img {
-    margin: 20px 0;
+  &__editPencil,
+  {
+    color: #fff !important;
+
+    &:hover {
+      color: $menu-color !important;
+    }
   }
-  .store__info_container {
-    margin-bottom: 50px;
-  }
-}
-.stores__edit_pencil,
-.stores__edit_pencil:hover {
-  color: $menu-color;
+
 }
