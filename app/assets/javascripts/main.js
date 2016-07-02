@@ -118,7 +118,7 @@ $(document).on('ready page:change page:load', function() {
   description_text();
   auto_close_alerts();
   menuCaret();
-  if ($('.major h2').text() == "Editar Producto" || $('.major h2').text() == "Nuevo Producto") {
+  if ($('.container h2').text() == "Editar Producto" || $('.container h2').text() == "Nuevo Producto") {
     countdown_for_product_name();
   }
   loadFiraFont();
