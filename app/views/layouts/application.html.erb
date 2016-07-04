@@ -7,10 +7,7 @@
   <meta name="description" content="Catlog: Catálogo virtual de las tiendas de Instagram. Sabrás los precios, descripciones y disponibilidad de tus productos favoritos">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= yield(:meta_tags) %>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="msapplication-config" content="/IEconfig.xml" />
-
+  <%= render 'favicon' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag :modernizr %>
