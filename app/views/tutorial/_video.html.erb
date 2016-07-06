@@ -3,7 +3,9 @@
 
   <div class="tutorial__video js_tutVideo invisible col-xs-12 col-sm-6">
     <%= image_tag "iphone.png", class: "tutorial__frame" %>
-    <%= image_tag gif, class: "tutorial__gif" %>
+    <iframe src="https://player.vimeo.com/video/17041299<%=url%>?color=E23212"
+      webkitallowfullscreen mozallowfullscreen allowfullscreen class="embed-responsive-item tutorial__videoFrame" frameBorder='0' >
+    </iframe>
   </div>
 
   <div class="tutorial__instructions js_tutInstructions invisible col-xs-12 col-sm-6 ">
