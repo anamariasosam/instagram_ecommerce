@@ -12,9 +12,6 @@ ActiveAdmin.register User do
     :user_token
   )
 
-  before_filter :only => [:show, :edit, :update, :destroy] do
-    @user = User.find_by(slug: params[:id])
-  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

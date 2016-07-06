@@ -8,115 +8,90 @@
 
 <section class="container">
 
-    <div class="tutorial__container row">
-      <h2 class="tutorial__instructions_headline invisible text-center">Crear una cuenta</h2>
-      <div class="tutorial__video invisible col-xs-12 col-md-5 col-sm-offset-1">
-        <%= render "video", url: '170412990' %>
-      </div>
-      <div class="tutorial__instructions invisible col-xs-12 col-md-5 ">
-        <h4 class="tutorial__instructions_subtitle">Recomendaciones:</h4>
-        <ul>
-          <li class="tutorial__instructions_text">Debes tener una cuenta de Instagram</li>
-          <li class="tutorial__instructions_text">El número de celular es primordial para el contacto con los clientes</li>
-          <li class="tutorial__instructions_text">Escribe toda la información de los productos que vendes.</li>
-        </ul>
-        <h4 class="tutorial__instructions_subtitle">Pasos:</h4>
-        <ul>
-          <li class="tutorial__instructions_text">Selecciona la opción 'Ingresar con Instagram'</li>
-          <li class="tutorial__instructions_text">Ingresa tus datos de Instagram</li>
-          <li class="tutorial__instructions_text">Autoriza a Catlog para poder acceder a tus información</li>
-          <li class="tutorial__instructions_text">Completa la información de contacto</li>
-          <li class="tutorial__instructions_text">Guarda</li>
-        </ul>
-      </div>
-    </div>
-    <hr>
+  <%= render partial: "video", locals: {
+    headline: 'Crear una cuenta',
+    gif: "1.gif",
+    recommendations: [
+      'Debes tener una cuenta de Instagram',
+      'El número de celular es primordial para el contacto con los clientes',
+      'Escribe toda la información de los productos que vendes.'
+    ],
+    steps: [
+      'Selecciona la opción \'Ingresar con Instagram\'',
+      'El número de celular es primordial para el contacto con los clientes',
+      'Ingresa tus datos de Instagram',
+      'Autoriza a Catlog para poder acceder a tus información',
+      'Completa la información de contacto',
+      'Guarda'
+    ]
+  } %>
 
-    <div class="tutorial__container clearfix" id="create_product">
-      <h2 class="tutorial__instructions_headline invisible text-center">Crear un producto</h2>
-      <div class="tutorial__video invisible col-xs-12 even col-md-5">
-        <%= render "video", url: '170412994' %>
-      </div>
-      <div class="tutorial__instructions invisible col-xs-12 even col-md-5 col-sm-offset-1">
-        <h4 class="tutorial__instructions_subtitle">Recomendaciones:</h4>
-        <ul>
-          <li class="tutorial__instructions_text">Escoge la imagen de Instagram en la que mejor se ve tu producto</li>
-          <li class="tutorial__instructions_text">Publica toda la información que un cliente necesite saber de ese producto</li>
-        </ul>
-        <h4 class="tutorial__instructions_subtitle">Pasos:</h4>
-        <ul>
-          <li class="tutorial__instructions_text">Selecciona la opción 'Crear producto'</li>
-          <li class="tutorial__instructions_text">Elige la imagen que desees</li>
-          <li class="tutorial__instructions_text">Completa la información del producto</li>
-          <li class="tutorial__instructions_text">Guarda</li>
-          <li class="tutorial__instructions_text">La aplicación se encargará de generar el código</li>
-        </ul>
-      </div>
-    </div>
-    <hr>
+  <hr>
 
+  <%= render partial: "video", locals: {
+    headline: 'Crear un producto',
+    gif: "2.gif",
+    recommendations: [
+      'Escoge la imagen de Instagram en la que mejor se ve tu producto',
+      'Publica toda la información que un cliente necesite saber de ese producto'
+    ],
+    steps: [
+      'Selecciona la opción \'Crear producto\'',
+      'Elige la imagen que desees',
+      'Completa la información del producto',
+      'Guarda',
+      'La aplicación se encargará de generar el código',
+    ]
+  } %>
 
-    <div class="tutorial__container clearfix" id="add_code">
-      <h2 class="tutorial__instructions_headline invisible text-center">Añadir Código a Instagram</h2>
-      <div class="tutorial__video invisible col-xs-12 col-md-5 col-sm-offset-1">
-        <%= render "video", url: '170412993' %>
-      </div>
-      <div class="tutorial__instructions invisible col-xs-12 col-md-5">
-        <h4 class="tutorial__instructions_subtitle">Recomendaciones:</h4>
-        <ul>
-          <li class="tutorial__instructions_text">En la página web de tu cuenta de Instagram escribe la direccion de catlog.com, para que sea más fácil encontrar la información</li>
-        </ul>
-        <h4 class="tutorial__instructions_subtitle">Pasos:</h4>
-        <ul>
-          <li class="tutorial__instructions_text">Copia el código que está acompañado en el producto</li>
-          <li class="tutorial__instructions_text">Ve a tu perfil de Instagram</li>
-          <li class="tutorial__instructions_text">Escoge la fotografía que quieras que tenga el código</li>
-          <li class="tutorial__instructions_text">Selecciona la opción de editar</li>
-          <li class="tutorial__instructions_text">Pega el código</li>
-        </ul>
-      </div>
-    </div>
-    <hr>
+  <hr>
 
-    <div class="tutorial__container clearfix" id="edit_product">
-      <h2 class="tutorial__instructions_headline invisible text-center">Editar un producto</h2>
-      <div class="tutorial__video invisible col-xs-12 even col-md-5">
-        <%= render "video", url: '170412991' %>
-      </div>
-      <div class="tutorial__instructions invisible col-xs-12 even col-md-5 col-sm-offset-1">
-        <h4 class="tutorial__instructions_subtitle">Recomendaciones:</h4>
-        <ul>
-          <li class="tutorial__instructions_text">Puedes ir actualizando la cantidad de productos que tienes disponibles.</li>
-          <li class="tutorial__instructions_text">Añade información que consideres necesaria</li>
-          <li class="tutorial__instructions_text">Cuando eliminas un producto toda la información de este se pierde.</li>
-        </ul>
-        <h4 class="tutorial__instructions_subtitle">Pasos:</h4>
-        <ul>
-          <li class="tutorial__instructions_text">Selecciona la opción 'Ver productos'</li>
-          <li class="tutorial__instructions_text">Elige el producto que desees editar</li>
-          <li class="tutorial__instructions_text">Edita la información del producto</li>
-          <li class="tutorial__instructions_text">Guarda</li>
-        </ul>
-      </div>
-    </div>
-    <hr>
+  <%= render partial: "video", locals: {
+    headline: 'Añadir Código a Instagram',
+    gif: "3.gif",
+    recommendations: [
+      'En la página web de tu cuenta de Instagram escribe la direccion de catlog.com, para que sea más fácil encontrar la información'
+    ],
+    steps: [
+      'Copia el código que está acompañado en el producto',
+      'Ve a tu perfil de Instagram',
+      'Escoge la fotografía que quieras que tenga el código',
+      'Selecciona la opción de editar',
+      'Pega el código',
+    ]
+  } %>
 
-    <div class="tutorial__container clearfix" id="edit_account">
-      <h2 class="tutorial__instructions_headline invisible text-center">Editar tu cuenta</h2>
-      <div class="tutorial__video invisible col-xs-12 col-md-5 col-sm-offset-1">
-        <%= render "video", url: '170412992' %>
-      </div>
-      <div class="tutorial__instructions invisible col-xs-12 col-md-5">
-        <h4 class="tutorial__instructions_subtitle">Recomendaciones:</h4>
-        <ul>
-          <li class="tutorial__instructions_text">Siempre verifica la información de contacto que actualizaste.</li>
-        </ul>
-        <h4 class="tutorial__instructions_subtitle">Pasos:</h4>
-        <ul>
-          <li class="tutorial__instructions_text">Selecciona la opción 'Editar mi información'</li>
-          <li class="tutorial__instructions_text">Edita la información que desees</li>
-          <li class="tutorial__instructions_text">Guarda</li>
-        </ul>
-      </div>
-    </div>
+  <hr>
+
+  <%= render partial: "video", locals: {
+    headline: 'Editar un producto',
+    gif: "4.gif",
+    recommendations: [
+      'Puedes ir actualizando la cantidad de productos que tienes disponibles.',
+      'Añade información que consideres necesaria',
+      'Cuando eliminas un producto toda la información de este se pierde.'
+    ],
+    steps: [
+      'Selecciona la opción \'Ver productos\'',
+      'Elige el producto que desees editar',
+      'Edita la información del producto',
+      'Guarda'
+    ]
+  } %>
+
+  <hr>
+
+  <%= render partial: "video", locals: {
+    headline: 'Editar tu cuenta',
+    gif: "5.gif",
+    recommendations: [
+      'Siempre verifica la información de contacto que actualizaste.'
+    ],
+    steps: [
+      'Selecciona la opción \'Editar mi información\'',
+      'Edita la información que desees',
+      'Guarda'
+    ]
+  } %>
+
 </section>
