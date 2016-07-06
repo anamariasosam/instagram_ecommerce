@@ -1,13 +1,11 @@
-
-<section class="app__registration_container section wrapper special">
-  <div class="inner">
-    <header class="major">
-      <h2>Iniciar Sesión</h2>
-    </header>
-
-    <div class="app__registration_form">
-      <%= render "devise/shared/links" %>
-    </div>
-
+<header class="sectionHero">
+  <div class="container">
+    <h2>Iniciar Sesión</h2>
   </div>
+</header>
+
+<section class="container">
+  <%= link_to user_omniauth_authorize_path(:instagram) do %>
+  <i class="fa fa-instagram" aria-hidden="true"></i> Ingresar con Instagram
+  <% end %>
 </section>
