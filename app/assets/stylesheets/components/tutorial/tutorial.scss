@@ -24,9 +24,9 @@
   }
 
   &__headline {
-    text-transform: inherit;
     font-weight: bold;
     margin-bottom: 20px;
+    text-align: center;
 
     &.invisble {
       opacity: 0;
