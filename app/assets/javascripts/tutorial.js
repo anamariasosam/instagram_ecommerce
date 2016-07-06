@@ -12,7 +12,7 @@ var viewportOptions = {
 }
 
 $(document).on('ready page:change page:load', function() {
-  $('.tutorial__instructions').viewportChecker(viewportOptions);
-  $('.tutorial__headline').viewportChecker($.extend( viewportOptions, {offset: '5%'} ));
-  $('.tutorial__video').viewportChecker($.extend( viewportOptions, {offset: '20%'} ));
+  $('.js_tutHeadline').viewportChecker(viewportOptions);
+  $('.js_tutVideo').viewportChecker($.extend( viewportOptions, {offset: '5%'} ));
+  $('.js_tutInstructions').viewportChecker($.extend( viewportOptions, {offset: '20%'} ));
 });

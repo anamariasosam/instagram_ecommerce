@@ -1,24 +1,24 @@
 <div class="tutorial row">
-  <h2 class="tutorial__headline invisible text-center"><%= headline %></h2>
+  <h2 class="tutorial__headline js_tutHeadline invisible text-center"><%= headline %></h2>
 
-  <div class="tutorial__video invisible col-xs-12 col-sm-6">
+  <div class="tutorial__video js_tutVideo invisible col-xs-12 col-sm-6">
     <%= image_tag "iphone.png", class: "tutorial__frame" %>
     <%= image_tag gif, class: "tutorial__gif" %>
   </div>
 
-  <div class="tutorial__instructions invisible col-xs-12 col-sm-6 ">
+  <div class="tutorial__instructions js_tutInstructions invisible col-xs-12 col-sm-6 ">
 
     <h4 class="tutorial__subtitle">Recomendaciones:</h4>
     <ul>
       <% recommendations.each do |recommendation| %>
-        <li class="tutorial__itemz"><%= recommendation %></li>
+        <li><%= recommendation %></li>
       <% end %>
     </ul>
 
     <h4 class="tutorial__subtitle">Pasos:</h4>
     <ul>
       <% steps.each do |step| %>
-        <li class="tutorial__itemz"><%= step %></li>
+        <li><%= step %></li>
       <% end %>
     </ul>
   </div>
