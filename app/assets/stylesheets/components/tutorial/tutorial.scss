@@ -72,7 +72,9 @@
   }
 
   &__video {
+    
     height: 630px;
+
     &.even {
       @include respond-to(xl){
         float: right;
@@ -86,6 +88,7 @@
         float: right;
       };
     }
+
     &.invisble {
       opacity: 0;
     }
@@ -93,9 +96,11 @@
     &.visible {
       animation: tutorialFade 600ms;
     }
+
     &--frame {
       position: absolute;
     }
+
     &--content {
       left: 21px;
       position: relative;
