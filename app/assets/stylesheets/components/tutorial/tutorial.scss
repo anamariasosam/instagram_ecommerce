@@ -2,17 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .tutorial {
-  &__container {
-    margin-top: 50px;
+  $root: &;
+  // container in BEM is the block itself
+  margin-top: 50px;
+
+  &:nth-child(4n-1) {
+    #{$root}__video {
+      float: right !important;
+    }
+  }
+
+  &__frame {
+    position: absolute;
+  }
+
+  &__gif {
+    left: 21px;
+    position: relative;
+    top: 74px;
+    width: 257px;
+  }
+
+  &__headline {
+    text-transform: inherit;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+    &.invisble {
+      opacity: 0;
+    }
+
+    &.visible {
+      animation: tutorialFade 400ms;
+    }
   }
 
   &__instructions {
-    @media (min-width: 640px) {
-      position: relative;
-      min-height: 1px;
-      float: right;
-      width: 50%;
-    }
+
+    margin-top: 10%;
+
+    @include respond-to(s) {
+      margin-top: 0;
+    };
+
+    @include respond-to(xs) {
+      margin-top: 0;
+    };
 
     &.invisble {
       opacity: 0;
@@ -21,73 +56,25 @@
     &.visible {
       animation: tutorialFade 800ms 100ms backwards;
     }
-
-    &_headline {
-      text-transform: inherit;
-      font-weight: bold;
-      margin-bottom: 20px;
-
-      &.invisble {
-        opacity: 0;
-      }
-
-      &.visible {
-        animation: tutorialFade 400ms;
-      }
-    }
-
-    &_text {
-      text-align: left;
-    }
-
-    &_subtitle {
-      font-weight: bold;
-      text-transform: inherit;
-      text-align: left;
-      font-size: 1.15em;
-      margin-top: 20px;
-    }
   }
 
-  &__headline {
-    font-size: 2.1em;
+  &__item {
+    text-align: left;
+    list-style-position: inside;
   }
 
-  &__video_container {
-
-    @media (min-width: 640px) {
-      float: left;
-      width: 50%;
-      position: relative;
-      min-height: 1px;
-      padding-left: 5%;
-      padding-right: 5%;
-
-      @media (min-width: 640px) {
-        &.even {
-          float: right;
-        }
-      }
-    }
+  &__subtitle {
+    font-weight: bold;
+    font-size: 1.15em;
+    margin-top: 20px;
+    text-transform: inherit;
+    text-align: left;
   }
 
   &__video {
-    
+
     height: 630px;
-
-    &.even {
-      @include respond-to(xl){
-        float: right;
-      };
-
-      @include respond-to(l){
-        float: right;
-      };
-
-      @include respond-to(m){
-        float: right;
-      };
-    }
+    text-align: center;
 
     &.invisble {
       opacity: 0;
@@ -96,19 +83,7 @@
     &.visible {
       animation: tutorialFade 600ms;
     }
-
-    &--frame {
-      position: absolute;
-    }
-
-    &--content {
-      left: 21px;
-      position: relative;
-      top: 74px;
-      width: 257px;
-    }
   }
-
 }
 
 @keyframes tutorialFade {
