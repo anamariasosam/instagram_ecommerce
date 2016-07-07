@@ -13,14 +13,12 @@
   }
 
   &__frame {
-    position: absolute;
-  }
-
-  &__gif {
-    left: 21px;
+    background-image: image-url("iphone.png");
+    height: 605px;
+    padding: 76px 18px 70px 22px;
     position: relative;
-    top: 74px;
-    width: 257px;
+    top: 10px;
+    width: 296px;
   }
 
   &__headline {
