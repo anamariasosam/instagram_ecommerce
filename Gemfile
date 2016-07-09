@@ -82,3 +82,4 @@ gem 'rails_12factor', group: :production
 gem 'lightbox2-rails'
 gem 'modernizr-rails'
 gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'newrelic_rpm'
