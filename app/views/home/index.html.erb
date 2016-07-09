@@ -1,3 +1,18 @@
+<% content_for :meta_tags do %>
+  <meta property="og:url"                  content="<%= request.original_url %>" />
+  <meta property="og:type"                 content="article" />
+  <meta property="og:title"                content="Catlog.co" />
+  <meta property="og:site_name"            content="Catlog" />
+  <meta property="og:description"          content="<%= t 'web.description' %>" />
+  <meta property="og:image"                content="logo.png" />
+
+  <meta name="twitter:card"         content="summary" />
+  <meta name="twitter:site"         content="@catlog_co" />
+  <meta name="twitter:title"        content="catlog.co" />
+  <meta name="twitter:description"  content="<%= t 'web.description' %>" />
+  <meta name="twitter:image"        content="logo.png" />
+<% end %>
+
 <%= render "components/intro" %>
 <%= render "components/recent" %>
 <%= render "components/about" %>
