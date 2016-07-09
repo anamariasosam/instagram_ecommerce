@@ -183,6 +183,7 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     nenv (0.2.0)
+    newrelic_rpm (3.16.0.318)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     normalize-rails (3.0.3)
@@ -349,6 +350,7 @@ DEPENDENCIES
   kaminari
   lightbox2-rails
   modernizr-rails
+  newrelic_rpm
   normalize-rails
   omniauth-instagram
   pg
