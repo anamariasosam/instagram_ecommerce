@@ -3,11 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-
 gem 'devise'
-
 gem 'rename'
-
 gem 'phonelib'
 
 # Style plugins
@@ -16,7 +13,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-rails'
 gem 'normalize-rails'
 gem "autoprefixer-rails"
-
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -36,6 +32,12 @@ gem 'kaminari'
 
 # Text Editor
 gem 'trix'
+
+gem 'pg'
+gem 'lightbox2-rails'
+gem 'modernizr-rails'
+gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'newrelic_rpm'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -58,6 +60,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'foreman'
@@ -75,11 +78,5 @@ group :development do
   gem 'spring'
 end
 
-gem 'pg'
 gem 'puma', group: :production
 gem 'rails_12factor', group: :production
-
-gem 'lightbox2-rails'
-gem 'modernizr-rails'
-gem 'activeadmin', '~> 1.0.0.pre2'
-gem 'newrelic_rpm'
