@@ -358,6 +358,7 @@ DEPENDENCIES
   guard-livereload
   hstore_accessor
   high_voltage
+  hstore_accessor
   instagram
   jbuilder (~> 2.0)
   jquery-rails

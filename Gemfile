@@ -33,7 +33,9 @@ gem 'kaminari'
 # Text Editor
 gem 'trix'
 
+# Postgres
 gem 'pg'
+
 gem 'lightbox2-rails'
 gem 'modernizr-rails'
 gem 'activeadmin', '~> 1.0.0.pre2'
