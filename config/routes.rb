@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'categories/:id', to: 'categories#show', as: 'category'
   get '/:id' => "shortener/shortened_urls#show"
+  get 'users/oauth_failure'
   get 'catalog/view'
   get 'home/index'
   get 'legal/privacy_policy'
