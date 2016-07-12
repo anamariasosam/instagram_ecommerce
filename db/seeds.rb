@@ -7,13 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Product.destroy_all
+id = User.first.id
 puts 'destroying data...'
 for i in 0..100
   puts "Creating product #{i}"
   product = Product.create(
       instagram_image: 'http://lorempixel.com/400/400',
       price: rand(1000..1000000),
-      user_id: 1,
+      user_id: id,
       quantity: rand(19),
       description: 'Lorem ipsum dolor sit amet doloribus, minus repellat quo optio asperiores ullam aliquam.',
       product_name: "Product #{i}",
@@ -21,4 +22,4 @@ for i in 0..100
       category_id: 1
     )
 end
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
