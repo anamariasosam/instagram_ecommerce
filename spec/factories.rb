@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :customer do
+    
+  end
+  factory :store do
+    
+  end
   factory :product do
     product_name "mani rosado"
     price 1000
