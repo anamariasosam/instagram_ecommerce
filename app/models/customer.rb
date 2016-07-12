@@ -1,4 +1,7 @@
 class Customer < User
   hstore_accessor :details,
-  country: :string
+  country: :string,
+  state: :string,
+  full_name: :string,
+  address: :text
 end
