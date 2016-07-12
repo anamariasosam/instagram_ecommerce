@@ -1,0 +1,17 @@
+<header class="sectionHero">
+  <div class="container">
+    <h2>Lista de Espera</h2>
+  </div>
+</header>
+<section class="container">
+  <% if current_user.pilot? %>
+    <p>
+      ¡La espera terminó!
+    </p>
+    <%= link_to "Comenzar", users_dashboard_path %>
+  <% else %>
+  <p>
+    Acutalmente te encuentras en lista de espera.
+  </p>
+  <% end %>
+</section>
