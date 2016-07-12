@@ -88,16 +88,16 @@ ActiveRecord::Schema.define(version: 20160712173643) do
     t.string   "phone_number"
     t.string   "address"
     t.text     "delivery_info"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "instagram_id"
     t.string   "store_image"
     t.string   "email",                  default: ""
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20160712173643) do
     t.string   "provider"
     t.string   "uid"
     t.string   "slug"
-    t.boolean  "pilot"
+    t.boolean  "pilot",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
