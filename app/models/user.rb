@@ -11,9 +11,9 @@ class User < ActiveRecord::Base
           omniauth_providers: [:instagram]
 
   has_many :products, dependent: :destroy
-  validates :email, uniqueness: true, allow_blank: true, allow_nil: true
-  validates_presence_of :store_name, :email, :phone_number, :on => :update
-  validates :phone_number, phone: { possible: true, types: :mobile } , :on => :update
+  # validates :email, uniqueness: true, allow_blank: true, allow_nil: true
+  # validates_presence_of :store_name, :email, :phone_number, :on => :update
+  # validates :phone_number, phone: { possible: true, types: :mobile } , :on => :update
 
   def to_param
     slug
