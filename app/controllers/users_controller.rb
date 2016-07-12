@@ -9,13 +9,13 @@ class UsersController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @user }
     end
-
   end
 
   def oauth_failure
   end
 
   def suscribe
+    @waiting_users = User.where(pilot: false).all.count
   end
 
   def dashboard
@@ -50,11 +50,5 @@ class UsersController < ApplicationController
       else
         redirect_to edit_user_registration_path
       end
-    else
-
-
-
-
-
   end
 end
