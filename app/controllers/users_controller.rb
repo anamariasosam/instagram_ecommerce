@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def suscribe
+    @waiting_users = User.where(pilot: false).all.count
   end
 
   def dashboard
@@ -40,11 +41,5 @@ class UsersController < ApplicationController
       else
         redirect_to edit_user_registration_path
       end
-    else
-
-
-
-
-
   end
 end
