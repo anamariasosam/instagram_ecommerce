@@ -83,13 +83,17 @@
             <% else %>
             <ul class="dropdown-menu">
               <li id="add__product_path">
-                <%= link_to "Status", users_suscribe_path %>
+                <%= link_to users_suscribe_path do %>
+                  <span class="glyphicon glyphicon-stats"></span>
+                  Estado
+                <% end %>
               </li>
               <li>
                 <%= link_to(destroy_user_session_path, method: :delete) do %>
                   <span class="glyphicon glyphicon-off"></span>
                   Cerrar Sesión
                 <% end %>
+
               </li>
               </ul>
             <% end %>
