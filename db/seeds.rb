@@ -6,17 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Product.destroy_all
-# puts 'destroying data...'
-# for i in 0..9
-#   puts "Creating product #{i}"
-#   product = Product.create(
-#       instagram_image: 'http://lorempixel.com/400/400',
-#       price: rand(1000..1000000),
-#       user_id: 1,
-#       quantity: 2,
-#       description: 'Lorem ipsum dolor sit amet doloribus, minus repellat quo optio asperiores ullam aliquam.',
-#       product_name: "Camisa #{i}"
-#     )
-# end
+Product.destroy_all
+puts 'destroying data...'
+for i in 0..100
+  puts "Creating product #{i}"
+  product = Product.create(
+      instagram_image: 'http://lorempixel.com/400/400',
+      price: rand(1000..1000000),
+      user_id: 1,
+      quantity: rand(19),
+      description: 'Lorem ipsum dolor sit amet doloribus, minus repellat quo optio asperiores ullam aliquam.',
+      product_name: "Product #{i}",
+      photo_id: '1279792922464486905_2129469216',
+      category_id: 1
+    )
+end
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
