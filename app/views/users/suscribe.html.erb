@@ -11,7 +11,9 @@
     <%= link_to "Comenzar", users_dashboard_path %>
   <% else %>
   <p>
-    Acutalmente te encuentras en lista de espera.
+    Estás a punto de comenzar la mejor experiencia de venta a través de Instagram. Actualmente te encuentras en lista de espera.
+    Turno de espera: <%= current_user.id %>
+    Total de usuarios en espera: <%= @waiting_users %>
   </p>
   <% end %>
 </section>
