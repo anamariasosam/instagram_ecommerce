@@ -12,6 +12,9 @@ class UsersController < ApplicationController
 
   end
 
+  def oauth_failure
+  end
+
   def dashboard
 
       if current_user.user_token?
