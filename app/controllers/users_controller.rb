@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 
   before_filter :authenticate_user!, :only => [:dashboard]
 
+  def oauth_failure
+  end
+
   def dashboard
 
       if current_user.user_token?
