@@ -55,6 +55,7 @@
         <% if session['super_token'] %> <br>
           <%= f.hidden_field :user_token, value: session['super_token'] %>
         <% end %>
+          <%= f.hidden_field :waiting_position, value: User.where(pilot: false).all.count %>
       </table>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
