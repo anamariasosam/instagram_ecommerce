@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :authenticate_user!, :only => [:dashboard]
+  before_filter :authenticate_user!, :only => [:dashboard, :suscribe]
 
   def show
     @user = User.find_by(slug: params[:id])
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def suscribe
     @waiting_users = User.where(pilot: false).all.count
+    @waiting_position = current_user.waiting_position
   end
 
   def dashboard

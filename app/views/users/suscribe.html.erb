@@ -26,7 +26,7 @@
               Actualmente te encuentras en lista de espera.
             </h4>
             <p class="subscribe__body">Ideamos esta forma de inscripción para darte un servicio e-commerce de clase mundial, estamos llenando las reservaciones en el orden de entrada y trabando muy duro para aceptar a todos los usuarios rápidamente.</p>
-            <h3 class="subscribe__waiting"><i class="subscribe__icon fa fa-inbox" aria-hidden="true"></i> Turno de espera: <%= current_user.id %> </h3>
+            <h3 class="subscribe__waiting"><i class="subscribe__icon fa fa-inbox" aria-hidden="true"></i> Turno de espera: <%= @waiting_position %> </h3>
           </div>
         </div>
       </section>
@@ -36,8 +36,11 @@
         <br>
         <br>
         <h4>¿Cúanto tengo qué esperar?</h4>
-        <p>No podemos decirte específicamente cuanto tiempo pero podemos asegurarte que más temprano que tarde vas a saber mucho de nuestra marca. <span class="subscribe__waitingUsers">
-          El total de espera es <%= @waiting_users %> Usuario(s). </p>
+        <p>No podemos decirte específicamente cuanto tiempo pero podemos asegurarte que pronto vas a saber mucho de nuestra marca. <span class="subscribe__waitingUsers">
+          Actualmente tenemos <%= @waiting_users %>
+          <%= "usuario".pluralize(@waiting_users) %>
+          en espera.
+        </p>
         </span>
       </div>
     </div>
