@@ -48,8 +48,8 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="user_path">
               <i class="fa fa-user" aria-hidden="true"></i> Opciones
             </a>
-
-            <ul class="dropdown-menu">
+            <% if current_user.pilot? %>
+              <ul class="dropdown-menu">
                 <li id="add__product_path">
                   <%= link_to users_dashboard_path, class: 'js_addNewProduct navbar__adminItem' do %>
                     <span class="glyphicon glyphicon-plus"></span>
@@ -80,6 +80,23 @@
 
               </ul>
             </li>
+            <% else %>
+            <ul class="dropdown-menu">
+              <li id="add__product_path">
+                <%= link_to users_suscribe_path do %>
+                  <span class="glyphicon glyphicon-stats"></span>
+                  Estado
+                <% end %>
+              </li>
+              <li>
+                <%= link_to(destroy_user_session_path, method: :delete) do %>
+                  <span class="glyphicon glyphicon-off"></span>
+                  Cerrar Sesión
+                <% end %>
+
+              </li>
+              </ul>
+            <% end %>
           <% else %>
           <li>
             <%= link_to user_omniauth_authorize_path(:instagram) do %>

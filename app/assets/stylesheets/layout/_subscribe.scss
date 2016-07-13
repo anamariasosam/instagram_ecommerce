@@ -1,0 +1,55 @@
+.subscribe {
+  &__deck {
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  &__headline {
+    font-weight: bold;
+    line-height: 1.4;
+  }
+
+  &__hero {
+    background-image: asset-url('subscribe/hero.png'), asset-url('subscribe/index2_bg.jpg');
+    background-size: auto 90%, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 54vw bottom, center;
+    color: #fff;
+    padding-top: 100px;
+
+    @include respond-to (s) {
+      background-image: asset-url('subscribe/index2_bg.jpg');
+      background-size: cover;
+      background-position: center;
+    };
+
+    @include respond-to (xs) {
+      background-image: asset-url('subscribe/index2_bg.jpg');
+      background-size: cover;
+      background-position: center;
+    };
+
+  }
+
+  &__icon {
+    color: darken(#49c5c5, 5%);
+  }
+
+  &__waiting {
+    background-color: #222;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 18px;
+    padding: 12px 25px;
+    text-shadow: 1px 2px 2px black;
+    margin-bottom: 100px;
+  }
+
+  &__waitingUsers {
+    color: #555;
+    border-bottom: 1px solid crimson;
+    font-weight: bold;
+  }
+
+}

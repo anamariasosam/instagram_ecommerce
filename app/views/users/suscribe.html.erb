@@ -1,0 +1,48 @@
+<div class="subscribe">
+  <% if current_user.pilot? %>
+    <div class="subscribe__hero">
+      <section class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2 class="subscribe__headline">
+              ¡La espera terminó!
+            </h2>
+            <h3 class="subscribe__waiting">
+              <%= link_to "Comenzar", users_dashboard_path %>
+            </h3>
+          </div>
+        </div>
+      </section>
+    </div>
+  <% else %>
+    <div class="subscribe__hero">
+      <section class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2 class="subscribe__headline">
+              Estás a punto de comenzar la mejor experiencia de venta a través de Instagram.
+            </h2>
+            <h4 class="subscribe__deck">
+              Actualmente te encuentras en lista de espera.
+            </h4>
+            <p class="subscribe__body">Ideamos esta forma de inscripción para darte un servicio e-commerce de clase mundial, estamos llenando las reservaciones en el orden de entrada y trabando muy duro para aceptar a todos los usuarios rápidamente.</p>
+            <h3 class="subscribe__waiting"><i class="subscribe__icon fa fa-inbox" aria-hidden="true"></i> Turno de espera: <%= @waiting_position %> </h3>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="container subscribe__why">
+      <div class="col-sm-6 col-sm-offset-3">
+        <br>
+        <br>
+        <h4>¿Cúanto tengo qué esperar?</h4>
+        <p>No podemos decirte específicamente cuanto tiempo pero podemos asegurarte que pronto vas a saber mucho de nuestra marca. <span class="subscribe__waitingUsers">
+          Actualmente tenemos <%= @waiting_users %>
+          <%= "usuario".pluralize(@waiting_users) %>
+          en espera.
+        </p>
+        </span>
+      </div>
+    </div>
+  <% end %>
+</div>

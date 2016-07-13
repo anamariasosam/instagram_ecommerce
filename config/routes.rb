@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :users, :path => 'store', :only => [:show]
 
   get 'categories/:id', to: 'categories#show', as: 'category'
+  get "users/suscribe"
   get '/:id' => "shortener/shortened_urls#show"
   get 'users/oauth_failure'
   get 'catalog/view'
@@ -21,5 +22,6 @@ Rails.application.routes.draw do
   get 'users/dashboard'
   get 'tutorial/index'
   post 'products/new'
+
 
 end
