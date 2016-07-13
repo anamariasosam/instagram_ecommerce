@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 20160716000904) do
     t.string   "city"
     t.string   "country"
     t.boolean  "pilot",                  default: false
+    t.integer  "waiting_position"
   end
 
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
