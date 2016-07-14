@@ -42,9 +42,11 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+
     if current_user.pilot?
       @product = Product.new(product_params)
-      @product.user_id = current_user.id
+      @product.store_id = current_user.id
+
       respond_to do |format|
         if @product.save
           format.html { redirect_to @product, notice: "El producto ha sido creado exitosamente.<br>
