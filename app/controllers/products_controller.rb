@@ -58,7 +58,6 @@ class ProductsController < ApplicationController
     else
       redirect_to users_suscribe_path
     end
-
   end
 
   # PATCH/PUT /products/1
