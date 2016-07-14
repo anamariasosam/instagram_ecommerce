@@ -3,5 +3,5 @@ class Customer < User
   country: :string,
   state: :string,
   full_name: :string,
-  address: :text
+  address: :string
 end
