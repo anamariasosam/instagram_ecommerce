@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, :only => [:dashboard]
 
   def show
-    @user = User.find_by(slug: params[:id])
-    @products = @user.products.page(params[:page]).per(24).order('created_at DESC')
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
-    end
+    # @user = User.find_by(slug: params[:id])
+    # @products = @user.products.page(params[:page]).per(24).order('created_at DESC')
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.json { render json: @user }
+    # end
 
   end
 
