@@ -11,11 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160716000904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
+=======
+ActiveRecord::Schema.define(version: 20160713232351) do
+>>>>>>> [edit] database schema
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160716000904) do
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
+  add_index "products", ["store_id"], name: "index_products_on_store_id", using: :btree
 
   create_table "shortened_urls", force: :cascade do |t|
     t.integer  "owner_id"
@@ -132,6 +137,11 @@ ActiveRecord::Schema.define(version: 20160716000904) do
   add_index "users", ["slug"], name: "index_users_on_slug", using: :btree
 
   add_foreign_key "products", "categories"
+<<<<<<< HEAD
   add_foreign_key "products", "users", column: "store_id"
 
+=======
+  add_foreign_key "products", "stores"
+  add_foreign_key "products", "users"
+>>>>>>> [edit] database schema
 end
