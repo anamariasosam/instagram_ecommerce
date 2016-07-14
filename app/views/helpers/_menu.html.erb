@@ -99,7 +99,7 @@
             <% end %>
           <% else %>
           <li>
-            <%= link_to user_omniauth_authorize_path(:instagram) do %>
+            <%= link_to user_omniauth_authorize_path(:instagram, model: 'store') do %>
             <i class="fa fa-instagram" aria-hidden="true"></i> Ingresar con Instagram
             <% end %>
           </li>
