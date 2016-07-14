@@ -37,8 +37,6 @@ class UsersController < ApplicationController
         else
           redirect_to users_suscribe_path
         end
-
-
       else
         redirect_to edit_user_registration_path
       end
