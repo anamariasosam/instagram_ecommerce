@@ -9,7 +9,7 @@
   <div class="registration_form">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
-
+      <%= @user.type %>
       <table class="table stores__form">
         <tr>
           <td class="stores__form-data">
@@ -60,6 +60,9 @@
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
+
+      <%# f.label "Nombre" %>
+      <%# f.text_area :name, class: 'form-control' %>
 
       <p class="help-block">(*) Campos obligatorios</p>
 
