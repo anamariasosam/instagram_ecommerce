@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715152341) do
+ActiveRecord::Schema.define(version: 20160715165620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,11 +56,6 @@ ActiveRecord::Schema.define(version: 20160715152341) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "customers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.string   "product_name"
     t.integer  "price"
@@ -72,11 +67,9 @@ ActiveRecord::Schema.define(version: 20160715152341) do
     t.string   "photo_id"
     t.integer  "user_id"
     t.integer  "category_id",     default: 1
-    t.integer  "store_id"
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
-  add_index "products", ["store_id"], name: "index_products_on_store_id", using: :btree
   add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
 
   create_table "shortened_urls", force: :cascade do |t|
@@ -94,22 +87,16 @@ ActiveRecord::Schema.define(version: 20160715152341) do
   add_index "shortened_urls", ["unique_key"], name: "index_shortened_urls_on_unique_key", unique: true, using: :btree
   add_index "shortened_urls", ["url"], name: "index_shortened_urls_on_url", using: :btree
 
-  create_table "stores", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "store_name"
     t.string   "phone_number"
-    t.string   "address"
     t.text     "delivery_info"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "instagram_id"
-    t.string   "store_image"
-    t.string   "email",                  default: ""
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "image"
+    t.string   "email",                             default: ""
+    t.string   "encrypted_password",                default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -128,12 +115,12 @@ ActiveRecord::Schema.define(version: 20160715152341) do
     t.string   "type",                   limit: 15
     t.hstore   "details"
     t.string   "city"
+    t.string   "country"
   end
 
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["slug"], name: "index_users_on_slug", using: :btree
 
   add_foreign_key "products", "categories"
-  add_foreign_key "products", "stores"
   add_foreign_key "products", "users"
 end
