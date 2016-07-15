@@ -13,14 +13,15 @@
 #  photo_id        :string
 #  user_id         :integer
 #  category_id     :integer          default(1)
-#  store_id        :integer
 #
 
 class Product < ActiveRecord::Base
   after_create :magic
+
   has_shortened_urls
-  belongs_to :user
+
   belongs_to :category
+  
   validates_presence_of :instagram_image,
                         :price,
                         :description,
@@ -30,13 +31,15 @@ class Product < ActiveRecord::Base
   validates :description, length: { maximum: 500 }
   validates_length_of :product_name, :maximum => 40
 
-  def slug
-    user.store_account.downcase.gsub(" ", "-") + "_"  + product_name.downcase.gsub(" ", "-")
-  end
+  belongs_to :store
 
-  def to_param
-    "#{id}-#{slug}"
-  end
+  # def slug
+  #   user.name.downcase.gsub(" ", "-") + "_"  + product_name.downcase.gsub(" ", "-")
+  # end
+  #
+  # def to_param
+  #   "#{id}-#{slug}"
+  # end
 
   private
     def magic

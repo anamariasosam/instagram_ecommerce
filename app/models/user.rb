@@ -5,12 +5,11 @@
 #  id                     :integer          not null, primary key
 #  store_name             :string
 #  phone_number           :string
-#  address                :string
 #  delivery_info          :text
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  instagram_id           :string
-#  store_image            :string
+#  image                  :string
 #  email                  :string           default("")
 #  encrypted_password     :string           default(""), not null
 #  reset_password_token   :string
@@ -29,6 +28,7 @@
 #  type                   :string(15)
 #  details                :hstore
 #  city                   :string
+#  country                :string
 #
 
 class User < ActiveRecord::Base
@@ -44,9 +44,9 @@ class User < ActiveRecord::Base
           omniauth_providers: [:instagram]
 
   validates :email, uniqueness: true, allow_blank: true, allow_nil: true
-  validates_presence_of :store_name, :email, :phone_number, :on => :update
+  validates_presence_of :city, :country,:email, :phone_number, :on => :update
   validates :phone_number, phone: { possible: true, types: :mobile } , :on => :update
-
+  
   def to_param
     slug
   end
