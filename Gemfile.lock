@@ -144,6 +144,7 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (3.4.4)
+    high_voltage (3.0.0)
     hitimes (1.2.3)
     hstore_accessor (1.0.3)
       activerecord (>= 4.0.0)
@@ -356,6 +357,7 @@ DEPENDENCIES
   foreman
   guard-livereload
   hstore_accessor
+  high_voltage
   instagram
   jbuilder (~> 2.0)
   jquery-rails
