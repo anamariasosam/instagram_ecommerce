@@ -20,8 +20,6 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'legal/privacy_policy'
   get 'users/dashboard'
-  get 'tutorial/index'
   post 'products/new'
-
 
 end
