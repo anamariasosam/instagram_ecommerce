@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :customer do
-    
+
   end
   factory :store do
-    
+
   end
   factory :product do
     product_name "mani rosado"
@@ -19,10 +19,9 @@ FactoryGirl.define do
   factory :user do
     store_name '@anasosam23'
     phone_number '1234567890'
-    address 'fasfasdf'
     delivery_info 'fasdfasd'
     instagram_id 'fsad86fs9a87'
-    store_image 'fasdf'
+    image 'fasdf'
     email 'ana@ama.com'
     encrypted_password '11111'
     user_token '22222'
