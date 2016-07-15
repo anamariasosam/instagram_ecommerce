@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'categories/:id', to: 'categories#show', as: 'category'
   get 'store/:id', to: 'stores#show', as: 'store'
   get "users/suscribe"
+  get 'store/:id', to: 'stores#show', as: 'store'
   get '/:id' => "shortener/shortened_urls#show"
   get 'users/oauth_failure'
   get 'catalog/view'
