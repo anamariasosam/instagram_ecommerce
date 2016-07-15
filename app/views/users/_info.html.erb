@@ -1,7 +1,7 @@
 <div class="col-sm-3 text-center">
   <div class="store__info">
     <span class="app__bold-text">Correo Electrónico</span> <br>
-    <%= mail_to @user.email %>
+    <%= mail_to @store.email %>
   </div>
 </div>
 
@@ -9,8 +9,8 @@
   <div class="store__info">
     <span class="app__bold-text">Celular</span> <br>
     <span id="phone_number">
-      <a href="tel:<%= number_to_phone(@user.phone_number) %>" class="track" data-track='tel'>
-        <%= number_to_phone(@user.phone_number) %>
+      <a href="tel:<%= number_to_phone(@store.phone_number) %>" class="track" data-track='tel'>
+        <%= number_to_phone(@store.phone_number) %>
       </a>
     </span>
   </div>
@@ -19,13 +19,13 @@
 <div class="col-sm-3 text-center">
   <div class="store__info">
     <span class="app__bold-text">Instagram</span> <br>
-    <a href="https://www.instagram.com/<%= @user.store_account %>" target="_blank"><%= @user.store_account %></a>
+    <a href="https://www.instagram.com/<%= @store.store_account %>" target="_blank"><%= @store.store_account %></a>
   </div>
 </div>
 
 <div class="col-sm-3 text-center">
-  <div class="store__info"><% if @user.address? %>
-      <span class="app__bold-text">Dirección</span> <br>
-      <%= @user.address %>
+  <div class="store__info"><% if @store.city? %>
+      <span class="app__bold-text">Ubicación</span> <br>
+      <%= @store.city %> - <%= @store.country %>
     <% end %></div>
 </div>
