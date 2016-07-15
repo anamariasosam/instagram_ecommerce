@@ -5,8 +5,8 @@
   </header>
 
   <div class="row text-center">
-    <% @users.each do |user| %>
-      <% if user.store_name? && user.products.count > 0 %>
+    <% @stores.each do |user| %>
+      <% if user.store_name? and && user.products.count > 0%>
         <figure class="app__partners-figure col-xs-6 col-sm-4 col-md-3">
           <%= link_to user do %>
             <img src="<%= user.store_image %>" class="img-circle app__partners-img" alt="catlog, aliados, <%= user.store_name%>">
