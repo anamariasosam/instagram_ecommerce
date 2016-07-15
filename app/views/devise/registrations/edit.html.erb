@@ -9,15 +9,17 @@
   <div class="registration_form">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
-      <%= @user.type %>
+
       <table class="table stores__form">
         <tr>
-          <td class="stores__form-data">
-            <div class="form-group">
-              <%= f.label "Nombre de la Tienda*" %> <br>
-              <%= f.text_field :store_name, autofocus: true, class: 'form-control' %>
-            </div>
-          </td>
+          <% if @user.type == "Store" %>
+            <td class="stores__form-data">
+              <div class="form-group">
+                <%= f.label "Nombre de la Tienda*" %> <br>
+                <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+              </div>
+            </td>
+          <% end %>
 
           <td class="stores__form-data">
             <div class="form-group">
@@ -30,17 +32,22 @@
         <tr>
           <td class="stores__form-data">
             <div class="form-group">
-              <%= f.label "Dirección" %>
-              <%= f.text_area :address, class: 'form-control' %>
-
+              <%= f.label "Ciudad" %>
+              <%= f.text_field :city, class: 'form-control' %>
             </div>
-          </td>
-          <td rowspan="2" class="stores__form-data">
             <div class="form-group">
-              <%= f.label "Información adicional" %> <br>
-              <%= f.text_area :delivery_info, rows: 7, class: 'form-control' %>
+              <%= f.label "País" %>
+              <%= f.text_field :country, class: 'form-control' %>
             </div>
           </td>
+          <% if @user.type == "Store" %>
+            <td rowspan="2" class="stores__form-data">
+              <div class="form-group">
+                <%= f.label "Información adicional" %> <br>
+                <%= f.text_area :info, rows: 9, class: 'form-control' %>
+              </div>
+            </td>
+          <% end %>
         </tr>
 
         <tr>
