@@ -5,12 +5,11 @@
 #  id                     :integer          not null, primary key
 #  store_name             :string
 #  phone_number           :string
-#  address                :string
 #  delivery_info          :text
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  instagram_id           :string
-#  store_image            :string
+#  image                  :string
 #  email                  :string           default("")
 #  encrypted_password     :string           default(""), not null
 #  reset_password_token   :string
@@ -29,12 +28,15 @@
 #  type                   :string(15)
 #  details                :hstore
 #  city                   :string
+#  country                :string
 #
 
 class Store < User
+  has_many :products
+
   hstore_accessor :details,
   name: :string,
   info: :string
-
-  has_many :products, dependent: :destroy
+  
+  validates_presence_of :name, on: :update
 end
