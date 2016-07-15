@@ -1,4 +1,5 @@
 class StoresController < ApplicationController
+  
   def show
     @store = Store.find_by(slug: params[:id])
     @products = @store.products.page(params[:page]).per(24).order('created_at DESC')
