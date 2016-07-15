@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id              :integer          not null, primary key
+#  product_name    :string
+#  price           :integer
+#  quantity        :integer
+#  instagram_image :string
+#  description     :text
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  photo_id        :string
+#  user_id         :integer
+#  category_id     :integer          default(1)
+#  store_id        :integer
+#
+
 class Product < ActiveRecord::Base
   after_create :magic
   has_shortened_urls
