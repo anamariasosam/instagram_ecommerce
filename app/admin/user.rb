@@ -2,8 +2,7 @@ ActiveAdmin.register User do
   permit_params(
     :store_name,
     :phone_number,
-    :address,
-    :store_image,
+    :image,
     :delivery_info,
     :email,
     # only on a very specific and verified case
