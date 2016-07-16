@@ -5,7 +5,7 @@ class CatalogController < ApplicationController
     @products = Product
                           .page(params[:page])
                           .per(12)
-                          .order('user_id asc')
+                          .order('store_id asc')
                           .order('created_at DESC')
   end
 end

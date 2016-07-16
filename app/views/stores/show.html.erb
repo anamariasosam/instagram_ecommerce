@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-5 col-sm-offset-1">
-        <img src="<%= @store.image %>" class="" alt="<%=  @store.store_name %>">
+        <img src="<%= @store.image %>" class="" alt="<%=  @store.name %>">
         <h2 class="app__list-headline">
           <%= @store.name %>
           <% if current_user %>
@@ -33,11 +33,11 @@
 <section class="container">
 
   <div class="row">
-    <%# render @products %>
+    <%= render @products %>
   </div>
 
   <div class="paginator text-center">
-    <%# paginate @products %>
+    <%= paginate @products %>
   </div>
 
 </section>
