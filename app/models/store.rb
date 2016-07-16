@@ -32,11 +32,11 @@
 #
 
 class Store < User
-  has_many :products
+  has_many :products, dependent: :destroy
 
   hstore_accessor :details,
   name: :string,
   info: :string
-  
+
   validates_presence_of :name, on: :update
 end
