@@ -69,11 +69,12 @@ ActiveRecord::Schema.define(version: 20160716000904) do
     t.datetime "updated_at",                  null: false
     t.string   "photo_id"
     t.integer  "category_id",     default: 1
+    t.integer  "store_id"
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
-  add_index "products", ["store_id"], name: "index_products_on_store_id", using: :btree
 
+  add_index "products", ["store_id"], name: "index_products_on_store_id", using: :btree
 
   create_table "shortened_urls", force: :cascade do |t|
     t.integer  "owner_id"
@@ -129,10 +130,6 @@ ActiveRecord::Schema.define(version: 20160716000904) do
   add_index "users", ["slug"], name: "index_users_on_slug", using: :btree
 
   add_foreign_key "products", "categories"
-<<<<<<< HEAD
   add_foreign_key "products", "users", column: "store_id"
 
-=======
-  add_foreign_key "products", "users"
->>>>>>> [add] new country to user and new schema
 end
