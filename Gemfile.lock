@@ -146,6 +146,8 @@ GEM
     hashie (3.4.4)
     high_voltage (3.0.0)
     hitimes (1.2.3)
+    hstore_accessor (1.0.3)
+      activerecord (>= 4.0.0)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     inherited_resources (1.6.0)
@@ -355,6 +357,7 @@ DEPENDENCIES
   foreman
   guard-livereload
   high_voltage
+  hstore_accessor
   instagram
   jbuilder (~> 2.0)
   jquery-rails

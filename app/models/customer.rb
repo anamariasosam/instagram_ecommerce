@@ -33,7 +33,7 @@
 
 class Customer < User
   belongs_to :user
-  
+
   hstore_accessor :details,
   country: :string,
   full_name: :string,
