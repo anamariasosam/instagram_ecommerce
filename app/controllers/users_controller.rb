@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def suscribe
-    @waiting_users = User.where(pilot: false).all.count
+    @waiting_users =  Store.where("details->'pilot' = ?", "false").all.count
     @waiting_position = current_user.waiting_position
   end
 
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         slug:           client.user.username
       )
 
-      if current_user.pilot?
+      if current_user.type.eql?("Store") and current_user.pilot?
         @options = { count: 40}
         @options[:max_id] = params[:max_id] if params[:max_id]
         @media = client.user_recent_media("self", @options)
@@ -37,7 +37,6 @@ class UsersController < ApplicationController
       else
         redirect_to users_suscribe_path
       end
-
 
     else
       redirect_to edit_user_registration_path
