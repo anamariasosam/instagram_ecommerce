@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
   has_shortened_urls
 
   belongs_to :category
-  
+
   validates_presence_of :instagram_image,
                         :price,
                         :description,
@@ -33,13 +33,13 @@ class Product < ActiveRecord::Base
 
   belongs_to :store
 
-  # def slug
-  #   user.name.downcase.gsub(" ", "-") + "_"  + product_name.downcase.gsub(" ", "-")
-  # end
-  #
-  # def to_param
-  #   "#{id}-#{slug}"
-  # end
+  def slug
+    store.name.downcase.gsub(" ", "-") + "_"  + product_name.downcase.gsub(" ", "-")
+  end
+
+  def to_param
+    "#{id}-#{slug}"
+  end
 
   private
     def magic
