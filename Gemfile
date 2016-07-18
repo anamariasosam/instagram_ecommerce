@@ -39,6 +39,7 @@ gem 'modernizr-rails'
 gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'newrelic_rpm'
 gem 'high_voltage'
+gem 'hstore_accessor'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -68,7 +69,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'sqlite3'
+  gem 'annotate'
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'guard-livereload', require: false

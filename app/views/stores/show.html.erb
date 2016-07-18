@@ -2,11 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-5 col-sm-offset-1">
-        <img src="<%= @user.store_image %>" class="" alt="<%=  @user.store_name %>">
+        <img src="<%= @store.image %>" class="" alt="<%=  @store.name %>">
         <h2 class="app__list-headline">
-          <%= @user.name %>
+          <%= @store.name %>
           <% if current_user %>
-            <% if current_user.id == @user.id %>
+            <% if current_user.id == @store.id %>
               <%= link_to edit_user_registration_path do %>
                 <i class="stores__editPencil fa fa-pencil"></i>
               <% end %>
@@ -15,9 +15,9 @@
         </h2>
       </div>
       <div class="col-md-5">
-        <% if @user.info? %>
+        <% if @store.info? %>
           <div class="store__description">
-            <%= @user.info%>
+            <%= @store.info%>
           </div>
         <% end %>
       </div>
@@ -33,11 +33,11 @@
 <section class="container">
 
   <div class="row">
-    <%# render @products %>
+    <%= render @products %>
   </div>
 
   <div class="paginator text-center">
-    <%# paginate @products %>
+    <%= paginate @products %>
   </div>
 
 </section>

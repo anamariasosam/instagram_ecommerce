@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   }
 
   resources :products
-  resources :users, :path => 'store', :only => [:show]
 
   get 'categories/:id', to: 'categories#show', as: 'category'
   get "users/suscribe"
+  get 'store/:id', to: 'stores#show', as: 'store'
   get '/:id' => "shortener/shortened_urls#show"
   get 'users/oauth_failure'
   get 'catalog/view'
