@@ -5,7 +5,13 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    users_dashboard_path
+    type = resource.type
+    if type == "Store"
+      users_dashboard_path
+    else
+      users_liked_path
+    end
+
   end
 
   protected
