@@ -36,7 +36,9 @@ class Store < User
 
   hstore_accessor :details,
   name: :string,
-  info: :string
+  info: :string,
+  pilot: :boolean,
+  waiting_position: :integer
 
   validates_presence_of :name, on: :update
 end

@@ -47,6 +47,10 @@
                 <%= f.text_area :info, rows: 9, class: 'form-control' %>
               </div>
             </td>
+
+            <%= f.hidden_field :pilot, value: false %>
+            <%= f.hidden_field :waiting_position, value: Store.where("details->'pilot' = ?", "false").all.count %>
+
           <% end %>
         </tr>
 
@@ -62,7 +66,6 @@
         <% if session['super_token'] %> <br>
           <%= f.hidden_field :user_token, value: session['super_token'] %>
         <% end %>
-          <%= f.hidden_field :waiting_position, value: User.where(pilot: false).all.count %>
       </table>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
