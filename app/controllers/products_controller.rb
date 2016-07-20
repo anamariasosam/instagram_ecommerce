@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :only => [:index, :new, :edit]
   helper_method :sort_column, :sort_direction
+  before_filter :require_store, only: [:index, :new, :edit]
 
   # GET /products
   # GET /products.json
@@ -120,5 +121,12 @@ class ProductsController < ApplicationController
 
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
+
+    def require_store
+      if current_user.type == "Customer"
+        flash[:error] = "No eres tienda"
+        redirect_to root_url
+      end
     end
 end
