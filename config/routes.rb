@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'legal/privacy_policy'
   get 'users/dashboard'
+  get 'users/liked'
   post 'products/new'
 
 end
