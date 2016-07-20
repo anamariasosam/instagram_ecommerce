@@ -13,32 +13,12 @@ function description_text () {
 // Add class active to menu
 function add_class_active() {
   var path = window.location.pathname
-  $(".menu_nav-item").removeClass('active')
-  switch (path) {
-    case "/":
-      $("#home_path").addClass('active')
-      break;
-    case "":
-      $("#home_path").addClass('active')
-      break;
-    case "/tutorial/index":
-      $("#tutorial_path").addClass('active')
-      break;
-    case "/users/dashboard":
-      $("#user_path").addClass('active')
-      $("#add__product_path").addClass('active')
-      break;
-    case "/products":
-      $("#user_path").addClass('active')
-      $("#product_path").addClass('active')
-      break;
-    case "/users/edit":
-      $("#user_path").addClass('active')
-      $("#edit_user_path").addClass('active')
-      break;
-    default:
-      $("#catalog_path").addClass('active')
-  }
+  var $list = $(".js_topMenu").find('li');
+  var len = $list
+    .find('[href="' + path + '"]')
+    .addClass('active').length
+
+  if (!len) $list.first().addClass('active');
 }
 
 
@@ -127,5 +107,5 @@ $(document).on('ready page:change page:load', function() {
   if ($(".pagination").length) {
     $(".pagination").rPage();
   }
-  
+
 });

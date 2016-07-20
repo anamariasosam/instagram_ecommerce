@@ -1,0 +1,23 @@
+<h1 class="contact__headline">Hola</h1>
+<p>Cuentanos cómo podemos ayudarte.</p>
+
+<%= form_for @contact do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :message %>
+    <%= f.text_area :message, size: "30x9",class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Enviar Mensaje', class: 'btn btn-primary' %>
+  </div>
+<% end %>

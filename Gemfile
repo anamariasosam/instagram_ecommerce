@@ -41,6 +41,7 @@ gem 'newrelic_rpm'
 gem 'high_voltage'
 gem 'hstore_accessor'
 gem 'turnout'
+gem 'mail_form'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
