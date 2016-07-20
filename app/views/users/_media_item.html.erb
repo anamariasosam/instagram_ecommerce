@@ -3,7 +3,8 @@
   <% if Product.exists?(:photo_id => media.id) %>
     <div class="dashboard_gallery-thumbnail">
       <img  src='<%= media.images.thumbnail.url %>'
-            class="dashboard_gallery-blur img-responsive" alt="product" >
+            class="dashboard_gallery-blur img-responsive"
+            alt="product" >
     </div>
 
   <% else %>

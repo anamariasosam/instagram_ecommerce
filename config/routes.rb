@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   }
 
   resources :products
+  resources :contacts, only: [:new, :create]
 
   get 'categories/:id', to: 'categories#show', as: 'category'
   get "users/suscribe"

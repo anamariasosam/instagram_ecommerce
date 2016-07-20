@@ -2,6 +2,12 @@
 es:
   product:
     purchase: Actualmente puedes contactar el vendedor con su número de teléfono.
+  mail_form:
+    attributes:
+      contact:
+        name: Nombre
+        email: "E-mail"
+        message: "Mensaje"
   activerecord:
     attributes:
       product:
