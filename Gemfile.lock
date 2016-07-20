@@ -229,6 +229,8 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
+    rack-accept (0.4.5)
+      rack (>= 0.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5)
@@ -324,6 +326,10 @@ GEM
       rails
     turbolinks (2.5.3)
       coffee-rails
+    turnout (2.3.1)
+      rack (~> 1.3)
+      rack-accept (~> 0.4)
+      tilt (>= 1.4, < 3)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -381,6 +387,7 @@ DEPENDENCIES
   spring
   trix
   turbolinks
+  turnout
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 

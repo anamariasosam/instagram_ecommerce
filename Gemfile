@@ -40,6 +40,7 @@ gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'newrelic_rpm'
 gem 'high_voltage'
 gem 'hstore_accessor'
+gem 'turnout'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
