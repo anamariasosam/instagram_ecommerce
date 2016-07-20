@@ -19,6 +19,13 @@
                 <%= f.text_field :name, autofocus: true, class: 'form-control' %>
               </div>
             </td>
+          <% else %>
+          <td class="stores__form-data">
+            <div class="form-group">
+              <%= f.label "Nombre" %> <br>
+              <%= f.text_field :full_name, autofocus: true, class: 'form-control' %>
+            </div>
+          </td>
           <% end %>
 
           <td class="stores__form-data">
@@ -32,11 +39,11 @@
         <tr>
           <td class="stores__form-data">
             <div class="form-group">
-              <%= f.label "Ciudad" %>
+              <%= f.label "Ciudad*" %>
               <%= f.text_field :city, class: 'form-control' %>
             </div>
             <div class="form-group">
-              <%= f.label "País" %>
+              <%= f.label "País*" %>
               <%= f.text_field :country, class: 'form-control' %>
             </div>
           </td>
@@ -47,11 +54,20 @@
                 <%= f.text_area :info, rows: 9, class: 'form-control' %>
               </div>
             </td>
-
+            
             <% if !current_user.name? %>
               <%= f.hidden_field :pilot, value: false %>
               <%= f.hidden_field :waiting_position, value: Store.where("details->'pilot' = ?", "false").all.count %>
             <% end %>
+
+          <% else %>
+            <td rowspan="2" class="stores__form-data">
+              <div class="form-group">
+                <%= f.label "Dirección de envío" %> <br>
+                <%= f.text_area :address, rows: 9, class: 'form-control' %>
+              </div>
+            </td>
+>>>>>>> [add] customer omniauth login
           <% end %>
         </tr>
 

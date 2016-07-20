@@ -23,7 +23,9 @@ class RegistrationsController < Devise::RegistrationsController
                       :waiting_position,
                       :city,
                       :country,
-                      :pilot
+                      :pilot,
+                      :full_name,
+                      :address
                     )
     end
 end
