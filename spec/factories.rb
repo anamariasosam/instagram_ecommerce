@@ -1,20 +1,33 @@
+require "faker"
+
 FactoryGirl.define do
   factory :customer do
+    city { Faker::Address.city }
+    country { Faker::Address.country }
+    email { Faker::Internet.email }
 
+    # TODO: fix model validation to accept real user typos
+    # phone_number { Faker::PhoneNumber.cell_phone }
+    phone_number "1234567890"
   end
-  factory :store do
 
+  factory :store do
+    name { Faker::Name.name }
+    city { Faker::Address.city }
+    country { Faker::Address.country }
+    email { Faker::Internet.email }
+
+    # TODO: fix model validation to accept real user typos
+    # phone_number { Faker::PhoneNumber.cell_phone }
+    phone_number "1234567890"
   end
 
   factory :product do
-    product_name "mani rosado"
-    price 1000
-    quantity 2
-    instagram_image "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/1173135_1016593388379223_512156499_n.jpg"
-    description "Nuevo mani"
-    photo_id "2"
-    store_id "1"
-    category_id "1"
+    product_name { Faker::Commerce.product_name }
+    price { Faker::Number.number(5) }
+    quantity { Faker::Number.number(1) }
+    instagram_image { Faker::Placeholdit.image }
+    description { Faker::Lorem.sentence }
   end
 
   factory :user do
@@ -33,6 +46,6 @@ FactoryGirl.define do
   end
 
   factory :category do
-    name 'ropa'
+    name { Faker::Commerce.color }
   end
 end
