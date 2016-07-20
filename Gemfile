@@ -7,6 +7,8 @@ gem 'devise'
 gem 'rename'
 gem 'phonelib'
 
+gem 'httparty'
+
 # Style plugins
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'

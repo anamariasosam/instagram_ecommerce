@@ -27,6 +27,8 @@
 #  slug                   :string
 #  type                   :string(15)
 #  details                :hstore
+#  pilot                  :boolean          default(FALSE)
+#  waiting_position       :integer
 #  city                   :string
 #  country                :string
 #

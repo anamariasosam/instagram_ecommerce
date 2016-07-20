@@ -156,6 +156,9 @@ GEM
     hstore_accessor (1.0.3)
       activerecord (>= 4.0.0)
     http_parser.rb (0.6.0)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
@@ -380,6 +383,7 @@ DEPENDENCIES
   guard-rspec
   high_voltage
   hstore_accessor
+  httparty
   instagram
   jbuilder (~> 2.0)
   jquery-rails

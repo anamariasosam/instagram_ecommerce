@@ -27,6 +27,8 @@
 #  slug                   :string
 #  type                   :string(15)
 #  details                :hstore
+#  pilot                  :boolean          default(FALSE)
+#  waiting_position       :integer
 #  city                   :string
 #  country                :string
 #
@@ -35,7 +37,6 @@ class Customer < User
   belongs_to :user
 
   hstore_accessor :details,
-  country: :string,
   full_name: :string,
   address: :string
 end
