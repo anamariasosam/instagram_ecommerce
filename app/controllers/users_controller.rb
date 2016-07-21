@@ -21,10 +21,10 @@ class UsersController < ApplicationController
       end
 
       current_user.update(
-        instagram_id:   client.user.id,
-        image:    client.user.profile_picture,
-        store_account:  client.user.username,
-        slug:           client.user.username
+        instagram_id:       client.user.id,
+        image:              client.user.profile_picture,
+        instagram_account:  client.user.username,
+        slug:               client.user.username
       )
 
       if current_user.type.eql?("Store") and current_user.pilot?
