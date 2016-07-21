@@ -6,6 +6,12 @@ class ProductsController < ApplicationController
   helper_method :sort_column, :sort_direction
   layout 'dashboard', :except => :show
 
+
+  def create_comment(product)
+    message = "⚠️ ¡IMPORTANTE! ⚠️  Ingresa a 🌐 www.catlog.co y encuentra toda la información de este producto con este código: 🔍 #{@product.shortened_urls.last.unique_key } 🔍 #catlog @catlog.co ⬆️ Encuentra el link en la biografía ⬆️"
+    client = Instagram.client(:access_token => current_user.user_token)
+    result = client.create_media_comment(product.photo_id, message)
+  end
   # GET /products
   # GET /products.json
   def index
@@ -45,9 +51,10 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        create_comment(@product)
         @product.create_activity :create, owner: current_user
         format.html { redirect_to products_path, notice: "El producto ha sido creado exitosamente.<br>
-          <a class='js_instagramLoad' href='/users/dashboard' class='product_link'>Agregar otro producto</a>"}
+          <a class='js_instagramLoad' href='/users/list' class='product_link'>Agregar otro producto</a>"}
         format.json { render :index, status: :created, location: @product }
       else
         format.html { render :new }
