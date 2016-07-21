@@ -33,7 +33,8 @@
 
 class Store < User
   has_many :products, dependent: :destroy
-
+  has_many :orders
+  
   hstore_accessor :details,
   name: :string,
   info: :string,
