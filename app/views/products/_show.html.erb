@@ -1,0 +1,162 @@
+<% content_for :title, @product.product_name + " - " %>
+<% content_for :meta_tags do %>
+  <meta property="og:url"                  content="<%= request.original_url %>" />
+  <meta property="og:type"                 content="product" />
+  <meta property="og:title"                content="<%= @product.product_name %>" />
+  <meta property="og:description"          content="<%= strip_tags(@product.description.html_safe) %>" />
+  <meta property="og:image"                content="<%= @product.instagram_image %>" />
+  <meta property="product:price:amount"    content="<%= number_to_currency @product.price, precision:0 %>" />
+  <meta property="product:price:currency"  content="COP" />
+
+  <meta name="twitter:card"         content="summary" />
+  <meta name="twitter:site"         content="@catlog_co" />
+  <meta name="twitter:title"        content="<%= @product.product_name %>" />
+  <meta name="twitter:description"  content="<%= @product.product_name %> de <%= @product.store.name %> ahora en http://catlog.co" />
+  <meta name="twitter:image"        content="<%= @product.instagram_image %>" />
+<% end %>
+
+<header class="sectionHero">
+  <div class="container">
+
+    <h5>Producto de:</h5>
+    <h3 class="sectionHero__headline"><%= link_to @product.store.name, store_path(@product.store.slug), class: 'sectionHero__link' %></h3>
+
+  </div>
+</header>
+
+<section class="container">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <img
+        src="<%= @product.instagram_image %>"
+        class="product__image img-responsive"
+        alt="catlog, productos, <%= @product.store.name %>"
+        data-zoom-image="<%= @product.instagram_image %>"
+        id="instagram_image"
+        >
+    </div>
+
+    <div class="product__caption caption col-xs-12 col-sm-6">
+
+      <header>
+        <h1 class="product__name">
+          <%= @product.product_name %>
+        </h1>
+
+        <h2 class="product__price">
+          <%= number_to_currency @product.price, precision:0 %>
+        </h2>
+      </header>
+
+      <p class="product__avalability">
+        <span class="app__bold-text">Disponibles</span>
+        <%= @product.quantity %>
+      </p>
+
+      <p>
+        <% unless @product.category.name == 'Sin Categoría' %>
+          <p class="align-left">
+            <b>Categoría:</b>
+            <br>
+            <br>
+            <%= link_to @product.category.name, @product.category, class: "category__link" %>
+          </p>
+        <% end %>
+      </p>
+
+      <% if current_user and current_user.id == @product.store_id %>
+        <p class="product-code">
+          Comparte este código en tu post de instagram:
+
+          <span class="app__bold-text product_code" oncopy="addLink()" >
+            <%= @product.shortened_urls.last.unique_key %>
+          </span>
+        </p>
+
+        <div class="product-action--container text-right">
+          <%= link_to edit_product_path(@product) do %>
+            <i class="product-action--item fa fa-pencil"></i>
+          <% end %>
+
+          <%= link_to @product, method: :delete, data: { confirm: '¿Está seguro que desea eliminarlo?' } do%>
+            <i class="product-action--item fa fa-trash-o"></i>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="js_callToAction">
+          <br>
+          <button class="btn btn-primary btn-block btn-lg js_togglePurchaseBtn" class="track" data-track='comprar'>Comprar</button>
+          <div class="sellerInfo hide">
+            <p>
+              <b>Cel:</b>
+              <a href="tel:<%= number_to_phone(@product.store.phone_number) %>" class="track" data-track='tel'>
+                <%= number_to_phone(@product.store.phone_number) %>
+              </a>
+              <br>
+              <%= t "product.purchase" %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+      <hr>
+      <div>
+        <span class="social">
+          <iframe
+            src="https://platform.twitter.com/widgets/tweet_button.html?size=l&url=https%3A%2F%2Fcatlog.co%2F<%= @product.shortened_urls.last.unique_key %>&via=catlog_co&text=<%= @product.product_name %> de la tienda <%= @product.store.name %>,&hashtags=LoEncontreEnCatlog"
+            width="80"
+            height="40"
+            title="Twitter Tweet Button"
+            style="border: 0; overflow: hidden;">
+          </iframe>
+        </span>
+        <span class="social">
+          <a
+            data-pin-do="buttonPin"
+            href="https://www.pinterest.com/pin/create/button/?url=http://catlog.co/<%= @product.shortened_urls.last.unique_key %>&media=<%= @product.instagram_image %>&description=<%= strip_tags(@product.description.html_safe) %>"
+            data-pin-color="red"
+            data-pin-tall="true"
+            data-pin-height="40">
+          </a>
+        </span>
+        <span class="social">
+          <iframe
+            src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fcatlog.co%2F<%= @product.shortened_urls.last.unique_key %>&layout=button&mobile_iframe=true&width=80&height=20&appId"
+            width="80" height="39" style="border:none;overflow:hidden"
+            scrolling="yes" frameborder="0" allowTransparency="true">
+          </iframe>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="app__bold-text" id="description">Descripción</h3>
+  <br>
+  <div class="product__description">
+    <%=  @product.description.html_safe %>
+  </div>
+
+</section>
+
+<script>
+
+$('.js_callToAction').on('click', '.track', function(event){
+  $element = $(event.currentTarget);
+  data = $element.data('track');
+  ga('send', 'event', '<%= @product.store.name %>', data, '<%= @product.product_name %>');
+});
+
+$('.js_togglePurchaseBtn').on('click', function(event){
+  $(event.currentTarget)
+    .addClass('hide')
+    .next()
+    .removeClass('hide');
+});
+
+</script>
+
+<script
+    type="text/javascript"
+    async defer
+    src="//assets.pinterest.com/js/pinit.js"
+></script>
