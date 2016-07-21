@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+  root 'home#index'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root 'home#index'
 
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks",
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :products
   resources :contacts, only: [:new, :create]
+  resources :orders
 
   get 'categories/:id', to: 'categories#show', as: 'category'
   get "users/suscribe"
@@ -21,7 +23,9 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'legal/privacy_policy'
   get 'users/dashboard'
+  get 'customers/dashboard'
   get 'users/liked'
+  
   post 'products/new'
 
 end

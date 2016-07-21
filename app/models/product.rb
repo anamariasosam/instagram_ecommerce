@@ -31,8 +31,8 @@ class Product < ActiveRecord::Base
   validates :description, length: { maximum: 500 }
   validates_length_of :product_name, :maximum => 40
 
-  belongs_to :store
   belongs_to :store, touch: true
+  belongs_to :order
 
   def slug
     store.name.downcase.gsub(" ", "-") + "_"  + product_name.downcase.gsub(" ", "-")
