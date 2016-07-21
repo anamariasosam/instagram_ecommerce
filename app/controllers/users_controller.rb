@@ -14,11 +14,10 @@ class UsersController < ApplicationController
   def dashboard
     if current_user.user_token?
       if !session['super_token'].blank?
-        client = Instagram.client(:access_token => session['super_token'])
         current_user.update(user_token: session['super_token'])
-      else
-        client = Instagram.client(:access_token => current_user.user_token)
       end
+
+      client = Instagram.client(:access_token => current_user.user_token)
 
       current_user.update(
         instagram_id:       client.user.id,
