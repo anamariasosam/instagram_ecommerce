@@ -35,6 +35,7 @@
 
 class Customer < User
   belongs_to :user
+  has_many :orders
 
   hstore_accessor :details,
   full_name: :string,
