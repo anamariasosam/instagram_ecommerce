@@ -91,7 +91,7 @@ function loader() {
       .addClass('loader--running');
   }
 
-  $('.js_addNewProduct').on('click', addLoaderClass);
+  $('.js_instagramLoad').on('click', addLoaderClass);
   $('.js_nextOnDash').on('click', addLoaderClass);
 }
 
