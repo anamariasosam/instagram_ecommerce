@@ -15,6 +15,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       @customer = Customer.from_omniauth(request.env["omniauth.auth"])
       session['super_token'] = request.env["omniauth.auth"]["credentials"]["token"]
+      @customer.update_attribute(:user_token, session['super_token'])
 
       if @customer.persisted?
        sign_in_and_redirect @customer, :event => :authentication #this will throw if @customer is not activated
