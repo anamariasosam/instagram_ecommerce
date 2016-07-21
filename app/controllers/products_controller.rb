@@ -36,6 +36,10 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    if current_user.id != @product.store_id
+      flash[:error] = "No tienes permisos para editar este producto"
+      redirect_to root_url
+    end
   end
 
   # POST /products
