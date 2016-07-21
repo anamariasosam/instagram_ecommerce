@@ -56,6 +56,18 @@ ActiveRecord::Schema.define(version: 20160721180705) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string   "status"
+    t.integer  "product_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "customer_id"
+    t.integer  "store_id"
+    t.integer  "total"
+  end
+
+  add_index "orders", ["product_id"], name: "index_orders_on_product_id", using: :btree
+
   create_table "products", force: :cascade do |t|
     t.string   "product_name"
     t.integer  "price"
@@ -118,6 +130,9 @@ ActiveRecord::Schema.define(version: 20160721180705) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["slug"], name: "index_users_on_slug", using: :btree
 
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "users", column: "customer_id"
+  add_foreign_key "orders", "users", column: "store_id"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users", column: "store_id"
 end
