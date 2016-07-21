@@ -11,8 +11,8 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  photo_id        :string
-#  user_id         :integer
 #  category_id     :integer          default(1)
+#  store_id        :integer
 #
 
 class Product < ActiveRecord::Base
