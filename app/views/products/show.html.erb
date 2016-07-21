@@ -84,20 +84,7 @@
           <% end %>
         </div>
       <% else %>
-        <div class="js_callToAction">
-          <br>
-          <button class="btn btn-primary btn-block btn-lg js_togglePurchaseBtn" class="track" data-track='comprar'>Comprar</button>
-          <div class="sellerInfo hide">
-            <p>
-              <b>Cel:</b>
-              <a href="tel:<%= number_to_phone(@product.store.phone_number) %>" class="track" data-track='tel'>
-                <%= number_to_phone(@product.store.phone_number) %>
-              </a>
-              <br>
-              <%= t "product.purchase" %>
-            </p>
-          </div>
-        </div>
+        <%= link_to "Comprar", new_order_path(product: @product), class: "btn btn-primary btn-block btn-lg" %>
       <% end %>
       <hr>
       <div>
