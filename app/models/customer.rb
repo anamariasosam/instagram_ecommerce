@@ -21,14 +21,12 @@
 #  current_sign_in_ip     :string
 #  last_sign_in_ip        :string
 #  user_token             :string
-#  store_account          :string
+#  instagram_account      :string
 #  provider               :string
 #  uid                    :string
 #  slug                   :string
 #  type                   :string(15)
 #  details                :hstore
-#  pilot                  :boolean          default(FALSE)
-#  waiting_position       :integer
 #  city                   :string
 #  country                :string
 #

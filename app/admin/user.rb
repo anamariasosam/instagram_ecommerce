@@ -7,7 +7,7 @@ ActiveAdmin.register User do
     :email,
     # only on a very specific and verified case
     # you should change this param otherwise is dangerous.
-    # :store_account,
+    # :instagram_account,
     :user_token
   )
 

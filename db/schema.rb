@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721180705) do
+ActiveRecord::Schema.define(version: 20160721193921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 20160721180705) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "user_token"
-    t.string   "store_account"
+    t.string   "instagram_account"
     t.string   "provider"
     t.string   "uid"
     t.string   "slug"
