@@ -6,7 +6,6 @@ gem 'rails', '4.2.5'
 gem 'devise'
 gem 'rename'
 gem 'phonelib'
-
 gem 'httparty'
 
 # Style plugins
