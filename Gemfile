@@ -8,8 +8,6 @@ gem 'rename'
 gem 'phonelib'
 gem 'httparty'
 
-gem 'httparty'
-
 # Style plugins
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
