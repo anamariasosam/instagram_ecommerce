@@ -20,7 +20,7 @@ class CustomersController < ApplicationController
 
     return instagram_photos_id & products_id
   end
-  
+
   def getProducts()
     @products = []
     media_id = getMedia()
@@ -31,21 +31,18 @@ class CustomersController < ApplicationController
 
     @product = @products.shift()
 
-    if @products.empty?
+    if @products.empty? and !@product.blank?
       redirect_to product_path(@product)
     end
 
   end
 
   def dashboard
-    if current_user.user_token?
-      if !session['super_token'].blank?
-        current_user.update(user_token: session['super_token'])
-      end
-      getProducts()
-    else
-      redirect_to edit_user_registration_path
+    if !session['super_token'].blank?
+      current_user.update(user_token: session['super_token'])
     end
+
+    getProducts()
   end
 
 end
