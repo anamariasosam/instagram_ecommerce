@@ -1,2 +1,10 @@
-<h1>Customers#dashboard</h1>
-<p>Find me in app/views/customers/dashboard.html.erb</p>
+<% if @product.blank? %>
+  <section class="container">
+    <h2>Ups!</h2>
+    <p>
+      El producto que buscas no hace parte de nuestras tiendas aliadas
+    </p>
+  </section>
+<% else %>
+  <%= render 'liked_products' %>
+<% end %>
