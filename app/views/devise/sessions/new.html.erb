@@ -5,7 +5,11 @@
 </header>
 
 <section class="container">
-  <%= link_to user_omniauth_authorize_path(:instagram) do %>
-  <i class="fa fa-instagram" aria-hidden="true"></i> Ingresar con Instagram
+  <%= link_to user_omniauth_authorize_path(:instagram, model: 'store'), class: "js_instagramLoad" do %>
+    <i class="fa fa-instagram" aria-hidden="true"></i> Ingresar como tienda
+  <% end %>
+  <br>
+  <%= link_to user_omniauth_authorize_path(:instagram, model: 'customer'), class: "js_instagramLoad" do %>
+    <i class="fa fa-instagram" aria-hidden="true"></i> Ingresar como comprador
   <% end %>
 </section>
