@@ -73,11 +73,11 @@ function sortProducts() {
 
   function searchAJAXY (event) {
     event.preventDefault();
-    if (!$input.val()) {
-      $.get($form.attr('action'), '', null, "script");
-      return;
-    }
-    $.get($form.attr('action'), $form.serialize(), null, "script");
+    var cleanData;
+
+    $input.val($input.val().trim())
+    cleanData = $form.serialize().replace(/%5C/g, '');
+    $.get($form.attr('action'), !$input.val() ? '' : cleanData, null, "script");
   };
 
   $input.on('keyup', searchAJAXY);
