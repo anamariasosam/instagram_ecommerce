@@ -68,13 +68,20 @@ function menuCaret() {
 }
 
 function sortProducts() {
+  $form = $('#js_productSearch');
+  $input = $('#js_searchField');
+
   function searchAJAXY (event) {
     event.preventDefault();
-    $.get($('#js_productSearch').attr('action'), $('#js_productSearch').serialize(), null, "script");
+    if (!$input.val()) {
+      $.get($form.attr('action'), '', null, "script");
+      return;
+    }
+    $.get($form.attr('action'), $form.serialize(), null, "script");
   };
 
-  $('#js_searchField').on('keyup', searchAJAXY);
-  $('#js_productSearch').on('submit', searchAJAXY);
+  $input.on('keyup', searchAJAXY);
+  $form.on('submit', searchAJAXY);
 }
 
 function loader() {
