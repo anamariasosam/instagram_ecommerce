@@ -5,7 +5,7 @@
 </header>
 
 <section class="container js_sortProducts">
-  <%= form_tag products_path, method: :get, id: 'js_productSearch' do %>
+  <%= form_tag products_path, method: :get, class: 'product__searchForm', id: 'js_productSearch' do %>
     <div class="navbar-form navbar-left search-form">
       <%= text_field_tag(
           :search,
@@ -17,7 +17,7 @@
       <%= submit_tag "Buscar", :name => nil, class: 'btn btn-default' %>
     </div>
 
-    <div class="render">
+    <div class="js_userProducts">
       <%= render 'store_products' %>
     </div>
   <% end %>
