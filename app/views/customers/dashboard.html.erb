@@ -1,9 +1,8 @@
 <% if @product.blank? %>
   <section class="container">
     <h2>¡Ups!</h2>
-    <p>
-      El producto que buscas no hace parte de nuestras tiendas aliadas
-    </p>
+    <p> El producto que buscas no hace parte de nuestras tiendas aliadas. </p>
+    <p> Cuentanos que tienda es para ponernos en <%= link_to 'Contacto', new_contact_path %>. </p>
   </section>
 <% else %>
   <%= render 'liked_products' %>
