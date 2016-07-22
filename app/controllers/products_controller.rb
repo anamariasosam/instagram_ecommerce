@@ -8,7 +8,8 @@ class ProductsController < ApplicationController
 
 
   def create_comment(product)
-    message = "⚠️ ¡IMPORTANTE! ⚠️  Ingresa a 🌐 www.catlog.co y encuentra toda la información de este producto con este código: 🔍 #{@product.shortened_urls.last.unique_key } 🔍 #catlog @catlog.co ⬆️ Encuentra el link en la biografía ⬆️"
+    product_code = @product.shortened_urls.last.unique_key
+    message = t('web.instagram_comment', code: product_code )
     client = Instagram.client(:access_token => current_user.user_token)
     result = client.create_media_comment(product.photo_id, message)
   end
