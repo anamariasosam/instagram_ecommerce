@@ -43,7 +43,7 @@ class Product < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where("product_name LIKE ?", "%#{search}%")
+      where("product_name ILIKE ?", "%#{search}%")
     else
       all
     end
