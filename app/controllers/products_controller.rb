@@ -2,14 +2,14 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :only => [:index, :new, :edit]
   helper_method :sort_column, :sort_direction
-  
+
   # GET /products
   # GET /products.json
   def index
     if current_user.pilot?
       @products = current_user
                     .products
-                      .order(sort_column + " " + sort_direction)
+                    .order(sort_column + " " + sort_direction)
     else
       redirect_to users_suscribe_path
     end
