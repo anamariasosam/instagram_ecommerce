@@ -22,18 +22,21 @@
   <div class="loader"></div>
 
   <%= render 'shared/alerts/flash' %>
+  <%= render partial: 'shared/menu/top', locals: { search: false } %>
 
-  <div class="container app__container">
-    <%= render partial: "shared/menu/top", locals: { search: true } %>
-    <div class="app__content clearfix">
-      <%= yield %>
+  <div class="dashboard clearfix">
 
+    <div class="dashboard__sidebar">
+      <%= render'shared/dashboard/sidebar' %>
     </div>
 
-    <%= render "layouts/footer" %>
+    <div class="dashboard__content">
+      <%= yield %>
+    </div>
 
   </div>
 
+  <%= render "layouts/footer" %>
   <%= render "mixins/search" %>
   <%= render "mixins/login" %>
 

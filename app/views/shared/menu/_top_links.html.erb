@@ -1,0 +1,10 @@
+<ul class="nav navbar-nav navbar-left js_topMenu">
+  <li>
+    <%= link_to root_url do %>
+      Home <span class="sr-only">(current)</span></a>
+    <% end %>
+  </li>
+  <li><%= link_to "Catálogo", catalog_view_path %></li>
+  <li><%= link_to '¿Cómo funciona?', page_path('tutorial') %></li>
+  <li><%= link_to 'Contacto', new_contact_path %></li>
+</ul>

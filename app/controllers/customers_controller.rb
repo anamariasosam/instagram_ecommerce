@@ -43,6 +43,7 @@ class CustomersController < ApplicationController
     end
 
     getProducts()
+    render :layout => 'dashboard'
   end
 
 end

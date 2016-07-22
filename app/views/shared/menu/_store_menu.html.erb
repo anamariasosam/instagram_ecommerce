@@ -1,0 +1,23 @@
+<li class='dashboard__item'>
+  <%= link_to users_dashboard_path, class: 'dashboard__link js_instagramLoad' do %>
+    <i class="fa fa-plus"></i>
+    <br>
+    Crear un producto
+  <% end %>
+</li>
+
+<li class='dashboard__item'>
+  <%= link_to products_path, class: "dashboard__link" do %>
+    <i class="fa fa-shopping-basket"></i>
+    <br>
+    Productos de la tienda
+  <% end %>
+</li>
+
+<li class='dashboard__item'>
+  <%= link_to edit_user_registration_path, class: "dashboard__link"  do %>
+    <i class="fa fa-pencil"></i>
+    <br>
+    Editar mi información
+  <% end %>
+</li>
