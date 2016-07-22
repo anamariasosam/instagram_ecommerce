@@ -95,6 +95,10 @@
 
 .product {
 
+  &__searchForm {
+    min-height: 50vh;
+  }
+
   &__avalability {
     padding-bottom: 10px;
     border-bottom: 1px dotted #ccc;

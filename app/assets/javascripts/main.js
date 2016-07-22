@@ -67,6 +67,23 @@ function menuCaret() {
    });
 }
 
+function sortProducts() {
+  $form = $('#js_productSearch');
+  $input = $('#js_searchField');
+
+  function searchAJAXY (event) {
+    event.preventDefault();
+    var cleanData;
+
+    $input.val($input.val().trim())
+    cleanData = $form.serialize().replace(/%5C/g, '');
+    $.get($form.attr('action'), !$input.val() ? '' : cleanData, null, "script");
+  };
+
+  $input.on('keyup', searchAJAXY);
+  $form.on('submit', searchAJAXY);
+}
+
 function loader() {
   function addLoaderClass() {
     $('.loader')
@@ -82,6 +99,7 @@ function loadFiraFont() {
   WebFontConfig = {
   google: { families: [ 'Open+Sans:400,700' ] }
 };
+
 (function() {
   var wf = document.createElement('script');
   wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
@@ -109,3 +127,5 @@ $(document).on('ready page:change page:load', function() {
   }
 
 });
+
+$(document).on('ready page:load', sortProducts);
