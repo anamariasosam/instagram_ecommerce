@@ -17,6 +17,10 @@
     width: 58px;
   }
 
+  &-link a {
+    color: $menu-color;
+  }
+
   &-values td{
     vertical-align: middle !important;
   }
