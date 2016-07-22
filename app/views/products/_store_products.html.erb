@@ -1,0 +1,40 @@
+<%= hidden_field :direction, params[:direction] %>
+<%= hidden_field :sort, params[:sort] %>
+
+<% if @products.count > 0 %>
+  <table class="table table-striped table-hover footable toggle-arrow" id="table">
+    <thead>
+      <tr class="list-fields">
+        <th>Imagen</th>
+        <th class="list-link">
+          <%= sortable "Nombre", "product_name" %>
+        </th>
+        <th data-hide="phone" class="list-link">
+          <%= sortable "Precio", "price" %>
+        </th>
+        <th data-hide="phone,tablet" class="list-link">
+          <%= sortable "Cantidad", "quantity" %>
+        </th>
+        <th data-hide="phone,tablet">Descripción</th>
+        <th data-hide="phone">Código</th>
+        <th colspan="3">Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody id="products">
+      <%= render "products" %>
+    </tbody>
+  </table>
+
+  <script>
+    $(function($){ $('#table').footable({ phone: 480 }); });
+  </script>
+<% else %>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>:(</h1>
+      <p>Actualmente no tienes productos o no se encuentran con esa búsqueda, convierte algunos desde tu <%= link_to 'Tablero', users_dashboard_path %>.
+      </p>
+    </div>
+  </div>
+<% end %>

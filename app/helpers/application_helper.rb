@@ -3,7 +3,7 @@ module ApplicationHelper
     direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
     css_class = column == sort_column ? sort_direction == "asc" ? "down" : "up" : "down"
 
-    link_to sort: column, direction: direction do
+    link_to params.merge(sort: column, direction: direction) do
       title.html_safe + ' ' +
       content_tag(:small, '',class: "glyphicon glyphicon-chevron-#{css_class}")
     end

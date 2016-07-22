@@ -41,6 +41,14 @@ class Product < ActiveRecord::Base
     "#{id}-#{slug}"
   end
 
+  def self.search(search)
+    if search
+      where("product_name LIKE ?", "%#{search}%")
+    else
+      all
+    end
+  end
+
   private
     def magic
       Shortener::ShortenedUrl.generate("/products/#{self.id}", owner: self)

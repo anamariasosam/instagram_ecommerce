@@ -67,6 +67,16 @@ function menuCaret() {
    });
 }
 
+function sortProducts() {
+  function searchAJAXY (event) {
+    event.preventDefault();
+    $.get($('#js_productSearch').attr('action'), $('#js_productSearch').serialize(), null, "script");
+  };
+
+  $('#js_searchField').on('keyup', searchAJAXY);
+  $('#js_productSearch').on('submit', searchAJAXY);
+}
+
 function loader() {
   function addLoaderClass() {
     $('.loader')
@@ -82,6 +92,7 @@ function loadFiraFont() {
   WebFontConfig = {
   google: { families: [ 'Open+Sans:400,700' ] }
 };
+
 (function() {
   var wf = document.createElement('script');
   wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
@@ -109,3 +120,5 @@ $(document).on('ready page:change page:load', function() {
   }
 
 });
+
+$(document).on('ready page:load', sortProducts);

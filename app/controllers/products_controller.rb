@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
     if current_user.pilot?
       @products = current_user
                     .products
+                    .search(params[:search])
                     .order(sort_column + " " + sort_direction)
     else
       redirect_to users_suscribe_path
