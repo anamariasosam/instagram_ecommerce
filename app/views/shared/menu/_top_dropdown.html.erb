@@ -1,0 +1,36 @@
+<ul class="dropdown-menu">
+
+  <% if current_user.type.eql?("Store") and current_user.pilot? %>
+
+    <li>
+      <%= link_to users_dashboard_path, class: 'js_instagramLoad' do %>
+        <i class="fa fa-tachometer"></i> ir al Dashboard
+      <% end %>
+    </li>
+
+  <% elsif current_user.type == "Customer" %>
+
+    <li>
+      <%= link_to customers_dashboard_path, class: " js_instagramLoad" do %>
+        <i class="fa fa-tachometer"></i> Ir al Dashboard
+      <% end %>
+    </li>
+
+  <% else %>
+
+    <li>
+      <%= link_to users_suscribe_path, class: '' do %>
+        <i class="fa fa-stats"></i> Estado
+      <% end %>
+    </li>
+
+  <% end %>
+
+  <li>
+    <%= link_to(destroy_user_session_path, method: :delete) do %>
+      <i class="glyphicon glyphicon-off"></i>
+      Cerrar Sesión
+    <% end %>
+  </li>
+
+</ul>

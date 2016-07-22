@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
     else
       redirect_to users_suscribe_path
     end
+    render :layout => 'dashboard'
   end
 
   # GET /products/1
@@ -37,6 +38,9 @@ class ProductsController < ApplicationController
     else
       redirect_to :controller => 'sessions', :action => 'connect'
     end
+
+    render :layout => 'dashboard'
+
   end
 
   # GET /products/1/edit

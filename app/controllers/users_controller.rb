@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
+
     if current_user.user_token?
       if !session['super_token'].blank?
         current_user.update(user_token: session['super_token'])
@@ -39,6 +40,9 @@ class UsersController < ApplicationController
     else
       redirect_to edit_user_registration_path
     end
+
+    render :layout => 'dashboard'
+
   end
 
   private
