@@ -59,9 +59,9 @@ class ProductsController < ApplicationController
       respond_to do |format|
         if @product.save
           @product.create_activity :create, owner: current_user
-          format.html { redirect_to @product, notice: "El producto ha sido creado exitosamente.<br>
+          format.html { redirect_to products_path, notice: "El producto ha sido creado exitosamente.<br>
             <a class='js_instagramLoad' href='/users/dashboard' class='product_link'>Agregar otro producto</a>"}
-          format.json { render :show, status: :created, location: @product }
+          format.json { render :index, status: :created, location: @product }
         else
           format.html { render :new }
           format.json { render json: @product.errors, status: :unprocessable_entity }
