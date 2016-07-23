@@ -47,6 +47,10 @@ class UsersController < ApplicationController
       if !session['super_token'].blank?
         current_user.update(user_token: session['super_token'])
       end
+      @activities = PublicActivity::Activity
+                                  .order("created_at desc")
+                                  .where(owner_id: current_user)
+                                  .limit(5)
     else
       redirect_to edit_user_registration_path
     end
