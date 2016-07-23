@@ -17,12 +17,11 @@
       <div class="col-lg-6 col-sm-5">
         <% if @photo %>
           <img src="<%= @photo %>" alt="catlog, productos, instagram" class="img-responsive product_form-image">
-          <%= f.text_field :instagram_image, value: @photo, class: "hidden" %>
-          <%= f.text_field :photo_id, value: @photo_id, class: "hidden" %>
+          <%= f.hidden_field :instagram_image, value: @photo%>
         <% else %>
-          <figure class="">
+          <figure>
             <img src="<%= @product.instagram_image %>" alt="catlog, productos, instagram" class="img-responsive product_form-image">
-            <%= f.text_field :instagram_image, value: @product.instagram_image, class: "hidden" %>
+            <%= f.hidden_field :instagram_image, value: @product.instagram_image%>
           </figure>
         <% end %>
       </div>
@@ -62,6 +61,13 @@
     <div class="actions">
       <%= f.submit 'Guardar', :class => 'btn btn-primary   col-md-offset-3 col-sm-offset-3 col-sm-6  col-xs-offset-3 col-xs-6 '  %>
     </div>
+
+    <!-- The product photo_id needs to be hidden -->
+    <% if @photo_id %>
+      <%= f.hidden_field :photo_id, value: @photo_id %>
+    <% else %>
+      <%= f.hidden_field :photo_id, value: @product.photo_id %>
+    <% end %>
 
   </div>
 <% end %>
