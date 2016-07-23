@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_filter :authenticate_user!, :only => [:index, :new, :edit]
   helper_method :sort_column, :sort_direction
   before_filter :require_store, only: [:index, :new, :edit]
+  layout 'dashboard', :except => :show
 
   # GET /products
   # GET /products.json
@@ -15,7 +16,6 @@ class ProductsController < ApplicationController
     else
       redirect_to users_suscribe_path
     end
-    render :layout => 'dashboard'
   end
 
   # GET /products/1
@@ -38,9 +38,6 @@ class ProductsController < ApplicationController
     else
       redirect_to :controller => 'sessions', :action => 'connect'
     end
-
-    render :layout => 'dashboard'
-
   end
 
   # GET /products/1/edit

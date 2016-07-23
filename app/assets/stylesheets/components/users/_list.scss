@@ -1,20 +1,20 @@
 .list {
   &-action {
-    color: $primary-color;
+    color: cornflowerblue;
     font-size: 1.4em;
   }
 
   &-fields th{
-    color: $menu-color;
+    color: #459;
     padding-left: 0;
   }
 
-  &-fields th, &-values {
+  &-values {
     text-align: center;
   }
 
   &-image {
-    width: 58px;
+    width: 64px;
   }
 
   &-link a {
@@ -27,11 +27,10 @@
 }
 
 // Footable plugin improvements
-
 .footable-toggle {
-  vertical-align: top !important;
-  color: $menu-color !important;
-  font-size: 12px;
+  color: cornflowerblue !important;
+  margin-top: 19px;
+  margin-right: 10px;
 }
 
 .footable-row-detail-inner{
@@ -39,5 +38,6 @@
   text-align: left;
 }
 .footable-row-detail-name{
-  color: $menu-color;
+  color: gray;
+  line-height: 1.4;
 }

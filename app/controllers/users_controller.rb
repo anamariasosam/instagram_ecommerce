@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-  before_filter :authenticate_user!, only: [:dashboard, :suscribe]
-  before_filter :require_store, only: [:dashboard, :suscribe]
+  before_filter :authenticate_user!, only: [:dashboard, :suscribe, :list]
+  before_filter :require_store, only: [:dashboard, :suscribe, :list]
 
   def oauth_failure
   end
@@ -11,8 +11,7 @@ class UsersController < ApplicationController
     @waiting_position = current_user.waiting_position
   end
 
-  def dashboard
-
+  def list
     if current_user.user_token?
       if !session['super_token'].blank?
         current_user.update(user_token: session['super_token'])
@@ -40,9 +39,18 @@ class UsersController < ApplicationController
     else
       redirect_to edit_user_registration_path
     end
-
     render :layout => 'dashboard'
+  end
 
+  def dashboard
+    if current_user.user_token?
+      if !session['super_token'].blank?
+        current_user.update(user_token: session['super_token'])
+      end
+    else
+      redirect_to edit_user_registration_path
+    end
+    render :layout => 'dashboard'
   end
 
   private
