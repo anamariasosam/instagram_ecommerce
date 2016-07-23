@@ -27,7 +27,7 @@
       <div class="updates__row">
         <h5><b>Nuevo Dashboard !!</b></h5>
         <p>
-          Estamos estrenando dashboard si estas tan emocionado como nosotros compartelo en <a href="http://twitter.com">twitter</a></div>
+          Estamos estrenando dashboard si estas tan emocionado como nosotros compartelo en <a href="http://twitter.com">twitter</a>.</div>
         </p>
     </div>
 
@@ -35,7 +35,7 @@
       <div class="updates__row">
         <h5><b>Recibimos Sugerencias</b></h5>
         <p>
-          Ahora nos puedes enviar sugerencias presionando el icono de sobre de carta ubicado a la izquierda</div>
+          Ahora nos puedes enviar sugerencias presionando el icono de sobre de carta ubicado a la izquierda.</div>
         </p>
     </div>
 
@@ -51,11 +51,11 @@
         <i class="fa fa-heartbeat"></i>&nbsp;
         <b>Tu Actividad</b>
       </div>
-      <p class="activities__row">Creaste el producto xxxss hace <a href="">2 minutos</a>.</p>
-
-      <p class="activities__row">Actualizaste tus redes sociales hace <a>12 horas</a>.</p>
-
-      <p class="activities__row">Actualizaste el precio de <a href="">bikini para perro</a> hace <a href="">2 dias</a></p>
+      <% @activities.each do |activity| %>
+        <p class="activities__row">
+          <%= render_activity activity %>
+        </p>
+      <% end %>
     </div>
     <div class="col-sm-6">
       <div class="activities__icon">

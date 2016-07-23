@@ -34,6 +34,7 @@ gem 'kaminari'
 # Text Editor
 gem 'trix'
 
+gem 'public_activity'
 gem 'pg'
 gem 'lightbox2-rails'
 gem 'modernizr-rails'
