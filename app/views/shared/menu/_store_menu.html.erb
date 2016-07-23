@@ -1,8 +1,16 @@
 <li class='dashboard__item'>
-  <%= link_to users_dashboard_path, class: 'dashboard__link js_instagramLoad' do %>
+  <%= link_to users_dashboard_path, class: 'dashboard__link' do %>
+    <i class="fa fa-home"></i>
+    <br>
+    <span class="hidden-xs">Dashboard</span>
+  <% end %>
+</li>
+
+<li class='dashboard__item'>
+  <%= link_to users_list_path, class: 'dashboard__link js_instagramLoad' do %>
     <i class="fa fa-plus"></i>
     <br>
-    Crear un producto
+    <span class="hidden-xs">Crear un producto</span>
   <% end %>
 </li>
 
@@ -10,7 +18,7 @@
   <%= link_to products_path, class: "dashboard__link" do %>
     <i class="fa fa-shopping-basket"></i>
     <br>
-    Productos de la tienda
+    <span class="hidden-xs">Productos de la tienda</span>
   <% end %>
 </li>
 
@@ -18,6 +26,6 @@
   <%= link_to edit_user_registration_path, class: "dashboard__link"  do %>
     <i class="fa fa-pencil"></i>
     <br>
-    Editar mi información
+    <span class="hidden-xs">Editar mi información</span>
   <% end %>
 </li>

@@ -1,29 +1,70 @@
-
-
 <div class="dashboard__header">
-  <div class="container">
-    <h4>Bienvenido</h4>
+  <div class="container-fluid">
     <h2 class="dashboard__username">
-      <%= current_user.name  %>
+      <small><%= sayHello %>,</small> <%= current_user.name %>
     </h2>
   </div>
 </div>
 
-<section class="container">
-
-  <header class="major">
-    <p>Haz <strong>clic</strong> en la imagen que desees convertir en producto.</p>
-  </header>
-
+<section class="container-fluid updates">
   <div class="row">
-    <% @media.each do |media| %>
-    <%= render partial: 'users/media_item', locals: { media: media } %>
-    <% end %>
+    <div class="col-xs-1">
+      <div class="updates__icon">
+        <i class="fa fa-bell"></i>
+      </div>
+    </div>
   </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="updates__row">
+        <h5><b>Ahora Tenemos Notificaciones</b></h5>
+        <p>
+          Te presentamos nuestro nuevo sistema de notificaciones, as'i estaremos en contacto, te escribiremos aqu'i todo sobre actualizaciones, promociones y demas; no te preocupes, no llegan las malas noticias.</div>
+        </p>
+    </div>
 
-  <%= link_to users_dashboard_path(max_id: @media.last.id),
-          :class => 'js_nextOnDash btn btn-primary   col-md-6 col-md-offset-3 col-sm-offset-3
-                       col-sm-6 col-xs-offset-3 col-xs-6' do %>
-      Siguiente &#x2192;
-    <% end %>
+    <div class="col-sm-12">
+      <div class="updates__row">
+        <h5><b>Nuevo Dashboard !!</b></h5>
+        <p>
+          Estamos estrenando dashboard si estas tan emocionado como nosotros compartelo en <a href="http://twitter.com">twitter</a></div>
+        </p>
+    </div>
+
+    <div class="col-sm-12">
+      <div class="updates__row">
+        <h5><b>Recibimos Sugerencias</b></h5>
+        <p>
+          Ahora nos puedes enviar sugerencias presionando el icono de sobre de carta ubicado a la izquierda</div>
+        </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="container-fluid activities">
+  <div class="row">
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="activities__icon">
+        <i class="fa fa-heartbeat"></i>&nbsp;
+        <b>Tu Actividad</b>
+      </div>
+      <p class="activities__row">Creaste el producto xxxss hace <a href="">2 minutos</a>.</p>
+
+      <p class="activities__row">Actualizaste tus redes sociales hace <a>12 horas</a>.</p>
+
+      <p class="activities__row">Actualizaste el precio de <a href="">bikini para perro</a> hace <a href="">2 dias</a></p>
+    </div>
+    <div class="col-sm-6">
+      <div class="activities__icon">
+        <i class="fa fa-bullhorn"></i>&nbsp;
+        <b>Te Recomenamos</b>
+      </div>
+      <p class="activities__row">Llenar los precios de envio a las principales ciudades de Colombia <a href="">aqu'i</a></p>
+      <p class="activities__row">Completar la informaci[on de tu tienda en <a href="">Editar Info</a>, Asi incrementas el nivel de confianza. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, a! </p>
+    </div>
+
+  </div>
 </section>

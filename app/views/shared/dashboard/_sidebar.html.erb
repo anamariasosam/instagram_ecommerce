@@ -1,11 +1,4 @@
 <ul class="dashboard__list">
-  <li class="dashboard__item">
-    <a href="" class="dashboard__link">
-      <i class="fa fa-home"></i>
-      <br>
-      Dashboard
-    </a>
-  </li>
   <% if current_user.type.eql?("Store") and current_user.pilot? %>
     <%= render 'shared/menu/store_menu' %>
   <% else current_user.type == "Customer" %>
@@ -15,7 +8,7 @@
     <%= link_to new_contact_path, class: 'dashboard__link' do %>
       <i class="fa fa-envelope"></i>
       <br>
-      Sugerencias
+      <span class="hidden-xs">Sugerencias</span>
     <% end %>
   </li>
 </ul>

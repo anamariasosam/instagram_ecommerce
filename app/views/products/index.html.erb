@@ -1,10 +1,13 @@
 <header class="dashboard__header">
-  <div class="container">
-    <h2 class="dashboard__headline">Mis productos</h2>
+  <div class="container-fluid">
+    <h2 class="dashboard__headline">
+      Mis productos
+    </h2>
   </div>
 </header>
 
-<section class="container js_sortProducts">
+<section class="container ">
+<section class="container-fluid js_sortProducts">
   <%= form_tag products_path, method: :get, class: 'product__searchForm', id: 'js_productSearch' do %>
     <div class="navbar-form navbar-left search-form">
       <%= text_field_tag(
@@ -20,5 +23,35 @@
     <div class="js_userProducts">
       <%= render 'store_products' %>
     </div>
+
+  <% if @products.count > 0 %>
+    <table class="table table-striped table-hover table-bordered footable toggle-arrow" id="table">
+      <thead>
+        <tr class="list-fields">
+          <th class="text-center" width="14%">Imagen</th>
+          <th class="text-left" width="19%">Nombre</th>
+          <th class="text-center" width="10%" data-hide="phone">Precio</th>
+          <th class="text-center" width="10%" data-hide="phone,tablet">Cantidad</th>
+          <th class="text-left" width="20%" data-hide="phone,tablet">Descripción</th>
+          <th class="text-center" width="10%" data-hide="phone">Código</th>
+          <th class="text-center" width="17%" colspan="2">Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody id="products">
+        <%= render "products" %>
+      </tbody>
+    </table>
+
+    <script>
+      jQuery(function($){ $('#table').footable({ phone: 480 }); });
+    </script>
+  <% else %>
+    <p>No hay tienes productos.</p>
   <% end %>
 </section>
+
+<div class="container-fluid text-center">
+  <!-- disabled until the static page to teach about products exists -->
+  <button class="btn btn-primary" disabled="disabled">Aprende <span class="hidden-xs">más</span> sobre crear productos</button>
+</div>
