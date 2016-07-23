@@ -16,35 +16,20 @@
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <div class="updates__row">
-        <h5><b>Ahora Tenemos Notificaciones</b></h5>
-        <p>
-          Te presentamos nuestro nuevo sistema de notificaciones, as'i estaremos en contacto, te escribiremos aqu'i todo sobre actualizaciones, promociones y demas; no te preocupes, no llegan las malas noticias.</div>
-        </p>
+      <% if @announcements.size > 0 %>
+        <% @announcements.each do |announcement| %>
+          <div class="updates__row">
+            <%= announcement.message.html_safe %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="updates__row">
+          <p>Actualmente no tienes notificaciones por leer.</p>
+        </div>
+      <% end %>
     </div>
-
-    <div class="col-sm-12">
-      <div class="updates__row">
-        <h5><b>Nuevo Dashboard !!</b></h5>
-        <p>
-          Estamos estrenando dashboard si estas tan emocionado como nosotros compartelo en <a href="http://twitter.com">twitter</a>.</div>
-        </p>
-    </div>
-
-    <div class="col-sm-12">
-      <div class="updates__row">
-        <h5><b>Recibimos Sugerencias</b></h5>
-        <p>
-          Ahora nos puedes enviar sugerencias presionando el icono de sobre de carta ubicado a la izquierda.</div>
-        </p>
-    </div>
-
   </div>
-</section>
 
-<section class="container-fluid activities">
-  <div class="row">
-  </div>
   <div class="row">
     <div class="col-sm-6">
       <div class="activities__icon">
@@ -60,10 +45,10 @@
     <div class="col-sm-6">
       <div class="activities__icon">
         <i class="fa fa-bullhorn"></i>&nbsp;
-        <b>Te Recomenamos</b>
+        <b>Te Recomendamos</b>
       </div>
-      <p class="activities__row">Llenar los precios de envio a las principales ciudades de Colombia <a href="">aqu'i</a></p>
-      <p class="activities__row">Completar la informaci[on de tu tienda en <a href="">Editar Info</a>, Asi incrementas el nivel de confianza. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, a! </p>
+      <p class="activities__row">Llenar los precios de envio a las principales ciudades de Colombia <a href="">aquí</a></p>
+      <p class="activities__row">Completar la informaci[on de tu tienda en <a href="">Editar Información</a>, Asi incrementas el nivel de confianza. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, a! </p>
     </div>
 
   </div>

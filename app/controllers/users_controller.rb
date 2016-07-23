@@ -51,6 +51,7 @@ class UsersController < ApplicationController
                                   .order("created_at desc")
                                   .where(owner_id: current_user)
                                   .limit(5)
+      @announcements = Announcement.current
     else
       redirect_to edit_user_registration_path
     end
