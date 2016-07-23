@@ -16,6 +16,8 @@
 #
 
 class Product < ActiveRecord::Base
+  include PublicActivity::Common
+
   after_create :magic
 
   has_shortened_urls

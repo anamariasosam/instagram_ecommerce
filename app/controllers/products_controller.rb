@@ -58,6 +58,7 @@ class ProductsController < ApplicationController
 
       respond_to do |format|
         if @product.save
+          @product.create_activity :create, owner: current_user
           format.html { redirect_to @product, notice: "El producto ha sido creado exitosamente.<br>
             <a class='js_instagramLoad' href='/users/dashboard' class='product_link'>Agregar otro producto</a>"}
           format.json { render :show, status: :created, location: @product }
@@ -78,6 +79,7 @@ class ProductsController < ApplicationController
     if current_user.user_token
       respond_to do |format|
         if @product.update(product_params)
+          @product.create_activity :update, owner: current_user
           format.html { redirect_to @product, notice: 'El producto ha sido actualizado exitosamente' }
           format.json { render :show, status: :ok, location: @product }
         else
@@ -94,6 +96,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    @product.create_activity :destroy, owner: current_user, parameters: { last_name: @product.product_name }
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'El producto ha sido eliminado con éxito.' }
