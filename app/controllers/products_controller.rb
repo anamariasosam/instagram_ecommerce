@@ -40,6 +40,10 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    if current_user.id != @product.store_id
+      flash[:error] = t('product.edit_permissions')
+      redirect_to root_url
+    end
   end
 
   # POST /products
