@@ -1,12 +1,16 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :only => [:index, :new, :edit]
+  helper_method :sort_column, :sort_direction
 
   # GET /products
   # GET /products.json
   def index
     if current_user.pilot?
-      @products = current_user.products.order(:product_name)
+      @products = current_user
+                    .products
+                    .search(params[:search])
+                    .order(sort_column + " " + sort_direction)
     else
       redirect_to users_suscribe_path
     end
@@ -104,5 +108,13 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:product_name, :price, :quantity, :instagram_image, :description, :likes, :photo_id, :category_id)
+    end
+
+    def sort_column
+      Product.column_names.include?(params[:sort]) ? params[:sort] : "product_name"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end
