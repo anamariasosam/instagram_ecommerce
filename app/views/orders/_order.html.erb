@@ -1,0 +1,9 @@
+<tr>
+  <td><%= order.id %></td>
+  <td><%= order.status %></td>
+  <td><%= time_ago_in_words order.created_at %></td>
+  <td><%= order.customer.full_name %></td>
+  <td><%= order.product.product_name %></td>
+  <td><a href="tel:<%= order.customer.phone_number %>"><%= order.customer.phone_number %></a> <br> <a href="mailTo:<%= order.customer.email %>"><%= order.customer.email %></a></td>
+  <td> Print </td>
+</tr>

@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20160723220408) do
     t.string   "recipient_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end 
+  end
 
   add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type", using: :btree
   add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type", using: :btree
