@@ -58,7 +58,14 @@ class UsersController < ApplicationController
     render :layout => 'dashboard'
   end
 
+  def orders
+    @orders = Order.where("store_id = :store_id", store_id: current_user.id)
+    render :layout => 'dashboard'
+  end
+
+  # private methods
   private
+
     def require_store
       if current_user.type == "Customer"
         flash[:error] = "No eres tienda"
