@@ -1,0 +1,61 @@
+<header class="sectionHero">
+  <div class="container">
+    <h2 class="">Detalles de la compra</h2>
+  </div>
+</header>
+
+<section class="container">
+  <div class="row">
+
+    <div class="col-sm-6">
+      <%= render 'product_and_store_details' %>
+    </div>
+    <div class="col-sm-6">
+      <h2>Comprador</h2>
+      <p><%= current_user.full_name %></p>
+      <p>Contacto: <%= current_user.phone_number %> / <%= current_user.email %></p>
+      <hr>
+      <%= form_for([@product, @order]) do |f| %>
+        <b>Metodo de pago</b>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                Contraentrega
+              </label>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" >
+                Consignacion
+              </label>
+            </div>
+          </div>
+        </div>
+        <p> Direccion: <br> <%= f.text_field :address, value: current_user.address, class: 'form-control' %> </p>
+        <p>
+          Informacion adicional:
+          <br>
+          <textarea
+            class="form-control"
+            name="name"
+            rows="8"
+            cols="40"
+            placeholder="Detalles adicionales: Cómo llegar, horario, talla... etc." ></textarea>
+        </p>
+        <hr>
+        total a pagar: <%= number_to_currency @order.total, precision:0 %>
+        <hr>
+        <div class="actions">
+          <%= f.submit 'Confirmar Orden', :class => 'btn btn-primary col-sm-6 '  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 text-center"> </div>
+  </div>
+</section>

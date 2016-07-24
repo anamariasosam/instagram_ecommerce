@@ -36,7 +36,6 @@ gem 'trix'
 
 # Text Message gem
 gem 'twilio-ruby'
-
 gem 'public_activity'
 gem 'pg'
 gem 'lightbox2-rails'

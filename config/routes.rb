@@ -10,7 +10,13 @@ Rails.application.routes.draw do
     registrations: 'registrations'
   }
 
-  resources :products
+  resources :products do
+    resources :orders do
+      # the reference is fall out boy
+      get 'thnks_fr_th_mmrs', :on => :collection
+    end
+
+  end
   resources :contacts, only: [:new, :create]
 
   get 'categories/:id', to: 'categories#show', as: 'category'
@@ -22,10 +28,14 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'legal/privacy_policy'
   get 'users/dashboard'
+  get 'users/dashboard/orders', to: 'users#orders', as: 'dashboard_orders'
   get 'users/list'
   get 'users/liked'
   get 'customers/dashboard'
 
   post 'products/new'
+  post 'twilio/voice' => 'twilio#voice'
+  post 'twilio/notify' => 'twilio#notify'
+  post 'twilio/status' => 'twilio#status'
 
 end

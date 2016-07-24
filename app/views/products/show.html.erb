@@ -85,7 +85,8 @@
         </div>
       <% else %>
         <div class="js_callToAction">
-          <button class="btn btn-primary btn-block btn-lg js_togglePurchaseBtn" class="track" data-track='comprar'>Comprar</button>
+          <!-- <button class="btn btn-primary btn-block btn-lg js_togglePurchaseBtn" class="track" data-track='comprar'>Comprar</button> -->
+          <%= link_to 'Comprar', new_product_order_path(@product) %>
           <div class="sellerInfo hide">
             <p>
               <b>Cel:</b>
