@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :only => [:index, :new, :edit]
-  helper_method :sort_column, :sort_direction
   before_filter :require_store, only: [:index, :new, :edit]
+  helper_method :sort_column, :sort_direction
   layout 'dashboard', :except => :show
 
   # GET /products
@@ -120,11 +120,11 @@ class ProductsController < ApplicationController
     end
 
     def sort_column
-      Product.column_names.include?(params[:sort]) ? params[:sort] : "product_name"
+      Product.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
     end
 
     def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
     end
 
     def require_store
