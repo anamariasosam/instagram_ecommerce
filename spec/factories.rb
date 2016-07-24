@@ -1,34 +1,12 @@
 require "faker"
 
 FactoryGirl.define do
-  factory :order do
-    product_name "MyString"
-    product_price 1
-    delivery_price 1
-    order_total 1
-    store_name "MyString"
-    store_instagram "MyString"
-    customer_name "MyString"
-    customer_instagram "MyString"
-    store_email "MyString"
-    customer_email "MyString"
-    store_phone "MyString"
-    customer_phone "MyString"
-    customer_ip_address "MyString"
-    invoice_number "MyString"
-    tracking_number "MyString"
-    delivery_instructions "MyText"
-    payment_method "MyString"
-    customer_address "MyString"
-    customer_city "MyString"
-    order_state "MyString"
-  end
   factory :announcement do
     message "MyText"
     start_at "2016-07-23 15:50:48"
     ends_at "2016-07-23 15:50:48"
   end
-  
+
   factory :customer do
     full_name { Faker::Name.name }
     city { Faker::Address.city }
