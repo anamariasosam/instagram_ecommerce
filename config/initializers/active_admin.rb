@@ -181,7 +181,7 @@ ActiveAdmin.setup do |config|
   # We recommend using the built in Active Admin layout and loading
   # up your own stylesheets / javascripts to customize the look
   # and feel.
-  #
+  config.register_stylesheet 'active_admin/hstore_editor.css'
   # To load a stylesheet:
   #   config.register_stylesheet 'my_stylesheet.css'
   #
@@ -190,7 +190,7 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
-
+  config.register_javascript 'active_admin/hstore_editor.js'
   # == CSV options
   #
   # Set the CSV builder separator
