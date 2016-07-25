@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-1">
+    <div class="updates__icon">
+      <i class="fa fa-bell"></i>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <% if @announcements.size > 0 %>
+      <% @announcements.each do |announcement| %>
+        <div class="updates__row">
+          <%= announcement.message.html_safe %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="updates__row">
+        <p>Actualmente no tienes notificaciones por leer.</p>
+      </div>
+    <% end %>
+  </div>
+</div>

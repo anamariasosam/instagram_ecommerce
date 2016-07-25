@@ -28,10 +28,12 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'legal/privacy_policy'
   get 'users/dashboard'
-  get 'users/dashboard/orders', to: 'users#orders', as: 'dashboard_orders'
+  get 'users/dashboard/orders', to: 'users#orders', as: 'store_dashboard_orders'
   get 'users/list'
   get 'users/liked'
   get 'customers/dashboard'
+  get 'customers/dashboard/orders', to: 'customers#orders', as: 'customer_dashboard_orders'
+  get 'customers/list'
 
   post 'products/new'
   post 'twilio/voice' => 'twilio#voice'

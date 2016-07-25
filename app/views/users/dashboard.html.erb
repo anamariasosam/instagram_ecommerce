@@ -7,49 +7,23 @@
 </div>
 
 <section class="container-fluid updates">
-  <div class="row">
-    <div class="col-xs-1">
-      <div class="updates__icon">
-        <i class="fa fa-bell"></i>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <% if @announcements.size > 0 %>
-        <% @announcements.each do |announcement| %>
-          <div class="updates__row">
-            <%= announcement.message.html_safe %>
-          </div>
-        <% end %>
-      <% else %>
-        <div class="updates__row">
-          <p>Actualmente no tienes notificaciones por leer.</p>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <%= render 'shared/dashboard/announcements' %>
 
   <div class="row">
     <div class="col-sm-6">
-      <div class="activities__icon">
-        <i class="fa fa-heartbeat"></i>&nbsp;
-        <b>Tu Actividad</b>
-      </div>
-      <% @activities.each do |activity| %>
-        <p class="activities__row">
-          <%= render_activity activity %>
-        </p>
-      <% end %>
+      <%= render 'shared/dashboard/activity' %>
     </div>
     <div class="col-sm-6">
       <div class="activities__icon">
         <i class="fa fa-bullhorn"></i>&nbsp;
         <b>Te Recomendamos</b>
       </div>
-      <p class="activities__row">Llenar los precios de envio a las principales ciudades de Colombia <a href="">aquí</a></p>
-      <p class="activities__row">Completar la informaci[on de tu tienda en <a href="">Editar Información</a>, Asi incrementas el nivel de confianza. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, a! </p>
-    </div>
-
+      <!-- <p class="activities__row">Llenar los precios de envio a las principales ciudades de Colombia <a href="">aquí</a></p> -->
+      <p class="activities__row">Completar la información de tu tienda en
+        <%= link_to edit_user_registration_path do %>
+          <i class="fa fa-pencil"></i>
+          Editar mi información
+        <% end %>, si ya la completaste olvídalo ;)
+      </p>
   </div>
 </section>
