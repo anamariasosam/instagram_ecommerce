@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   before_filter :authenticate_user!, only: [:dashboard, :suscribe, :list]
   before_filter :require_store, only: [:dashboard, :suscribe, :list]
+  before_filter :pilot_store, only: [:dashboard, :list]
 
   def oauth_failure
   end
@@ -9,33 +10,33 @@ class UsersController < ApplicationController
   def suscribe
     @waiting_users =  Store.where("details->'pilot' = ?", "false").all.count
     @waiting_position = current_user.waiting_position
+
+    if current_user.user_token?
+      client = Instagram.client(:access_token => current_user.user_token)
+      update_instagram_data(client)
+    else
+      redirect_to edit_user_registration_path
+    end
   end
 
   def list
     if current_user.user_token?
+      @options = { count: 40}
+      @options[:max_id] = params[:max_id] if params[:max_id]
+
       if !session['super_token'].blank?
         current_user.update(user_token: session['super_token'])
       end
 
       client = Instagram.client(:access_token => current_user.user_token)
+      @media = client.user_recent_media("self", @options)
 
-      current_user.update(
-        instagram_id:       client.user.id,
-        image:              client.user.profile_picture,
-        instagram_account:  client.user.username,
-        slug:               client.user.username
-      )
+      update_instagram_data(client)
 
-      if current_user.type.eql?("Store") and current_user.pilot?
-        @options = { count: 40}
-        @options[:max_id] = params[:max_id] if params[:max_id]
-        @media = client.user_recent_media("self", @options)
-        if @media.last.nil?
-          @media = client.user_recent_media
-        end
-      else
-        redirect_to users_suscribe_path
+      if @media.last.nil?
+        @media = client.user_recent_media
       end
+
     else
       redirect_to edit_user_registration_path
     end
@@ -63,13 +64,29 @@ class UsersController < ApplicationController
     render :layout => 'dashboard'
   end
 
+  def update_instagram_data(client)
+    current_user.update(
+      instagram_id:       client.user.id,
+      image:              client.user.profile_picture,
+      instagram_account:  client.user.username,
+      slug:               client.user.username
+    )
+  end
+
   # private methods
   private
 
     def require_store
       if current_user.type == "Customer"
-        flash[:error] = "No eres tienda"
+        flash[:error] = t('user.no_store')
         redirect_to root_url
+      end
+    end
+
+    def pilot_store
+      if !current_user.pilot?
+        flash[:error] = t('user.no_pilot')
+        redirect_to users_suscribe_path
       end
     end
 
