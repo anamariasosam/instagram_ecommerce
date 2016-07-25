@@ -2,7 +2,15 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
     def after_update_path_for(resource)
-      users_dashboard_path
+      if resource.is_a?(Store)
+        users_dashboard_path
+      elsif resource.is_a?(Customer)
+        customers_dashboard_path
+      elsif resource.is_a?(AdminUser)
+        admin_dashboard_path
+      else
+        root_path
+      end
     end
 
   private
