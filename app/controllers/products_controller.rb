@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
         create_comment(@product)
         @product.create_activity :create, owner: current_user
         format.html { redirect_to products_path, notice: "El producto ha sido creado exitosamente.<br>
-          <a class='js_instagramLoad' href='/users/list' class='product_link'>Agregar otro producto</a>"}
+          <a class='js_instagramLoad' href='/stores/list' class='product_link'>Agregar otro producto</a>"}
         format.json { render :index, status: :created, location: @product }
       else
         format.html { render :new }
@@ -124,7 +124,7 @@ class ProductsController < ApplicationController
     def pilot_store
       if !current_user.pilot?
         flash[:error] = t('user.no_pilot')
-        redirect_to users_suscribe_path
+        redirect_to stores_suscribe_path
       end
     end
 end

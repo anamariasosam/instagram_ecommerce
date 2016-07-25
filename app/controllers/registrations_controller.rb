@@ -3,7 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
 
     def after_update_path_for(resource)
       if resource.is_a?(Store)
-        users_dashboard_path
+        stores_dashboard_path
       elsif resource.is_a?(Customer)
         customers_dashboard_path
       elsif resource.is_a?(AdminUser)

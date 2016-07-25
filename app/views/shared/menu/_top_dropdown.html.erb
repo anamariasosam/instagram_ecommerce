@@ -3,7 +3,7 @@
   <% if current_user.type.eql?("Store") and current_user.pilot? %>
 
     <li>
-      <%= link_to users_dashboard_path, class: 'js_instagramLoad' do %>
+      <%= link_to stores_dashboard_path, class: 'js_instagramLoad' do %>
         <i class="fa fa-tachometer"></i> ir al Dashboard
       <% end %>
     </li>
@@ -19,7 +19,7 @@
   <% else %>
 
     <li>
-      <%= link_to users_suscribe_path, class: '' do %>
+      <%= link_to stores_suscribe_path, class: '' do %>
         <i class="fa fa-stats"></i> Estado
       <% end %>
     </li>
