@@ -16,7 +16,7 @@
       <p>Contacto: <%= current_user.phone_number %> / <%= current_user.email %></p>
       <hr>
       <%= form_for([@product, @order]) do |f| %>
-        <b>Metodo de pago</b>
+        <b>Método de pago</b>
         <div class="row">
           <div class="col-sm-4">
             <div class="radio">
@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-        <p> Direccion: <br> <%= f.text_field :address, value: current_user.address, class: 'form-control' %> </p>
+        <p> Dirección: <br> <%= f.text_field :address, value: current_user.address, class: 'form-control' %> </p>
         <p>
           Informacion adicional:
           <br>
