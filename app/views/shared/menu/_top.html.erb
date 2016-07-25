@@ -21,7 +21,7 @@
             <li class="dropdown" >
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="store_path">
                 <%= image_tag current_user.image, style: "width: 20px; height: 20px;" %>
-                <%= current_user.email %>&nbsp;
+                <%= current_user.slug %>&nbsp;
                 <i class="fa fa-bars" aria-hidden="true"></i>
               </a>
               <%= render 'shared/menu/top_dropdown' %>
@@ -30,7 +30,7 @@
           <% else %>
             <li>
               <a href="#login" role="button" data-toggle="modal" data-target="#loginModal">
-                <i class="glyphicon glyphicon-user"></i> Iniciar Session
+                <i class="glyphicon glyphicon-user"></i> Iniciar Sesión
               </a>
             </li>
           <% end %>
