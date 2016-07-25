@@ -9,8 +9,10 @@ class ApplicationController < ActionController::Base
       users_dashboard_path
     elsif resource.is_a?(Customer)
       customers_dashboard_path
-    else
+    elsif resource.is_a?(AdminUser)
       admin_dashboard_path
+    else
+      root_path
     end
   end
 
