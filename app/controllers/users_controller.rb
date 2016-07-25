@@ -21,15 +21,22 @@ class UsersController < ApplicationController
 
   def list
     if current_user.user_token?
-      @options = { count: 40}
-      @options[:max_id] = params[:max_id] if params[:max_id]
+      options = { count: 40 }
+      options[:max_id] = params[:max_id] if params[:max_id]
 
       if !session['super_token'].blank?
         current_user.update(user_token: session['super_token'])
       end
 
       client = Instagram.client(:access_token => current_user.user_token)
-      @media = client.user_recent_media("self", @options)
+      media = client.user_recent_media("self", options)
+      products =  current_user.products
+
+      media.each do |product|
+        product.already_on_db = products.exists? photo_id: product.id
+      end
+
+      @media = media
 
       update_instagram_data(client)
 

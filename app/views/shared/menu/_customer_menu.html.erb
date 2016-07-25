@@ -1,13 +1,13 @@
 <li class="dashboard__item">
-  <a href="" class="dashboard__link">
+  <%= link_to customers_dashboard_path, class: "dashboard__link js_instagramLoad" do %>
     <i class="fa fa-home"></i>
     <br>
     Dashboard
-  </a>
+  <% end %>
 </li>
 
 <li class="dashboard__item">
-  <%= link_to customers_dashboard_path, class: "dashboard__link js_instagramLoad" do %>
+  <%= link_to customers_list_path, class: "dashboard__link js_instagramLoad" do %>
     <i class="fa fa-heart"></i>
     <br>
     Productos Favoritos
@@ -23,9 +23,9 @@
 </li>
 
 <li class="dashboard__item">
-  <a href="" class="dashboard__link">
+  <%= link_to customer_dashboard_orders_path, class: "dashboard__link" do %>
     <i class="fa fa-shopping-bag"></i>
     <br>
     Productos comprados
-  </a>
+  <% end %>
 </li>

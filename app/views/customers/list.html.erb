@@ -1,0 +1,21 @@
+<div class="dashboard__header">
+  <div class="container-fluid">
+    <h2 class="dashboard__headline">
+      Productos listos para comprar
+    </h2>
+  </div>
+</div>
+
+<% if @products.empty? %>
+  <section class="container-fluid">
+    <h2>¡Ups!</h2>
+    <p>Los productos que buscas no hacen parte de nuestras tiendas aliadas. </p>
+    <p>Cuentanos que tienda es para ponernos en <%= link_to 'Contacto', new_contact_path %>. </p>
+  </section>
+<% else %>
+  <section class="container-fluid">
+    <div class="row">
+      <%= render @products %>
+    </div>
+  </section>
+<% end %>
