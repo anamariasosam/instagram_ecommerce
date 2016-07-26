@@ -30,14 +30,14 @@
             <div class="radio">
               <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" >
-                Consignacion
+                Consignación
               </label>
             </div>
           </div>
         </div>
         <p> Dirección: <br> <%= f.text_field :address, value: current_user.address, class: 'form-control' %> </p>
         <p>
-          Informacion adicional:
+          Información adicional:
           <br>
           <textarea
             class="form-control"
@@ -47,7 +47,8 @@
             placeholder="Detalles adicionales: Cómo llegar, horario, talla... etc." ></textarea>
         </p>
         <hr>
-        total a pagar: <%= number_to_currency @order.total, precision:0 %>
+        <h4>Total a pagar: <%= number_to_currency @order.total, precision:0 %></h4>
+
         <hr>
         <div class="actions">
           <%= f.submit 'Confirmar Orden', :class => 'btn btn-primary col-sm-6 '  %>
