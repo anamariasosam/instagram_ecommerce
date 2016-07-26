@@ -58,15 +58,6 @@ function addColor(remain) {
   }
 }
 
-function menuCaret() {
-  $('.dropdown').on('show.bs.dropdown', function(){
-       $("#app__menu_caret").css('transform', 'rotate(0deg)');
-   });
-   $('.dropdown').on('hide.bs.dropdown', function(e){
-       $("#app__menu_caret").css('transform', 'rotate(270deg)');
-   });
-}
-
 function sortProducts() {
   $form = $('#js_productSearch');
   $input = $('#js_searchField');
@@ -115,7 +106,6 @@ $(document).on('ready page:change page:load', function() {
   add_class_active();
   description_text();
   auto_close_alerts();
-  menuCaret();
   loadFiraFont();
 
   if ($('.container h2').text() == "Editar Producto" || $('.container h2').text() == "Nuevo Producto") {

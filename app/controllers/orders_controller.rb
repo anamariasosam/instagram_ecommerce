@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
   end
 
   def thnks_fr_th_mmrs
-    @result = Order.where("customer_id = :customer_id", :customer_id => current_user.id).last
+    @result = current_user.orders.last
   end
 
   private
