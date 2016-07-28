@@ -6,13 +6,6 @@ class ProductsController < ApplicationController
   helper_method :sort_column, :sort_direction
   layout 'dashboard', :except => :show
 
-
-  def create_comment(product)
-    product_code = @product.shortened_urls.last.unique_key
-    message = t('web.instagram_comment', code: product_code )
-    client = Instagram.client(:access_token => current_user.user_token)
-    result = client.create_media_comment(product.photo_id, message)
-  end
   # GET /products
   # GET /products.json
   def index
@@ -52,7 +45,6 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        create_comment(@product)
         @product.create_activity :create, owner: current_user
         format.html { redirect_to products_path, notice: "El producto ha sido creado exitosamente.<br>
           <a class='js_instagramLoad' href='/stores/list' class='product_link'>Agregar otro producto</a>"}

@@ -285,4 +285,3 @@ es:
     pm: pm
   web:
     description: "Catlog: Catálogo virtual de las tiendas de Instagram. Sabrás los precios, descripciones y disponibilidad de tus productos favoritos"
-    instagram_comment: '⚠️ ¡IMPORTANTE! ⚠️  Ingresa a 🌐 www.catlog.co y encuentra toda la información de este producto con este código: 🔍 %{code} 🔍 #catlog @catlog.co ⬆️ Encuentra el link en la biografía ⬆️'
