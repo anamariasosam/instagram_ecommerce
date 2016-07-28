@@ -7,3 +7,18 @@
     opacity: 1;
   }
 }
+
+.modal {
+  &__container  {
+    text-align: center;
+  }
+
+  &__image {
+    border-radius: 6px;
+  }
+
+  &__title {
+    text-align: center;
+    margin: 10px 0 25px;
+  }
+}
