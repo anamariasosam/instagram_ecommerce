@@ -53,9 +53,14 @@ class StoresController < ApplicationController
   end
 
   def dashboard
+
     if !session['super_token'].blank?
       current_user.update(user_token: session['super_token'])
     end
+
+    client = Instagram.client(:access_token => current_user.user_token)
+    update_instagram_data(client)
+    
     @activities = PublicActivity::Activity
                                 .order("created_at desc")
                                 .where(owner_id: current_user)
