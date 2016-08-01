@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       current_user.update(
         instagram_id:   client.user.id,
         image:    client.user.profile_picture,
-        instagram_account:  client.user.username,
+        store_account:  client.user.username,
         slug:           client.user.username
       )
 
