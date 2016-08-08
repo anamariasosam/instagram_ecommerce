@@ -15,7 +15,16 @@
       <% end %>
     <% else %>
       <div class="updates__row">
-        <p>Actualmente no tienes notificaciones por leer.</p>
+        <% if current_user.type == "Store" and current_user.hashtag? %>
+          <p> Tu hashtag <b><%= current_user.hashtag %></b>
+             ha sido usado <b><%= @hashtag_count %></b> veces. ¿No es el hashtag de tu marca?, puedes editarlo en
+            <%= link_to "editar mi información", edit_user_registration_path %>
+          </p>
+        <% else %>
+          <p>
+            Añade un hashtag a tu cuenta para que podamos analizar tus interacciones
+          </p>
+        <% end %>
       </div>
     <% end %>
   </div>

@@ -46,12 +46,20 @@
               <%= f.label "País*" %>
               <%= f.text_field :country, class: 'form-control' %>
             </div>
+            <div class="form-group">
+              <%= f.label "Celular*" %> <br>
+              <%= f.telephone_field :phone_number, class: 'form-control' %>
+            </div>
           </td>
           <% if @user.type == "Store" %>
             <td rowspan="2" class="stores__form-data">
               <div class="form-group">
+                <%= f.label "Hashtag" %> <br>
+                <%= f.text_field :hashtag, class: 'form-control' %>
+              </div>
+              <div class="form-group">
                 <%= f.label "Información adicional" %> <br>
-                <%= f.text_area :info, rows: 9, class: 'form-control' %>
+                <%= f.text_area :info, rows: 5, class: 'form-control' %>
               </div>
             </td>
 
@@ -70,14 +78,6 @@
           <% end %>
         </tr>
 
-        <tr>
-          <td class="stores__form-data">
-            <div class="form-group">
-              <%= f.label "Celular*" %> <br>
-              <%= f.telephone_field :phone_number, class: 'form-control' %>
-            </div>
-          </td>
-        </tr>
         <!-- User token -->
         <% if session['super_token'] %> <br>
           <%= f.hidden_field :user_token, value: session['super_token'] %>
