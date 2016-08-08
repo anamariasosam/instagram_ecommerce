@@ -6,12 +6,14 @@
 
   <div class="row text-center">
     <% @stores.each do |store| %>
+    <% cache store do %>
       <% if store.name? and store.products.count > 0  %>
         <figure class="app__partners-figure col-xs-6 col-sm-4 col-md-3">
           <%= link_to store do %>
             <img src="<%= store.image %>" class="img-circle app__partners-img" alt="catlog, aliados, <%= store.name%>">
           <% end %>
         </figure>
+      <% end %>
       <% end %>
     <% end %>
   </div>

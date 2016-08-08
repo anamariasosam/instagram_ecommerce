@@ -6,10 +6,12 @@
     </li>
 
     <% @categories.each do |category| %>
+      <% cache category do %>
       <% unless category.isDefault? or category.products.count < 1 %>
         <li class="category__item">
           <%= link_to category.name, category, class: "category__link" %>
         </li>
+      <% end %>
       <% end %>
     <% end %>
 

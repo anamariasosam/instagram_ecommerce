@@ -7,5 +7,6 @@ class CatalogController < ApplicationController
                           .per(12)
                           .order('store_id asc')
                           .order('created_at DESC')
+                          .includes(:store)
   end
 end

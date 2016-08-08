@@ -1,11 +1,11 @@
 class CategoriesController < ApplicationController
   def show
-    @category = Category.find(params[:id])
     @categories = Category.all.order('name ASC')
+    @category = @categories.find(params[:id])
     @products = @category.products
                           .page(params[:page])
-                          .per(8)
-                          .order('store_id asc')
-                          .order('created_at DESC')
+                          .per(12)
+                          .reorder(created_at: :desc)
+                          .includes(:store)
   end
 end
