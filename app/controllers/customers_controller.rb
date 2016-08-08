@@ -30,7 +30,30 @@ class CustomersController < ApplicationController
     end
 
     @products
+  end
 
+  def media_liked
+    response = HTTParty.get("https://api.instagram.com/v1/users/self/media/liked?access_token=" + current_user.user_token)
+    @media = response['data']
+  end
+
+  def hashtag
+    tag = params[:tag]
+    @catlogco_media = getHashtagMedia('catlogapp')
+
+    if !tag.nil? and !tag.empty?
+      @hashtag = getHashtagMedia(tag)
+      @hashtag_text = "#" +  params[:tag]
+    else
+      @hashtag = getHashtagMedia('productosMedellin')
+      @hashtag_text = "#producto"
+    end
+
+    @media =  @catlogco_media & @hashtag
+
+    if @media.empty?
+      flash[:error] = t('instagram.hashtag_not_found', hashtag: @hashtag_text)
+    end
   end
 
   def orders
@@ -70,4 +93,7 @@ class CustomersController < ApplicationController
       )
     end
 
+    def getHashtagMedia(data)
+      return HTTParty.get("https://api.instagram.com/v1/tags/#{data}/media/recent?access_token=2129469216.e029fea.33e99327453b40dbbe901e4f36a247c4")['data']
+    end
 end

@@ -7,10 +7,18 @@
 </li>
 
 <li class="dashboard__item">
-  <%= link_to customers_list_path, class: "dashboard__link js_instagramLoad" do %>
+  <%= link_to customers_media_liked_path, class: "dashboard__link js_instagramLoad" do %>
     <i class="fa fa-heart"></i>
     <br>
-    <span class="hidden-xs">Productos Favoritos</span>
+    <span class="hidden-xs">Fotos Favoritas de Instagram</span>
+  <% end %>
+</li>
+
+<li class="dashboard__item">
+  <%= link_to customers_hashtag_path, class: "dashboard__link js_instagramLoad" do %>
+    <i class="fa fa-hashtag"></i>
+    <br>
+    <span class="hidden-xs">Encuentra productos por hashtag</span>
   <% end %>
 </li>
 

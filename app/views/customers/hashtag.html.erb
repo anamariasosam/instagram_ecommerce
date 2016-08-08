@@ -1,0 +1,44 @@
+<div class="dashboard__header">
+  <div class="container-fluid">
+    <h2 class="dashboard__headline">
+      Encuentra los productos por un hashtag
+    </h2>
+    <div class="col-md-4">
+      <%= form_tag("/customers/hashtag", method: "post") do %>
+      <div class="input-group">
+        <%= text_field_tag :tag, nil, class: 'form-control', required: true, value: params[:tag]%>
+        <span class="input-group-btn">
+          <%= submit_tag "Find", class: "btn btn-default js_instagramLoad"%>
+        </span>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>
+<section class="container-fluid">
+  <div class="row">
+    <% if !@media.empty? %>
+      <h3 class="dashboard_hashtag-headline">#catlogapp  y <%= @hashtag_text %> </h3>
+      <% @media.each do |media| %>
+        <%= render partial: 'shared/media/media_item', locals: { media: media } %>
+      <% end %>
+    <% end %>
+  </div>
+  <% if !@hashtag.nil? %>
+    <div class="row">
+      <h3 class="dashboard_hashtag-headline"><%= @hashtag_text %></h3>
+      <% @hashtag.each do |media| %>
+        <%= render partial: 'shared/media/media_item', locals: { media: media } %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <h3 class="dashboard_hashtag-headline">#catlogapp</h3>
+    <% @catlogco_media.each do |media| %>
+      <%= render partial: 'shared/media/media_item', locals: { media: media } %>
+    <% end %>
+  </div>
+</section>
