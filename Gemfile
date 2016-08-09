@@ -6,6 +6,7 @@ gem 'rails', '4.2.5'
 gem 'devise'
 gem 'rename'
 gem 'phonelib'
+gem 'httparty'
 
 # Style plugins
 gem 'bootstrap-sass'
@@ -33,6 +34,8 @@ gem 'kaminari'
 # Text Editor
 gem 'trix'
 
+gem 'twilio-ruby'
+gem 'public_activity'
 gem 'pg'
 gem 'lightbox2-rails'
 gem 'modernizr-rails'
