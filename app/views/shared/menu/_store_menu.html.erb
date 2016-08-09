@@ -1,0 +1,39 @@
+<li class='dashboard__item'>
+  <%= link_to users_dashboard_path, class: 'dashboard__link' do %>
+    <i class="fa fa-home"></i>
+    <br>
+    <span class="hidden-xs">Dashboard</span>
+  <% end %>
+</li>
+
+<li class='dashboard__item'>
+  <%= link_to users_list_path, class: 'dashboard__link js_instagramLoad' do %>
+    <i class="fa fa-plus"></i>
+    <br>
+    <span class="hidden-xs">Crear un producto</span>
+  <% end %>
+</li>
+
+<li class='dashboard__item'>
+  <%= link_to products_path, class: "dashboard__link" do %>
+    <i class="fa fa-shopping-basket"></i>
+    <br>
+    <span class="hidden-xs">Productos de la tienda</span>
+  <% end %>
+</li>
+
+<li class='dashboard__item'>
+  <%= link_to store_dashboard_orders_path, class: "dashboard__link" do %>
+    <i class="fa fa-paper-plane"></i>
+    <br>
+    <span class="hidden-xs">Reporte de ordenes</span>
+  <% end %>
+</li>
+
+<li class='dashboard__item'>
+  <%= link_to edit_user_registration_path, class: "dashboard__link"  do %>
+    <i class="fa fa-pencil"></i>
+    <br>
+    <span class="hidden-xs">Editar mi información</span>
+  <% end %>
+</li>

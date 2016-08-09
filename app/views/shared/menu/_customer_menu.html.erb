@@ -1,0 +1,31 @@
+<li class="dashboard__item">
+  <%= link_to customers_dashboard_path, class: "dashboard__link js_instagramLoad" do %>
+    <i class="fa fa-home"></i>
+    <br>
+    Dashboard
+  <% end %>
+</li>
+
+<li class="dashboard__item">
+  <%= link_to customers_list_path, class: "dashboard__link js_instagramLoad" do %>
+    <i class="fa fa-heart"></i>
+    <br>
+    Productos Favoritos
+  <% end %>
+</li>
+
+<li class="dashboard__item">
+  <%= link_to edit_user_registration_path, class: "dashboard__link "  do %>
+    <i class="fa fa-pencil"></i>
+    <br>
+    Editar mi información
+  <% end %>
+</li>
+
+<li class="dashboard__item">
+  <%= link_to customer_dashboard_orders_path, class: "dashboard__link" do %>
+    <i class="fa fa-shopping-bag"></i>
+    <br>
+    Productos comprados
+  <% end %>
+</li>

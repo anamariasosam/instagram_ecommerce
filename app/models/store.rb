@@ -21,7 +21,7 @@
 #  current_sign_in_ip     :string
 #  last_sign_in_ip        :string
 #  user_token             :string
-#  store_account          :string
+#  instagram_account      :string
 #  provider               :string
 #  uid                    :string
 #  slug                   :string
@@ -33,7 +33,8 @@
 
 class Store < User
   has_many :products, dependent: :destroy
-
+  has_many :orders
+  
   hstore_accessor :details,
   name: :string,
   info: :string,

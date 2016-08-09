@@ -3,6 +3,9 @@ es:
   product:
     purchase: Actualmente puedes contactar el vendedor con su número de teléfono.
     edit_permissions: No tienes permisos para editar este producto
+  user:
+    no_pilot: Te encuentras en lista de espera
+    no_store: Debes registarte como tienda para crear productos
   mail_form:
     attributes:
       contact:
@@ -282,3 +285,4 @@ es:
     pm: pm
   web:
     description: "Catlog: Catálogo virtual de las tiendas de Instagram. Sabrás los precios, descripciones y disponibilidad de tus productos favoritos"
+    instagram_comment: '⚠️ ¡IMPORTANTE! ⚠️  Ingresa a 🌐 www.catlog.co y encuentra toda la información de este producto con este código: 🔍 %{code} 🔍 #catlog @catlog.co ⬆️ Encuentra el link en la biografía ⬆️'

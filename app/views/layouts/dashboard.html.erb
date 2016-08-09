@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title><%= yield(:title) %>Catlog</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="<%= t 'web.description' %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= yield(:meta_tags) %>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-config" content="/IEconfig.xml" />
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :modernizr %>
+
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+  <div class="loader"></div>
+
+  <%= render 'shared/alerts/flash' %>
+  <%= render partial: 'shared/menu/top', locals: { search: false } %>
+
+  <div class="dashboard clearfix">
+
+    <div class="dashboard__sidebar">
+      <%= render'shared/dashboard/sidebar' %>
+    </div>
+
+    <div class="dashboard__content">
+      <%= yield %>
+    </div>
+
+  </div>
+
+  <%= render "layouts/footer" %>
+  <%= render "mixins/search" %>
+  <%= render "mixins/login" %>
+
+  <!-- Google Analytics -->
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-79609369-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='//www.google-analytics.com/analytics.js'></script>
+  <!-- End Google Analytics -->
+</body>
+</html>

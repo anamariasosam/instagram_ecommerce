@@ -1,8 +1,14 @@
 require "faker"
 
 FactoryGirl.define do
+  factory :announcement do
+    message "MyText"
+    start_at "2016-07-23 15:50:48"
+    ends_at "2016-07-23 15:50:48"
+  end
 
   factory :customer do
+    full_name { Faker::Name.name }
     city { Faker::Address.city }
     country { Faker::Address.country }
     email { Faker::Internet.email }

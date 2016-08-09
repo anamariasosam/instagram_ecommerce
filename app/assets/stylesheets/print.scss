@@ -1,0 +1,24 @@
+@page {
+  margin: 1cm;
+  size: Letter;
+}
+body {
+  padding: 0;
+  font-family: 'Times New Roman' ;
+  letter-spacing: 0.03em;
+}
+.dashboard {
+  &__content {
+    margin: 0;
+    width: 100%;
+  }
+
+  &__sidebar {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.footer {
+  display: none;
+}

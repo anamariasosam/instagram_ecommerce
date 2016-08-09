@@ -21,7 +21,7 @@
 #  current_sign_in_ip     :string
 #  last_sign_in_ip        :string
 #  user_token             :string
-#  store_account          :string
+#  instagram_account      :string
 #  provider               :string
 #  uid                    :string
 #  slug                   :string
@@ -32,10 +32,11 @@
 #
 
 class Customer < User
-  belongs_to :user
+  has_many :orders
 
   hstore_accessor :details,
-  country: :string,
   full_name: :string,
   address: :string
+
+  validates_presence_of :full_name, on: :update
 end

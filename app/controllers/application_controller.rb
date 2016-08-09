@@ -5,7 +5,15 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    users_dashboard_path
+    if resource.is_a?(Store)
+      users_dashboard_path
+    elsif resource.is_a?(Customer)
+      customers_dashboard_path
+    elsif resource.is_a?(AdminUser)
+      admin_dashboard_path
+    else
+      root_path
+    end
   end
 
   protected
