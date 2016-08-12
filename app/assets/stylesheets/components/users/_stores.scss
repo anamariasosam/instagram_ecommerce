@@ -57,6 +57,25 @@
       display: none;
     }
 
+    &-socialUrl {
+      font-size: 20px;
+      margin: 0 16px;
+
+      @include respond-to(m) {
+        margin: 0 10px;
+      }
+
+      @include respond-to(s) {
+        font-size: 30px;
+        margin-top: 10px;
+      }
+
+      @include respond-to(xs) {
+        font-size: 25px;
+        margin-top: 10px;
+      }
+    }
+
   }
 }
 

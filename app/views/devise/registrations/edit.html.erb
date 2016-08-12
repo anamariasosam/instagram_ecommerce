@@ -51,11 +51,37 @@
               <%= f.telephone_field :phone_number, class: 'form-control' %>
             </div>
           </td>
-          <% if @user.type == "Store" %>
+
+          <% if @user.type == "Customer" %>
             <td rowspan="2" class="stores__form-data">
               <div class="form-group">
+                <%= f.label "Dirección de envío" %> <br>
+                <%= f.text_area :address, rows: 9, class: 'form-control' %>
+              </div>
+            </td>
+          <% else %>
+            <td class="stores__form-data">
+              <div class="form-group">
+                <%= f.label "Cuenta de Facebook" %>
+                <%= f.text_field :facebook, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label "Cuenta de Twitter" %>
+                <%= f.text_field :twitter, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label "Cuenta de Snapchat" %> <br>
+                <%= f.telephone_field :snapchat, class: 'form-control' %>
+              </div>
+            </td>
+          <% end %>
+        </tr>
+        <tr>
+          <% if @user.type == "Store" %>
+            <td class="stores__form-data" colspan="2">
+              <div class="form-group">
                 <%= f.label "Información adicional" %> <br>
-                <%= f.text_area :info, rows: 9, class: 'form-control' %>
+                <%= f.text_area :info, rows: 4, class: 'form-control' %>
               </div>
             </td>
 
@@ -63,14 +89,6 @@
               <%= f.hidden_field :pilot, value: true %>
               <%= f.hidden_field :waiting_position, value: Store.where("details->'pilot' = ?", "false").all.count %>
             <% end %>
-
-          <% else %>
-            <td rowspan="2" class="stores__form-data">
-              <div class="form-group">
-                <%= f.label "Dirección de envío" %> <br>
-                <%= f.text_area :address, rows: 9, class: 'form-control' %>
-              </div>
-            </td>
           <% end %>
         </tr>
 

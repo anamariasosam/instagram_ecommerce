@@ -11,7 +11,7 @@ gem 'httparty'
 # Style plugins
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
-gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 4.6.2'
 gem 'normalize-rails'
 gem "autoprefixer-rails"
 
