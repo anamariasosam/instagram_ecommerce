@@ -6,5 +6,7 @@ function showGif() {
 }
 
 $(document).on('ready', function() {
-  showGif()
+  if ($('#js_celebrateGif').length) {
+    showGif()
+  }
 });

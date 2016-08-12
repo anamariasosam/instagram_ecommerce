@@ -108,7 +108,7 @@ $(document).on('ready page:change page:load', function() {
   auto_close_alerts();
   loadFiraFont();
 
-  if ($('.container h2').text() == "Editar Producto" || $('.container h2').text() == "Nuevo Producto") {
+  if ($('.js_countdown_product_name').length) {
     countdown_for_product_name();
   }
 
