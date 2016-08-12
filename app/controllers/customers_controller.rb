@@ -21,7 +21,7 @@ class CustomersController < ApplicationController
   end
 
   def orders
-    @orders = Order.where("customer_id = :customer_id", customer_id: current_user.id)
+    @orders = current_user.orders
   end
 
   private
