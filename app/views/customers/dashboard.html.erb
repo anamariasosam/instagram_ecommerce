@@ -9,64 +9,22 @@
 <section class="container-fluid updates">
   <!-- <%= render 'shared/dashboard/announcements' %> -->
   <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-sm-12 col-md-6">
-        <br>
-        <div class="thumbnail productList">
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="productList__actions">
-                <a class="productList__zoom" href="<%= product.instagram_image %>" data-lightbox="image-1" data-title="<%= product.product_name %> - Valor: <%= number_to_currency product.price, precision:0 %>" >Zoom</a>
-                <span class="productList__separator">|</span>
-                <%= link_to 'Ver Más', product, class: "productList__more" %>
-              </div>
-
-              <%= link_to product do %>
-                <img src="<%= product.instagram_image %>" class="img-responsive" alt="product">
-              <% end %>
-            </div>
-            <div class="col-sm-6">
-              <div class="caption">
-                <h3 class="productList__name">
-                  <%= link_to product.product_name, product, class: 'productList__link' %>
-                </h3>
-
-                <p class="text-left" >
-                  De: <%= link_to product.store.name, store_path(product.store.slug), class: "productList__store" %>
-                </p>
-
-                <p class="text-left" >
-                  <%= truncate(product.description, length: 200, escape: false) %>
-                </p>
-
-                <p class="productList__price">
-                  <%= number_to_currency product.price, precision: 0 %>
-                </p>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <% end %>
-
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <%= render 'shared/dashboard/activity' %>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <div class="activities__icon">
         <i class="fa fa-bullhorn"></i>&nbsp;
         <b>Te Recomendamos</b>
       </div>
-      <p class="activities__row">Para mirar los productos que te han gustado en instagram que venden nuestras tiendas dale click a
-        <%= link_to customers_list_path do %>
-          <i class="fa fa-heart"></i>
-          Productos Favoritos
+      <p class="activities__row">Para mirar los productos de las tiendas de Instagram entra a
+        <%= link_to catalog_view_path do %>
+          <i class="fa fa-shopping-bag"></i>
+          Catálogo
         <% end %>.
       </p>
       <p class="activities__row">
-        Para comprar, recuerda tener tu actualizada.
+        Para comprar, recuerda tener tu cuenta actualizada.
       </p>
   </div>
 </section>
