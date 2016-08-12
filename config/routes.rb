@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
 
   end
+
   resources :contacts, only: [:new, :create]
 
   get 'categories/:id', to: 'categories#show', as: 'category'
@@ -32,15 +33,10 @@ Rails.application.routes.draw do
   get "stores/suscribe"
   get 'store/:id', to: 'stores#show', as: 'store'
   get 'customers/dashboard'
-  get 'customers/list'
-  get 'customers/media_liked'
-  get 'customers/hashtag'
   get 'customers/dashboard/orders', to: 'customers#orders', as: 'customer_dashboard_orders'
 
-  post 'customers/hashtag'
   post 'products/new'
   post 'twilio/voice' => 'twilio#voice'
   post 'twilio/notify' => 'twilio#notify'
   post 'twilio/status' => 'twilio#status'
-
 end
