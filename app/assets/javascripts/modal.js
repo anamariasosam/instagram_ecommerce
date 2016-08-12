@@ -10,7 +10,7 @@ function center_modal() {
 }
 
 $(document).on('ready page:change page:load', function() {
-  $('#loginModal').on('show.bs.modal', center_modal);
+  $('.modal').on('show.bs.modal', center_modal);
   $(window).on('resize', function() {
       $('.modal:visible').each(center_modal);
   });

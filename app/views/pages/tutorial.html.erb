@@ -46,6 +46,23 @@
   <hr>
 
   <%= render partial: "/pages/video", locals: {
+   headline: 'Añadir Código a Instagram',
+   url: "3",
+   recommendations: [
+     'En la página web de tu cuenta de Instagram escribe la direccion de catlog.com, para que sea más fácil encontrar la información'
+   ],
+   steps: [
+     'Copia el código que está acompañado en el producto',
+     'Ve a tu perfil de Instagram',
+     'Escoge la fotografía que quieras que tenga el código',
+     'Selecciona la opción de editar',
+     'Pega el código',
+   ]
+  } %>
+
+  <hr>
+
+  <%= render partial: "/pages/video", locals: {
     headline: 'Editar un producto',
     url: "1",
     recommendations: [

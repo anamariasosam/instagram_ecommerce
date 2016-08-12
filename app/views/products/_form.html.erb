@@ -43,7 +43,7 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :quantity do %> (Cuantos tienes para vender) <% end %><br>
+        <%= f.label :quantity do %> Disponibles (Cuantos tienes para vender) <% end %><br>
         <%= f.number_field :quantity , min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number", placeholder: "0 unidades", class: 'form-control' %>
       </div>
 

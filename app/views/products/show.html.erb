@@ -66,6 +66,12 @@
       </p>
 
       <% if current_user and current_user.id == @product.store_id %>
+        <p class="product-code">
+          Comparte este código en tu post de instagram:
+          <span class="app__bold-text product_code" oncopy="addLink()" >
+            <%= @product.shortened_urls.last.unique_key %>
+          </span>
+        </p>
 
         <div class="product-action--container text-right">
           <%= link_to edit_product_path(@product) do %>

@@ -1,16 +1,14 @@
-#loginModal {
+.modal {
+  &__container  {
+    text-align: center;
+  }
+
   .close {
     background-color: transparent;
     color: #fff !important;
     height: 1em;
     font-size: 6em;
     opacity: 1;
-  }
-}
-
-.modal {
-  &__container  {
-    text-align: center;
   }
 
   &__image {
