@@ -39,8 +39,7 @@ class Store < User
   name: :string,
   info: :string,
   pilot: :boolean,
-  waiting_position: :integer,
-  hashtag: :string
+  waiting_position: :integer
 
   validates_presence_of :name, on: :update
 end

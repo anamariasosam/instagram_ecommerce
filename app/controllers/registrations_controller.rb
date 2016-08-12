@@ -33,8 +33,7 @@ class RegistrationsController < Devise::RegistrationsController
                       :country,
                       :pilot,
                       :full_name,
-                      :address,
-                      :hashtag
+                      :address
                     )
     end
 end

@@ -52,12 +52,6 @@ class StoresController < ApplicationController
     render :layout => 'dashboard'
   end
 
-  def hashtag_analytics
-    if current_user.hashtag?
-      @hashtag_count = HTTParty.get("https://api.instagram.com/v1/tags/" + current_user.hashtag + "?access_token=" + current_user.user_token)['data']['media_count']
-    end
-  end
-
   def dashboard
     if !session['super_token'].blank?
       current_user.update(user_token: session['super_token'])
@@ -65,8 +59,6 @@ class StoresController < ApplicationController
 
     client = Instagram.client(:access_token => current_user.user_token)
     update_instagram_data(client)
-
-    hashtag_analytics
 
     @activities = PublicActivity::Activity
                                 .order("created_at desc")
