@@ -1,19 +1,18 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :only => [:index, :new, :edit]
+  before_filter :require_store, only: [:index, :new, :edit]
+  before_filter :pilot_store, only: [:index, :new, :edit]
   helper_method :sort_column, :sort_direction
+  layout 'dashboard', :except => :show
 
   # GET /products
   # GET /products.json
   def index
-    if current_user.pilot?
-      @products = current_user
-                    .products
-                    .search(params[:search])
-                    .order(sort_column + " " + sort_direction)
-    else
-      redirect_to users_suscribe_path
-    end
+    @products = current_user
+                  .products
+                  .search(params[:search])
+                  .order(sort_column + " " + sort_direction)
   end
 
   # GET /products/1
@@ -23,19 +22,11 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    if current_user.user_token
-      if current_user.pilot?
-        params.inspect
-        @photo = params[:photo]
-        @photo_id = params[:photo_id]
+    params.inspect
+    @photo = params[:photo]
+    @photo_id = params[:photo_id]
 
-        @product = Product.new
-      else
-        redirect_to users_suscribe_path
-      end
-    else
-      redirect_to :controller => 'sessions', :action => 'connect'
-    end
+    @product = Product.new
   end
 
   # GET /products/1/edit
@@ -49,49 +40,42 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    @product = Product.new(product_params)
+    @product.store_id = current_user.id
 
-    if current_user.pilot?
-      @product = Product.new(product_params)
-      @product.store_id = current_user.id
-
-      respond_to do |format|
-        if @product.save
-          format.html { redirect_to @product, notice: "El producto ha sido creado exitosamente.<br>
-            <a class='js_addNewProduct' href='/users/dashboard' class='product_link'>Agregar otro producto</a>"}
-          format.json { render :show, status: :created, location: @product }
-        else
-          format.html { render :new }
-          format.json { render json: @product.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @product.save
+        @product.create_activity :create, owner: current_user
+        format.html { redirect_to products_path, notice: "El producto ha sido creado exitosamente.<br>
+          <a class='js_instagramLoad' href='/stores/list' class='product_link'>Agregar otro producto</a>"}
+        format.json { render :index, status: :created, location: @product }
+      else
+        format.html { render :new }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
-    else
-      redirect_to users_suscribe_path
     end
-
   end
 
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
-    if current_user.user_token
-      respond_to do |format|
-        if @product.update(product_params)
-          format.html { redirect_to @product, notice: 'El producto ha sido actualizado exitosamente' }
-          format.json { render :show, status: :ok, location: @product }
-        else
+    respond_to do |format|
+      if @product.update(product_params)
+        @product.create_activity :update, owner: current_user
+        format.html { redirect_to @product, notice: 'El producto ha sido actualizado exitosamente' }
+        format.json { render :show, status: :ok, location: @product }
+      else
 
-          format.html { render :edit }
-          format.json { render json: @product.errors, status: :unprocessable_entity }
-        end
+        format.html { render :edit }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
-    else
-        redirect_to :controller => 'sessions', :action => 'connect'
     end
   end
 
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    @product.create_activity :destroy, owner: current_user, parameters: { last_name: @product.product_name }
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'El producto ha sido eliminado con éxito.' }
@@ -115,10 +99,24 @@ class ProductsController < ApplicationController
     end
 
     def sort_column
-      Product.column_names.include?(params[:sort]) ? params[:sort] : "product_name"
+      Product.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
     end
 
     def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+    end
+
+    def require_store
+      if current_user.type == "Customer"
+        flash[:error] = t('user.no_store')
+        redirect_to root_url
+      end
+    end
+
+    def pilot_store
+      if !current_user.pilot?
+        flash[:error] = t('user.no_pilot')
+        redirect_to stores_suscribe_path
+      end
     end
 end

@@ -2,7 +2,15 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
     def after_update_path_for(resource)
-      users_dashboard_path
+      if resource.is_a?(Store)
+        stores_dashboard_path
+      elsif resource.is_a?(Customer)
+        customers_dashboard_path
+      elsif resource.is_a?(AdminUser)
+        admin_dashboard_path
+      else
+        root_path
+      end
     end
 
   private
@@ -14,7 +22,7 @@ class RegistrationsController < Devise::RegistrationsController
     def account_update_params
       params.require(:user)
               .permit(:name,
-                      :store_account,
+                      :instagram_account,
                       :email,
                       :phone_number,
                       :address,
@@ -23,7 +31,9 @@ class RegistrationsController < Devise::RegistrationsController
                       :waiting_position,
                       :city,
                       :country,
-                      :pilot
+                      :pilot,
+                      :full_name,
+                      :address
                     )
     end
 end

@@ -1,0 +1,17 @@
+<div class="dashboard__header">
+  <div class="container-fluid">
+    <h2 class="dashboard__headline">
+      Las fotografías que te han gustado de Instagram
+    </h2>
+    <%= link_to "Filtrar por productos de Catlog", customers_list_path, class:"btn btn-default btn-success js_instagramLoad" %>
+  </div>
+</div>
+<section class="container-fluid">
+
+  <div class="row">
+    <% @media.each do |media| %>
+      <%= render partial: 'shared/media/media_item', locals: { media: media } %>
+    <% end %>
+  </div>
+
+</section>

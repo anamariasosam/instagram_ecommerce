@@ -1,0 +1,38 @@
+<div class="menu">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+
+      <%= render 'shared/menu/top_button' %>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <%= render 'shared/menu/top_links' %>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#login" role="button" class="login_btn" data-toggle="modal" data-target="#searchModal">
+              <i class="fa fa-search"></i> Buscar Producto
+            </a>
+          </li>
+          <% if user_signed_in? %>
+            <li class="dropdown" >
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="store_path">
+                <%= image_tag current_user.image, style: "width: 20px; height: 20px;" %>
+                <%= current_user.slug %>&nbsp;
+                <i class="fa fa-bars" aria-hidden="true"></i>
+              </a>
+              <%= render 'shared/menu/top_dropdown' %>
+            </li>
+
+          <% else %>
+            <li>
+              <a href="#login" role="button" class="login_btn" data-toggle="modal" data-target="#loginModal">
+                <i class="fa fa-instagram"></i> Iniciar Sesión
+              </a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

@@ -13,13 +13,15 @@
 @import "helpers/touch";
 
 @import "layout/contacts";
+@import "layout/dashboard";
 @import "layout/flash_notices";
 @import "layout/footer";
 @import "layout/loader";
 @import "layout/menu";
-@import "layout/modal-search";
+@import "layout/modal-login";
 @import "layout/sections";
 @import "layout/subscribe";
+@import "layout/updates";
 
 @import "components/home/intro";
 @import "components/home/about";
@@ -41,6 +43,7 @@
 
 @import "components/tutorial/tutorial";
 
+@import "components/orders/order";
 
 // Vendor
 @import "footable/footable.core.min.css";
@@ -57,7 +60,7 @@
   }
 
   &__content {
-    padding-bottom: 200px;
+    padding-bottom: 100px;
   }
 
    &__bold-text {

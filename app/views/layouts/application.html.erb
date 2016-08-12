@@ -21,23 +21,11 @@
 <body>
   <div class="loader"></div>
 
+  <%= render 'shared/alerts/flash' %>
+
   <div class="container app__container">
-
-    <%= render "helpers/menu" %>
-
+    <%= render partial: "shared/menu/top", locals: { search: true } %>
     <div class="app__content clearfix">
-
-      <div class="flashNotices">
-        <% flash.each do |name, msg| %>
-          <div class="alert alert-info alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <%= sanitize msg %>
-          </div>
-        <% end %>
-      </div>
-
       <%= yield %>
 
     </div>
@@ -46,8 +34,9 @@
 
   </div>
 
+  <%= render "mixins/login" %>
   <%= render "mixins/search" %>
-
+  
   <!-- Google Analytics -->
   <script>
   window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;

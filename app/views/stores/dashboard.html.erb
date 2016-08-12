@@ -1,0 +1,44 @@
+<div class="dashboard__header">
+  <div class="container-fluid">
+    <h2 class="dashboard__username">
+      <small><%= sayHello %>,</small> <%= current_user.name %>
+    </h2>
+  </div>
+</div>
+
+<section class="container-fluid updates">
+  <%= render 'shared/dashboard/announcements' %>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <%= render 'shared/dashboard/activity' %>
+    </div>
+    <div class="col-sm-6">
+      <div class="activities__icon">
+        <i class="fa fa-bullhorn"></i>&nbsp;
+        <b>Te Recomendamos</b>
+      </div>
+      <!-- <p class="activities__row">Llenar los precios de envio a las principales ciudades de Colombia <a href="">aquí</a></p> -->
+      <% if !current_user.name? %>
+        <p class="activities__row">Completar la información de tu tienda en
+          <%= link_to edit_user_registration_path do %>
+            <i class="fa fa-pencil"></i>
+            Editar mi información
+          <% end %>
+        </p>
+      <% end %>
+      <% if current_user.products.blank? %>
+        <p class="activities__row">
+          Comenzar a llenar tu tienda de productos
+          <%= link_to "aquí", stores_list_path %>
+        </p>
+      <% end %>
+      <p class="activities__row">
+        Copia este link:
+        <%= link_to "#{root_url}store/#{current_user.slug}", store_path(current_user) %>
+        y añadelo en tu cuenta de Instagram
+        <a href="https://www.instagram.com/accounts/edit/" target="_blank">aquí</a>
+      </p>
+
+  </div>
+</section>

@@ -3,9 +3,9 @@
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( lightbox/* )
-Rails.application.config.assets.precompile += %w( footable/footable.js )
-Rails.application.config.assets.precompile += %w( cookie/cookie.js )
-Rails.application.config.assets.precompile += %w( trix/trix.js )
+Rails.application.config.assets.precompile += %w( */*.js )
+Rails.application.config.assets.precompile += %w( *.png )
+Rails.application.config.assets.precompile += %w( *.jpg )
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 # Precompile additional assets.

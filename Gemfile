@@ -34,12 +34,14 @@ gem 'kaminari'
 # Text Editor
 gem 'trix'
 
+# Text Message gem
 gem 'twilio-ruby'
 gem 'public_activity'
 gem 'pg'
 gem 'lightbox2-rails'
 gem 'modernizr-rails'
 gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'activeadmin_hstore_editor'
 gem 'newrelic_rpm'
 gem 'high_voltage'
 gem 'hstore_accessor'

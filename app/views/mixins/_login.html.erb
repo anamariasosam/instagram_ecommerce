@@ -1,0 +1,25 @@
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content clearfix">
+      <div class="modal-body">
+        <h3 class="modal__title">¿Qué tipo de usuario eres?</h3>
+        <div class="modal__container col-sm-6">
+          <%= link_to user_omniauth_authorize_path(:instagram, model: 'customer'), class: "js_instagramLoad" do %>
+            <%= image_tag "fan.png", class: "modal__image img-responsive"%>
+          <% end %>
+          <h4>Comprador</h4>
+        </div>
+        <div class="modal__container col-sm-6">
+          <%= link_to user_omniauth_authorize_path(:instagram, model: 'store'), class: "js_instagramLoad" do %>
+            <%= image_tag "store.png", class: "modal__image img-responsive"%>
+          <% end %>
+          <h4>Tienda</h4>
+        </div>
+        <div class="col-sm-12 modal__privacyLink">
+          <%= link_to "Ver políticas de Privacidad", page_path('privacy_policy') %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

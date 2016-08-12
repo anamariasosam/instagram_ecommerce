@@ -11,11 +11,13 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  photo_id        :string
-#  user_id         :integer
 #  category_id     :integer          default(1)
+#  store_id        :integer
 #
 
 class Product < ActiveRecord::Base
+  include PublicActivity::Common
+
   after_create :magic
 
   has_shortened_urls
@@ -31,8 +33,8 @@ class Product < ActiveRecord::Base
   validates :description, length: { maximum: 500 }
   validates_length_of :product_name, :maximum => 40
 
-  belongs_to :store
   belongs_to :store, touch: true
+  belongs_to :order
 
   def slug
     store.name.downcase.gsub(" ", "-") + "_"  + product_name.downcase.gsub(" ", "-")

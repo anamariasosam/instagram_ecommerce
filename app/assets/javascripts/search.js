@@ -9,9 +9,18 @@ function center_modal() {
   dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
 }
 
+// Select the input between the modal input and the intro input
+function getInput() {
+  if ($('#searchModal').is(':visible')) {
+    return $(".js_search-Modalinput")
+  } else {
+    return $(".js_search-input")
+  }
+}
+
 // Validates the input value is not empty
 function validate_search_req( event ) {
-  var $input = $(".js_search-input");
+  var $input = getInput();
   if ( !$input.val() ) {
     event.preventDefault();
     $input

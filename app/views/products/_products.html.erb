@@ -5,24 +5,19 @@
         <img src="<%= product.instagram_image %>" alt="catlog, productos, <%= product.store.name%>" class="list-image">
       </a>
     </td>
-    <td><%= product.product_name %></td>
+    <td class="text-left"><%= product.product_name %></td>
     <td><%= number_to_currency product.price, precision:0 %></td>
     <td><%= product.quantity %></td>
-    <td><%= truncate(product.description, escape: false) %></td>
-    <td><%= product.shortened_urls.last.unique_key %></td>
-    <td>
-      <%= link_to product do %>
-        <i class="list-action fa fa-eye"></i>
-      <% end %>
-    </td>
+    <td class="text-left"><%= truncate(product.description, length: 90, escape: false) %></td>
+    <td oncopy="addLink()"><%= product.shortened_urls.last.unique_key %></td>
     <td>
       <%= link_to edit_product_path(product) do %>
-        <i class="list-action fa fa-pencil"></i>
+        <i class="list-action fa fa-pencil-square"></i> <span class="hidden-xs">Editar</span>
       <% end %>
     </td>
     <td>
       <%= link_to product, method: :delete, data: { confirm: '¿Estás seguro que deseas eliminarlo?' } do%>
-        <i class="list-action fa fa-trash-o"></i>
+        <i class="list-action fa fa-trash"></i> <span class="hidden-xs">Borrar</span>
       <% end %>
     </td>
   </tr>

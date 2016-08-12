@@ -1,0 +1,5 @@
+<% if activity.trackable %>
+Ahora tienes un nuevo producto: <%= link_to activity.trackable.product_name, product_path(id: activity.trackable.id) %>,  creado hace <%= time_ago_in_words(activity.trackable.created_at) %>.
+<% else %>
+Creaste un nuevo producto pero ha sido producto borrado.
+<% end %>

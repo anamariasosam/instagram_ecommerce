@@ -49,7 +49,7 @@
   }
 
 }
-.search_btn {
+.login_btn {
   // background-color: $menu-color;
   background: $menu-color;
   background: -webkit-linear-gradient(45deg, $menu-color, #E543273);
@@ -61,6 +61,7 @@
   color: #fff !important;
   font-weight: bold;
   margin-top: 7px;
+  margin-right: 7px;
   padding: 10px 20px !important;
 
   &:active,

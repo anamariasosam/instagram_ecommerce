@@ -1,28 +1,25 @@
 .footer {
 
-    background: #909090;
-    background: -webkit-linear-gradient(-45deg, #cacaca, #777);
-    background: -o-linear-gradient(-45deg, #cacaca, #777);
-    background: -moz-linear-gradient(-45deg, #cacaca, #777);
-    background: linear-gradient(-45deg, #cacaca, #777);
+  background: #fff;
 
-    clear: both;
-    color: #eaeaea;
-    margin-top: 100px;
-    width: 100%;
-  	height: auto;
-  	position: absolute !important;
-    padding: 50px;
-  	bottom:0;
-  	left:0;
+  clear: both;
+  color: #909090;
+  margin-top: 100px;
+  width: 100%;
+  padding: 25px 50px;
+
+  .fa {
+    color: crimson;
+  }
 
   &__link {
-    color: #fff;
+    color: #333333;
     font-weight: bold;
     border-bottom: 1px dotted #fff;
+
     &:hover {
       border-bottom-style: solid;
-      color: #fff;
+      color: #909090;
       font-style: italic;
       text-decoration: none;
     }
@@ -31,6 +28,7 @@
   &__text {
     font-size: 1.1em;
     text-align: center;
+    margin: 0;
   }
 
   &_second {

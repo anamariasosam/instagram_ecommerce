@@ -1,12 +1,18 @@
-<section id="four" class="app__legal_container wrapper special">
-  <div class="inner">
-    <header class="major">
-      <h2 class="app__legal_title">Catlog’s Privacy Policy</h2>
-    </header>
+<header class="sectionHero">
+  <div class="container">
+    <h2 class="">Catlog’s Privacy Policy</h2>
+  </div>
+</header>
+
+<section class="container">
 
     <p>Catlog is a marketplace that allows you to sell and buy easily on Instagram.</p>
     <p>This Privacy Policy describes how and when Catlog collects, uses and shares your information when you use our Services.  Catlog receives your information through our APIs, applications and from our partners and other third parties.  For example, you send us information when you use Catlog app.  When using any of our Services you consent to the collection, transfer, manipulation, storage, disclosure and other uses of your information as described in this Privacy Policy. Irrespective of which country you reside in or supply information from, you authorize Catlog to use your information in Colombia and any other country where Catlog operates.</p>
-    <p>If you have any questions or comments about this Privacy Policy, please contact us at <a href="mailto:catlogcoapp@gmail.com">catlogcoapp@gmail.com</a>.</p>
+    <p>
+      If you have any questions or comments about this Privacy Policy, please contact us at
+      <a href="mailto:anamaria@catlog.co">anamaria@catlog.co</a> or
+      <%= link_to "here", new_contact_path %>.
+    </p>
 
     <p class="app__legal_subtitle">Information Collection and Use</p>
     <p>We collect and use your information below to provide our Services and to measure and improve our Services from time to time.</p>
@@ -28,8 +34,11 @@
     <p><span class="app__legal_subtitle">Non-Private or Non-Personal Information</span>: We may share or disclose your non-private, aggregated or otherwise non-personal information, such as your public user profile information, the people you share your information with, or the number of users who clicked on a particular link (even if only one did), or reports to advertisers about unique users who saw or clicked on their ads after we have removed any private personal information (such as your name or contact information).</p>
 
     <p><span class="app__legal_subtitle">Changes to this Policy</span><br>
-    We may revise this Privacy Policy from time to time. The most current version of the policy will govern our use of your information and will always be at <a href="http://catlog.co/legal/privacy_policy">http://catlog.co/legal/privacy_policy</a>. If we make a change to this policy that, in our sole discretion, is material, we will update <a href="http://catlog.co/legal/privacy_policy">http://catlog.co/legal/privacy_policy</a>. By continuing to access or use the Services after those changes become effective, you agree to be bound by the revised Privacy Policy.</p>
+    We may revise this Privacy Policy from time to time. The most current version of the policy will govern our use of your information and will always be at
+    <%= link_to "http://catlog.herokuapp.com/pages/privacy_policy", page_path('privacy_policy') %>
+    . If we make a change to this policy that, in our sole discretion, is material, we will update
+    <%= link_to "http://catlog.herokuapp.com/pages/privacy_policy", page_path('privacy_policy') %>
+    . By continuing to access or use the Services after those changes become effective, you agree to be bound by the revised Privacy Policy.</p>
 
-    <p>Effective: 1st February   2016</p>
-  </div>
+    <p>Effective: 1st July   2016</p>
 </section>

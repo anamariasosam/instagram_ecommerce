@@ -1,8 +1,13 @@
 # https://raw.githubusercontent.com/svenfuchs/rails-i18n/master/rails/locale/es.yml
 es:
+  instagram:
+    hashtag_not_found: "No encontramos una relación entre #catlogapp y %{hashtag}"
   product:
     purchase: Actualmente puedes contactar el vendedor con su número de teléfono.
     edit_permissions: No tienes permisos para editar este producto
+  user:
+    no_pilot: Te encuentras en lista de espera
+    no_store: Debes registarte como tienda para crear productos
   mail_form:
     attributes:
       contact:

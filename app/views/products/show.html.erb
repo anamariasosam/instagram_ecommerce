@@ -68,7 +68,6 @@
       <% if current_user and current_user.id == @product.store_id %>
         <p class="product-code">
           Comparte este código en tu post de instagram:
-
           <span class="app__bold-text product_code" oncopy="addLink()" >
             <%= @product.shortened_urls.last.unique_key %>
           </span>
@@ -85,8 +84,8 @@
         </div>
       <% else %>
         <div class="js_callToAction">
-          <br>
-          <button class="btn btn-primary btn-block btn-lg js_togglePurchaseBtn" class="track" data-track='comprar'>Comprar</button>
+          <!-- <button class="btn btn-primary btn-block btn-lg js_togglePurchaseBtn" class="track" data-track='comprar'>Comprar</button> -->
+          <%= link_to 'Comprar', new_product_order_path(@product), class: 'btn btn-primary btn-lg btn-block' %>
           <div class="sellerInfo hide">
             <p>
               <b>Cel:</b>

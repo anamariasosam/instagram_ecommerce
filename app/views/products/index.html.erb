@@ -1,20 +1,28 @@
-<header class="sectionHero">
-  <div class="container">
-    <h2 class="">Mis productos</h2>
+<header class="dashboard__header">
+  <div class="container-fluid">
+    <h2 class="dashboard__headline">
+      Mis productos
+    </h2>
   </div>
 </header>
 
-<section class="container js_sortProducts">
+<section class="container-fluid js_sortProducts">
   <%= form_tag products_path, method: :get, class: 'product__searchForm', id: 'js_productSearch' do %>
     <div class="navbar-form navbar-left search-form">
-      <%= text_field_tag(
-          :search,
-          params[:search],
-          placeholder: "Buscar Producto",
-          class: "form-control",
-          id: "js_searchField"
-      ) %>
-      <%= submit_tag "Buscar", :name => nil, class: 'btn btn-default' %>
+      <div class="col-lg-12">
+        <div class="input-group">
+          <%= text_field_tag(
+              :search,
+              params[:search],
+              placeholder: "Buscar Producto",
+              class: "form-control",
+              id: "js_searchField"
+          ) %>
+          <span class="input-group-btn">
+          <%= submit_tag "Buscar", :name => nil, class: 'btn btn-default' %>
+          </span>
+        </div>
+      </div>
     </div>
 
     <div class="js_userProducts">
@@ -22,3 +30,8 @@
     </div>
   <% end %>
 </section>
+
+<div class="container-fluid text-center">
+  <!-- disabled until the static page to teach about products exists -->
+  <button class="btn btn-primary" disabled="disabled">Aprende <span class="hidden-xs">más</span> sobre crear productos</button>
+</div>
