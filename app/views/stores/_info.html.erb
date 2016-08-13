@@ -22,21 +22,19 @@
     <a href="http://www.instagram.com/<%= @store.instagram_account %>" target="_blank">
       <%= icon('instagram', class: 'store__socialIcon') %>
     </a>
-    <% if @store.facebook? %>
-      <a href="http://www.facebook.com/<%= @store.facebook %>" target="_blank">
-        <%= icon('facebook', class: 'store__socialIcon') %>
-      </a>
+
+    <%= link_to_if @store.facebook?, "http://www.facebook.com/#{@store.facebook}", target:"_blank" do %>
+      <%= icon('facebook', class: 'store__socialIcon') %>
     <% end %>
-    <% if @store.twitter? %>
-      <a href="http://www.twitter.com/<%= @store.twitter %>" target="_blank">
-        <%= icon('twitter', class: 'store__socialIcon') %>
-      </a>
+
+    <%= link_to_if @store.facebook?, "http://www.twitter.com/#{@store.twitter}", target:"_blank" do %>
+      <%= icon('twitter', class: 'store__socialIcon') %>
     <% end %>
-    <% if @store.snapchat? %>
-      <a href="http://www.snapchat.com/add/<%= @store.snapchat %>" target="_blank">
-       <%= icon('snapchat-ghost', class: 'store__socialIcon') %>
-      </a>
+
+    <%= link_to_if @store.facebook?, "http://www.snapchat.com/add/#{@store.snapchat}", target:"_blank" do %>
+      <%= icon('snapchat-ghost', class: 'store__socialIcon') %>
     <% end %>
+
   </div>
 </div>
 
