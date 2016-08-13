@@ -5,98 +5,20 @@
 </header>
 
 <section class="container">
-
   <div class="registration_form">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
 
-      <table class="table stores__form">
-        <tr>
-          <% if @user.type == "Store" %>
-            <td class="stores__form-data">
-              <div class="form-group">
-                <%= f.label "Nombre de la Tienda*" %> <br>
-                <%= f.text_field :name, autofocus: true, class: 'form-control' %>
-              </div>
-            </td>
-          <% else %>
-          <td class="stores__form-data">
-            <div class="form-group">
-              <%= f.label "Nombre Completo*" %> <br>
-              <%= f.text_field :full_name, autofocus: true, class: 'form-control' %>
-            </div>
-          </td>
-          <% end %>
+      <% if @user.type == "Store" %>
+        <%= render partial: "devise/registrations/store/form", locals: { f: f } %>
+      <% else %>
+        <%= render partial: "devise/registrations/customer/form", locals: { f: f } %>        
+      <% end %>
 
-          <td class="stores__form-data">
-            <div class="form-group">
-              <%= f.label "Correo*" %> <br>
-              <%= f.email_field :email, class: 'form-control' %>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="stores__form-data">
-            <div class="form-group">
-              <%= f.label "Ciudad*" %>
-              <%= f.text_field :city, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-              <%= f.label "País*" %>
-              <%= f.text_field :country, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-              <%= f.label "Celular*" %> <br>
-              <%= f.telephone_field :phone_number, class: 'form-control' %>
-            </div>
-          </td>
-
-          <% if @user.type == "Customer" %>
-            <td rowspan="2" class="stores__form-data">
-              <div class="form-group">
-                <%= f.label "Dirección de envío" %> <br>
-                <%= f.text_area :address, rows: 9, class: 'form-control' %>
-              </div>
-            </td>
-          <% else %>
-            <td class="stores__form-data">
-              <div class="form-group">
-                <%= f.label "Cuenta de Facebook" %>
-                <%= f.text_field :facebook, class: 'form-control' %>
-              </div>
-              <div class="form-group">
-                <%= f.label "Cuenta de Twitter" %>
-                <%= f.text_field :twitter, class: 'form-control' %>
-              </div>
-              <div class="form-group">
-                <%= f.label "Cuenta de Snapchat" %> <br>
-                <%= f.telephone_field :snapchat, class: 'form-control' %>
-              </div>
-            </td>
-          <% end %>
-        </tr>
-        <tr>
-          <% if @user.type == "Store" %>
-            <td class="stores__form-data" colspan="2">
-              <div class="form-group">
-                <%= f.label "Información adicional" %> <br>
-                <%= f.text_area :info, rows: 4, class: 'form-control' %>
-              </div>
-            </td>
-
-            <% if !current_user.name? %>
-              <%= f.hidden_field :pilot, value: true %>
-              <%= f.hidden_field :waiting_position, value: Store.where("details->'pilot' = ?", "false").all.count %>
-            <% end %>
-          <% end %>
-        </tr>
-
-        <!-- User token -->
-        <% if session['super_token'] %> <br>
-          <%= f.hidden_field :user_token, value: session['super_token'] %>
-        <% end %>
-      </table>
+      <!-- User token -->
+      <% if session['super_token'] %> <br>
+        <%= f.hidden_field :user_token, value: session['super_token'] %>
+      <% end %>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

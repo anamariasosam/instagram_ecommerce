@@ -20,21 +20,21 @@
   <div class="store__info">
     <span class="app__bold-text">Redes Sociales</span> <br>
     <a href="http://www.instagram.com/<%= @store.instagram_account %>" target="_blank">
-      <%= icon('instagram', class: 'store__info-socialUrl') %>
+      <%= icon('instagram', class: 'store__socialIcon') %>
     </a>
     <% if @store.facebook? %>
       <a href="http://www.facebook.com/<%= @store.facebook %>" target="_blank">
-        <%= icon('facebook', class: 'store__info-socialUrl') %>
+        <%= icon('facebook', class: 'store__socialIcon') %>
       </a>
     <% end %>
     <% if @store.twitter? %>
       <a href="http://www.twitter.com/<%= @store.twitter %>" target="_blank">
-        <%= icon('twitter', class: 'store__info-socialUrl') %>
+        <%= icon('twitter', class: 'store__socialIcon') %>
       </a>
     <% end %>
     <% if @store.snapchat? %>
       <a href="http://www.snapchat.com/add/<%= @store.snapchat %>" target="_blank">
-       <%= icon('snapchat-ghost', class: 'store__info-socialUrl') %>
+       <%= icon('snapchat-ghost', class: 'store__socialIcon') %>
       </a>
     <% end %>
   </div>

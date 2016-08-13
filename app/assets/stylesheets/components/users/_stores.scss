@@ -8,30 +8,29 @@
   background: -moz-linear-gradient(45deg, #4776E6, #8E54E9);
   background: linear-gradient(45deg, #4776E6, #8E54E9);
 
+  color: #fff;
 
+  margin-bottom: 30px;
+
+  padding-top: 30px;
+  padding-bottom: 60px;
+
+  &__headline {
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  &__link {
     color: #fff;
-
-    margin-bottom: 30px;
-
-    padding-top: 30px;
-    padding-bottom: 60px;
-
-    &__headline {
-      line-height: 1;
-      margin-top: 0;
-      margin-bottom: 5px;
-    }
-
-    &__link {
+    &:hover {
       color: #fff;
-      &:hover {
-        color: #fff;
-      }
     }
-
+  }
 }
 
 .store {
+
   &__description {
     margin-top: 50px;
   }
@@ -56,30 +55,30 @@
     &:empty {
       display: none;
     }
+  }
 
-    &-socialUrl {
-      font-size: 20px;
-      margin: 0 16px;
+  &__socialIcon {
+    font-size: 20px;
+    margin: 0 16px;
 
-      @include respond-to(m) {
-        margin: 0 10px;
-      }
-
-      @include respond-to(s) {
-        font-size: 30px;
-        margin-top: 10px;
-      }
-
-      @include respond-to(xs) {
-        font-size: 25px;
-        margin-top: 10px;
-      }
+    @include respond-to(m) {
+      margin: 0 10px;
     }
 
+    @include respond-to(s) {
+      font-size: 30px;
+      margin-top: 10px;
+    }
+
+    @include respond-to(xs) {
+      font-size: 25px;
+      margin-top: 10px;
+    }
   }
 }
 
-.stores{
+.stores {
+
   &__form-data {
     @include respond-to(s) {
       display: block;
