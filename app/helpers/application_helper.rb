@@ -8,4 +8,10 @@ module ApplicationHelper
       content_tag(:small, '',class: "glyphicon glyphicon-chevron-#{css_class}")
     end
   end
+
+  def link_to_if(*args,&block)
+    args.insert 1, capture(&block) if block_given?
+
+    super *args
+  end
 end

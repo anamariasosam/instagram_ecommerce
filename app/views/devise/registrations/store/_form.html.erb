@@ -1,0 +1,63 @@
+<table class="table stores__form">
+  <tr>
+    <td class="stores__form-data">
+      <div class="form-group">
+        <%= f.label "Nombre de la Tienda*" %> <br>
+        <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+      </div>
+    </td>
+
+    <td class="stores__form-data">
+      <div class="form-group">
+        <%= f.label "Correo*" %> <br>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="stores__form-data">
+      <div class="form-group">
+        <%= f.label "Ciudad*" %>
+        <%= f.text_field :city, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label "País*" %>
+        <%= f.text_field :country, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Celular*" %> <br>
+        <%= f.telephone_field :phone_number, class: 'form-control' %>
+      </div>
+    </td>
+
+    <td class="stores__form-data">
+      <div class="form-group">
+        <%= f.label "Cuenta de Facebook" %>
+        <%= f.text_field :facebook, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Cuenta de Twitter" %>
+        <%= f.text_field :twitter, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Cuenta de Snapchat" %> <br>
+        <%= f.telephone_field :snapchat, class: 'form-control' %>
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="stores__form-data" colspan="2">
+      <div class="form-group">
+        <%= f.label "Información adicional" %> <br>
+        <%= f.text_area :info, rows: 4, class: 'form-control' %>
+      </div>
+    </td>
+
+    <% if !current_user.name? %>
+      <%= f.hidden_field :pilot, value: true %>
+      <%= f.hidden_field :waiting_position, value: Store.where("details->'pilot' = ?", "false").all.count %>
+    <% end %>
+  </tr>
+</table>

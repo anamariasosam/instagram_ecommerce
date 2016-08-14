@@ -1,0 +1,41 @@
+<table class="table stores__form">
+  <tr>
+    <td class="stores__form-data">
+      <div class="form-group">
+        <%= f.label "Nombre Completo*" %> <br>
+        <%= f.text_field :full_name, autofocus: true, class: 'form-control' %>
+      </div>
+    </td>
+
+    <td class="stores__form-data">
+      <div class="form-group">
+        <%= f.label "Correo*" %> <br>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="stores__form-data">
+      <div class="form-group">
+        <%= f.label "Ciudad*" %>
+        <%= f.text_field :city, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label "País*" %>
+        <%= f.text_field :country, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Celular*" %> <br>
+        <%= f.telephone_field :phone_number, class: 'form-control' %>
+      </div>
+    </td>
+
+    <td rowspan="2" class="stores__form-data">
+      <div class="form-group">
+        <%= f.label "Dirección de envío" %> <br>
+        <%= f.text_area :address, rows: 9, class: 'form-control' %>
+      </div>
+    </td>
+  </tr>
+</table>

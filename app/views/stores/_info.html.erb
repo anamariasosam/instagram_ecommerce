@@ -18,8 +18,23 @@
 
 <div class="col-sm-3 text-center">
   <div class="store__info">
-    <span class="app__bold-text">Instagram</span> <br>
-    <a href="https://www.instagram.com/<%= @store.instagram_account %>" target="_blank"><%= @store.instagram_account %></a>
+    <span class="app__bold-text">Redes Sociales</span> <br>
+    <a href="http://www.instagram.com/<%= @store.instagram_account %>" target="_blank">
+      <%= icon('instagram', class: 'store__socialIcon') %>
+    </a>
+
+    <%= link_to_if @store.facebook?, "http://www.facebook.com/#{@store.facebook}", target:"_blank" do %>
+      <%= icon('facebook', class: 'store__socialIcon') %>
+    <% end %>
+
+    <%= link_to_if @store.facebook?, "http://www.twitter.com/#{@store.twitter}", target:"_blank" do %>
+      <%= icon('twitter', class: 'store__socialIcon') %>
+    <% end %>
+
+    <%= link_to_if @store.facebook?, "http://www.snapchat.com/add/#{@store.snapchat}", target:"_blank" do %>
+      <%= icon('snapchat-ghost', class: 'store__socialIcon') %>
+    <% end %>
+
   </div>
 </div>
 
