@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   before_filter :authenticate_user!
-  layout "dashboard"
+  layout 'dashboard'
 
   def dashboard
     if current_user.full_name

@@ -26,14 +26,18 @@ Rails.application.routes.draw do
   get 'catalog/view'
   get 'home/index'
   get 'legal/privacy_policy'
-  get 'stores/dashboard'
-  get 'stores/dashboard/orders', to: 'stores#orders', as: 'store_dashboard_orders'
-  get 'stores/list'
-  get 'stores/liked'
-  get "stores/suscribe"
-  get 'store/:id', to: 'stores#show', as: 'store'
+
+  namespace :stores do
+    resources :orders, only: [:index, :show]
+    get 'dashboard'
+    get 'list'
+    get 'liked'
+    get 'suscribe'
+    get ':id', to: 'stores#show', as: 'store'
+  end
+
   get 'customers/dashboard'
-  get 'customers/dashboard/orders', to: 'customers#orders', as: 'customer_dashboard_orders'
+  get 'customers/dashboard/orders', to: 'customers#orders'
 
   post 'products/new'
   post 'twilio/voice' => 'twilio#voice'

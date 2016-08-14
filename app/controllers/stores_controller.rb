@@ -69,11 +69,6 @@ class StoresController < ApplicationController
     render :layout => 'dashboard'
   end
 
-  def orders
-    @orders = Order.where("store_id = :store_id", store_id: current_user.id)
-    render :layout => 'dashboard'
-  end
-
   def update_instagram_data(client)
     current_user.update(
       instagram_id:       client.user.id,

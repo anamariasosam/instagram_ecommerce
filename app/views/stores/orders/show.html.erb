@@ -1,0 +1,78 @@
+<div class="dashboard__header">
+  <div class="container-fluid">
+    <h2 class="dashboard__headline">
+      Orden <small>#<%= @order.id %></small>
+      <a href="javascript:window.print()" class="btn btn-sm btn-default">Imprimir orden</a>
+      <br>
+      <small><span class="label label-info"><%= @order.status %></span></small>
+    </h2>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag @order.store.image %>
+      <br>
+      <%= @order.store.store_name %>
+    </div>
+    <div class="col-md-9">
+      <table class="table">
+        <tr>
+          <td colspan="3">Orden #<%= @order.id %></td>
+        </tr>
+        <tr>
+          <td>Producto</td>
+          <td></td>
+          <td>Precio (COP)</td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.product.product_name %>
+            <br>
+            <br>
+            <%= @order.product.description.html_safe %>
+          </td>
+          <td></td>
+          <td>
+            <%= number_to_currency @order.product.price %>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>Total</b></td>
+          <td><b><%= number_to_currency @order.total %></b></td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+  <br>
+  <br>
+  <h4><b>Detalles</b></h4>
+  <p>Fecha de compra: <%= @order.created_at.to_formatted_s(:short) %></p>
+  <p>Comprador: <%= @order.customer.full_name %></p>
+  <p>Direccion: <%= @order.customer.address %></p>
+  <p>Teléfono: <a href="tel:<%= @order.customer.phone_number %>"><%= number_to_phone @order.customer.phone_number %></a></p>
+  <hr>
+  <div class="form-inline">
+
+    <div class="form-group">
+      <label for="status" class="sr-only">Estado</label>
+      <div class="input-group">
+        <div class="input-group-addon">Estado</div>
+
+        <select name="" id="" class="form-control">
+          <option value="">En Proceso</option>
+          <option value="">Enviada</option>
+          <option value="">Entregada</option>
+        </select>
+      </div>
+      <button class="btn btn-primary">Guardar Estado</button>
+    </div>
+  </div>
+  <br>
+  <br>
+  <p>
+    <%= link_to 'Volver a Ordenes', stores_orders_path %>
+  </p>
+</div>

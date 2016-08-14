@@ -2,6 +2,7 @@
   <div class="container-fluid">
     <h2 class="dashboard__headline">
       Órdenes de producto
+      <a href="javascript:window.print()" class="btn btn-sm btn-default">Imprimir ordenes</a>
     </h2>
   </div>
 </div>
@@ -18,7 +19,7 @@
       <th>Acciones</th>
     </tr>
     <tbody>
-      <%= render @orders %>
+      <%= render partial: 'orders/order', collection: @orders %>
     </tbody>
   </table>
 </section>
