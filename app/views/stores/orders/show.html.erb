@@ -1,13 +1,16 @@
-<div class="dashboard__header">
+<%= stylesheet_link_tag 'print', media: 'print' %>
+
+<div class="dashboard__header hidden-print">
   <div class="container-fluid">
     <h2 class="dashboard__headline">
       Orden <small>#<%= @order.id %></small>
       <a href="javascript:window.print()" class="btn btn-sm btn-default">Imprimir orden</a>
       <br>
-      <small><span class="label label-info"><%= @order.status %></span></small>
+      <small><span class="label label-info js_orderStatus"><%= @order.status %></span></small>
     </h2>
   </div>
 </div>
+
 <div class="container">
   <div class="row">
     <div class="col-md-3">
@@ -54,25 +57,30 @@
   <p>Direccion: <%= @order.customer.address %></p>
   <p>Teléfono: <a href="tel:<%= @order.customer.phone_number %>"><%= number_to_phone @order.customer.phone_number %></a></p>
   <hr>
-  <div class="form-inline">
-
-    <div class="form-group">
-      <label for="status" class="sr-only">Estado</label>
-      <div class="input-group">
-        <div class="input-group-addon">Estado</div>
-
-        <select name="" id="" class="form-control">
-          <option value="">En Proceso</option>
-          <option value="">Enviada</option>
-          <option value="">Entregada</option>
-        </select>
+  <div class="form-inline hidden-print">
+    <%= form_for(['stores', @order]) do |f| %>
+      <% unless @order.errors.messages.empty? %>
+        <% @order.errors.messages[:status].each do |message| %>
+          <div class="alert alert-danger" role="alert">
+            <%= message %>
+          </div>
+        <% end %>
+      <br>
+      <% end %>
+      <div class="form-group">
+        <label for="status" class="sr-only">Estado</label>
+        <div class="input-group">
+          <div class="input-group-addon">Estado</div>
+          <%= f.select :status, @state_options.each {}, {}, { class: 'form-control' } %>
+        </div>
+        <%= f.submit 'Guardar Estado', class: 'btn btn-primary' %>
       </div>
-      <button class="btn btn-primary">Guardar Estado</button>
-    </div>
+    <% end %>
   </div>
+
   <br>
   <br>
-  <p>
+  <p class="hidden-print">
     <%= link_to 'Volver a Ordenes', stores_orders_path %>
   </p>
 </div>

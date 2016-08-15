@@ -1,8 +1,10 @@
+<%= stylesheet_link_tag 'print', media: 'print' %>
+
 <div class="dashboard__header">
   <div class="container-fluid">
     <h2 class="dashboard__headline">
       Órdenes de producto
-      <a href="javascript:window.print()" class="btn btn-sm btn-default">Imprimir ordenes</a>
+      <a href="javascript:window.print()" class="hidden-print btn btn-sm btn-default">Imprimir ordenes</a>
     </h2>
   </div>
 </div>
@@ -16,7 +18,7 @@
       <th>Por</th>
       <th>Comprando</th>
       <th>Contacto</th>
-      <th>Acciones</th>
+      <th class="hidden-print">Acciones</th>
     </tr>
     <tbody>
       <%= render partial: 'orders/order', collection: @orders %>

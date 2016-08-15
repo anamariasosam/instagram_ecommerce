@@ -11,12 +11,12 @@
     <td class="text-left"><%= truncate(product.description, length: 90, escape: false) %></td>
     <td oncopy="addLink()"><%= product.shortened_urls.last.unique_key %></td>
     <td>
-      <%= link_to edit_product_path(product) do %>
+      <%= link_to edit_stores_product_path(product) do %>
         <i class="list-action fa fa-pencil-square"></i> <span class="hidden-xs">Editar</span>
       <% end %>
     </td>
     <td>
-      <%= link_to product, method: :delete, data: { confirm: '¿Estás seguro que deseas eliminarlo?' } do%>
+      <%= link_to ['stores', product], method: :delete, data: { confirm: '¿Estás seguro que deseas eliminarlo?' } do%>
         <i class="list-action fa fa-trash"></i> <span class="hidden-xs">Borrar</span>
       <% end %>
     </td>

@@ -10,34 +10,39 @@ Rails.application.routes.draw do
     registrations: 'registrations'
   }
 
-  resources :products do
+  resources :products, only: [:show] do
     resources :orders do
       # the reference is fall out boy
       get 'thnks_fr_th_mmrs', :on => :collection
     end
-
   end
 
+  # for the contact form
   resources :contacts, only: [:new, :create]
 
-  get 'categories/:id', to: 'categories#show', as: 'category'
-  get '/:id' => "shortener/shortened_urls#show"
-  get 'users/oauth_failure'
-  get 'catalog/view'
-  get 'home/index'
-  get 'legal/privacy_policy'
-
   namespace :stores do
-    resources :orders, only: [:index, :show]
+    resources :products, except: [:show]
+    resources :orders, only: [:index, :show, :update]
     get 'dashboard'
-    get 'list'
-    get 'liked'
-    get 'suscribe'
-    get ':id', to: 'stores#show', as: 'store'
+
+    # list with all instagram pictures
+    get 'instagram_media'
+
+    # when the user was on pilot and get accepted this is the route
+    get 'subscribe'
   end
+
+  resources :stores, only: [:show]
 
   get 'customers/dashboard'
   get 'customers/dashboard/orders', to: 'customers#orders'
+
+  get '/:id' => "shortener/shortened_urls#show"
+  get 'catalog/view'
+  get 'categories/:id', to: 'categories#show', as: 'category'
+  get 'home/index'
+  get 'legal/privacy_policy'
+  get 'users/oauth_failure'
 
   post 'products/new'
   post 'twilio/voice' => 'twilio#voice'

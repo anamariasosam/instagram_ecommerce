@@ -33,6 +33,10 @@ class Product < ActiveRecord::Base
   validates :description, length: { maximum: 500 }
   validates_length_of :product_name, :maximum => 40
 
+  # when the user create a product and go back and click again on create
+  # this will avoid product duplication
+  validates_uniqueness_of :photo_id
+
   belongs_to :store, touch: true
   belongs_to :order
 

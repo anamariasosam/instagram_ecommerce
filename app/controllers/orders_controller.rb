@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
       if @order.save
         # order needs to be trackable
         # @order.create_activity :purchase, owner: @product.store
-        format.html { redirect_to thnks_fr_th_mmrs_product_orders_path(order: @order), notice: "Tu orden ahora esta creada" }
+        format.html { redirect_to thnks_fr_th_mmrs_product_orders_path(order: @order), notice: "Tu orden ha sido creada" }
         format.json { render :index, status: :created, location: @product }
       else
         format.html { render :new }
