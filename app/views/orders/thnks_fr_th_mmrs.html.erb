@@ -1,10 +1,30 @@
 <header class="sectionHero">
   <div class="container">
-    <h2 class="">Thnks 4 th Mmrs - Fall Out Boy</h2>
+    <h2 class="">Gracias</h2>
   </div>
 </header>
 
 <section class="container">
-  <img alt="celebrate gif" id="js_celebrateGif" class="order__gif img-responsive" />
-  <%= @result.inspect %>
+  <div class="thanks">
+    <header class="thanks__header">
+      <h2>Orden Completa! <i class="fa fa-check-square"></i></h2>
+    </header>
+    <div class="thanks__body">
+      <p>
+        Has comprado 1 <b><%= @result.product.product_name %></b> en la tienda <b><%= @result.store.name %></b>, te acompañaremos en el proceso con mensajes de texto cuando la orden cambie de estado y al final del proceso te enviaremos una copia al correo electrónico, asegurate de tener tus datos actualizados.
+      </p>
+      <br>
+      <div class="thanks__details">
+
+        <p><b>Número de orden</b>: <%= @result.id %> </p>
+        <p><b>Total</b>: <%= number_to_currency @result.total %></p>
+        <p><b>Forma de pago</b>: <%= @result.payment_method %></p>
+        <p><b>Dirección de Envío</b>: <%= @result.address %></p>
+        <p><b>Detalles</b>: <%= @result.details %></p>
+      </div>
+    </div>
+    <footer class="thanks__footer">
+      <%= link_to 'Regresar al Catálogo', catalog_view_path %>
+    </footer>
+  </div>
 </section>

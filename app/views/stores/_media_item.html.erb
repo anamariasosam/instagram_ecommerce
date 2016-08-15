@@ -9,7 +9,7 @@
 
   <% else %>
 
-    <%= link_to new_product_path(photo: media.images.standard_resolution.url, photo_id: media.id), class: 'dashboard_gallery-thumbnail dashboard_gallery-active'  do %>
+    <%= link_to new_stores_product_path(photo: media.images.standard_resolution.url, photo_id: media.id), class: 'dashboard_gallery-thumbnail dashboard_gallery-active'  do %>
 
       <img  src='<%= media.images.thumbnail.url %>'
             class="dashboard_gallery-img img-responsive"

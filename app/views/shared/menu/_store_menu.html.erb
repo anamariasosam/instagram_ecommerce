@@ -7,7 +7,7 @@
 </li>
 
 <li class='dashboard__item'>
-  <%= link_to stores_list_path, class: 'dashboard__link js_instagramLoad' do %>
+  <%= link_to stores_instagram_media_path, class: 'dashboard__link js_instagramLoad' do %>
     <i class="fa fa-plus"></i>
     <br>
     <span class="hidden-xs">Crear un producto</span>
@@ -15,7 +15,7 @@
 </li>
 
 <li class='dashboard__item'>
-  <%= link_to products_path, class: "dashboard__link" do %>
+  <%= link_to stores_products_path, class: "dashboard__link" do %>
     <i class="fa fa-shopping-basket"></i>
     <br>
     <span class="hidden-xs">Productos de la tienda</span>
@@ -23,7 +23,7 @@
 </li>
 
 <li class='dashboard__item'>
-  <%= link_to store_dashboard_orders_path, class: "dashboard__link" do %>
+  <%= link_to stores_orders_path, class: "dashboard__link" do %>
     <i class="fa fa-paper-plane"></i>
     <br>
     <span class="hidden-xs">Reporte de órdenes</span>

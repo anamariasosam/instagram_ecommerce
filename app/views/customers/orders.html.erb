@@ -15,7 +15,9 @@
       <th>De (tienda)</th>
       <th>Producto</th>
       <th>Contactar la tienda</th>
-      <th>Acciones</th>
+      <% if is_store? %>
+        <th>Acciones</th>
+      <% end %>
     </tr>
     <tbody>
       <%= render @orders %>

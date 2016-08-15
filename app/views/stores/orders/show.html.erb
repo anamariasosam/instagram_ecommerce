@@ -1,0 +1,86 @@
+<%= stylesheet_link_tag 'print', media: 'print' %>
+
+<div class="dashboard__header hidden-print">
+  <div class="container-fluid">
+    <h2 class="dashboard__headline">
+      Orden <small>#<%= @order.id %></small>
+      <a href="javascript:window.print()" class="btn btn-sm btn-default">Imprimir orden</a>
+      <br>
+      <small><span class="label label-info js_orderStatus"><%= @order.status %></span></small>
+    </h2>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag @order.store.image %>
+      <br>
+      <%= @order.store.name %>
+    </div>
+    <div class="col-md-9">
+      <table class="table">
+        <tr>
+          <td colspan="3">Orden #<%= @order.id %></td>
+        </tr>
+        <tr>
+          <td>Producto</td>
+          <td></td>
+          <td>Precio (COP)</td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.product.product_name %>
+            <br>
+            <br>
+            <%= @order.product.description.html_safe %>
+          </td>
+          <td></td>
+          <td>
+            <%= number_to_currency @order.product.price %>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>Total</b></td>
+          <td><b><%= number_to_currency @order.total %></b></td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+  <br>
+  <br>
+  <h4><b>Detalles</b></h4>
+  <p>Fecha de compra: <%= @order.created_at.to_formatted_s(:short) %></p>
+  <p>Comprador: <%= @order.customer.full_name %></p>
+  <p>Dirección: <%= @order.customer.address %></p>
+  <p>Teléfono: <a href="tel:<%= @order.customer.phone_number %>"><%= number_to_phone @order.customer.phone_number %></a></p>
+  <hr>
+  <div class="form-inline hidden-print">
+    <%= form_for(['stores', @order]) do |f| %>
+      <% unless @order.errors.messages.empty? %>
+        <% @order.errors.messages[:status].each do |message| %>
+          <div class="alert alert-danger" role="alert">
+            <%= message %>
+          </div>
+        <% end %>
+      <br>
+      <% end %>
+      <div class="form-group">
+        <label for="status" class="sr-only">Estado</label>
+        <div class="input-group">
+          <div class="input-group-addon">Estado</div>
+          <%= f.select :status, @state_options.each {}, {}, { class: 'form-control' } %>
+        </div>
+        <%= f.submit 'Guardar Estado', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+
+  <br>
+  <br>
+  <p class="hidden-print">
+    <%= link_to 'Volver a Ordenes', stores_orders_path %>
+  </p>
+</div>

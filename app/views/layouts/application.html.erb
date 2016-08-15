@@ -25,7 +25,7 @@
 
   <div class="container app__container">
     <%= render partial: "shared/menu/top", locals: { search: true } %>
-    <div class="app__content clearfix">
+    <div class="content clearfix">
       <%= yield %>
 
     </div>
@@ -36,7 +36,7 @@
 
   <%= render "mixins/login" %>
   <%= render "mixins/search" %>
-  
+
   <!-- Google Analytics -->
   <script>
   window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;

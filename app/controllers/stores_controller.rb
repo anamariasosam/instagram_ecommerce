@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
-  before_filter :authenticate_user!, only: [:dashboard, :suscribe, :list]
-  before_filter :require_store, only: [:dashboard, :suscribe, :list]
+  before_filter :authenticate_user!, only: [:dashboard, :subscribe, :list]
+  before_filter :require_store, only: [:dashboard, :subscribe, :list]
   before_filter :pilot_store, only: [:dashboard, :list]
   before_filter :edit_store_info, only: [:dashboard]
 
@@ -13,7 +13,7 @@ class StoresController < ApplicationController
     end
   end
 
-  def suscribe
+  def subscribe
     @waiting_users =  Store.where("details->'pilot' = ?", "false").all.count
     @waiting_position = current_user.waiting_position
 
@@ -21,7 +21,7 @@ class StoresController < ApplicationController
     update_instagram_data(client)
   end
 
-  def list
+  def instagram_media
     if current_user.user_token?
       options = { count: 40 }
       options[:max_id] = params[:max_id] if params[:max_id]
@@ -64,13 +64,9 @@ class StoresController < ApplicationController
                                 .order("created_at desc")
                                 .where(owner_id: current_user)
                                 .limit(5)
+                                .includes(:trackable)
     @announcements = Announcement.current
 
-    render :layout => 'dashboard'
-  end
-
-  def orders
-    @orders = Order.where("store_id = :store_id", store_id: current_user.id)
     render :layout => 'dashboard'
   end
 
@@ -96,7 +92,7 @@ class StoresController < ApplicationController
     def pilot_store
       if !current_user.pilot? and current_user.name
         flash[:error] = t('user.no_pilot')
-        redirect_to stores_suscribe_path
+        redirect_to stores_subscribe_path
       end
     end
 

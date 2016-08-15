@@ -35,7 +35,7 @@
 @import "components/users/dashboard";
 @import "components/users/list";
 @import "components/users/stores";
-@import "components/users/suscribers";
+@import "components/users/subscribers";
 
 @import "components/legal/privacy";
 
@@ -45,6 +45,7 @@
 @import "components/tutorial/tutorial";
 
 @import "components/orders/order";
+@import "components/orders/thanks";
 
 // Vendor
 @import "footable/footable.core.min.css";
@@ -52,19 +53,14 @@
 @import "lightbox";
 @import "lightbox2";
 
+.content {
+  min-height: calc(100vh - 125px);
+}
 .app {
   &__container {
     width: 100%;
     padding: 0;
     min-height:100%;
-  	position:relative;
-  }
-
-  &__content {
-    padding-bottom: 100px;
-  }
-
-   &__bold-text {
-    font-weight: bold;
+    position:relative;
   }
 }

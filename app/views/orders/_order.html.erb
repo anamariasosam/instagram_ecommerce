@@ -3,10 +3,10 @@
   <td><%= order.status %></td>
   <td><%= time_ago_in_words order.created_at %></td>
   <td>
-    <% if current_user.type == 'Customer' %>
-      <%= order.store.name %>
-    <% else %>
+    <% if is_store? %>
       <%= order.customer.full_name %>
+    <% else %>
+      <%= order.store.name %>
     <% end %>
   </td>
   <td><%= order.product.product_name %></td>
@@ -29,5 +29,7 @@
       </a>
     <% end %>
   </td>
-  <td> Print </td>
+  <% if is_store? %>
+    <td  class="hidden-print"> <%= link_to 'Ver', stores_order_url(order.id) %> </td>
+  <% end %>
 </tr>

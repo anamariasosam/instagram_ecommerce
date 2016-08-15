@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   before_filter :authenticate_user!
-  layout "dashboard"
+  layout 'dashboard'
 
   def dashboard
     if current_user.full_name
@@ -21,7 +21,7 @@ class CustomersController < ApplicationController
   end
 
   def orders
-    @orders = current_user.orders
+    @orders = current_user.orders.includes(:store).includes(:product).reorder(:created_at)
   end
 
   private
