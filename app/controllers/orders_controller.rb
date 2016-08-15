@@ -55,7 +55,7 @@ class OrdersController < ApplicationController
     end
 
     def notify(who, order, first = false)
-      store = order.store.store_name
+      store = order.store.name
       customer = order.customer.full_name
       article = order.product.product_name
       status = order.status
