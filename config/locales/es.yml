@@ -9,6 +9,8 @@ es:
     no_pilot: Te encuentras en lista de espera
     no_store: Debes registarte como tienda para crear productos
   mail_form:
+    success: Tu mensaje ha sido enviado.
+    error: Tu mensaje no pudo ser enviado
     attributes:
       contact:
         name: Nombre
