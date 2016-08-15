@@ -14,4 +14,8 @@ module ApplicationHelper
 
     super *args
   end
+
+  def is_store?
+    current_user.type == "Store"
+  end
 end

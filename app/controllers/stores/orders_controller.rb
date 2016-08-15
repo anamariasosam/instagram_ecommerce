@@ -3,13 +3,14 @@ require 'twilio-ruby'
 class Stores::OrdersController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :require_store
   before_action :set_order, only: [:show, :update]
   before_action :set_states, only: [:show, :update]
 
   layout 'dashboard'
 
   def index
-    @orders = Order.where("store_id = :store_id", store_id: current_user.id)
+    @orders = current_user.orders.includes(:customer).includes(:product).reorder(:created_at)
   end
 
   def show
@@ -44,6 +45,13 @@ class Stores::OrdersController < ApplicationController
 
     def set_order
       @order = current_user.orders.find(params[:id])
+    end
+
+    def require_store
+      if current_user.type == "Customer"
+        flash[:error] = t('user.no_store')
+        redirect_to root_url
+      end
     end
 
     def notify(who, order, first = false)

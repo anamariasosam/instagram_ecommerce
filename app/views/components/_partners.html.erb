@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container partners">
 
   <header class="major">
     <h2 class="">Tiendas aliadas</h2>
@@ -8,9 +8,9 @@
     <% @stores.each do |store| %>
     <% cache store do %>
       <% if store.name? and store.products.count > 0  %>
-        <figure class="app__partners-figure col-xs-6 col-sm-4 col-md-3">
+        <figure class="partners__figure col-xs-6 col-sm-4 col-md-3">
           <%= link_to store do %>
-            <img src="<%= store.image %>" class="img-circle app__partners-img" alt="catlog, aliados, <%= store.name%>">
+            <img src="<%= store.image %>" class="img-circle partners__image" alt="catlog, aliados, <%= store.name%>">
           <% end %>
         </figure>
       <% end %>

@@ -16,11 +16,11 @@
       <br>
       <div class="thanks__details">
 
-        <p><b>Numero de orden</b>: <%= @result.id %> </p>
-        <p><b>Total</b>: <%= @result.total %></p>
+        <p><b>Número de orden</b>: <%= @result.id %> </p>
+        <p><b>Total</b>: <%= number_to_currency @result.total %></p>
         <p><b>Forma de pago</b>: <%= @result.payment_method %></p>
         <p><b>Dirección de Envío</b>: <%= @result.address %></p>
-        <p><b>Detales</b>: <%= @result.details %></p>
+        <p><b>Detalles</b>: <%= @result.details %></p>
       </div>
     </div>
     <footer class="thanks__footer">
