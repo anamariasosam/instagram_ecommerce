@@ -79,7 +79,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'annotate'
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'guard-livereload', require: false
