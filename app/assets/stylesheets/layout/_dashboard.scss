@@ -3,28 +3,17 @@ $sidebar-desktop: 175px;
 $sidebar-mobile: 60px;
 .dashboard {
 
-  background: -moz-linear-gradient(left,  $sidebar-bg $sidebar-desktop, #ebeef0 $sidebar-desktop, #f5f5f5 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  $sidebar-bg $sidebar-desktop,#ebeef0 $sidebar-desktop, #f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  $sidebar-bg $sidebar-desktop,#ebeef0 $sidebar-desktop, #f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to right,  $sidebar-bg $sidebar-desktop,#ebeef0 $sidebar-desktop, #f5f5f5 100%);
   min-height: calc(100vh - 125px);
 
   @include respond-to(s) {
-    background: -moz-linear-gradient(left,  $sidebar-bg $sidebar-mobile, #ebeef0 $sidebar-mobile, #f5f5f5 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  $sidebar-bg $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  $sidebar-bg $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(to right,  $sidebar-bg $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%);
   };
 
   @include respond-to(xs) {
-    background: -moz-linear-gradient(left,  $sidebar-bg $sidebar-mobile, #ebeef0 $sidebar-mobile, #f5f5f5 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  $sidebar-bg $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  $sidebar-bg $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(to right,  $sidebar-bg $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%);
     margin-top: 10px;
   };
-
-  // this style fix the margin from the footer to match the sidebar height
-  + .footer {
-    margin-top: 0;
-  }
 
   .container {
     max-width: 100%;
