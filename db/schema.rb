@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725001222) do
+ActiveRecord::Schema.define(version: 20160815191315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,9 +124,7 @@ ActiveRecord::Schema.define(version: 20160725001222) do
   add_index "shortened_urls", ["url"], name: "index_shortened_urls_on_url", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "store_name"
     t.string   "phone_number"
-    t.text     "delivery_info"
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.string   "instagram_id"

@@ -39,9 +39,7 @@ FactoryGirl.define do
   end
 
   factory :user do
-    store_name { Faker::Company.name }
     phone_number '1234567890'
-    delivery_info { Faker::Lorem.sentence }
     details { Faker::Lorem.sentence }
     city { Faker::Address.city }
     country { Faker::Address.country }
