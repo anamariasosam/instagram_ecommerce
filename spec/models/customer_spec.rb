@@ -3,9 +3,7 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  store_name             :string
 #  phone_number           :string
-#  delivery_info          :text
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  instagram_id           :string

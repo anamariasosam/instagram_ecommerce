@@ -45,7 +45,7 @@ es:
               not_a_number: La cantidad debe ser númerica
         user:
           attributes:
-            store_name:
+            name:
               taken: "La cuenta de Instagram ya está conectada"
               blank: "El nombre de la tienda no puede estar vacío"
             phone_number:
