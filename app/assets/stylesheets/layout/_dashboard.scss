@@ -8,6 +8,7 @@ $sidebar-mobile: 60px;
 
   @include respond-to(s) {
     background: linear-gradient(to right,  $sidebar-bg $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%);
+    margin-top: 10px;
   };
 
   @include respond-to(xs) {
@@ -45,6 +46,10 @@ $sidebar-mobile: 60px;
     width: 100%;
     text-align: left;
 
+    @include respond-to(s) {
+      text-align: center;
+    };
+
     @include respond-to(xs) {
       text-align: center;
     };
@@ -54,6 +59,10 @@ $sidebar-mobile: 60px;
     display: block;
     padding: 19px 0 17px 10px;
     color: #fff;
+
+    @include respond-to(s) {
+      padding-left: 0;
+    };
 
     @include respond-to(xs) {
       padding-left: 0;
@@ -80,6 +89,10 @@ $sidebar-mobile: 60px;
     .fa {
       font-size: 14px;
       margin-right: 3px;
+
+      @include respond-to(s) {
+        font-size: 22px;
+      };
 
       @include respond-to(xs) {
         font-size: 22px;
