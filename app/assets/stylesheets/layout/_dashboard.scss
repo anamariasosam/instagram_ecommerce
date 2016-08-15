@@ -1,23 +1,24 @@
-$dash_blue: #4776E6;
+$sidebar-bg: #34425A;
 $sidebar-desktop: 175px;
 $sidebar-mobile: 60px;
 .dashboard {
 
-  background: -moz-linear-gradient(left,  $dash_blue $sidebar-desktop, #ebeef0 $sidebar-desktop, #f5f5f5 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  $dash_blue $sidebar-desktop,#ebeef0 $sidebar-desktop, #f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  $dash_blue $sidebar-desktop,#ebeef0 $sidebar-desktop, #f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(left,  $sidebar-bg $sidebar-desktop, #ebeef0 $sidebar-desktop, #f5f5f5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  $sidebar-bg $sidebar-desktop,#ebeef0 $sidebar-desktop, #f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  $sidebar-bg $sidebar-desktop,#ebeef0 $sidebar-desktop, #f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   min-height: calc(100vh - 125px);
 
   @include respond-to(s) {
-    background: -moz-linear-gradient(left,  $dash_blue $sidebar-mobile, #ebeef0 $sidebar-mobile, #f5f5f5 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  $dash_blue $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  $dash_blue $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(left,  $sidebar-bg $sidebar-mobile, #ebeef0 $sidebar-mobile, #f5f5f5 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  $sidebar-bg $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  $sidebar-bg $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   };
 
   @include respond-to(xs) {
-    background: -moz-linear-gradient(left,  $dash_blue $sidebar-mobile, #ebeef0 $sidebar-mobile, #f5f5f5 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  $dash_blue $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  $dash_blue $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(left,  $sidebar-bg $sidebar-mobile, #ebeef0 $sidebar-mobile, #f5f5f5 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  $sidebar-bg $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  $sidebar-bg $sidebar-mobile,#ebeef0 $sidebar-mobile, #f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    margin-top: 10px;
   };
 
   // this style fix the margin from the footer to match the sidebar height
@@ -51,18 +52,26 @@ $sidebar-mobile: 60px;
   }
 
   &__item {
-    border-bottom: 1px solid lighten($dash_blue, 5%);
+    border-bottom: 1px solid lighten($sidebar-bg, 5%);
     width: 100%;
-    text-align: center;
+    text-align: left;
+
+    @include respond-to(xs) {
+      text-align: center;
+    };
   }
 
   &__link {
     display: block;
-    padding: 25px 0 23px;
+    padding: 19px 0 17px 10px;
     color: #fff;
 
+    @include respond-to(xs) {
+      padding-left: 0;
+    };
+
     &:hover {
-      background: darken($dash_blue, 5%);
+      background: darken($sidebar-bg, 5%);
       color: #fff;
       text-decoration: none;
       -webkit-box-shadow: inset 0px -3px 12px 0px rgba(0,0,0,0.15);
@@ -71,7 +80,7 @@ $sidebar-mobile: 60px;
     }
 
     &:active, &:focus {
-      background: darken($dash_blue, 5%);
+      background: darken($sidebar-bg, 5%);
       color: #ccc;
       text-decoration: none;
       -webkit-box-shadow: inset 0px -3px 12px 0px rgba(0,0,0,0.15);
@@ -80,7 +89,12 @@ $sidebar-mobile: 60px;
     }
 
     .fa {
-      font-size: 22px;
+      font-size: 14px;
+      margin-right: 3px;
+
+      @include respond-to(xs) {
+        font-size: 22px;
+      };
     }
   }
 
@@ -91,10 +105,9 @@ $sidebar-mobile: 60px;
   }
 
   &__sidebar {
-    background: $dash_blue;
+    border-right: 1px solid lighten($sidebar-bg, 5%);
     float: left;
     width: $sidebar-desktop;
-    border-right: 1px solid lighten($dash_blue, 5%);
 
     @include respond-to(s) {
       overflow: hidden;
