@@ -36,6 +36,7 @@ FactoryGirl.define do
     quantity { Faker::Number.number(1) }
     instagram_image { Faker::Placeholdit.image("500x500", 'jpg', Faker::Color.hex_color.to_s.sub(/^#/, '')) }
     description { Faker::Lorem.sentence }
+    photo_id { Faker::Number.number(11) }
   end
 
   factory :user do
