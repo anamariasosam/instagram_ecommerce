@@ -48,6 +48,9 @@ gem 'hstore_accessor'
 gem 'turnout'
 gem 'mail_form'
 
+# Env variables
+gem 'figaro'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
