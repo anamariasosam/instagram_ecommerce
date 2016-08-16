@@ -16,6 +16,8 @@
 #
 
 class Order < ActiveRecord::Base
+  include PublicActivity::Common
+
   belongs_to :product
   belongs_to :store
   belongs_to :customer

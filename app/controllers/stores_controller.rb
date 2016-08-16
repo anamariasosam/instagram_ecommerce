@@ -61,10 +61,10 @@ class StoresController < ApplicationController
     update_instagram_data(client)
 
     @activities = PublicActivity::Activity
-                                .order("created_at desc")
-                                .where(owner_id: current_user)
-                                .limit(5)
-                                .includes(:trackable)
+      .order("created_at desc")
+      .where(owner_id: current_user)
+      .limit(5)
+      .includes(:trackable)
     @announcements = Announcement.current
 
     render :layout => 'dashboard'
