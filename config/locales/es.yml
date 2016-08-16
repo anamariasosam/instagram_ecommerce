@@ -9,6 +9,7 @@ es:
   user:
     no_pilot: Te encuentras en lista de espera
     no_store: Debes registarte como tienda para crear productos
+    no_customer: Debes iniciar sesión como comprador para realizar esta acción
   mail_form:
     success: Tu mensaje ha sido enviado.
     error: Tu mensaje no pudo ser enviado

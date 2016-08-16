@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   before_action :set_product
   before_action :set_payment_methods, only: [:new]
   before_action :authenticate_user!
+  before_action :only_customers, only: [:new]
 
   def new
     order = Order.new
@@ -42,6 +43,13 @@ class OrdersController < ApplicationController
   end
 
   private
+
+    def only_customers
+      if current_user.type == "Store"
+        flash[:error] = t('user.no_customer')
+        redirect_to :back
+      end
+    end
 
     def set_product
       @product = Product.find params[:product_id]
