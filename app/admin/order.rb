@@ -5,7 +5,10 @@ ActiveAdmin.register Order do
                 :created_at,
                 :updated_at,
                 :customer_id,
-                :store_id
+                :store_id,
+                :address,
+                :details,
+                :payment_method
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
