@@ -27,11 +27,13 @@
     <%= render partial: "shared/menu/top", locals: { search: true } %>
 
     <div class="content clearfix">
-      <header class="sectionHero hidden-xs">
-        <div class="container">
-          <%= yield :headline %>
-        </div>
-      </header>
+      <% if content_for?(:headline) %>
+        <header class="sectionHero hidden-xs">
+          <div class="container">
+            <%= yield :headline %>
+          </div>
+        </header>
+        <% end %>
       <%= yield %>
     </div>
 
