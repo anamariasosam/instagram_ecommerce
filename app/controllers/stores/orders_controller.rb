@@ -1,6 +1,7 @@
 require 'twilio-ruby'
 
 class Stores::OrdersController < ApplicationController
+  include TwilioNotify
 
   before_action :authenticate_user!
   before_action :require_store
@@ -53,37 +54,4 @@ class Stores::OrdersController < ApplicationController
         redirect_to root_url
       end
     end
-
-    def notify(who, order, first = false)
-      store = order.store.name
-      customer = order.customer.full_name
-      article = order.product.product_name
-      status = order.status
-
-      phone = case who
-        when 'store'
-          order.customer.phone_number
-        when 'customer'
-          order.store.phone_number
-      end
-
-      body = "Hola #{store.truncate(17)}, "
-
-      body += case who
-        when "store" && first
-          "Acabas de vender 1 #{article} a #{customer} en catlog.co; actualiza el estado de la orden en la plataforma;"
-        when "store"
-          "Acabamos de informar a #{customer} que el artículo #{article} se encuentra"
-        when "customer" && first
-          "Acabas de comprar 1 #{article} de #{store} en catlog.co; por aquí te contaremos sobre el estado de tu orden,"
-        when "customer"
-          "Te contamos que el artículo #{article} se encuentra"
-      end
-
-      body += " actualmente: #{status}"
-
-      # client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
-      # message = client.messages.create from: '+12513016556', to: "+57#{phone}", body: body
-    end
-
 end
