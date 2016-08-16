@@ -78,7 +78,7 @@
             <i class="product-action--item fa fa-pencil"></i>
           <% end %>
 
-          <%= link_to @product, method: :delete, data: { confirm: '¿Está seguro que desea eliminarlo?' } do%>
+          <%= link_to ['stores', @product], method: :delete, data: { confirm: '¿Estás seguro que deseas eliminarlo?'} do%>
             <i class="product-action--item fa fa-trash-o"></i>
           <% end %>
         </div>
