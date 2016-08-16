@@ -68,6 +68,7 @@ $sidebar-mobile: 60px;
       padding-left: 0;
     };
 
+    &.active,
     &:hover {
       background: darken($sidebar-bg, 5%);
       color: #fff;
