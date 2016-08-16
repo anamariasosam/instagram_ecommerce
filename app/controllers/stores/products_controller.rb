@@ -59,13 +59,18 @@ class Stores::ProductsController < ApplicationController
   end
 
   def destroy
-    @product.create_activity :destroy, owner: current_user, parameters: {
-      last_name: @product.product_name
-    }
-    @product.destroy
-    respond_to do |format|
-      format.html { redirect_to stores_products_path, notice: 'El producto ha sido eliminado con éxito.' }
-      format.json { head :no_content }
+    if not Order.exists?(product_id: @product.id)
+      @product.create_activity :destroy, owner: current_user, parameters: {
+        last_name: @product.product_name
+      }
+      @product.destroy
+      respond_to do |format|
+        format.html { redirect_to stores_products_path, notice: 'El producto ha sido eliminado con éxito.' }
+        format.json { head :no_content }
+      end
+    else
+      flash[:error] = t('product.delete_permissions')
+      redirect_to :back
     end
   end
 
