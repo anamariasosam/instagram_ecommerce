@@ -38,7 +38,7 @@ class Product < ActiveRecord::Base
   validates_uniqueness_of :photo_id
 
   belongs_to :store, touch: true
-  belongs_to :order
+  has_many :orders
 
   def slug
     store.name.downcase.gsub(" ", "-") + "_"  + product_name.downcase.gsub(" ", "-")
