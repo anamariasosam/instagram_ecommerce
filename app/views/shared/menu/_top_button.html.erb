@@ -1,4 +1,8 @@
 <div class="navbar-header hamburger">
+  <div class="visible-xs-inline mobileHeader">
+    <%= yield :mobile_header %>
+  </div>
+
   <button type="button"
     class="hamburger__button navbar-toggle collapsed"
     data-toggle="collapse"

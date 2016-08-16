@@ -1,5 +1,5 @@
 .sectionHero {
-  @extend .background-purple;
+  @extend %background-purple;
 
   color: #fff;
 
@@ -10,8 +10,8 @@
 
   &__headline {
     line-height: 1;
-    margin-top: 0;
     margin-bottom: 5px;
+    margin-top: 0;
   }
 
   &__link {
@@ -19,5 +19,42 @@
     &:hover {
       color: #fff !important;
     }
+  }
+}
+.mobileHeader {
+  float: left;
+  padding-top: 7px;
+  max-width: 70%;
+  padding-left: 10px;
+
+  &__deck {
+    margin-top: 3px;
+    line-height: 1;
+    color: #f0f0f0;
+    margin-bottom: 0px;
+  }
+
+  &__headline {
+    margin: 0;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @include respond-to(xs) {
+      color: white;
+    };
+
+    &:nth-child(1) {
+      margin-top: 7px;
+    }
+  }
+
+  &__link {
+    color: #333;
+
+    @include respond-to(xs) {
+      color: white;
+    };
   }
 }

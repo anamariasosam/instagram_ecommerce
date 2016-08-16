@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .hero {
-  @extend .background-purple;
+  @extend %background-purple;
   color: #fff;
   padding-bottom: 40px;
   padding-top: 40px;

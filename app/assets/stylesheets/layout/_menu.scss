@@ -1,9 +1,10 @@
-
 .hamburger {
+  @extend %background-purple;
 
   &__button {
-    width: 45px;
+    background: #fff;
     height: 45px;
+    width: 45px;
 
     &:hover,
     &:focus {

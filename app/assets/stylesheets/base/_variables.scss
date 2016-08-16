@@ -15,7 +15,7 @@ $title-color: #4776E6;
   color: #c9302c;
 }
 
-.background-purple {
+%background-purple {
   background: $primary-color;
   background: linear-gradient(45deg, $title-color, $primary-color);
 }

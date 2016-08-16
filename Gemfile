@@ -83,6 +83,10 @@ end
 
 group :development do
   gem 'annotate'
+
+  # to use rails panel chrome
+  gem 'meta_request'
+
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'guard-livereload', require: false

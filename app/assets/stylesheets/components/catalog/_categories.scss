@@ -1,6 +1,10 @@
 .category {
   text-align: left;
 
+  @include respond-to(xs) {
+    margin-top: 20px;
+  };
+
   &__item {
     display: inline-block;
     margin-bottom: 10px;

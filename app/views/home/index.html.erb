@@ -13,6 +13,10 @@
   <meta name="twitter:image"        content="logo.png" />
 <% end %>
 
+<% content_for :mobile_header do %>
+  <h3 class="mobileHeader__headline">Catlog.co</h3>
+<% end %>
+
 <%= render "components/intro" %>
 <%= render "components/recent" %>
 <%= render "components/about" %>

@@ -15,7 +15,7 @@
     margin: 0 auto;
     padding: 22px;
     text-align: center;
-    @extend .background-purple;
+    @extend %background-purple;
     color: #fff;
     letter-spacing: 1px
   }

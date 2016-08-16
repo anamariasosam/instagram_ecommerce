@@ -25,9 +25,16 @@
 
   <div class="container app__container">
     <%= render partial: "shared/menu/top", locals: { search: true } %>
-    <div class="content clearfix">
-      <%= yield %>
 
+    <div class="content clearfix">
+      <% if content_for?(:headline) %>
+        <header class="sectionHero hidden-xs">
+          <div class="container">
+            <%= yield :headline %>
+          </div>
+        </header>
+        <% end %>
+      <%= yield %>
     </div>
 
     <%= render "layouts/footer" %>
