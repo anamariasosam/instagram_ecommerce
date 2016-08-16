@@ -8,14 +8,6 @@
     &--container {
       display: inline-block;
     }
-
-    &--item,
-    &--item:hover {
-      color: $menu-color;
-      font-size: 2em;
-      margin-right: 10px;
-      text-decoration: none !important;
-    }
   }
 
   &-caption {
@@ -95,8 +87,9 @@
 
 .product {
 
-  &__searchForm {
-    min-height: 50vh;
+  &__action,
+  &__action:hover {
+    text-decoration: none !important;
   }
 
   &__avalability {
@@ -105,21 +98,7 @@
   }
 
   &__caption {
-    @include respond-to(xl) {
-      margin-top: 9%;
-    };
-    @include respond-to(l) {
-      margin-top: 5%;
-    };
-    @include respond-to(m) {
-      margin-top: 0%;
-    };
-    @include respond-to(s) {
-      margin-top: 3%;
-    };
-    @include respond-to(xs) {
-      margin-top: 3%;
-    };
+    padding-top: 10px;
   }
 
   &__description {
@@ -134,10 +113,10 @@
   &__image {
     border: 15px solid white;
     box-shadow: 0 2px 3px rgba(10,10,10, 0.1);
-  }
 
-  &__caption {
-    padding-top: 10px;
+    @include respond-to(xs) {
+      margin-top: 20px;
+    };
   }
 
   &__headline {
@@ -159,10 +138,14 @@
 
   &__price {
     border-bottom: 1px dotted #ccc;
-    color: $primary-color;
+    color: #333;
     font-weight: bold;
     font-size: 32px;
     padding-bottom: 20px;
+  }
+
+  &__searchForm {
+    min-height: 50vh;
   }
 
   &__store {

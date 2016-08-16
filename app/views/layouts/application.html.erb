@@ -25,9 +25,14 @@
 
   <div class="container app__container">
     <%= render partial: "shared/menu/top", locals: { search: true } %>
-    <div class="content clearfix">
-      <%= yield %>
 
+    <div class="content clearfix">
+      <header class="sectionHero hidden-xs">
+        <div class="container">
+          <%= yield :headline %>
+        </div>
+      </header>
+      <%= yield %>
     </div>
 
     <%= render "layouts/footer" %>

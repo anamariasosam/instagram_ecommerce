@@ -1,6 +1,6 @@
 .order {
   &__gif {
-    @extend .background-purple;
+    @extend %background-purple;
     height: 400px;
     margin: 0 auto;
     width: 400px;

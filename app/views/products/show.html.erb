@@ -15,17 +15,17 @@
   <meta name="twitter:image"        content="<%= @product.instagram_image %>" />
 <% end %>
 
-<header class="sectionHero">
-  <div class="container">
+<% content_for :mobile_header do %>
+  <h5 class="mobileHeader__deck">Producto de:</h5>
+  <h3 class="mobileHeader__headline"><%= link_to @product.store.name, store_path(@product.store.slug), class: 'mobileHeader__link' %></h3>
+<% end %>
 
-    <h5>Producto de:</h5>
-    <h3 class="sectionHero__headline"><%= link_to @product.store.name, store_path(@product.store.slug), class: 'sectionHero__link' %></h3>
-
-  </div>
-</header>
+<% content_for :headline do %>
+  <h5>Producto de:</h5>
+  <h3 class="sectionHero__headline"><%= link_to @product.store.name, store_path(@product.store.slug), class: 'sectionHero__link' %></h3>
+<% end %>
 
 <section class="container">
-
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <img
@@ -50,39 +50,47 @@
       </header>
 
       <p class="product__avalability">
-        <span class="app__bold-text">Disponibles</span>
+        <b>Disponibles:</b>
         <%= @product.quantity %>
       </p>
-
       <p>
+        <b>Descripción:</b>
+      </p>
+      <div class="product__description">
+        <%=  @product.description.html_safe %>
+      </div>
+
+      <br>
+      <hr>
+
+      <p class="align-left">
         <% unless @product.category.name == 'Sin Categoría' %>
-          <p class="align-left">
-            <b>Categoría:</b>
-            <br>
-            <br>
-            <%= link_to @product.category.name, @product.category, class: "category__link" %>
-          </p>
+          <b>Categoría:</b>
+          <%= link_to @product.category.name, @product.category, class: "category__link" %>
         <% end %>
       </p>
 
       <% if current_user and current_user.id == @product.store_id %>
-        <p class="product-code">
-          Comparte este código en tu post de instagram:
-          <span class="app__bold-text product_code" oncopy="addLink()" >
-            <%= @product.shortened_urls.last.unique_key %>
-          </span>
-        </p>
+        <hr>
+        <blockquote class="product-code">
+          <p> Comparte este código en tu post de instagram:
+            <span class="product_code" oncopy="addLink()" >
+              <b><%= @product.shortened_urls.last.unique_key %></b>
+            </span>
+          </p>
 
-        <div class="product-action--container text-right">
-          <%= link_to edit_stores_product_path(@product) do %>
-            <i class="product-action--item fa fa-pencil"></i>
-          <% end %>
-
-          <%= link_to ['stores', @product], method: :delete, data: { confirm: '¿Estás seguro que deseas eliminarlo?'} do%>
-            <i class="product-action--item fa fa-trash-o"></i>
-          <% end %>
-        </div>
+          <p class="product__actions">
+            <%= link_to edit_stores_product_path(@product) do %>
+              <i class="product__action fa fa-pencil-square"></i> Editar
+            <% end %>
+            <br>
+            <%= link_to ['stores', @product], method: :delete, data: { confirm: '¿Estás seguro que deseas eliminarlo?'} do%>
+              <i class="product__action fa fa-trash"></i> Eliminar
+            <% end %>
+          </p>
+        </blockquote>
       <% else %>
+        <hr>
         <div class="js_callToAction">
           <!-- <button class="btn btn-primary btn-block btn-lg js_togglePurchaseBtn" class="track" data-track='comprar'>Comprar</button> -->
           <%= link_to 'Comprar', new_product_order_path(@product), class: 'btn btn-primary btn-lg btn-block' %>
@@ -127,12 +135,6 @@
         </span>
       </div>
     </div>
-  </div>
-
-  <h3 class="app__bold-text" id="description">Descripción</h3>
-  <br>
-  <div class="product__description">
-    <%=  @product.description.html_safe %>
   </div>
 
 </section>
