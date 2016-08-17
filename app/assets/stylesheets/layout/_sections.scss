@@ -41,6 +41,10 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 
+    @include respond-to(s) {
+    color: white;
+    };
+
     @include respond-to(xs) {
       color: white;
     };
