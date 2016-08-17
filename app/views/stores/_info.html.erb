@@ -27,11 +27,11 @@
       <%= icon('facebook', class: 'store__socialIcon') %>
     <% end %>
 
-    <%= link_to_if @store.facebook?, "http://www.twitter.com/#{@store.twitter}", target:"_blank" do %>
+    <%= link_to_if @store.twitter?, "http://www.twitter.com/#{@store.twitter}", target:"_blank" do %>
       <%= icon('twitter', class: 'store__socialIcon') %>
     <% end %>
 
-    <%= link_to_if @store.facebook?, "http://www.snapchat.com/add/#{@store.snapchat}", target:"_blank" do %>
+    <%= link_to_if @store.snapchat?, "http://www.snapchat.com/add/#{@store.snapchat}", target:"_blank" do %>
       <%= icon('snapchat-ghost', class: 'store__socialIcon') %>
     <% end %>
 
