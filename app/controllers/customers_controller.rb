@@ -10,9 +10,9 @@ class CustomersController < ApplicationController
 
       @announcements = Announcement.current
       @activities = PublicActivity::Activity
-                                  .order("created_at desc")
-                                  .where(owner_id: current_user)
-                                  .limit(5)
+        .order("created_at desc")
+        .where(owner_id: current_user)
+        .limit(5).includes(:trackable)
 
       getInstagramData
     else

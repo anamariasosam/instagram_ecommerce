@@ -25,6 +25,9 @@ class Stores::OrdersController < ApplicationController
         notify('customer', @order)
         notify('store', @order)
 
+        @order.create_activity :status, owner: @order.store, parameters: {order_status: @order.status}
+        @order.create_activity :status, owner: @order.customer, parameters: {order_status: @order.status}
+
         format.html { redirect_to ['stores', @order], notice: 'El estado de la orden ha sido actualizado exitosamente' }
         format.json { render :show, status: :ok, location: @order }
       else
