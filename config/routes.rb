@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     get 'subscribe'
   end
 
-  resources :stores, only: [:show]
+  resources :stores, only: [:show], path: 'store'
 
   get 'customers/dashboard'
   get 'customers/dashboard/orders', to: 'customers#orders'
