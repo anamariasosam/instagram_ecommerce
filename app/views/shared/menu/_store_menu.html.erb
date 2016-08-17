@@ -1,37 +1,12 @@
-<li class='dashboard__item'>
-  <%= link_to stores_dashboard_path, class: 'dashboard__link' do %>
-    <i class="fa fa-home"></i>
-    <span class="hidden-xs">Dashboard</span>
-  <% end %>
-</li>
+<%= active_link_to 'Dashboard', stores_dashboard_path, 'dashboard__link', 'home' %>
 
-<li class='dashboard__item'>
-  <%= link_to stores_instagram_media_path, class: 'dashboard__link js_instagramLoad' do %>
-    <i class="fa fa-plus"></i>
-    <span class="hidden-xs">Crear Producto</span>
-  <% end %>
-</li>
+<%= active_link_to 'Crear Producto', stores_instagram_media_path, 'dashboard__link js_instagramLoad', 'plus' %>
 
-<li class='dashboard__item'>
-  <%= link_to stores_products_path, class: "dashboard__link" do %>
-    <i class="fa fa-shopping-basket"></i>
-    <span class="hidden-xs">Ver Productos</span>
-  <% end %>
-</li>
+<%= active_link_to 'Ver Productos', stores_products_path, 'dashboard__link', 'shopping-basket' %>
 
-<li class='dashboard__item'>
-  <%= link_to stores_orders_path, class: "dashboard__link" do %>
-    <i class="fa fa-paper-plane"></i>
-    <span class="hidden-xs">Ver Órdenes</span>
-  <% end %>
-</li>
+<%= active_link_to 'Ver Órdenes', stores_orders_path, 'dashboard__link', 'paper-plane' %>
 
-<li class='dashboard__item'>
-  <%= link_to edit_user_registration_path, class: "dashboard__link"  do %>
-    <i class="fa fa-pencil-square"></i>
-    <span class="hidden-xs">Información</span>
-  <% end %>
-</li>
+<%= active_link_to 'Información', edit_user_registration_path, 'dashboard__link', 'pencil-square' %>
 
 <li class='dashboard__item'>
   <%= link_to store_path(current_user), class: "dashboard__link", target: '_blank' do %>

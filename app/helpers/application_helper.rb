@@ -18,4 +18,13 @@ module ApplicationHelper
   def is_store?
     current_user.type == "Store"
   end
+
+  def active_link_to(anchor, href, classes, icon = false)
+    content_tag :li, class: "dashboard__item" do
+      link_to href, class: "#{classes} #{'active' if current_page?(href)}" do
+        content_tag(:i, '',class: ["fa", "fa-#{icon}"]) +
+        content_tag(:span, anchor, class: 'hidden-xs')
+      end
+    end
+  end
 end
