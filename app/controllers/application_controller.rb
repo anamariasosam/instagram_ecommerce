@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
     if resource.is_a?(Store)
       stores_dashboard_path
     elsif resource.is_a?(Customer)
-      customers_dashboard_path
+      if resource.full_name?
+        stored_location_for(resource) || customers_dashboard_path
+      else
+        customers_dashboard_path
+      end
     elsif resource.is_a?(AdminUser)
       admin_dashboard_path
     else
