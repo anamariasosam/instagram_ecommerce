@@ -61,8 +61,7 @@ class OrdersController < ApplicationController
 
     def set_payment_methods
       @payment_methods = [
-        'Contra Entrega',
-        'Consignación Bancaria',
+        'Contra Entrega'
       ]
     end
 

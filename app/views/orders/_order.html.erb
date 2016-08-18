@@ -10,8 +10,9 @@
     <% end %>
   </td>
   <td><%= order.product.product_name %></td>
+  <td><%= order.payment_method%></td>
   <td>
-    <% if current_user.type == 'Customer' %>
+    <% if not is_store? %>
       <a href="tel:<%= order.store.phone_number %>">
         <%= order.store.phone_number %>
       </a>
