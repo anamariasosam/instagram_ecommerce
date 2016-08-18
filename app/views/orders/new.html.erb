@@ -22,7 +22,7 @@
           <div class="col-sm-4">
             <div class="radio">
               <label>
-                <%= f.radio_button :payment_method, p_method %>
+                <%= f.radio_button :payment_method, p_method, checked: true %>
                 <%= p_method %>
               </label>
             </div>
@@ -40,7 +40,7 @@
 
         <hr>
         <div class="actions">
-          <%= f.submit 'Confirmar Orden', :class => 'btn btn-primary col-sm-6 '  %>
+          <%= f.submit 'Confirmar Orden', :class => 'btn btn-primary app__btn col-sm-6 '  %>
         </div>
       <% end %>
     </div>
