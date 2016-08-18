@@ -18,16 +18,21 @@ function getInput() {
   }
 }
 
-// Validates the input value is empty or invalid
+/*
+  Validates the input value is invalid
+  The input must be any word character
+  and exactly 5 characters
+*/
 function validate_search_req( event ) {
   var $input = getInput();
-  var patt = new RegExp(/^[a-zA-Z0-9]+$/);
+  var patt = new RegExp(/\b[\w+]{5}\b/);
 
-  if ( !patt.test($input.val()) && $input.val().length != 5){
+  if ( !patt.test($input.val()) ){
     event.preventDefault();
     $input
       .val('')
-      .attr("placeholder", "Verifica el código");
+      .attr("placeholder", "Verifica el código")
+      .parent().addClass('has-error');
   }
 }
 
@@ -42,7 +47,7 @@ $(document).on('ready page:change page:load', function() {
   });
 
   $('#searchModal').on('hidden.bs.modal', function () {
-    $(".app__search-input").parent().removeClass('has-error')
+    $(".js_search-Modalinput").parent().removeClass('has-error')
   });
 
   // Validate search product box
