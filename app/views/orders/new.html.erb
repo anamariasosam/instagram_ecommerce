@@ -21,7 +21,7 @@
       <%= form_for([@product, @order]) do |f| %>
         <b>Método de pago</b>
         <div class="row">
-          <% @payment_methods.each do |p_method| %>
+          <% @payment_methods.reverse.each do |p_method| %>
           <div class="col-sm-4">
             <div class="radio">
               <label>

@@ -44,6 +44,7 @@ class Stores::OrdersController < ApplicationController
         'Listo Para Enviar',
         'Enviado',
         'Entregado',
+        'Esperando Consignación',
       ]
     end
 

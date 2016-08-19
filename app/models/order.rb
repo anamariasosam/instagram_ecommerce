@@ -34,7 +34,8 @@ class Order < ActiveRecord::Base
       'En Proceso',
       'Listo Para Enviar',
       'Enviado',
-      'Entregado'
+      'Entregado',
+      'Esperando Consignación',
     ].include? self.status
     unless valid
       errors.add(:status, "Estado no permitido")

@@ -61,10 +61,11 @@ class OrdersController < ApplicationController
     end
 
     def set_payment_methods
-      @payment_methods = [
-        'Consignación',
-        'Contra Entrega',
-      ]
+      @payment_methods = ['Contra Entrega']
+      
+      if Store.find(@product.store.id).bank_account?
+        @payment_methods.push('Consignación')
+      end
     end
 
 end
