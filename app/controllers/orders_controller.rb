@@ -33,6 +33,7 @@ class OrdersController < ApplicationController
         format.html { redirect_to thnks_fr_th_mmrs_product_orders_path(order: @order), notice: "Tu orden ha sido creada" }
         format.json { render :index, status: :created, location: @product }
       else
+        set_payment_methods
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
@@ -61,7 +62,8 @@ class OrdersController < ApplicationController
 
     def set_payment_methods
       @payment_methods = [
-        'Contra Entrega'
+        'Consignación',
+        'Contra Entrega',
       ]
     end
 

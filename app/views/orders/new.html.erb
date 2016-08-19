@@ -12,6 +12,9 @@
     </div>
     <div class="col-sm-6">
       <h2>Comprador</h2>
+
+      <%= render 'orders/errors' %>
+
       <p><%= current_user.full_name %></p>
       <p>Contacto: <%= current_user.phone_number %> / <%= current_user.email %></p>
       <hr>

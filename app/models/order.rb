@@ -22,6 +22,11 @@ class Order < ActiveRecord::Base
   belongs_to :store
   belongs_to :customer
 
+  validates_presence_of :total,
+                        :product_id,
+                        :customer_id,
+                        :payment_method,
+                        :address
   validate :status_is_valid
 
   def status_is_valid
