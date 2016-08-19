@@ -36,7 +36,8 @@ class RegistrationsController < Devise::RegistrationsController
                       :address,
                       :facebook,
                       :twitter,
-                      :snapchat
+                      :snapchat,
+                      :bank_account
                     )
     end
 end
