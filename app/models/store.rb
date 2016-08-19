@@ -40,8 +40,18 @@ class Store < User
   waiting_position: :integer,
   facebook: :string,
   twitter: :string,
-  snapchat: :string
+  snapchat: :string,
+  delivery_price: :integer
 
+  before_update :update_products_price
 
-  validates_presence_of :name, on: :update
+  validates_presence_of :name, :delivery_price, on: :update
+
+  private
+    def update_products_price
+      if self.delivery_price_changed?
+        new_price = self.delivery_price - self.delivery_price_was.to_i
+        self.products.update_all("price = price + #{new_price}")
+      end
+    end
 end
