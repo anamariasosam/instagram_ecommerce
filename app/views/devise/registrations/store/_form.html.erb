@@ -56,7 +56,7 @@
     </td>
 
     <% if !current_user.name? %>
-      <%= f.hidden_field :pilot, value: true %>
+      <%= f.hidden_field :pilot, value: false%>
       <%= f.hidden_field :waiting_position, value: Store.where("details->'pilot' = ?", "false").all.count %>
     <% end %>
   </tr>
