@@ -64,6 +64,6 @@ class Product < ActiveRecord::Base
     end
 
     def add_delivery_price
-      self.price = self.price + self.store.delivery_price
+      self.price += self.store.delivery_price
     end
 end
