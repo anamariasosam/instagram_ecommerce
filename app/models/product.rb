@@ -19,6 +19,7 @@ class Product < ActiveRecord::Base
   include PublicActivity::Common
 
   after_create :magic
+  before_create :add_delivery_price
 
   has_shortened_urls
 
@@ -60,5 +61,9 @@ class Product < ActiveRecord::Base
     def magic
       Shortener::ShortenedUrl.generate("/products/#{self.id}", owner: self)
       self.save!
+    end
+
+    def add_delivery_price
+      self.price += self.store.delivery_price
     end
 end

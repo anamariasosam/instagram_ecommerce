@@ -23,6 +23,7 @@ FactoryGirl.define do
     city { Faker::Address.city }
     country { Faker::Address.country }
     email { Faker::Internet.email }
+    delivery_price {  Faker::Number.number(5) }
 
     # TODO: fix model validation to accept real user typos
     # phone_number { Faker::PhoneNumber.cell_phone }

@@ -61,4 +61,8 @@ RSpec.describe Store, type: :model do
     FactoryGirl.create(:store, email: "x@x.com")
     FactoryGirl.build(:store, email: "x@x.com").should_not be_valid
   end
+
+  it "is invalid without delivery_price" do
+    FactoryGirl.create(:store, delivery_price: nil).should_not be_valid
+  end
 end
