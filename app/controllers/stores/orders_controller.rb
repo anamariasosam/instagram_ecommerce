@@ -5,8 +5,10 @@ class Stores::OrdersController < ApplicationController
 
   before_action :authenticate_user!
   before_action :require_store
+  before_action :pilot_store, only: [:index, :show, :update]
   before_action :set_order, only: [:show, :update]
   before_action :set_states, only: [:show, :update]
+
 
   layout 'dashboard'
 
@@ -55,6 +57,13 @@ class Stores::OrdersController < ApplicationController
       if current_user.type == "Customer"
         flash[:error] = t('user.no_store')
         redirect_to root_url
+      end
+    end
+
+    def pilot_store
+      if !current_user.pilot?
+        flash[:error] = t('user.no_pilot')
+        redirect_to stores_subscribe_path
       end
     end
 end

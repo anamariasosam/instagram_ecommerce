@@ -1,7 +1,7 @@
 class StoresController < ApplicationController
   before_filter :authenticate_user!, only: [:dashboard, :subscribe, :list]
   before_filter :require_store, only: [:dashboard, :subscribe, :list]
-  before_filter :pilot_store, only: [:dashboard, :list]
+  before_filter :pilot_store, only: [:dashboard, :list, :instagram_media]
   before_filter :edit_store_info, only: [:dashboard]
 
   def show
@@ -70,17 +70,16 @@ class StoresController < ApplicationController
     render :layout => 'dashboard'
   end
 
-  def update_instagram_data(client)
-    current_user.update(
-      instagram_id:       client.user.id,
-      image:              client.user.profile_picture,
-      instagram_account:  client.user.username,
-      slug:               client.user.username
-    )
-  end
-
   # private methods
   private
+    def update_instagram_data(client)
+      current_user.update(
+        instagram_id:       client.user.id,
+        image:              client.user.profile_picture,
+        instagram_account:  client.user.username,
+        slug:               client.user.username
+      )
+    end
 
     def require_store
       if current_user.type == "Customer"
