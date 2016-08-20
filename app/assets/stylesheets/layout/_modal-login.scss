@@ -11,6 +11,16 @@
     opacity: 1;
   }
 
+  &__dialog {
+    @include respond-to(s) {
+      margin-top: 85px !important;
+    };
+
+    @include respond-to(xs) {
+      margin-top: 85px !important;
+    };
+  }
+
   &__image {
     border-radius: 6px;
     max-width: 170px;
