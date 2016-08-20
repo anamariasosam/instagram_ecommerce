@@ -62,8 +62,8 @@ class OrdersController < ApplicationController
 
     def set_payment_methods
       @payment_methods = ['Contra Entrega']
-      
-      if Store.find(@product.store.id).bank_account?
+
+      if @product.store.bank_account?
         @payment_methods.push('Consignación')
       end
     end
