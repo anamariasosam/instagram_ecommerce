@@ -5,7 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
       if resource.is_a?(Store)
         stores_dashboard_path
       elsif resource.is_a?(Customer)
-        customers_dashboard_path
+        stored_location_for(resource) || customers_dashboard_path
       elsif resource.is_a?(AdminUser)
         admin_dashboard_path
       else
