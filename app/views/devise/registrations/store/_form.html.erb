@@ -67,4 +67,13 @@
       <%= f.hidden_field :waiting_position, value: Store.where("details->'pilot' = ?", "false").all.count %>
     <% end %>
   </tr>
+
+  <tr>
+    <td class="stores__form-data" colspan="2">
+      <div class="form-group">
+        <%= f.label "Cuenta bancaria si la compra es por consignación" %> <br>
+        <%= f.number_field :bank_account, min:"0", inputmode:"numeric", pattern:"[0-9]*", title:"Non-negative integral number", class: 'form-control' %>
+      </div>
+    </td>
+  </tr>
 </table>

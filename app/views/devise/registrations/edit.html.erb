@@ -12,7 +12,7 @@
       <% if @user.type == "Store" %>
         <%= render partial: "devise/registrations/store/form", locals: { f: f } %>
       <% else %>
-        <%= render partial: "devise/registrations/customer/form", locals: { f: f } %>        
+        <%= render partial: "devise/registrations/customer/form", locals: { f: f } %>
       <% end %>
 
       <!-- User token -->
@@ -27,7 +27,7 @@
       <p class="help-block">(*) Campos obligatorios</p>
 
       <div class="actions">
-        <%= f.submit 'Guardar', :class => 'btn btn-primary   col-md-offset-3 col-sm-offset-3 col-sm-6  col-xs-offset-3 col-xs-6 '  %>
+        <%= f.submit 'Guardar', :class => 'btn btn-primary app__btn col-md-offset-3 col-sm-offset-3 col-sm-6  col-xs-offset-3 col-xs-6 '  %>
       </div>
       <br>
     <% end %>

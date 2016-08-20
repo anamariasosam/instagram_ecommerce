@@ -55,6 +55,7 @@
   <p>Fecha de compra: <%= @order.created_at.to_formatted_s(:short) %></p>
   <p>Comprador: <%= @order.customer.full_name %></p>
   <p>Dirección: <%= @order.customer.address %></p>
+  <p>Método de pago: <%= @order.payment_method %></p>
   <p>Teléfono: <a href="tel:<%= @order.customer.phone_number %>"><%= number_to_phone @order.customer.phone_number %></a></p>
   <hr>
   <div class="form-inline hidden-print">

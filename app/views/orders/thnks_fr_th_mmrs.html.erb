@@ -9,6 +9,18 @@
     <header class="thanks__header">
       <h2>Orden Completa! <i class="fa fa-check-square"></i></h2>
     </header>
+
+    <% if @result.payment_method == "Consignación" %>
+      <div class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title">¡IMPORTANTE!</h3>
+      </div>
+      <div class="panel-body">
+        Debes hacer la consignación a este número
+        <b><%= @result.store.bank_account %></b> para que la tienda comience el proceso con tu pedido.
+      </div>
+    </div>
+    <% end %>
     <div class="thanks__body">
       <p>
         Has comprado 1 <b><%= @result.product.product_name %></b> en la tienda <b><%= @result.store.name %></b>, te acompañaremos en el proceso con mensajes de texto cuando la orden cambie de estado y al final del proceso te enviaremos una copia al correo electrónico, asegurate de tener tus datos actualizados.
