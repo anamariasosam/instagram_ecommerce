@@ -18,24 +18,36 @@ function getInput() {
   }
 }
 
-// Validates the input value is not empty
+/*
+  Validates the input value is invalid
+  The input must be any word character
+  and exactly 5 characters
+*/
 function validate_search_req( event ) {
   var $input = getInput();
-  if ( !$input.val() ) {
+  var patt = new RegExp(/\b[\w+]{5}\b/);
+
+  if ( !patt.test($input.val()) ){
     event.preventDefault();
     $input
-      .attr("placeholder", "Recuerda escribir el código de producto");
+      .val('')
+      .attr("placeholder", "Verifica el código")
+      .parent().addClass('has-error');
   }
 }
 
 $(document).on('ready page:change page:load', function() {
-  $('#searchModal').on('show.bs.modal', center_modal);
+  $('#searchModal').on('shown.bs.modal', function() {
+    center_modal()
+    $(this).find('[autofocus]').focus();
+  });
+
   $(window).on('resize', function() {
       $('.modal:visible').each(center_modal);
   });
 
   $('#searchModal').on('hidden.bs.modal', function () {
-    $(".app__search-input").parent().removeClass('has-error')
+    $(".js_search-Modalinput").parent().removeClass('has-error')
   });
 
   // Validate search product box

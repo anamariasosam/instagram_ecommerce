@@ -35,7 +35,7 @@ class Stores::ProductsController < ApplicationController
       if @product.save
         @product.create_activity :create, owner: current_user
         format.html { redirect_to stores_products_path, notice: "El producto ha sido creado exitosamente.<br>
-          <a class='js_instagramLoad' href='/stores/list' class='product_link'>Agregar otro producto</a>"}
+          <a class='js_instagramLoad' href='/stores/instagram_media' class='product_link'>Agregar otro producto</a>"}
         format.json { render :index, status: :created, location: @product }
       else
         format.html { render :new }
