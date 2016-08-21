@@ -16,6 +16,9 @@
       <p>Contacto: <%= current_user.phone_number %> / <%= current_user.email %></p>
       <hr>
       <%= form_for([@product, @order]) do |f| %>
+
+      <%= render "shared/errors", object: @order %>
+
         <b>Método de pago</b>
         <div class="row">
           <% @payment_methods.each do |p_method| %>
@@ -35,9 +38,7 @@
           <br>
           <%= f.text_area :details, cols: 40, rows: 8, placeholder: 'Detalles adicionales: Cómo llegar, horario, talla... etc.', class: 'form-control' %>
         </p>
-        <hr>
-        <h4>Total a pagar: <%= number_to_currency @order.total, precision:0 %></h4>
-
+        <%= render 'total_table' %>
         <hr>
         <div class="actions">
           <%= f.submit 'Confirmar Orden', :class => 'btn btn-primary col-sm-6 '  %>
