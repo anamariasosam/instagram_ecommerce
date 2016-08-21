@@ -3,7 +3,7 @@ class StoresController < ApplicationController
   before_filter :require_store, only: [:dashboard, :subscribe, :list]
   before_filter :pilot_store, only: [:dashboard, :list, :instagram_media]
   before_filter :edit_store_info, only: [:dashboard]
-  layout 'dashboard', except: [:show]
+  layout 'dashboard', except: [:show, :subscribe]
 
 
   def show

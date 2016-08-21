@@ -1,0 +1,16 @@
+<table class="table">
+  <tr>
+    <td>Producto</td>
+    <td class="text-right"><%= number_to_currency @product.price, precision:0 %></td>
+  </tr>
+  <tr>
+    <td>Envío</td>
+    <td class="text-right"><%= number_to_currency @product.store.delivery_price, precision:0 %></td>
+  </tr>
+  <tfoot>
+    <tr>
+      <td><b>Total a pagar</b></td>
+      <td class="text-right"><b><%= number_to_currency @order.total, precision:0 %></b></td>
+    </tr>
+  </tfoot>
+</table>

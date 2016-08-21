@@ -23,6 +23,7 @@ class Order < ActiveRecord::Base
   belongs_to :customer
 
   validate :status_is_valid
+  validates_presence_of :payment_method
 
   def status_is_valid
     valid = [

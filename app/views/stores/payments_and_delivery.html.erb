@@ -15,8 +15,8 @@
       <%= f.label :delivery_price, "Precio de envío" %>
       <%= f.number_field :delivery_price, value: current_user.delivery_price || 0, class: 'form-control' %>
       <br>
-      <h3>Médotos de pago aceptados</h3>
-      <p>Selecciona los médotos de pago que estás dispuest@ a recibir en tu tienda.</p>
+      <h3>Métodos de pago aceptados</h3>
+      <p>Selecciona los métodos de pago que estás dispuest@ a recibir en tu tienda.</p>
       <%= f.label :payment_upon_delivery, "Pago Contraentrega" %>
       <%= f.check_box :payment_upon_delivery, checked: current_user.payment_upon_delivery %>
       <br>
@@ -41,8 +41,8 @@
   var $instructions = $("#js_bankTransferInstructions").hide();
 
   var toggleInstructions = function(event) {
-    if ($check[0].checked) $instructions.show(100)
-    else $instructions.hide(100)
+    if ($check[0].checked) $instructions.show(100);
+    else $instructions.hide(100);
   };
 
   toggleInstructions();

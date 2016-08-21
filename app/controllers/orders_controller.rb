@@ -4,13 +4,13 @@ class OrdersController < ApplicationController
   include TwilioNotify
 
   before_action :set_product
-  before_action :set_payment_methods, only: [:new]
+  before_action :set_payment_methods
   before_action :authenticate_user!
   before_action :only_customers, only: [:new]
 
   def new
     order = Order.new
-    order.total = @product.price
+    order.total = @product.price + @product.store.delivery_price
     @order = order
   end
 
@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
       @order.customer_id = current_user.id
       @order.store_id = @product.store.id
       @order.product_id = @product.id
-      @order.total = @product.price
+      @order.total = @product.price + @product.store.delivery_price
       @order.status = 'En Proceso'
 
       if @order.save
