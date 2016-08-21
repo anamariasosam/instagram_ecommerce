@@ -3,6 +3,8 @@ class StoresController < ApplicationController
   before_filter :require_store, only: [:dashboard, :subscribe, :list]
   before_filter :pilot_store, only: [:dashboard, :list, :instagram_media]
   before_filter :edit_store_info, only: [:dashboard]
+  layout 'dashboard', except: [:show]
+
 
   def show
     @store = Store.find_by(slug: params[:id])
@@ -49,7 +51,6 @@ class StoresController < ApplicationController
     else
       redirect_to edit_user_registration_path
     end
-    render :layout => 'dashboard'
   end
 
   def dashboard
@@ -67,7 +68,24 @@ class StoresController < ApplicationController
       .includes(:trackable)
     @announcements = Announcement.current
 
-    render :layout => 'dashboard'
+  end
+
+  def payments_and_delivery
+    if params[:payments_and_delivery]
+      data = params[:payments_and_delivery]
+
+      respond_to do |format|
+        if current_user.update(
+          delivery_price: data[:delivery_price],
+          bank_transfer: data[:bank_transfer],
+          bank_transfer_instructions: data[:bank_transfer_instructions],
+          payment_upon_delivery: data[:payment_upon_delivery]
+        )
+
+          format.html { redirect_to stores_dashboard_path, notice: "Datos Guardados" }
+        end
+      end
+    end
   end
 
   # private methods

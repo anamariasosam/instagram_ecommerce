@@ -8,6 +8,8 @@
 
 <%= active_link_to 'Información', edit_user_registration_path, 'dashboard__link', 'pencil-square' %>
 
+<%= active_link_to 'Pagos y Envíos', stores_payments_and_delivery_path, 'dashboard__link', 'credit-card' %>
+
 <li class='dashboard__item'>
   <%= link_to store_path(current_user), class: "dashboard__link", target: '_blank' do %>
     <i class="fa fa-external-link-square"></i>

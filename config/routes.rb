@@ -30,6 +30,10 @@ Rails.application.routes.draw do
 
     # when the user was on pilot and get accepted this is the route
     get 'subscribe'
+
+    # this route provide a form to change payments and delivery info
+    get 'payments_and_delivery'
+    post 'payments_and_delivery'
   end
 
   resources :stores, only: [:show], path: 'store'
