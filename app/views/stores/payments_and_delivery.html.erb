@@ -1,0 +1,50 @@
+<div class="dashboard__header">
+  <div class="container-fluid">
+    <h2 class="dashboard__username">
+      Pagos <small>y</small> Envíos
+    </h2>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7">
+      <%= form_for :payments_and_delivery do |f| %>
+      <p>Aquí puedes agregar el precio que cobras a tus clientes por el envío de los produtos</p>
+
+      <%= f.label :delivery_price, "Precio de envío" %>
+      <%= f.number_field :delivery_price, value: current_user.delivery_price || 0, class: 'form-control' %>
+      <br>
+      <h3>Médotos de pago aceptados</h3>
+      <p>Selecciona los médotos de pago que estás dispuest@ a recibir en tu tienda.</p>
+      <%= f.label :payment_upon_delivery, "Pago Contraentrega" %>
+      <%= f.check_box :payment_upon_delivery, checked: current_user.payment_upon_delivery %>
+      <br>
+      <%= f.label :bank_transfer, "Transferencia/Consignación Bancaria" %>
+      <%= f.check_box :bank_transfer, checked: current_user.bank_transfer %>
+      <br>
+      <div id="js_bankTransferInstructions">
+        <%= f.label :bank_transfer_instructions, "Instrucciones" %>
+        <br>
+        <%= f.text_area :bank_transfer_instructions, value: current_user.bank_transfer_instructions, placeholder: "Cuéntale aquí a tus usuarios las instrucciones detalladas sobre el pago: \n- Nombre del Banco, \n- Usuario/Propietario de la cuenta, \n- Número de cuenta", class: 'form-control', size: '20x10' %>
+      </div>
+      <br>
+      <br>
+      <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+  var $check = $("#payments_and_delivery_bank_transfer");
+  var $instructions = $("#js_bankTransferInstructions").hide();
+
+  var toggleInstructions = function(event) {
+    if ($check[0].checked) $instructions.show(100)
+    else $instructions.hide(100)
+  };
+
+  toggleInstructions();
+  $check.on("change", toggleInstructions);
+</script>

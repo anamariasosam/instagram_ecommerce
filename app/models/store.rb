@@ -40,8 +40,11 @@ class Store < User
   waiting_position: :integer,
   facebook: :string,
   twitter: :string,
-  snapchat: :string
-
+  snapchat: :string,
+  delivery_price: :integer,
+  bank_transfer: :boolean,
+  bank_transfer_instructions: :string,
+  payment_upon_delivery: :boolean
 
   validates_presence_of :name, on: :update
 end
