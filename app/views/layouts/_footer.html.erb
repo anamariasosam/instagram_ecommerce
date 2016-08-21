@@ -1,11 +1,25 @@
 <footer class="footer">
-  <div class="copyright">
+  <div class="container-fluid footer__information">
+    <div class="row">
+      <%= render 'layouts/footer/social_networks' %>
+    </div>
+      <div class="row footer-links hide-xs">
+        <%= render 'layouts/footer/company' %>
+        <%= render 'layouts/footer/customer_service' %>
+        <%= render 'layouts/footer/information' %>
+        <%= render 'layouts/footer/contact' %>
+    </div>
+  </div>
+  <div class="footer__copyright">
     <p class="footer__text">
-      Made with <i class="fa fa-heart"></i>
-      <span class="footer_second">
-        by <a href="http://anamariasosa.com/" target="_blank" class="footer__link">Ana María Sosa</a>  © <%= Time.now.year %>
+      Made with
+      <i class="fa fa-heart"></i>
+      <span class="footer__second">
+        by
+        <a href="http://anamariasosa.com/" target="_blank" class="footer__link">Ana María Sosa</a>
+        ©
+        <%= Time.now.year %>
       </span>
     </p>
   </div>
-
 </footer>
