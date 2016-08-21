@@ -1,0 +1,26 @@
+<% products.each do |product| %>
+  <div class="col-xs-6 col-sm-4 col-md-2">
+    <div class="thumbnail productList">
+      <div class="productList__actions">
+        <a class="productList__zoom" href="<%= product.instagram_image %>" data-lightbox="image-1" data-title="<%= product.product_name %> - Valor: <%= number_to_currency product.price, precision:0 %>" >Zoom</a>
+        <span class="productList__separator">|</span>
+        <%= link_to 'Ver Más', product, class: "productList__more" %>
+      </div>
+
+      <%= link_to product do %>
+        <img src="<%= product.instagram_image %>" class="img-responsive" alt="product">
+      <% end %>
+
+      <div class="caption">
+        <h3 class="productList__name">
+          <%= link_to product.product_name, product, class: 'productList__link' %>
+        </h3>
+
+        <p class="productList__price">
+          <%= number_to_currency product.price, precision: 0 %>
+        </p>
+
+      </div>
+    </div>
+  </div>
+<% end %>

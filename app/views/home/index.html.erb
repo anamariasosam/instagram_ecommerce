@@ -19,4 +19,5 @@
 
 <%= render "home/intro" %>
 <%= render "home/recent" %>
+<%= render partial: "home/recent_by_category", locals: { bags: @bags } %>
 <%= render "home/partners" %>

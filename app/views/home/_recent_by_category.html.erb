@@ -1,0 +1,24 @@
+<% if bags && bags.count > 0 %>
+  <section class="container">
+    <header>
+      <h3>Bolsos</h3>
+    </header>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="panel">
+          <div class="panel-body">
+            <br>
+            Conoce todos los productos de esta categoría dando click en el botón al final del texto y cómpralos fácil y rápido.
+          <br>
+          <br>
+          <%= link_to 'Ver todos los bolsos', category_path(@category.id), class: 'btn btn-success btn-xs' %>
+          <br>
+          <br>
+          </div>
+        </div>
+      </div>
+      <%= render partial: 'categories/home_show', locals: { products: bags }   %>
+    </div>
+  </section>
+<% end %>
