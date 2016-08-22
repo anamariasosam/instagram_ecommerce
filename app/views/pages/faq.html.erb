@@ -1,3 +1,39 @@
 <div class="container">
-  <h2>PReguntas frecuentes</h2>
+  <h2>Preguntas frecuentes</h2>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <%= render partial: "/pages/faq", locals: {
+      number: 'One',
+      question: '¿Cuánto tengo que pagar para vender mis productos?',
+      answer: '<b>¡Es Gratis!</b>, actualmente estamos en nuestra versión piloto, si estás interesado en ser parte de esta comunícate con nostros <a href="/contacts/new">aquí</a> o envianos un correo con tus datos a <a href="mailto:anamaria@catlog.co">anamaria@catlog.co</a>'
+    } %>
+
+    <%= render partial: "/pages/faq", locals: {
+      number: 'Two',
+      question: '¿Cómo me registro en Catlog?',
+      answer: 'Es tan fácil como quitarle un dulce a un niño, solo debes dar click en
+      <a href="#login" role="button" data-toggle="modal" data-target="#loginModal">Iniciar Sesión </a>
+      y si eres una tienda escoger la opción de <b>Tienda</b> y si deseas comprar productos elegir la opción de <b>Comprador</b>, luego de que inicies sesión con Instagram, debes llenar una información adicional para poder informarte el proceso de compra o de venta.'
+    } %>
+
+    <%= render partial: "/pages/faq", locals: {
+      number: 'Three',
+      question: '¿Cómo creo un producto?',
+      answer: '
+        <ol>
+          <li>
+              <a href="#login" role="button" data-toggle="modal" data-target="#loginModal">Inicia sesión como tienda </a>
+          </li>
+          <li>
+            Click en crear producto
+          </li>
+          <li>
+            Selecciona tu producto y añade la información adicional
+          </li>
+          <li>
+            Añade el código generado por la plataforma en tu foto de Instagram
+          </li>
+          <li>¡Listo!</li>
+        </ol>'
+    } %>
+  </div>
 </div>

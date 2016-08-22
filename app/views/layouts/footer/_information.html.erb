@@ -2,18 +2,33 @@
   <h5 class="footer__headline">Mi Cuenta</h5>
   <ul class="footer__list">
     <% if user_signed_in? %>
-      <li>
-        <a class="footer__infoLink" href="#">Órdenes</a>
-      </li>
-      <li>
-        <a class="footer__infoLink" href="">Mis Productos</a>
-      </li>
-      <li>
-        <a class="footer__infoLink" href="#">Pagos y Envíos</a>
-      </li>
+      <% if is_store? %>
+        <li>
+          <%= link_to 'Dashboard', stores_dashboard_path %>
+        </li>
+        <li>
+          <%= link_to 'Productos', stores_products_path %>
+        </li>
+        <li>
+          <%= link_to 'Órdenes', stores_orders_path %>
+        </li>
+        <li>
+          <%= link_to 'Pagos y Envíos', stores_payments_and_delivery_path %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to 'Dashboard', customers_dashboard_path %>
+        </li>
+        <li>
+          <%= link_to 'Compras', customers_dashboard_orders_path %>
+        </li>
+        <li>
+          <%= link_to 'Información', edit_user_registration_path %>
+        </li>
+      <% end %>
     <% else %>
       <li>
-        Necesitas iniciar sesion.
+        Necesitas iniciar sesión.
       </li>
     <% end %>
   </ul>

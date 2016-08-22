@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="heading<%= number %>">
+    <h4 class="panel-title">
+      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= number %>" aria-expanded="false" aria-controls="collapse<%= number %>">
+        <%= question %>
+      </a>
+    </h4>
+  </div>
+  <div id="collapse<%= number %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= number %>">
+    <div class="panel-body">
+      <%= answer.html_safe %>
+    </div>
+  </div>
+</div>
