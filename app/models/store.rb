@@ -44,4 +44,8 @@ class Store < User
 
 
   validates_presence_of :name, on: :update
+
+  def country_name
+    ISO3166::Country[country]
+  end
 end
