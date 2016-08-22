@@ -47,6 +47,7 @@ gem 'high_voltage'
 gem 'hstore_accessor'
 gem 'turnout'
 gem 'mail_form'
+gem 'country_select'
 
 # Env variables
 gem 'figaro'

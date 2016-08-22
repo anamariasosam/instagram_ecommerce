@@ -47,4 +47,8 @@ class Store < User
   payment_upon_delivery: :boolean
 
   validates_presence_of :name, on: :update
+
+  def country_name
+    ISO3166::Country[country]
+  end
 end
