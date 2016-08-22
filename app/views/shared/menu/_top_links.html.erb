@@ -4,7 +4,13 @@
       <%= image_tag '/logo.png', class: 'img-responsive' %>
     <% end %>
   </li>
-  <li><%= link_to 'Productos', catalog_view_path %></li>
-  <li><%= link_to '¿Cómo funciona?', page_path('tutorial') %></li>
-  <li><%= link_to 'Contacto', new_contact_path %></li>
+  <li>
+    <%= link_to 'Productos', catalog_view_path %>
+  </li>
+  <li>
+    <%= link_to '¿Cómo funciona?', page_path('tutorial') %>
+  </li>
+  <li>
+    <%= link_to 'Contacto', new_contact_path %>
+  </li>
 </ul>

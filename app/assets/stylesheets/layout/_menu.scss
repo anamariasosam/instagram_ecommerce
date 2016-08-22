@@ -118,11 +118,11 @@
     };
   }
 
+  a {
+    border-bottom: 4px solid transparent;
+  }
+
   .active {
-    border-bottom: 4px solid coral;
-    a {
-      color: #777 !important;
-      background-color: transparent !important;
-    }
+    border-color: coral;
   }
 }

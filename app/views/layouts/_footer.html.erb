@@ -1,16 +1,5 @@
 <footer class="footer">
-  <div class="container-fluid footer__information">
-    <div class="row">
-      <%= render 'layouts/footer/social_networks' %>
-    </div>
-      <div class="row footer-links hide-xs">
-        <%= render 'layouts/footer/company' %>
-        <%= render 'layouts/footer/customer_service' %>
-        <%= render 'layouts/footer/information' %>
-        <%= render 'layouts/footer/contact' %>
-    </div>
-  </div>
-  <div class="footer__copyright">
+  <div class="container">
     <p class="footer__text">
       Made with
       <i class="fa fa-heart"></i>
@@ -20,6 +9,18 @@
         ©
         <%= Time.now.year %>
       </span>
+      <span class="pull-right"><i class="fa fa-question-circle footer__help js_footerHelp"></i></span>
     </p>
+  </div>
+</footer>
+
+<footer class="footer__information js_footerInfo">
+  <div class="container">
+    <div class="row footer-links hide-xs">
+      <%= render 'layouts/footer/company' %>
+      <%= render 'layouts/footer/customer_service' %>
+      <%= render 'layouts/footer/information' %>
+      <%= render 'layouts/footer/contact' %>
+    </div>
   </div>
 </footer>

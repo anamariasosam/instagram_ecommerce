@@ -18,7 +18,22 @@ function add_class_active() {
     .find('[href="' + path + '"]')
     .addClass('active').length
 
-  if (!len) $list.first().addClass('active');
+  if (!len) $list.removeClass('active');
+}
+
+function toggleFooterLinks() {
+  var $help = $('.js_footerHelp');
+  var $links = $('.js_footerInfo').slideUp();
+
+  $help.on('click', function(){
+    $links.slideToggle(200);
+    $help
+      .toggleClass('fa-question-circle')
+      .addClass('fa-times-circle');
+    $("html, body").animate({
+      scrollTop: $(document).height()
+    }, 400);
+  });
 }
 
 
@@ -101,12 +116,13 @@ function loadFiraFont() {
 })();
 }
 
-$(document).on('ready page:change page:load', function() {
+$(document).on('ready page:load', function() {
   loader();
   add_class_active();
   description_text();
   auto_close_alerts();
   loadFiraFont();
+  toggleFooterLinks();
 
   if ($('.js_countdown_product_name').length) {
     countdown_for_product_name();

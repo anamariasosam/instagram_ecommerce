@@ -4,7 +4,10 @@
     <li>
       <%= link_to 'Déjanos un mensaje', new_contact_path, class: "footer__infoLink" %>
     </li>
-    <li> <i class="fa fa-map-marker"></i> Atom House -  Calle 8 # 43a-­49, Medellín</li>
+    <li>
+      <%= link_to new_contact_path, class: "footer__infoLink" do %>
+      <i class="fa fa-map-marker"></i> Atom House -  Calle 8 # 43a-­49, Medellín</li>
+      <% end %>
     <li>
     </li>
   </ul>

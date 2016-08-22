@@ -1,14 +1,20 @@
 <div class="col-md-3">
-  <h5 class="footer__headline">Información</h5>
+  <h5 class="footer__headline">Mi Cuenta</h5>
   <ul class="footer__list">
-    <li>
-      <a class="footer__infoLink" href="#">Órdenes</a>
-    </li>
-    <li>
-      <a class="footer__infoLink" href="">Mis Productos</a>
-    </li>
-    <li>
-      <a class="footer__infoLink" href="#">Pagos y Envíos</a>
-    </li>
+    <% if user_signed_in? %>
+      <li>
+        <a class="footer__infoLink" href="#">Órdenes</a>
+      </li>
+      <li>
+        <a class="footer__infoLink" href="">Mis Productos</a>
+      </li>
+      <li>
+        <a class="footer__infoLink" href="#">Pagos y Envíos</a>
+      </li>
+    <% else %>
+      <li>
+        Necesitas iniciar sesion.
+      </li>
+    <% end %>
   </ul>
 </div>
