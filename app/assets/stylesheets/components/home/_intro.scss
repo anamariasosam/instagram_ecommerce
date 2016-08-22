@@ -3,7 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .hero {
-  @extend %background-purple;
+  background: url(http://fabandfru.com/new/wp-content/uploads/2012/03/woman-shopping-online-with-credit-card.jpg);
+  background-size: cover;
+  background-position: center;
   color: #fff;
   padding-bottom: 40px;
   padding-top: 40px;
