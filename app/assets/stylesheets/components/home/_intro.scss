@@ -11,11 +11,11 @@
   margin-bottom: 30px;
 
   @include respond-to(xl) {
-    padding: 7em 0;
+    padding: 5em 0;
   }
 
   @include respond-to(l) {
-    padding: 6em 0;
+    padding: 5em 0;
   }
 
   @include respond-to(m) {
