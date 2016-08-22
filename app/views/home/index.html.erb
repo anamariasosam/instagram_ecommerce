@@ -20,4 +20,8 @@
 <%= render "home/intro" %>
 <%= render "home/recent" %>
 <%= render partial: "home/recent_by_category", locals: { bags: @bags } %>
+
+<% if not user_signed_in? %>
+  <%= render "home/login" %>
+<% end %>
 <%= render "home/partners" %>

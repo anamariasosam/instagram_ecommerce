@@ -1,0 +1,29 @@
+<div class="container">
+  <header>
+    <h3>Iniciar Sesión</h3>
+  </header>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= link_to user_omniauth_authorize_path(:instagram, model: 'customer'), class: "login__link js_instagramLoad" do %>
+        <div class="panel login__box">
+          <div class="panel-body text-center">
+            <%= image_tag "fan.png", class: 'img-responsive img-circle login__image' %>
+            <h4 class="login__headline">Comprar a un Clic</h4>
+            <p class="login__deck">Inicia session en el icono de arriba para comprar rapidamente productos de instagram.</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-sm-6">
+      <%= link_to user_omniauth_authorize_path(:instagram, model: 'store'), class: "login__link js_instagramLoad" do %>
+      <div class="panel login__box">
+        <div class="panel-body text-center">
+          <%= image_tag "store.png", class: 'img-responsive img-circle login__image' %>
+          <h4 class="login__headline">Vender a un Clic</h4>
+          <p class="login__deck">Inicia session dando click en el icono de tienda para vender tus productos de instagram.</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
