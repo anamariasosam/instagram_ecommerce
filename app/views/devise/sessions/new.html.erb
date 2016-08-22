@@ -1,15 +1,9 @@
 <header class="sectionHero">
   <div class="container">
-    <h2>Iniciar Sesión</h2>
+    <h2>Inicia Sesión</h2>
   </div>
 </header>
 
 <section class="container">
-  <%= link_to user_omniauth_authorize_path(:instagram, model: 'store'), class: "js_instagramLoad" do %>
-    <i class="fa fa-instagram" aria-hidden="true"></i> Ingresar como tienda
-  <% end %>
-  <br>
-  <%= link_to user_omniauth_authorize_path(:instagram, model: 'customer'), class: "js_instagramLoad" do %>
-    <i class="fa fa-instagram" aria-hidden="true"></i> Ingresar como comprador
-  <% end %>
+  <%= render partial: "home/login", locals: { devise_login: true } %>
 </section>
