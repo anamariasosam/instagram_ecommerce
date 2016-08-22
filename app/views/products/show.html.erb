@@ -39,16 +39,25 @@
 
     <div class="product__caption caption col-xs-12 col-sm-6">
 
-      <header>
+      <header class="clearfix">
         <h1 class="product__name">
           <%= @product.product_name %>
         </h1>
-
         <h2 class="product__price">
           <%= number_to_currency @product.price, precision:0 %>
         </h2>
+        <% if @product.store.delivery_price %>
+          <h4>
+            <span class="label label-default">+ Envío <%= number_to_currency @product.store.delivery_price, precision: 0 %></span>
+          </h4>
+          <hr>
+        <% else %>
+          <div class="alert alert-warning" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            Esta tienda <b>no</b> tiene <b>precio de envío</b>, recuerda preguntar.
+          </div>
+        <% end %>
       </header>
-
       <p class="product__avalability">
         <b>Disponibles:</b>
         <%= @product.quantity %>
