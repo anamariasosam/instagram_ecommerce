@@ -1,15 +1,17 @@
 <div class="container">
-  <header>
-    <h3>Iniciar Sesión</h3>
-  </header>
+  <% if not devise_login %>
+    <header>
+      <h3>Inicia Sesión</h3>
+    </header>
+  <% end %>
   <div class="row">
     <div class="col-sm-6">
       <%= link_to user_omniauth_authorize_path(:instagram, model: 'customer'), class: "login__link js_instagramLoad" do %>
         <div class="panel login__box">
           <div class="panel-body text-center">
             <%= image_tag "fan.png", class: 'img-responsive img-circle login__image' %>
-            <h4 class="login__headline">Comprar a un Clic</h4>
-            <p class="login__deck">Inicia session en el icono de arriba para comprar rapidamente productos de instagram.</p>
+            <h4 class="login__headline">Comprar a un Click</h4>
+            <p class="login__deck">Inicia sesión en el ícono de arriba para <b>comprar</b> rápidamente productos de Instagram.</p>
           </div>
         </div>
       <% end %>
@@ -19,8 +21,8 @@
       <div class="panel login__box">
         <div class="panel-body text-center">
           <%= image_tag "store.png", class: 'img-responsive img-circle login__image' %>
-          <h4 class="login__headline">Vender a un Clic</h4>
-          <p class="login__deck">Inicia session dando click en el icono de tienda para vender tus productos de instagram.</p>
+          <h4 class="login__headline">Vender a un Click</h4>
+          <p class="login__deck">Inicia sesión dando click en el ícono de <b>tienda</b> para vender tus productos de Instagram.</p>
         </div>
       </div>
       <% end %>

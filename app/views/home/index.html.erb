@@ -22,6 +22,7 @@
 <%= render partial: "home/recent_by_category", locals: { bags: @bags } %>
 
 <% if not user_signed_in? %>
-  <%= render "home/login" %>
+
+  <%= render partial: "home/login", locals: { devise_login: false } %>
 <% end %>
 <%= render "home/partners" %>
