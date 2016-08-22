@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
   def new
     order = Order.new
-    order.total = @product.price + @product.store.delivery_price
+    order.total = @product.price + (@product.store.delivery_price || 0)
     @order = order
   end
 
@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
       @order.customer_id = current_user.id
       @order.store_id = @product.store.id
       @order.product_id = @product.id
-      @order.total = @product.price + @product.store.delivery_price
+      @order.total = @product.price + (@product.store.delivery_price || 0)
       @order.status = 'En Proceso'
 
       if @order.save
