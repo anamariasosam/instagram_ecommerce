@@ -1,3 +1,14 @@
+.menu {
+  &__logo {
+    padding: 3px 0px 5px !important;
+    width: 150px;
+    max-height: 50px;
+
+    img {
+      max-width: 100% !important;
+    }
+  }
+}
 .hamburger {
   @extend %background-purple;
 
