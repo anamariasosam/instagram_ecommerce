@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+    <center>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+    <tr>
+    <td align="center" valign="top" id="bodyCell">
+    <!-- BEGIN TEMPLATE // -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+    <td align="center" valign="top">
+    <!-- BEGIN PREHEADER // -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
+    <tr>
+    <td align="center" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer">
+    <tr>
+    <td valign="top" class="preheaderContainer" style="padding-top:10px; padding-bottom:10px"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+    <tbody class="mcnTextBlockOuter">
+    <tr>
+    <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+    <!--[if mso]>
+    <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+    <tr>
+    <![endif]-->
+
+    <!--[if mso]>
+    <td valign="top" width="390" style="width:390px;">
+    <![endif]-->
+    <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:390px;" width="100%" class="mcnTextContentContainer">
+    <tbody><tr>
+
+    <td valign="top" class="mcnTextContent" style="padding-top:0; padding-left:18px; padding-bottom:9px; padding-right:18px;">
+
+    Acabas de comprar un producto en Catlog&nbsp;
+    </td>
+    </tr>
+    </tbody></table>
+
+    </td>
+    </tr>
+    </tbody>
+    </table></td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+    </table>
+    <!-- // END PREHEADER -->
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="top">
+    <!-- BEGIN HEADER // -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
+    <tr>
+    <td align="center" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer">
+    <tr>
+    <td valign="top" class="headerContainer" style="padding-top:10px; padding-bottom:10px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width:100%;">
+    <tbody class="mcnImageBlockOuter">
+    <tr>
+    <td valign="top" style="padding:9px" class="mcnImageBlockInner">
+    <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width:100%;">
+    <tbody><tr>
+    <td class="mcnImageContent" valign="top" style="padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;">
+
+
+    <img align="center" alt="" src="https://gallery.mailchimp.com/4c6db6ff172bdbff87bc51384/images/12a79148-4b84-46ba-ae28-5e09b69b78a1.png" width="300" style="max-width:300px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+
+
+    </td>
+    </tr>
+    </tbody></table>
+    </td>
+    </tr>
+    </tbody>
+    </table></td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+    </table>
+    <!-- // END HEADER -->
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="top">
+    <!-- BEGIN COLUMNS // -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateColumns">
+    <tr>
+    <td align="center" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer">
+    <tr>
+    <td align="left" valign="top" class="columnsContainer" width="50%">
+    <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateColumn">
+    <tr>
+        <td valign="top" class="leftColumnContainer"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+    <tbody class="mcnTextBlockOuter">
+    <tr>
+    <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+    <!--[if mso]>
+    <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+    <tr>
+    <![endif]-->
+
+    <!--[if mso]>
+    <td valign="top" width="300" style="width:300px;">
+    <![endif]-->
+    <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+    <tbody><tr>
+
+    <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #251212;">
+
+    <h1><span style="font-size:23px">Hola <%= @customer.full_name %>: </span></h1>
+    <span style="font-size:16px">
+      Acabas de comprar un producto en
+      <a href="http://catlog.co" target="_blank" title="Catlog">
+
+          <b>catlog.co</b>,
+      </a>
+      tu orden se encuentra en <b><%= @order.status.downcase %></b>, te estaremos informando.
+    </span>
+
+    <h3>&nbsp;</h3>
+
+    </td>
+    </tr>
+    </tbody></table>
+    <!--[if mso]>
+    </td>
+    <![endif]-->
+
+    <!--[if mso]>
+    </tr>
+    </table>
+    <![endif]-->
+    </td>
+    </tr>
+    </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+    <tbody class="mcnTextBlockOuter">
+    <tr>
+    <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+    <!--[if mso]>
+    <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+    <tr>
+    <![endif]-->
+
+    <!--[if mso]>
+    <td valign="top" width="300" style="width:300px;">
+    <![endif]-->
+    <!--[if mso]>
+    </td>
+    <![endif]-->
+
+    <!--[if mso]>
+    </tr>
+    </table>
+    <![endif]-->
+    </td>
+    </tr>
+    </tbody>
+    </table></td>
+    </tr>
+    </table>
+    </td>
+    <td align="left" valign="top" class="columnsContainer" width="50%">
+    <table align="right" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateColumn">
+    <tr>
+        <td valign="top" class="rightColumnContainer"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width:100%;">
+    <tbody class="mcnImageBlockOuter">
+    <tr>
+    <td valign="top" style="padding:9px" class="mcnImageBlockInner">
+    <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width:100%;">
+    <tbody><tr>
+    <td class="mcnImageContent" valign="top" style="padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;">
+
+
+    <img align="center" alt="catlog products <%= @product.product_name %>" src="<%= @product.instagram_image %>" width="264" style="max-width:320px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+
+
+    </td>
+    </tr>
+    </tbody></table>
+    </td>
+    </tr>
+    </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
+    <tbody class="mcnDividerBlockOuter">
+    <tr>
+    <td class="mcnDividerBlockInner" style="min-width:100%; padding:18px;">
+    <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top: 2px solid #EAEAEA;">
+    <tbody><tr>
+    <td>
+    <span></span>
+    </td>
+    </tr>
+    </tbody></table>
+    <!--
+    <td class="mcnDividerBlockInner" style="padding: 18px;">
+    <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+    -->
+    </td>
+    </tr>
+    </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+    <tbody class="mcnTextBlockOuter">
+    <tr>
+    <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+    <!--[if mso]>
+    <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+    <tr>
+    <![endif]-->
+
+    <!--[if mso]>
+    <td valign="top" width="300" style="width:300px;">
+    <![endif]-->
+    <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+    <tbody><tr>
+
+    <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+      <p>
+        <b>Nombre de la tienda:</b> <%= @store.name %>
+      </p>
+      <p>
+        <b>Producto comprado:</b> <%= @product.product_name %>
+      </p>
+      <p>
+        <b>Estado de la orden:</b> <%= @order.status.downcase %>
+      </p>
+      <p>
+        <b>Total a pagar:</b> <%= number_to_currency @order.total, precision:0 %>
+      </p>
+    </td>
+    </tr>
+    </tbody></table>
+    <!--[if mso]>
+    </td>
+    <![endif]-->
+
+    <!--[if mso]>
+    </tr>
+    </table>
+    <![endif]-->
+    </td>
+    </tr>
+    </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
+    <tbody class="mcnDividerBlockOuter">
+    <tr>
+    <td class="mcnDividerBlockInner" style="min-width: 100%; padding: 18px 18px 40px;">
+    <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; border-top: 0px;">
+    <tbody><tr>
+    <td>
+    <span></span>
+    </td>
+    </tr>
+    </tbody></table>
+    <!--
+    <td class="mcnDividerBlockInner" style="padding: 18px;">
+    <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+    -->
+    </td>
+    </tr>
+    </tbody>
+    </table></td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+    </table>
+    <!-- // END COLUMNS -->
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="top" style="padding-bottom:40px;">
+    <!-- BEGIN FOOTER // -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter">
+    <tr>
+    <td align="center" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer">
+    <tr>
+    <td valign="top" class="footerContainer" style="padding-top:10px; padding-bottom:10px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowBlock" style="min-width:100%;">
+    <tbody class="mcnFollowBlockOuter">
+    <tr>
+    <td align="center" valign="top" style="padding:9px" class="mcnFollowBlockInner">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentContainer" style="min-width:100%;">
+    <tbody><tr>
+    <td align="center" style="padding-left:9px;padding-right:9px;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;" class="mcnFollowContent">
+    <tbody><tr>
+    <td align="center" valign="top" style="padding-top:9px; padding-right:9px; padding-left:9px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+    <td align="center" valign="top">
+    <!--[if mso]>
+    <table align="center" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <![endif]-->
+
+    <!--[if mso]>
+    <td align="center" valign="top">
+    <![endif]-->
+
+
+    <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+    <tbody><tr>
+    <td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+    <tbody><tr>
+    <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+        <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+            <tbody><tr>
+
+                    <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+                        <a href="http://www.facebook.com/catlog.co" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-facebook-48.png" style="display:block;" height="24" width="24" class=""></a>
+                    </td>
+
+
+            </tr>
+        </tbody></table>
+    </td>
+    </tr>
+    </tbody></table>
+    </td>
+    </tr>
+    </tbody></table>
+
+    <!--[if mso]>
+    </td>
+    <![endif]-->
+
+    <!--[if mso]>
+    <td align="center" valign="top">
+    <![endif]-->
+
+
+    <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+    <tbody><tr>
+    <td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+    <tbody><tr>
+    <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+        <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+            <tbody><tr>
+
+                    <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+                        <a href="https://twitter.com/catlog_co" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-twitter-48.png" style="display:block;" height="24" width="24" class=""></a>
+                    </td>
+
+
+            </tr>
+        </tbody></table>
+    </td>
+    </tr>
+    </tbody></table>
+    </td>
+    </tr>
+    </tbody></table>
+
+    <!--[if mso]>
+    </td>
+    <![endif]-->
+
+    <!--[if mso]>
+    <td align="center" valign="top">
+    <![endif]-->
+
+
+    <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+    <tbody><tr>
+    <td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+    <tbody><tr>
+    <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+        <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+            <tbody><tr>
+
+                    <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+                        <a href="http://www.catlog.co" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-link-48.png" style="display:block;" height="24" width="24" class=""></a>
+                    </td>
+
+
+            </tr>
+        </tbody></table>
+    </td>
+    </tr>
+    </tbody></table>
+    </td>
+    </tr>
+    </tbody></table>
+
+    <!--[if mso]>
+    </td>
+    <![endif]-->
+
+    <!--[if mso]>
+    <td align="center" valign="top">
+    <![endif]-->
+
+
+    <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+    <tbody><tr>
+    <td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+    <tbody><tr>
+    <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+        <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+            <tbody><tr>
+
+                    <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+                        <a href="http://instagram.com/catlog.co" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-instagram-48.png" style="display:block;" height="24" width="24" class=""></a>
+                    </td>
+
+
+            </tr>
+        </tbody></table>
+    </td>
+    </tr>
+    </tbody></table>
+    </td>
+    </tr>
+    </tbody></table>
+
+    <!--[if mso]>
+    </td>
+    <![endif]-->
+
+    <!--[if mso]>
+    <td align="center" valign="top">
+    <![endif]-->
+
+
+    <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+    <tbody><tr>
+    <td valign="top" style="padding-right:0; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+    <tbody><tr>
+    <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+        <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+            <tbody><tr>
+
+                    <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+                        <a href="mailto:anamaria@catlog.co" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-forwardtofriend-48.png" style="display:block;" height="24" width="24" class=""></a>
+                    </td>
+
+
+            </tr>
+        </tbody></table>
+    </td>
+    </tr>
+    </tbody></table>
+    </td>
+    </tr>
+    </tbody></table>
+
+    <!--[if mso]>
+    </td>
+    <![endif]-->
+
+    <!--[if mso]>
+    </tr>
+    </table>
+    <![endif]-->
+    </td>
+    </tr>
+    </tbody></table>
+    </td>
+    </tr>
+    </tbody></table>
+    </td>
+    </tr>
+    </tbody></table>
+
+    </td>
+    </tr>
+    </tbody>
+    </table></td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+    </table>
+    <!-- // END FOOTER -->
+    </td>
+    </tr>
+    </table>
+    <!-- // END TEMPLATE -->
+    </td>
+    </tr>
+    </table>
+    </center>
+    </body>
+</html>
