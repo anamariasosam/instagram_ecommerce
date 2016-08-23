@@ -26,6 +26,7 @@ class Stores::OrdersController < ApplicationController
 
         notify('customer', @order)
         notify('store', @order)
+        UserNotifier.customer_order_updated(@order).deliver
 
         @order.create_activity :status, owner: @order.store, parameters: {order_status: @order.status}
         @order.create_activity :status, owner: @order.customer, parameters: {order_status: @order.status}
