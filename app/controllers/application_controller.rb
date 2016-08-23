@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_raven_context
 
   def after_sign_in_path_for(resource)
     if resource.is_a?(Store)
@@ -19,6 +20,14 @@ class ApplicationController < ActionController::Base
       root_path
     end
   end
+
+
+  private
+
+    def set_raven_context
+      Raven.user_context(id: session[:current_user_id]) # or anything else in session
+      Raven.extra_context(params: params.to_hash, url: request.url)
+    end
 
   protected
     def configure_permitted_parameters
