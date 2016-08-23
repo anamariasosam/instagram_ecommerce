@@ -48,6 +48,7 @@ gem 'hstore_accessor'
 gem 'turnout'
 gem 'mail_form'
 gem 'country_select'
+gem 'sentry-raven'
 
 # Env variables
 gem 'figaro'
