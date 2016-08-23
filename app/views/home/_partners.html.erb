@@ -8,7 +8,7 @@
     <% @stores.each do |store| %>
     <% cache store do %>
       <% if store.name? and store.products.count > 0  %>
-        <figure class="partners__figure col-xs-6 col-sm-4 col-md-3">
+        <figure class="partners__figure col-xs-6 col-sm-4 col-md-2">
           <%= link_to store do %>
             <img src="<%= store.image %>" class="img-circle partners__image" alt="catlog, aliados, <%= store.name%>">
           <% end %>
