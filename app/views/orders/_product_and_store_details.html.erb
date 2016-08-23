@@ -7,7 +7,7 @@
     <h4><%= @product.product_name %></h4>
     <%= number_to_currency @product.price, precision: 0 %>
     <br>
-    <%= truncate(@product.description, length: 90, escape: false) %>
+    <%= simple_format(truncate @product.description, length: 90, escape: false) %>
   </div>
 </div>
 
