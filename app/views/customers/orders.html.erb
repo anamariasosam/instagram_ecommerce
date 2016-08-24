@@ -7,20 +7,24 @@
 </div>
 
 <section class="container-fluid">
-  <table class="table table-hover">
-    <tr>
-      <th>#</th>
-      <th>Estado</th>
-      <th>Comprado hace</th>
-      <th>De (tienda)</th>
-      <th>Producto</th>
-      <th>Contactar la tienda</th>
-      <% if is_store? %>
-        <th>Acciones</th>
-      <% end %>
-    </tr>
+  <table class="table table-hover footable" id="js_footableOrders">
+    <thead>
+      <tr>
+        <th data-hide="phone,tablet">#</th>
+        <th data-hide="phone">Estado</th>
+        <th data-hide="phone">Comprado hace</th>
+        <th>De</th>
+        <th>Producto</th>
+        <th data-hide="phone,tablet">Contactar la tienda</th>
+      </tr>
+    </thead>
     <tbody>
       <%= render @orders %>
     </tbody>
   </table>
 </section>
+
+<script>
+  $(function($){
+    $('#js_footableOrders').footable({ phone: 480 }); });
+</script>
