@@ -19,11 +19,11 @@ class OrdersController < ApplicationController
     customer = current_user
 
     respond_to do |format|
-      @order.customer_id = current_user.id
-      @order.store_id = @product.store.id
-      @order.product_id = @product.id
-      @order.total = @product.price + (@product.store.delivery_price || 0)
-      @order.status = 'En Proceso'
+      fill_data
+
+      if @payment_methods.empty?
+        @order.payment_method = 'A Convenir'
+      end
 
       if @order.save
         # order needs to be trackable
@@ -38,6 +38,7 @@ class OrdersController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
+        set_payment_methods
       end
     end
   end
@@ -63,10 +64,29 @@ class OrdersController < ApplicationController
     end
 
     def set_payment_methods
-      @payment_methods = [
-        'Contra Entrega',
-        'Consignación Bancaria',
-      ]
+      @payment_methods = []
+      if @product.store.bank_transfer?
+        @payment_methods.push('Consignación Bancaria')
+      end
+      if @product.store.payment_upon_delivery?
+        @payment_methods.push('Contra Entrega')
+      end
     end
 
+    def fill_data
+      @order.customer_id = current_user.id
+      @order.store_id = @product.store.id
+      @order.product_id = @product.id
+      @order.total = @product.price + (@product.store.delivery_price || 0)
+
+      first_status
+    end
+
+    def first_status
+      if @order.payment_method == "Consignación Bancaria"
+        @order.status = 'Esperando Consignación'
+      else
+        @order.status = 'En Proceso'
+      end
+    end
 end

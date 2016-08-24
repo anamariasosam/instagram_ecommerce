@@ -21,15 +21,22 @@
 
         <b>Método de pago</b>
         <div class="row">
-          <% @payment_methods.each do |p_method| %>
-          <div class="col-sm-4">
-            <div class="radio">
-              <label>
-                <%= f.radio_button :payment_method, p_method %>
-                <%= p_method %>
-              </label>
+          <% if @payment_methods.empty? %>
+            <div class="alert alert-warning" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              Esta tienda <b>no</b> tiene <b>métodos de pago</b>, definidos, cuando tu orden esté creada la tienda se comunicará contigo.
             </div>
-          </div>
+          <% else %>
+            <% @payment_methods.each do |p_method| %>
+              <div class="col-sm-4">
+                <div class="radio">
+                  <label>
+                    <%= f.radio_button :payment_method, p_method, checked: true %>
+                    <%= p_method %>
+                  </label>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         </div>
         <p> Dirección: <br> <%= f.text_field :address, value: current_user.address, class: 'form-control' %> </p>
