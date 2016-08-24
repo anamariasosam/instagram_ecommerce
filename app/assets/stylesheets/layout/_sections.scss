@@ -55,7 +55,7 @@
   }
 
   &__link {
-    color: #333;
+    color: white;
 
     @include respond-to(xs) {
       color: white;
