@@ -1,1 +1,5 @@
+<% if activity.trackable %>
 El producto <%= link_to activity.trackable.product_name %> ha sido actualizado hace <%= time_ago_in_words(activity.trackable.updated_at) %>.
+<% else %>
+Editaste un producto pero ya lo eliminaste
+<% end %>
