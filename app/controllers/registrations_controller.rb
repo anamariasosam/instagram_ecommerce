@@ -1,17 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
 
-  def edit
-    get_instagram_data
-    super
-  end
-
-  def update
-    if not @user.update(account_update_params)
-      get_instagram_data
-    end
-    super
-  end
-
   protected
 
     def after_update_path_for(resource)
@@ -27,31 +15,6 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
   private
-
-    def get_instagram_data
-      # Know the first edit
-      if not current_user.country?
-        client = Instagram.client(access_token: current_user.user_token)
-        fill_data(client)
-      end
-    end
-
-    def fill_data(client)
-      if current_user.type == "Store"
-        store = current_user
-        store.name ||=  client.user.full_name
-        store.info ||=  client.user.bio
-        store.facebook ||=  get_facebook(client)
-      else
-        current_user.full_name ||=  client.user.full_name
-      end
-    end
-
-    def get_facebook(client)
-      if client.user.website.include? "facebook"
-        client.user.website.split('/')[-1]
-      end
-    end
 
     def update_resource(resource, params)
       resource.update_without_password(params)
