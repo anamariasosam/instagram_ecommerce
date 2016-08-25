@@ -1,4 +1,4 @@
-== README
+== CATLOG APP [![Build Status](https://travis-ci.com/anamariasosa/catlog.svg?token=tnThecNEp22cKh3fTQsJ&branch=master)](https://travis-ci.com/anamariasosa/catlog)
 
 Catlog is an web app, where you can show all the information from your instagram's products photos.
 
