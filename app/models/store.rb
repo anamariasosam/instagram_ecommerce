@@ -48,6 +48,8 @@ class Store < User
 
   validates_presence_of :name, on: :update
 
+  validates_presence_of :bank_transfer_instructions, :if => :bank_transfer
+
   def country_name
     ISO3166::Country[country]
   end
