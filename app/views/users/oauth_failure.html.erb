@@ -3,7 +3,12 @@
     <h2>Anuncio</h2>
   </div>
 </header>
-
 <section class="container">
-  <%= render partial: "home/login", locals: { devise_login: true } %>
+  <p>
+    Parece que hubo un error intenta de nuevo
+    <%= link_to user_omniauth_authorize_path(:instagram) do %>
+    <i class="fa fa-instagram" aria-hidden="true"></i> Ingresa con Instagram
+    <% end %>
+  </p>
+  <iframe src="https://www.instagram.com/accounts/logout/" style="border:0px #FFFFFF none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="60px" width="468px"></iframe>
 </section>

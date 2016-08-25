@@ -19,7 +19,8 @@ class StoresController < ApplicationController
     @waiting_users =  Store.where("details->'pilot' = ?", "false").all.count
     @waiting_position = current_user.waiting_position
 
-    update_instagram_data
+    client = Instagram.client(:access_token => current_user.user_token)
+    update_instagram_data(client)
   end
 
   def instagram_media
@@ -41,7 +42,7 @@ class StoresController < ApplicationController
 
       @media = media
 
-      update_instagram_data
+      update_instagram_data(client)
 
       if @media.last.nil?
         @media = client.user_recent_media
@@ -57,7 +58,8 @@ class StoresController < ApplicationController
       current_user.update(user_token: session['super_token'])
     end
 
-    update_instagram_data
+    client = Instagram.client(:access_token => current_user.user_token)
+    update_instagram_data(client)
 
     @activities = PublicActivity::Activity
       .order("created_at desc")
@@ -88,10 +90,9 @@ class StoresController < ApplicationController
 
   # private methods
   private
-    def update_instagram_data
-      client = Instagram.client(access_token: current_user.user_token)
-
+    def update_instagram_data(client)
       current_user.update(
+        instagram_id:       client.user.id,
         image:              client.user.profile_picture,
         instagram_account:  client.user.username,
         slug:               client.user.username
