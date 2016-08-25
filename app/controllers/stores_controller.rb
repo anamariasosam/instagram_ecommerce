@@ -106,14 +106,14 @@ class StoresController < ApplicationController
     end
 
     def pilot_store
-      if !current_user.pilot? and current_user.name
+      if !current_user.pilot? and current_user.email?
         flash[:error] = t('user.no_pilot')
         redirect_to stores_subscribe_path
       end
     end
 
     def edit_store_info
-      if !current_user.name
+      if !current_user.email?
         redirect_to edit_user_registration_path
       end
     end
