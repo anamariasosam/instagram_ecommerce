@@ -26,13 +26,12 @@ class CustomersController < ApplicationController
 
   private
     def getInstagramData
-      response = HTTParty.get('https://api.instagram.com/v1/users/self/?access_token=' + current_user.user_token)
+      client = Instagram.client(access_token: current_user.user_token)
 
       current_user.update(
-        instagram_id:       response['data']['id'],
-        image:              response['data']['profile_picture'],
-        instagram_account:  response['data']['username'],
-        slug:               response['data']['username']
+        image:              client.user.profile_picture,
+        instagram_account:  client.user.username,
+        slug:               client.user.username
       )
     end
 end

@@ -1,5 +1,9 @@
-<% if is_store? %>
-  Haz actualizado la <b><%= link_to "orden #{activity.trackable.id}", stores_order_path(activity.trackable.id) %></b> hace <%= time_ago_in_words(activity.trackable.updated_at) %>, hemos notificado el comprador que el nuevo estado es <b><%= activity.parameters[:order_status] %></b>.
+<% if not activity.trackable.nil? %>
+  <% if is_store? %>
+    Haz actualizado la <b><%= link_to "orden #{activity.trackable.id}", stores_order_path(activity.trackable.id) %></b> hace <%= time_ago_in_words(activity.trackable.updated_at) %>, hemos notificado el comprador que el nuevo estado es <b><%= activity.parameters[:order_status] %></b>.
+  <% else %>
+    El estado tu compra de <b><%= activity.trackable.product.product_name %></b> ha cambiado a: <b><%= activity.parameters[:order_status] %></b>, hace <%= time_ago_in_words(activity.trackable.updated_at)%>.
+  <% end %>
 <% else %>
-  El estado tu compra de <b><%= activity.trackable.product.product_name %></b> ha cambiado a: <b><%= activity.parameters[:order_status] %></b>, hace <%= time_ago_in_words(activity.trackable.updated_at)%>.
+  La orden ha sido eliminada
 <% end %>
