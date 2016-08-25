@@ -3,6 +3,7 @@ class StoresController < ApplicationController
   before_filter :require_store, only: [:dashboard, :subscribe, :list]
   before_filter :pilot_store, only: [:dashboard, :list, :instagram_media]
   before_filter :edit_store_info, only: [:dashboard]
+  before_action :set_store, only: [:payments_and_delivery]
   layout 'dashboard', except: [:show, :subscribe]
 
 
@@ -16,10 +17,8 @@ class StoresController < ApplicationController
   end
 
   def subscribe
-    @waiting_users =  Store.where("details->'pilot' = ?", "false").all.count
+    @waiting_users =  Store.where("details->'pilot' = ?", "false").count
     @waiting_position = current_user.waiting_position
-
-    update_instagram_data
   end
 
   def instagram_media
@@ -40,8 +39,6 @@ class StoresController < ApplicationController
       end
 
       @media = media
-
-      update_instagram_data
 
       if @media.last.nil?
         @media = client.user_recent_media
@@ -73,14 +70,17 @@ class StoresController < ApplicationController
       data = params[:payments_and_delivery]
 
       respond_to do |format|
-        if current_user.update(
+        if @store.update(
           delivery_price: data[:delivery_price],
           bank_transfer: data[:bank_transfer],
           bank_transfer_instructions: data[:bank_transfer_instructions],
           payment_upon_delivery: data[:payment_upon_delivery]
         )
 
-          format.html { redirect_to stores_dashboard_path, notice: "Datos Guardados" }
+          format.html { redirect_to stores_dashboard_path, notice: t('store.payment_methods_saved') }
+        else
+          format.html { render stores_payments_and_delivery_path }
+          format.json { render json: @store.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -116,5 +116,9 @@ class StoresController < ApplicationController
       if !current_user.name
         redirect_to edit_user_registration_path
       end
+    end
+
+    def set_store
+      @store = current_user
     end
 end
