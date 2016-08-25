@@ -19,7 +19,7 @@
         <b>Te Recomendamos</b>
       </div>
       <!-- <p class="activities__row">Llenar los precios de envio a las principales ciudades de Colombia <a href="">aquí</a></p> -->
-      <% if !current_user.name? %>
+      <% if !current_user.email? %>
         <p class="activities__row">Completar la información de tu tienda en
           <%= link_to edit_user_registration_path do %>
             <i class="fa fa-pencil"></i>

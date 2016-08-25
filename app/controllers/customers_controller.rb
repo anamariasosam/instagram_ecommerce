@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
   layout 'dashboard'
 
   def dashboard
-    if current_user.full_name
+    if current_user.email?
       if !session['super_token'].blank?
         current_user.update(user_token: session['super_token'])
       end
