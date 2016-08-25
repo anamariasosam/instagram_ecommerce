@@ -29,8 +29,11 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
     def get_instagram_data
-      client = Instagram.client(access_token: current_user.user_token)
-      fill_data(client)
+      # Know the first edit
+      if not current_user.country?
+        client = Instagram.client(access_token: current_user.user_token)
+        fill_data(client)
+      end
     end
 
     def fill_data(client)
