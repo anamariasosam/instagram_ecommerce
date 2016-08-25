@@ -10,6 +10,9 @@ es:
     no_pilot: Te encuentras en lista de espera
     no_store: Debes registarte como tienda para crear productos
     no_customer: Debes iniciar sesión como comprador para realizar esta acción
+  store:
+    payment_methods_saved: Información de pagos y envíos guradada con éxito
+    no_bank_transfer_instructions: Tienes que contarle a tus clientes las instrucciones para hacer la consignación
   mail_form:
     success: Tu mensaje ha sido enviado.
     error: Tu mensaje no pudo ser enviado

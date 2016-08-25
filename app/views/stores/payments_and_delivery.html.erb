@@ -10,6 +10,7 @@
   <div class="row">
     <div class="col-md-7">
       <%= form_for :payments_and_delivery do |f| %>
+        <%= render "shared/errors", object: @store %>
       <p>Aquí puedes agregar el precio que cobras a tus clientes por el envío de los produtos</p>
 
       <%= f.label :delivery_price, "Precio de envío" %>
