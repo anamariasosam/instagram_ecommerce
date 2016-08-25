@@ -13,7 +13,7 @@ class Stores::OrdersController < ApplicationController
   layout 'dashboard'
 
   def index
-    @orders = current_user.orders.includes(:customer).includes(:product).reorder(created_at: :desc)
+    @orders = current_user.orders.includes(:customer).includes(:product).reorder(:created_at)
   end
 
   def show
@@ -48,14 +48,6 @@ class Stores::OrdersController < ApplicationController
         'Enviado',
         'Entregado',
       ]
-      bank_transfer_data(@state_options)
-    end
-
-    def bank_transfer_data(array)
-      if @order.payment_method == "Consignación Bancaria"
-        array.unshift('Consignación Recibida')
-        array.unshift('Esperando Consignación')
-      end
     end
 
     def set_order
