@@ -23,32 +23,18 @@ class Order < ActiveRecord::Base
   belongs_to :customer
 
   validate :status_is_valid
-  validates_presence_of :total,
-                        :product_id,
-                        :customer_id,
-                        :payment_method,
-                        :address
-  private
-    def status_is_valid
-      options =  [
-        'En Proceso',
-        'Listo Para Enviar',
-        'Enviado',
-        'Entregado'
-      ]
-      bank_transfer_data(options)
-      valid = options.include? self.status
+  validates_presence_of :payment_method
 
-      unless valid
-        errors.add(:status, "Estado no permitido")
-      end
+  def status_is_valid
+    valid = [
+      'En Proceso',
+      'Listo Para Enviar',
+      'Enviado',
+      'Entregado'
+    ].include? self.status
+    unless valid
+      errors.add(:status, "Estado no permitido")
     end
-
-    def bank_transfer_data(array)
-      if self.payment_method == "Consignación Bancaria"
-        array.push('Esperando Consignación')
-        array.push('Consignación Recibida')
-      end
-    end
+  end
 
 end

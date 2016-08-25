@@ -11,7 +11,7 @@
   </td>
   <td><%= order.product.product_name %></td>
   <td>
-    <% if not is_store? %>
+    <% if current_user.type == 'Customer' %>
       <a href="tel:<%= order.store.phone_number %>">
         <%= order.store.phone_number %>
       </a>

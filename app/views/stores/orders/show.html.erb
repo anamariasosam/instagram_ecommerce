@@ -31,25 +31,19 @@
         <tr>
           <td>
             <%= @order.product.product_name %>
+            <br>
+            <br>
+            <%= @order.product.description.html_safe %>
           </td>
           <td></td>
           <td>
-            <%= number_to_currency @order.product.price, precision: 0 %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Precio domicilio
-          </td>
-          <td></td>
-          <td>
-            <%= number_to_currency @order.store.delivery_price, precision: 0 %>
+            <%= number_to_currency @order.product.price %>
           </td>
         </tr>
         <tr>
           <td></td>
           <td><b>Total</b></td>
-          <td><b><%= number_to_currency @order.total, precision: 0 %></b></td>
+          <td><b><%= number_to_currency @order.total %></b></td>
         </tr>
       </table>
 
@@ -58,14 +52,10 @@
   <br>
   <br>
   <h4><b>Detalles</b></h4>
-  <% if @order.details? %>
-    <p><b>Información importante:</b> <%= @order.details %></p>
-  <% end %>
   <p>Fecha de compra: <%= @order.created_at.to_formatted_s(:short) %></p>
   <p>Comprador: <%= @order.customer.full_name %></p>
-  <p>Dirección: <%= @order.address %></p>
+  <p>Dirección: <%= @order.customer.address %></p>
   <p>Teléfono: <a href="tel:<%= @order.customer.phone_number %>"><%= number_to_phone @order.customer.phone_number %></a></p>
-  <p>Método de pago: <%= @order.payment_method %></p>
   <hr>
   <div class="form-inline hidden-print">
     <%= form_for(['stores', @order]) do |f| %>
