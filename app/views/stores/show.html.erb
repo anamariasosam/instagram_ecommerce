@@ -1,3 +1,18 @@
+<% content_for :title, @store.name + " - " %>
+<% content_for :meta_tags do %>
+  <meta property="og:url"                  content="<%= request.original_url %>" />
+  <meta property="og:type"                 content="website" />
+  <meta property="og:title"                content="<%= @store.name %> es una tienda aliada de catlog" />
+  <meta property="og:image"                content="<%= @store.image %>" />
+
+  <meta name="twitter:card"         content="summary" />
+  <meta name="twitter:site"         content="@catlog_co" />
+  <meta name="twitter:title"        content="<%= @store.name %>" />
+  <meta name="twitter:description"  content="<%= @store.product_name %> de <%= @store.info || "Esta tienda se encuentra en catlog.co" %> ahora en http://catlog.co" />
+  <meta name="twitter:image"        content="<%= @store.image %>" />
+
+<% end %>
+
 <header class="storeHero">
   <div class="container">
     <div class="row">
