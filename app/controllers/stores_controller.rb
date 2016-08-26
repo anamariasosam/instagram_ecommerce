@@ -1,7 +1,7 @@
 class StoresController < ApplicationController
-  before_filter :authenticate_user!, only: [:dashboard, :subscribe, :list]
-  before_filter :require_store, only: [:dashboard, :subscribe, :list]
-  before_filter :pilot_store, only: [:dashboard, :list, :instagram_media]
+  before_filter :authenticate_user!, only: [:dashboard, :subscribe, :list, :payments_and_delivery]
+  before_filter :require_store, only: [:dashboard, :subscribe, :list, :payments_and_delivery]
+  before_filter :pilot_store, only: [:dashboard, :list, :instagram_media, :payments_and_delivery]
   before_filter :edit_store_info, only: [:dashboard]
   before_action :set_store, only: [:payments_and_delivery]
   layout 'dashboard', except: [:show, :subscribe]
