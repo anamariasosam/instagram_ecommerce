@@ -30,7 +30,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   private
     def getInstagramData(user_instance)
-      if user_instance.email.blank?
+      if user_instance.slug.blank?
         client = Instagram.client(access_token: session['super_token'])
 
         user_instance.update(
