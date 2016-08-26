@@ -5,7 +5,7 @@
   <meta property="og:title"                content="<%= @product.product_name %>" />
   <meta property="og:description"          content="<%= strip_tags(@product.description.html_safe) %>" />
   <meta property="og:image"                content="<%= @product.instagram_image %>" />
-  <meta property="product:price:amount"    content="<%= number_to_currency @product.price, precision:0 %>" />
+  <meta property="product:price:amount"    content="<%=  @product.price %>" />
   <meta property="product:price:currency"  content="COP" />
 
   <meta name="twitter:card"         content="summary" />
