@@ -1,70 +1,79 @@
-<table class="table stores__form">
-  <tr>
-    <td class="stores__form-data">
-      <div class="form-group">
-        <%= f.label "Nombre de la Tienda*" %> <br>
-        <%= f.text_field :name, autofocus: true, class: 'form-control' %>
-      </div>
-    </td>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label "Nombre de la Tienda*" %> <br>
+      <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+    </div>
+  </div>
 
-    <td class="stores__form-data">
-      <div class="form-group">
-        <%= f.label "Correo*" %> <br>
-        <%= f.email_field :email, class: 'form-control' %>
-      </div>
-    </td>
-  </tr>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label "Correo*" %> <br>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+  </div>
+</div>
 
-  <tr>
-    <td class="stores__form-data">
-      <div class="form-group">
-        <%= f.label "Ciudad*" %>
-        <%= f.text_field :city, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label "País*" %>
-        <%= country_select("user", "country", {selected: "CO"}, {class: 'form-control'} ) %>
-      </div>
-      <div class="form-group">
-        <%= f.label "Celular*" %> <br>
-        <%= f.telephone_field :phone_number, class: 'form-control' %>
-      </div>
-    </td>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label "Ciudad*" %>
+      <%= f.text_field :city, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label "País*" %>
+      <%= country_select("user", "country", {selected: "CO"}, {class: 'form-control'} ) %>
+    </div>
+  </div>
+</div>
 
-    <td class="stores__form-data">
-      <div class="form-group">
-        <%= f.label "Usuario de Facebook" %>
-        <div class="input-group">
-          <div class="input-group-addon">http://facebook.com/</div>
-          <%= f.text_field :facebook, class: 'form-control' %>
-        </div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label "Celular*" %> <br>
+      <%= f.telephone_field :phone_number, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label "Información adicional" %> <br>
+      <%= f.text_area :info, rows: 4, class: 'form-control' %>
+    </div>
+  </div>
+</div>
 
-      </div>
-      <div class="form-group">
-        <%= f.label "Usuario de Twitter" %>
-        <div class="input-group">
-          <div class="input-group-addon">http://twitter.com/</div>
-          <%= f.text_field :twitter, class: 'form-control' %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label "Usuario de Snapchat" %> <br>
-        <%= f.telephone_field :snapchat, class: 'form-control' %>
-      </div>
-    </td>
-  </tr>
+<hr>
 
-  <tr>
-    <td class="stores__form-data" colspan="2">
-      <div class="form-group">
-        <%= f.label "Información adicional" %> <br>
-        <%= f.text_area :info, rows: 4, class: 'form-control' %>
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= f.label "Usuario de Facebook" %>
+      <div class="input-group">
+        <div class="input-group-addon">http://facebook.com/</div>
+        <%= f.text_field :facebook, class: 'form-control' %>
       </div>
-    </td>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= f.label "Usuario de Twitter" %>
+      <div class="input-group">
+        <div class="input-group-addon">http://twitter.com/</div>
+        <%= f.text_field :twitter, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= f.label "Usuario de Snapchat" %> <br>
+      <%= f.telephone_field :snapchat, class: 'form-control' %>
+    </div>
+  </div>
+</div>
 
     <% if !current_user.email? %>
       <%= f.hidden_field :pilot, value: false%>
       <%= f.hidden_field :waiting_position, value: Store.where("details->'pilot' = ?", "false").count %>
     <% end %>
-  </tr>
-</table>
