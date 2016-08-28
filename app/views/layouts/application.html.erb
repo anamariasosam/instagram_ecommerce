@@ -28,23 +28,21 @@
 
   <%= render 'shared/alerts/flash' %>
 
-  <div class="container app__container">
-    <%= render partial: "shared/menu/top", locals: { search: true } %>
+  <%= render partial: "shared/menu/top", locals: { search: true } %>
 
-    <div class="content clearfix">
-      <% if content_for?(:headline) %>
-        <header class="sectionHero hidden-xs">
-          <div class="container">
-            <%= yield :headline %>
-          </div>
-        </header>
-        <% end %>
-      <%= yield %>
-    </div>
-
-    <%= render "layouts/footer" %>
-
+  <div class="content clearfix">
+    <% if content_for?(:headline) %>
+      <header class="sectionHero hidden-xs">
+        <div class="container">
+          <%= yield :headline %>
+        </div>
+      </header>
+      <% end %>
+    <%= yield %>
   </div>
+
+  <%= render "layouts/footer" %>
+
 
   <%= render "mixins/login" %>
   <%= render "mixins/search" %>

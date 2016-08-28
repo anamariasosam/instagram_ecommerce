@@ -1,8 +1,15 @@
+$top-to-header: 20px;
+$space-to-content: 10px;
+
 .category {
   text-align: left;
 
+  @include respond-to(s) {
+    margin-top: $top-to-header;
+  };
+
   @include respond-to(xs) {
-    margin-top: 20px;
+    margin-top: $top-to-header;
   };
 
   &__item {
@@ -11,11 +18,11 @@
     transition: margin 400ms ease;
 
     @include respond-to(s) {
-      margin-bottom: 20px;
+      margin-bottom: $space-to-content;
     };
 
     @include respond-to(xs) {
-      margin-bottom: 20px;
+      margin-bottom: $space-to-content;
     };
   }
 
@@ -23,16 +30,17 @@
     background-color: #dedede;
     border-radius: 2px;
     color: #666;
+    display: inline-block;
     font-family: sans-serif, Arial;
     padding: 5px 15px;
     transition: padding 400ms ease;
 
     @include respond-to(s) {
-      padding: 10px 15px;
+      padding: $space-to-content 15px;
     };
 
     @include respond-to(xs) {
-      padding: 10px 15px;
+      padding: $space-to-content 15px;
     };
 
     &:hover,
