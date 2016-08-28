@@ -35,6 +35,9 @@
       <%= f.label "Celular*" %> <br>
       <%= f.telephone_field :phone_number, class: 'form-control' %>
     </div>
+    <div id="js_phoneSuggestion">
+      Click para <b>usar</b>: <a href="#"></a>
+    </div>
   </div>
   <div class="col-sm-6">
     <div class="form-group">
@@ -77,3 +80,31 @@
       <%= f.hidden_field :pilot, value: false%>
       <%= f.hidden_field :waiting_position, value: Store.where("details->'pilot' = ?", "false").count %>
     <% end %>
+
+<script>
+  (function() {
+    'use strict';
+
+    var pattPhone = /(?:[[\+\(|\+|\(]57[\s|\)\-]?[\s|\)\-]?|])?(\d{3}[\s|\-]?(?:[\d][\s|\-]?){6}\d)/mi;
+    var info = $('#user_info').val();
+    var phoneResult = info.match(pattPhone) || [];
+    var phone = phoneResult[1] || phoneResult[0];
+    var $suggestionBox = $('#js_phoneSuggestion');
+
+    function populatePhoneInput (event) {
+      event.preventDefault();
+
+      $('#user_phone_number').val(phone.replace(/-/g, " "));
+      $suggestionBox.text('No olvides guardar.');
+    };
+
+    if (!phone) {
+      $suggestionBox.hide();
+      return;
+    }
+
+    $suggestionBox
+      .on('click', populatePhoneInput)
+      .find('a').text(phone);
+  }());
+</script>
