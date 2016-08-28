@@ -1,6 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$space-to-content: 10px;
 
 .hero {
   background: url(http://fabandfru.com/new/wp-content/uploads/2012/03/woman-shopping-online-with-credit-card.jpg);
@@ -10,7 +11,7 @@
   padding-bottom: 40px;
   padding-top: 40px;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: $space-to-content;
 
   @include respond-to(xl) {
     padding: 5em 0;
@@ -36,9 +37,10 @@
   }
 
   .btn-transparent {
-    background-color: transparent;
+    background: rgba(255,255,255, 0.3);
     border-color: #fff;
     color: #fff;
+    text-shadow: 1px 1px 3px #999;
     transition: background 1s, box-shadow 500ms;
 
     &:hover {
@@ -69,13 +71,15 @@
 
   &__deck {
     font-size: 24px;
+    max-width: 300px;
+    text-shadow: 1px 1px 3px #999;
 
     @include respond-to(s) {
       font-size: 18px;
     }
 
     @include respond-to(xs) {
-      font-size: 17px;
+      font-size: 18px;
     }
   }
 }

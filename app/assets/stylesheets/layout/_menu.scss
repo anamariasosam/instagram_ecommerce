@@ -1,3 +1,6 @@
+$menu-height-desktop: 56px;
+$menu-height-mobile: 62px;
+
 .menu {
   &__logo {
     padding: 3px 0px 5px !important;
@@ -9,9 +12,8 @@
     }
   }
 }
-.hamburger {
-  @extend %background-purple;
 
+.hamburger {
   &__button {
     background: #fff;
     height: 45px;
@@ -55,6 +57,18 @@
 
   &__list {
 
+  }
+
+  &__placeholder {
+    height: $menu-height-desktop;
+
+    @include respond-to(s) {
+      height: $menu-height-mobile;
+    };
+
+    @include respond-to(xs) {
+      height: $menu-height-mobile;
+    };
   }
 
   &__word {

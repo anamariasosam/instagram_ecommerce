@@ -1,12 +1,11 @@
-.sectionHero {
-  @extend %background-purple;
+$space-to-bottom: 20px;
+$color: #222;
+$color-hover: #444;
 
-  color: #fff;
+.sectionHero {
 
   margin-bottom: 30px;
-
-  padding-top: 15px;
-  padding-bottom: 20px;
+  padding-top: $space-to-bottom;
 
   &__headline {
     line-height: 1;
@@ -15,12 +14,17 @@
   }
 
   &__link {
-    color: #fff;
+    color: $color;
+    border-bottom: 1px dashed lighten($color, 30%);
+    text-decoration: none;
     &:hover {
-      color: #fff !important;
+      color: $color-hover !important;
+      text-decoration: none;
+      border-bottom-style: solid;
     }
   }
 }
+
 .mobileHeader {
   float: left;
   padding-top: 7px;
@@ -30,7 +34,7 @@
   &__deck {
     margin-top: 3px;
     line-height: 1;
-    color: #f0f0f0;
+    color: $color;
     margin-bottom: 0px;
   }
 
@@ -41,24 +45,17 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    @include respond-to(s) {
-    color: white;
-    };
-
-    @include respond-to(xs) {
-      color: white;
-    };
-
     &:nth-child(1) {
       margin-top: 7px;
     }
   }
 
   &__link {
-    color: white;
-
-    @include respond-to(xs) {
-      color: white;
-    };
+    color: $color;
+    border-bottom: 1px dashed lighten($color, 30%);
+    text-decoration: none;
+    &:hover {
+      color: $color-hover !important;
+    }
   }
 }

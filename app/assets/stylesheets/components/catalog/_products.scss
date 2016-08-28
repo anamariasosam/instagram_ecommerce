@@ -1,83 +1,4 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.product {
-
-  &-action {
-
-    &--container {
-      display: inline-block;
-    }
-  }
-
-  &-caption {
-    text-align:left;
-  }
-
-  &-container {
-    height: 100vh;
-    margin-top: 40px;
-  }
-
-  &-description {
-    margin-bottom: 0 !important;
-  }
-
-  &_form {
-
-    &-image {
-      margin: 0 auto;
-    }
-
-    &--textarea-trix {
-      min-height: 200px;
-    }
-  }
-
-  &-headline {
-    text-align: center;
-    margin-bottom: 0 !important;
-
-    & h2 {
-      margin-top: 0;
-    }
-  }
-
-  &-img {
-    margin-bottom: 20px;
-  }
-
-  &_name {
-    color: $primary-color;
-    text-align: center;
-    word-wrap: break-word;
-    height: 50px;
-
-    &-countdown {
-      font-size: 16px;
-    }
-
-    @media (max-width: 320px) {
-      & {
-        font-size: 15px;
-      }
-    }
-  }
-
-  &_save {
-    clear: both;
-    margin-top: 20px;
-  }
-
-  &__pagination li {
-    padding-left: 0;
-  }
-
-  &_link {
-    text-decoration: underline;
-  }
-
-}
+$top-to-header: 10px;
 
 //  Footable improvement
 .footable-toggle {
@@ -86,6 +7,14 @@
 }
 
 .product {
+
+  @include respond-to(s) {
+    margin-top: $top-to-header;
+  };
+
+  @include respond-to(xs) {
+    margin-top: $top-to-header;
+  };
 
   &__action,
   &__action:hover {
