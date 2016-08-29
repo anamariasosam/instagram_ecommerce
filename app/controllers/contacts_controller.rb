@@ -30,6 +30,10 @@ class ContactsController < ApplicationController
     end
 
     def determine_layout
-      current_user.email ? "dashboard" : "application"
+      if user_signed_in? and not current_user.email.blank?
+        "dashboard"
+      else
+         "application"
+       end
     end
 end
