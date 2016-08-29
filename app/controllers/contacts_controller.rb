@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  layout :determine_layout
+
   def new
     @contact = Contact.new
     populate_data
@@ -25,5 +27,9 @@ class ContactsController < ApplicationController
           @name = current_user.full_name
         end
       end
+    end
+
+    def determine_layout
+      current_user.email ? "dashboard" : "application"
     end
 end

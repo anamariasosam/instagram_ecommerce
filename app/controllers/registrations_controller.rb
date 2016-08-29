@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
-
+  layout :determine_layout
+  
   protected
 
     def after_update_path_for(resource)
@@ -39,5 +40,9 @@ class RegistrationsController < Devise::RegistrationsController
                       :twitter,
                       :snapchat
                     )
+    end
+
+    def determine_layout
+      current_user.email ? "dashboard" : "application"
     end
 end

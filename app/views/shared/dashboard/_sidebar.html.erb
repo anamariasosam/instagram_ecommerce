@@ -5,9 +5,6 @@
     <%= render 'shared/menu/customer_menu' %>
   <% end %>
   <li class="dashboard__item">
-    <%= link_to new_contact_path, class: 'dashboard__link' do %>
-      <i class="fa fa-envelope"></i>
-      <span class="hidden-xs">Sugerencias</span>
-    <% end %>
+    <%= active_link_to 'Sugerencias', new_contact_path, 'dashboard__link', 'envelope' %>
   </li>
 </ul>
