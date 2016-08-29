@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @stores = Store.limit(10)
+    @stores = Store.all
     @products =  Product.limit(4).order(created_at: :desc).includes(:store)
 
     @category = Category.find_by_name('Bolsos')
