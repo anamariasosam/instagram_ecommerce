@@ -71,6 +71,9 @@ class OrdersController < ApplicationController
       if @product.store.payment_upon_delivery?
         @payment_methods.push('Contra Entrega')
       end
+      if @product.store.pick_up_on_store?
+        @payment_methods.push('Recoger y Pagar en la tienda')
+      end
     end
 
     def fill_data

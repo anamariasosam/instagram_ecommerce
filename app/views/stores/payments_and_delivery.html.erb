@@ -21,6 +21,9 @@
       <%= f.label :payment_upon_delivery, "Pago Contraentrega" %>
       <%= f.check_box :payment_upon_delivery, checked: current_user.payment_upon_delivery %>
       <br>
+      <%= f.label :pick_up_on_store, "Recoger y pagar en la tienda" %>
+      <%= f.check_box :pick_up_on_store, checked: current_user.pick_up_on_store%>
+      <br>
       <%= f.label :bank_transfer, "Transferencia/Consignación Bancaria" %>
       <%= f.check_box :bank_transfer, checked: current_user.bank_transfer %>
       <br>

@@ -44,7 +44,8 @@ class Store < User
   delivery_price: :integer,
   bank_transfer: :boolean,
   bank_transfer_instructions: :string,
-  payment_upon_delivery: :boolean
+  payment_upon_delivery: :boolean,
+  pick_up_on_store: :boolean
 
   validates_presence_of :name, on: :update
 
