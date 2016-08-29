@@ -26,8 +26,9 @@ class Order < ActiveRecord::Base
   validates_presence_of :total,
                         :product_id,
                         :customer_id,
-                        :payment_method,
-                        :address
+                        :payment_method
+
+  validates_presence_of :address, if: :need_address
   private
     def status_is_valid
       options =  [
@@ -49,6 +50,13 @@ class Order < ActiveRecord::Base
         array.push('Esperando Consignación')
         array.push('Consignación Recibida')
       end
+      if self.payment_method == "Recoger y Pagar en la tienda"
+        array.push('Listo para recoger')
+      end
+    end
+
+    def need_address
+      self.payment_method == "Consignación Bancaria" or self.payment_method == "Contra Entrega"
     end
 
 end

@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
-  before_filter :authenticate_user!, only: [:dashboard, :subscribe, :list, :payments_and_delivery]
-  before_filter :require_store, only: [:dashboard, :subscribe, :list, :payments_and_delivery]
+  before_filter :authenticate_user!, only: [:dashboard, :subscribe, :list, :payments_and_delivery, :instagram_media]
+  before_filter :require_store, only: [:dashboard, :subscribe, :list, :payments_and_delivery, :instagram_media]
   before_filter :pilot_store, only: [:dashboard, :list, :instagram_media, :payments_and_delivery]
   before_filter :edit_store_info, only: [:dashboard]
   before_action :set_store, only: [:payments_and_delivery]
@@ -74,7 +74,9 @@ class StoresController < ApplicationController
           delivery_price: data[:delivery_price],
           bank_transfer: data[:bank_transfer],
           bank_transfer_instructions: data[:bank_transfer_instructions],
-          payment_upon_delivery: data[:payment_upon_delivery]
+          payment_upon_delivery: data[:payment_upon_delivery],
+          pick_up_on_store: data[:pick_up_on_store],
+          pick_up_instructions: data[:pick_up_instructions]
         )
 
           format.html { redirect_to stores_dashboard_path, notice: t('store.payment_methods_saved') }

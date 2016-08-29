@@ -1,4 +1,4 @@
-<tr>
+<tr class="list-values">
   <td><%= order.id %></td>
   <td><%= order.status %></td>
   <td><%= time_ago_in_words order.created_at %></td>
@@ -9,7 +9,11 @@
       <%= order.store.name %>
     <% end %>
   </td>
-  <td><%= order.product.product_name %></td>
+  <td>
+    <a href="<%= order.product.instagram_image %>" data-lightbox="image-1" data-title="<%= order.product.product_name %>" >
+      <img src="<%= order.product.instagram_image %>" alt="catlog, productos, <%= order.product.store.name%>" class="list-image">
+    </a>
+  </td>
   <td>
     <% if not is_store? %>
       <a href="tel:<%= order.store.phone_number %>">
