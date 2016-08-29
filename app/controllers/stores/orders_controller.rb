@@ -56,6 +56,10 @@ class Stores::OrdersController < ApplicationController
         array.unshift('Consignación Recibida')
         array.unshift('Esperando Consignación')
       end
+
+      if @order.payment_method == "Recoger y Pagar en la tienda"
+        array.push('Listo para recoger')
+      end
     end
 
     def set_order

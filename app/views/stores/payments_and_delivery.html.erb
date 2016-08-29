@@ -24,6 +24,11 @@
       <%= f.label :pick_up_on_store, "Recoger y pagar en la tienda" %>
       <%= f.check_box :pick_up_on_store, checked: current_user.pick_up_on_store%>
       <br>
+      <div id="js_pickUpInstructions">
+        <%= f.label :pick_up_instructions, "Dirección de la tienda" %>
+        <br>
+        <%= f.text_area :pick_up_instructions, value: current_user.pick_up_instructions, placeholder: "Cuéntale aquí a tus usuarios las instrucciones detalladas para llegar a tu tienda: \n- Dirección, \n- Horario de atención, \n- Número de teléfono", class: 'form-control', size: '20x4' %>
+      </div>
       <%= f.label :bank_transfer, "Transferencia/Consignación Bancaria" %>
       <%= f.check_box :bank_transfer, checked: current_user.bank_transfer %>
       <br>
@@ -41,14 +46,27 @@
 </div>
 
 <script>
-  var $check = $("#payments_and_delivery_bank_transfer");
-  var $instructions = $("#js_bankTransferInstructions").hide();
+  var $bank_transfer_check = $("#payments_and_delivery_bank_transfer");
+  var $pick_up_check = $("#payments_and_delivery_pick_up_on_store");
 
-  var toggleInstructions = function(event) {
-    if ($check[0].checked) $instructions.show(100);
-    else $instructions.hide(100);
+  var $bank_transfer_instructions = $("#js_bankTransferInstructions").hide();
+  var $pick_up_instructions = $("#js_pickUpInstructions").hide();
+
+  var toggleInstructions = function(input, instructions) {
+    if (input[0].checked) instructions.show(100);
+    else instructions.hide(100);
   };
 
-  toggleInstructions();
-  $check.on("change", toggleInstructions);
+  toggleInstructions($bank_transfer_check, $bank_transfer_instructions)
+  toggleInstructions($pick_up_check, $pick_up_instructions)
+
+
+  $bank_transfer_check.on("change", function() {
+    toggleInstructions($(this), $bank_transfer_instructions)
+  });
+
+  $pick_up_check.on("change", function() {
+    toggleInstructions($(this), $pick_up_instructions)
+  });
+
 </script>

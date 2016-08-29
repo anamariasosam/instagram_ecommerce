@@ -45,11 +45,12 @@ class Store < User
   bank_transfer: :boolean,
   bank_transfer_instructions: :string,
   payment_upon_delivery: :boolean,
-  pick_up_on_store: :boolean
+  pick_up_on_store: :boolean,
+  pick_up_instructions: :string
 
   validates_presence_of :name, on: :update
-
-  validates_presence_of :bank_transfer_instructions, :if => :bank_transfer
+  validates_presence_of :bank_transfer_instructions, if: :bank_transfer
+  validates_presence_of :pick_up_instructions, if: :pick_up_on_store
 
   def country_name
     ISO3166::Country[country]

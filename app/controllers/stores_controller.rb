@@ -75,7 +75,8 @@ class StoresController < ApplicationController
           bank_transfer: data[:bank_transfer],
           bank_transfer_instructions: data[:bank_transfer_instructions],
           payment_upon_delivery: data[:payment_upon_delivery],
-          pick_up_on_store: data[:pick_up_on_store]
+          pick_up_on_store: data[:pick_up_on_store],
+          pick_up_instructions: data[:pick_up_instructions]
         )
 
           format.html { redirect_to stores_dashboard_path, notice: t('store.payment_methods_saved') }

@@ -31,8 +31,16 @@
             <br>
             <i><%= @result.store.bank_transfer_instructions %></i>
           </p>
+        <% elsif @result.payment_method == 'Recoger y Pagar en la tienda' %>
+        <p>
+          <b>Dirección de la tienda:</b>
+          <br>
+          <i><%= @result.store.pick_up_instructions %></i>
+        </p>
         <% end %>
-        <p><b>Dirección de Envío</b>: <%= @result.address %></p>
+        <% if @result.address? %>
+          <p><b>Dirección de Envío</b>: <%= @result.address %></p>
+        <% end %>
         <% if @result.details? %>
           <p><b>Detalles</b>: <%= @result.details %></p>
         <% end %>
