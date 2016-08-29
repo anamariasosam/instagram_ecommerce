@@ -1,5 +1,9 @@
-<% if is_store? %>
-  Tienes una <%= link_to 'Nueva orden', stores_order_path(activity.trackable.id) %> de <%= activity.trackable.customer.full_name %> comprando 1 <%= activity.trackable.product.product_name %>, creada hace <%= time_ago_in_words(activity.trackable.created_at) %>.
+<% if activity.trackable %>
+  <% if is_store? %>
+    Tienes una <%= link_to 'Nueva orden', stores_order_path(activity.trackable.id) %> de <%= activity.trackable.customer.full_name %> comprando 1 <%= activity.trackable.product.product_name %>, creada hace <%= time_ago_in_words(activity.trackable.created_at) %>.
+  <% else %>
+    Has comprado 1 <%= activity.trackable.product.product_name %> hace <%= time_ago_in_words(activity.trackable.created_at) %> por <b><%= number_to_currency activity.trackable.total %></b>, mira <%= link_to 'tus órdenes', customers_dashboard_orders_path %> para obtener información sobre el vendedor.
+  <% end %>
 <% else %>
-  Has comprado 1 <%= activity.trackable.product.product_name %> hace <%= time_ago_in_words(activity.trackable.created_at) %> por <b><%= number_to_currency activity.trackable.total %></b>, mira <%= link_to 'tus órdenes', customers_dashboard_orders_path %> para obtener información sobre el vendedor.
+  Hubo un orden de un producto que ya no existe
 <% end %>
