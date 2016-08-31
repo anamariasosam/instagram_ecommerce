@@ -56,6 +56,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         details["info"] = client.user.bio
         details["name"] = client.user.full_name
         details["facebook"] = client.user.website.split('/')[-1] if client.user.website.include? "facebook"
+
+        UserNotifier.new_store_created.deliver_later
       else
         details["full_name"] = client.user.full_name
       end

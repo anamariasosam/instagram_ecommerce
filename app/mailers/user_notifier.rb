@@ -27,4 +27,9 @@ class UserNotifier < ApplicationMailer
     mail( :to => @customer.email,
     :subject => "👌 El producto que compraste en Catlog está #{order.status.downcase}" )
   end
+
+  def new_store_created
+    mail( :to => "anamaria@catlog.co",
+    :subject => "👯 Nuevo cliente en catlog.co" )
+  end
 end
