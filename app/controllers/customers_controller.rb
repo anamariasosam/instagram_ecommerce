@@ -29,9 +29,15 @@ class CustomersController < ApplicationController
       client = Instagram.client(access_token: current_user.user_token)
 
       current_user.update(
-        image:              client.user.profile_picture,
+        image:              set_protocol(client.user.profile_picture),
         instagram_account:  client.user.username,
         slug:               client.user.username
       )
+    end
+
+    def set_protocol(image)
+      uri = URI.parse(image)
+      uri.scheme = "https"
+      uri.to_s
     end
 end
