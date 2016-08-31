@@ -41,7 +41,7 @@ class Product < ActiveRecord::Base
   has_many :orders
 
   def slug
-    store.name.downcase.gsub(" ", "-") + "_"  + product_name.downcase.gsub(" ", "-")
+    store.slug.downcase.gsub(" ", "-") + "_"  + product_name.downcase.gsub(" ", "-")
   end
 
   def to_param
