@@ -35,13 +35,19 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
         user_instance.update(
           instagram_id:       client.user.id,
-          image:              client.user.profile_picture,
+          image:              set_protocol(client.user.profile_picture),
           instagram_account:  client.user.username,
           slug:               client.user.username,
           user_token:         session['super_token'],
           details:            fill_data(client, user_instance)
         )
       end
+    end
+
+    def set_protocol(image)
+      uri = URI.parse(image)
+      uri.scheme = "https"
+      uri.to_s
     end
 
     def fill_data(client, user)
