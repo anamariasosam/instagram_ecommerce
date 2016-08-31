@@ -9,7 +9,6 @@
     <td><%= number_to_currency product.price, precision:0 %></td>
     <td><%= product.quantity %></td>
     <td class="text-left"><%= truncate(product.description, length: 90, escape: false) %></td>
-    <td oncopy="addLink()"><%= product.shortened_urls.last.unique_key %></td>
     <td>
       <%= link_to edit_stores_product_path(product) do %>
         <i class="list-action fa fa-pencil-square"></i> <span class="hidden-xs">Editar</span>

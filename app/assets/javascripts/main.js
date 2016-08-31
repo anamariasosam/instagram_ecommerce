@@ -116,6 +116,14 @@ function loadFiraFont() {
 })();
 }
 
+function center_modal() {
+  var modal = $(this),
+      dialog = modal.find('.modal-dialog');
+  modal.css('display', 'block');
+
+  dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+}
+
 $(document).on('ready page:load', function() {
   loader();
   add_class_active();
@@ -131,6 +139,11 @@ $(document).on('ready page:load', function() {
   if ($(".pagination").length) {
     $(".pagination").rPage();
   }
+
+  $('.modal').on('show.bs.modal', center_modal);
+  $(window).on('resize', function() {
+      $('.modal:visible').each(center_modal);
+  });
 
 });
 
