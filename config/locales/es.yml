@@ -299,4 +299,4 @@ es:
       short: "%d de %b %H:%M"
     pm: pm
   web:
-    description: "Catlog: Catálogo virtual de las tiendas de Instagram. Sabrás los precios, descripciones y disponibilidad de tus productos favoritos"
+    description: "Catlog: Compra tus productos favoritos de las tiendas de Instagram sin necesidad de comunicarte directamente con ellas."
