@@ -1,3 +1,4 @@
+es.devise.sessions
 es:
   errors:
     messages:
@@ -22,7 +23,9 @@ es:
       not_found_in_database: 'Tienes que registrarte antes de continuar.'
     sessions:
       signed_in: 'Iniciaste sesión correctamente.'
-      signed_out: ''
+      signed_out: 'Se ha cerrado la sesión'
+      user:
+        already_signed_out: 'Se ha cerrado la sesión'
     passwords:
       user:
         no_token: "No has solicitado el cambio de contraseña"
