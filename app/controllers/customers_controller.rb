@@ -21,7 +21,13 @@ class CustomersController < ApplicationController
   end
 
   def orders
-    @orders = current_user.orders.includes(:store).includes(:product).reorder(created_at: :desc)
+    @orders = current_user
+                .orders
+                .page(params[:page])
+                .per(5)
+                .includes(:store)
+                .includes(:product)
+                .reorder(created_at: :desc)
   end
 
   private

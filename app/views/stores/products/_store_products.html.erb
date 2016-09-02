@@ -25,6 +25,10 @@
     </tbody>
   </table>
 
+  <div class="paginator text-center">
+    <%= paginate @products %>
+  </div>
+
   <script>
     $(function($){ $('#table').footable({ phone: 480 }); });
   </script>
