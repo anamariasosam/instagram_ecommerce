@@ -25,6 +25,11 @@ class OrdersController < ApplicationController
         @order.payment_method = 'A Convenir'
       end
 
+      if @order.payment_method == 'Recoger y Pagar en la tienda'
+        @order.total = @product.price
+        @order.address = 'No es necesaria'
+      end
+
       if @order.save
         # order needs to be trackable
         @order.create_activity :create, owner: @order.store

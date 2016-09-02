@@ -227,10 +227,11 @@
                                   <p>
                                     <b>Producto vendido:</b> <%= @product.product_name %>
                                   </p>
-                                  <p>
-                                    <b>Dirección de envío:</b> <%= @order.address %>
-                                  </p>
-
+                                  <% if not @order.payment_method == 'Recoger y Pagar en la tienda' %>
+                                    <p>
+                                      <b>Dirección de envío:</b> <%= @order.address %>
+                                    </p>
+                                  <% end %>
                                 <% else %>
                                   <p>
                                     <b>Nombre de la tienda:</b> <%= @store.name %>

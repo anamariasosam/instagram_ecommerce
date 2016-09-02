@@ -5,12 +5,12 @@
   </tr>
   <tr>
     <td>Envío</td>
-    <td class="text-right"><%= number_to_currency @product.store.delivery_price, precision:0 %></td>
+    <td class="text-right" id="js_delivery_price"><%= number_to_currency @product.store.delivery_price, precision:0 %></td>
   </tr>
   <tfoot>
     <tr>
       <td><b>Total a pagar</b></td>
-      <td class="text-right"><b><%= number_to_currency @order.total, precision:0 %></b></td>
+      <td class="text-right bold" id="js_total"><%= number_to_currency @order.total, precision:0 %></td>
     </tr>
   </tfoot>
 </table>

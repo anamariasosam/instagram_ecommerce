@@ -33,7 +33,7 @@
               <div class="col-sm-4">
                 <div class="radio">
                   <label>
-                    <%= f.radio_button :payment_method, p_method %>
+                    <%= f.radio_button :payment_method, p_method, class: "js_p_method_input" %>
                     <%= p_method %>
                   </label>
                 </div>
@@ -41,7 +41,9 @@
             <% end %>
           <% end %>
         </div>
-        <p> Dirección: <br> <%= f.text_field :address, value: current_user.address, class: 'form-control' %> </p>
+        <div id="js_address">
+          <p> Dirección: <br> <%= f.text_field :address, value: current_user.address, class: 'form-control' %> </p>
+        </div>
         <p>
           Información adicional:
           <br>
@@ -59,3 +61,21 @@
     <div class="col-sm-12 text-center"> </div>
   </div>
 </section>
+
+<script>
+  $pickup = $( "#order_payment_method_recoger_y_pagar_en_la_tienda" )
+  $address = $('#js_address')
+  
+  $('.js_p_method_input').on( "click", function() {
+    if ($pickup.is(':checked')) {
+      $('#js_total').text("<%= number_to_currency @order.total - @product.store.delivery_price, precision:0  %>")
+      $('#js_delivery_price').text("0")
+      $address.hide(100)
+    }
+    else {
+      $('#js_total').text("<%= number_to_currency @order.total, precision:0 %>")
+      $('#js_delivery_price').text("<%= number_to_currency @product.store.delivery_price, precision:0 %>")
+      $address.show(100)
+    }
+  });
+</script>
