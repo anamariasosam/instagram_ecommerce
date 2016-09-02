@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(params.require(:order).permit(:address, :payment_method, :details))
+    @order = Order.new(params.require(:order).permit(:address, :payment_method, :details, :city))
     customer = current_user
 
     respond_to do |format|

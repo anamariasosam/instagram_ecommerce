@@ -29,6 +29,7 @@ class Order < ActiveRecord::Base
                         :payment_method
 
   validates_presence_of :address, if: :need_address
+  validates_presence_of :city, if: :need_address
   private
     def status_is_valid
       options =  [

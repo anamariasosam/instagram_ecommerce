@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   layout :determine_layout
-  
+
   protected
 
     def after_update_path_for(resource)
@@ -35,7 +35,6 @@ class RegistrationsController < Devise::RegistrationsController
                       :country,
                       :pilot,
                       :full_name,
-                      :address,
                       :facebook,
                       :twitter,
                       :snapchat

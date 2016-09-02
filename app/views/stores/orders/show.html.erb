@@ -63,7 +63,10 @@
   <% end %>
   <p>Fecha de compra: <%= @order.created_at.to_formatted_s(:short) %></p>
   <p>Comprador: <%= @order.customer.full_name %></p>
-  <p>Dirección: <%= @order.address %></p>
+  <% if not @order.payment_method == 'Recoger y Pagar en la tienda' %>
+    <p>Dirección: <%= @order.address %></p>
+    <p>Ciudad: <%= @order.city %></p>
+  <% end %>
   <p>Teléfono: <a href="tel:<%= @order.customer.phone_number %>"><%= number_to_phone @order.customer.phone_number %></a></p>
   <p>Método de pago: <%= @order.payment_method %></p>
   <hr>

@@ -43,6 +43,11 @@
         </div>
         <div id="js_address">
           <p> Dirección: <br> <%= f.text_field :address, value: current_user.address, class: 'form-control' %> </p>
+
+          <div class="form-group">
+            <%= f.label "Ciudad" %>
+            <%= f.text_field :city, value: current_user.city, class: 'form-control' %>
+          </div>
         </div>
         <p>
           Información adicional:
@@ -65,7 +70,7 @@
 <script>
   $pickup = $( "#order_payment_method_recoger_y_pagar_en_la_tienda" )
   $address = $('#js_address')
-  
+
   $('.js_p_method_input').on( "click", function() {
     if ($pickup.is(':checked')) {
       $('#js_total').text("<%= number_to_currency @order.total - @product.store.delivery_price, precision:0  %>")

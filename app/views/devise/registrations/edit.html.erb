@@ -15,11 +15,6 @@
         <%= render partial: "devise/registrations/customer/form", locals: { f: f } %>
       <% end %>
 
-      <!-- User token -->
-      <% if session['super_token'] %> <br>
-        <%= f.hidden_field :user_token, value: session['super_token'] %>
-      <% end %>
-
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>

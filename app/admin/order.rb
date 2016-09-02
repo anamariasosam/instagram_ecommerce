@@ -7,6 +7,7 @@ ActiveAdmin.register Order do
                 :customer_id,
                 :store_id,
                 :address,
+                :city,
                 :details,
                 :payment_method
 

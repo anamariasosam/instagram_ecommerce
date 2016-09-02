@@ -38,8 +38,9 @@
           <i><%= @result.store.pick_up_instructions %></i>
         </p>
         <% end %>
-        <% if @result.address? %>
-          <p><b>Dirección de Envío</b>: <%= @result.address %></p>
+        <% if not @result.payment_method == 'Recoger y Pagar en la tienda' %>
+          <p>Dirección: <%= @result.address %></p>
+          <p>Ciudad: <%= @result.city %></p>
         <% end %>
         <% if @result.details? %>
           <p><b>Detalles</b>: <%= @result.details %></p>
