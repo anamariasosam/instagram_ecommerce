@@ -13,6 +13,8 @@ es:
   store:
     payment_methods_saved: Información de pagos y envíos guradada con éxito
     no_bank_transfer_instructions: Tienes que contarle a tus clientes las instrucciones para hacer la consignación
+  customer:
+    no_data: Termina de llenar tu información para realizar un pedido
   mail_form:
     success: Tu mensaje ha sido enviado.
     error: Tu mensaje no pudo ser enviado

@@ -61,6 +61,10 @@ class OrdersController < ApplicationController
       if current_user.type == "Store"
         flash[:error] = t('user.no_customer')
         redirect_to :back
+      elsif current_user.email.blank?
+        store_location_for(:user, new_product_order_path(@product))
+        redirect_to edit_user_registration_path
+        flash[:error] = t('customer.no_data')
       end
     end
 
