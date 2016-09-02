@@ -22,6 +22,9 @@
       <%= render @orders %>
     </tbody>
   </table>
+  <div class="paginator text-center">
+    <%= paginate @orders %>
+  </div>
 </section>
 
 <script>

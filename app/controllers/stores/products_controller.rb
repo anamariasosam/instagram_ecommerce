@@ -9,6 +9,8 @@ class Stores::ProductsController < ApplicationController
   def index
     @products = current_user
                   .products
+                  .page(params[:page])
+                  .per(7)
                   .search(params[:search])
                   .order(sort_column + " " + sort_direction)
   end
@@ -59,7 +61,6 @@ class Stores::ProductsController < ApplicationController
   end
 
   def destroy
-    if not Order.exists?(product_id: @product.id)
       @product.create_activity :destroy, owner: current_user, parameters: {
         last_name: @product.product_name
       }
@@ -68,10 +69,6 @@ class Stores::ProductsController < ApplicationController
         format.html { redirect_to stores_products_path, notice: 'El producto ha sido eliminado con éxito.' }
         format.json { head :no_content }
       end
-    else
-      flash[:error] = t('product.delete_permissions')
-      redirect_to :back
-    end
   end
 
   private

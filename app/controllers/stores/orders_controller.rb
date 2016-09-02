@@ -13,7 +13,14 @@ class Stores::OrdersController < ApplicationController
   layout 'dashboard'
 
   def index
-    @orders = current_user.orders.includes(:customer).includes(:product).reorder(created_at: :desc)
+    @orders = current_user
+              .orders
+              .page(params[:page])
+              .per(5)
+              .includes(:customer)
+              .includes(:product)
+              .reorder(created_at: :desc)
+
   end
 
   def show
