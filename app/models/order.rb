@@ -30,6 +30,11 @@ class Order < ActiveRecord::Base
 
   validates_presence_of :address, if: :need_address
   validates_presence_of :city, if: :need_address
+
+  def product
+    Product.with_deleted.find(product_id)
+  end
+
   private
     def status_is_valid
       options =  [

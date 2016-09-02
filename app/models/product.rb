@@ -18,6 +18,8 @@
 class Product < ActiveRecord::Base
   include PublicActivity::Common
 
+  acts_as_paranoid
+
   after_create :magic
 
   has_shortened_urls
