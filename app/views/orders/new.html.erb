@@ -73,7 +73,7 @@
 
   $('.js_p_method_input').on( "click", function() {
     if ($pickup.is(':checked')) {
-      $('#js_total').text("<%= number_to_currency @order.total - @product.store.delivery_price, precision:0  %>")
+      $('#js_total').text("<%= number_to_currency @order.total - (@product.store.delivery_price || 0), precision:0  %>")
       $('#js_delivery_price').text("0")
       $address.hide(100)
     }
