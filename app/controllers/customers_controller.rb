@@ -26,7 +26,6 @@ class CustomersController < ApplicationController
                 .page(params[:page])
                 .per(5)
                 .includes(:store)
-                .includes(:product)
                 .reorder(created_at: :desc)
   end
 
