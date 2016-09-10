@@ -145,6 +145,7 @@ $(document).on('ready page:load', function() {
       $('.modal:visible').each(center_modal);
   });
 
+  $("img").lazyload();
 });
 
 $(document).on('ready page:load', sortProducts);

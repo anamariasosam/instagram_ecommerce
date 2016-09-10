@@ -37,7 +37,7 @@ gem 'trix'
 # Text Message gem
 gem 'twilio-ruby'
 
-gem "paranoia", "~> 2.0"
+gem 'paranoia', '~> 2.0'
 gem 'public_activity'
 gem 'pg'
 gem 'lightbox2-rails'
@@ -51,6 +51,7 @@ gem 'turnout'
 gem 'mail_form'
 gem 'country_select'
 gem 'sentry-raven'
+gem 'lazyload-rails'
 
 # Env variables
 gem 'figaro'
