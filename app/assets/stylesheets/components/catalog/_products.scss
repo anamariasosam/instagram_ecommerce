@@ -132,6 +132,26 @@ $top-to-header: 10px;
     text-align: right;
   }
 
+  &__image {
+
+    @include respond-to(xl) {
+      width: 260px;
+      height: 260px;
+    };
+    @include respond-to(l) {
+      width: 210px;
+      height: 210px;
+    };
+    @include respond-to(m) {
+      width: 155px;
+      height: 155px;
+    };
+    @include respond-to(xs) {
+      min-width: 100px;
+      min-height: 100px;
+    };
+  }
+
   &__link {
     color: #666;
     font-size: 14px;

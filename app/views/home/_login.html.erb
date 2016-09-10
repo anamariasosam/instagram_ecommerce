@@ -9,7 +9,7 @@
       <%= link_to user_omniauth_authorize_path(:instagram, model: 'customer'), class: "login__link js_instagramLoad" do %>
         <div class="panel login__box">
           <div class="panel-body text-center">
-            <%= image_tag "fan.png", class: 'img-responsive img-circle login__image' %>
+            <%= image_tag 'fan.png', class: 'img-responsive img-circle login__image', lazy: true %>
             <h4 class="login__headline">Comprar a un Click</h4>
             <p class="login__deck">Inicia sesión en el ícono de arriba para <b>comprar</b> rápidamente productos de Instagram.</p>
           </div>
@@ -20,7 +20,7 @@
       <%= link_to user_omniauth_authorize_path(:instagram, model: 'store'), class: "login__link js_instagramLoad" do %>
       <div class="panel login__box">
         <div class="panel-body text-center">
-          <%= image_tag "store.png", class: 'img-responsive img-circle login__image' %>
+          <%= image_tag 'store.png', class: 'img-responsive img-circle login__image', lazy: true %>
           <h4 class="login__headline">Vender a un Click</h4>
           <p class="login__deck">Inicia sesión dando click en el ícono de <b>tienda</b> para vender tus productos de Instagram.</p>
         </div>
