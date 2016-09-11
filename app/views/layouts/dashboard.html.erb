@@ -37,7 +37,9 @@
   </div>
 
   <%= render "layouts/footer" %>
-  <%= render "mixins/login" %>
+  <% if not user_signed_in? %>
+    <%= render 'mixins/login' %>
+  <% end %>
 
   <!-- Google Analytics -->
   <script>

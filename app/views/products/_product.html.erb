@@ -1,5 +1,5 @@
 <% cache product do %>
-  <div class="col-xs-6 col-md-3">
+  <div class="col-xs-6 col-sm-3">
     <div class="thumbnail productList">
       <div class="productList__actions">
         <a class="productList__zoom" href="<%= product.instagram_image %>" data-lightbox="image-1" data-title="<%= product.product_name %> - Valor: <%= number_to_currency product.price, precision:0 %>" >Zoom</a>
@@ -8,7 +8,7 @@
       </div>
 
       <%= link_to product do %>
-        <img src="<%= product.instagram_image %>" class="img-responsive" alt="product">
+        <%= image_tag product.instagram_image, alt: product.product_name, lazy: true, class: 'productList__image' %>
       <% end %>
 
       <div class="caption">

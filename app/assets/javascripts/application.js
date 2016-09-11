@@ -11,12 +11,14 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
+//= require bootstrap/modal
+//= require bootstrap/dropdown
 //= require jquery_ujs
 //= require turbolinks
 //= require cookie/cookie.js
 //= require lightbox
 //= require trix
+//= require lazyLoad/jquery.lazyload.js
 //= require footable/footable.js
 //= require responsive-paginate/responsive-paginate.js
 //= require elevatezoom/jquery.elevateZoom-3.0.8.min.js
