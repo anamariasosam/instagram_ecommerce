@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
     @category = @categories.find(params[:id])
     @products = @category.products
                           .page(params[:page])
-                          .per(12)
+                          .per(24)
                           .reorder(created_at: :desc)
                           .includes(:store)
   end

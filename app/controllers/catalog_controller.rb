@@ -4,7 +4,7 @@ class CatalogController < ApplicationController
 
     @products = Product
                           .page(params[:page])
-                          .per(12)
+                          .per(24)
                           .order('store_id asc')
                           .order('created_at DESC')
                           .includes(:store)
