@@ -1,10 +1,9 @@
 class StoresController < ApplicationController
-  before_filter :authenticate_user!, only: [:dashboard, :subscribe, :list, :payments_and_delivery, :instagram_media]
-  before_filter :require_store, only: [:dashboard, :subscribe, :list, :payments_and_delivery, :instagram_media]
-  before_filter :pilot_store, only: [:dashboard, :list, :instagram_media, :payments_and_delivery]
+  before_filter :authenticate_user!, only: [:dashboard, :list, :payments_and_delivery, :instagram_media]
+  before_filter :require_store, only: [:dashboard, :list, :payments_and_delivery, :instagram_media]
   before_filter :edit_store_info, only: [:dashboard]
   before_action :set_store, only: [:payments_and_delivery]
-  layout 'dashboard', except: [:show, :subscribe]
+  layout 'dashboard', except: [:show]
 
 
   def show
@@ -14,11 +13,6 @@ class StoresController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @store }
     end
-  end
-
-  def subscribe
-    @waiting_users =  Store.where("details->'pilot' = ?", "false").count
-    @waiting_position = current_user.waiting_position
   end
 
   def instagram_media
@@ -110,13 +104,6 @@ class StoresController < ApplicationController
       if current_user.type == "Customer"
         flash[:error] = t('user.no_store')
         redirect_to root_url
-      end
-    end
-
-    def pilot_store
-      if !current_user.pilot? and current_user.email?
-        flash[:error] = t('user.no_pilot')
-        redirect_to stores_subscribe_path
       end
     end
 

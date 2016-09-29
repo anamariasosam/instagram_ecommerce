@@ -36,8 +36,6 @@ class Store < User
   hstore_accessor :details,
   name: :string,
   info: :string,
-  pilot: :boolean,
-  waiting_position: :integer,
   facebook: :string,
   twitter: :string,
   snapchat: :string,

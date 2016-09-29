@@ -76,11 +76,6 @@
   </div>
 </div>
 
-    <% if !current_user.email? %>
-      <%= f.hidden_field :pilot, value: false%>
-      <%= f.hidden_field :waiting_position, value: Store.where("details->'pilot' = ?", "false").count %>
-    <% end %>
-
 <script>
   (function() {
     'use strict';

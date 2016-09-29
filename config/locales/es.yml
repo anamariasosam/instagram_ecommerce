@@ -7,7 +7,6 @@ es:
     edit_permissions: No tienes permisos para editar este producto
     delete_permissions: No se pueden borrar productos que sean de una orden
   user:
-    no_pilot: Te encuentras en lista de espera
     no_store: Debes registarte como tienda para crear productos
     no_customer: Debes iniciar sesión como comprador para realizar esta acción
   store:

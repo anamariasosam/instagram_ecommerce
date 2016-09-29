@@ -1,7 +1,6 @@
 class Stores::ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_product, only: [:edit, :update, :destroy]
-  before_filter :pilot_store, only: [:index, :new, :edit]
 
   helper_method :sort_column, :sort_direction
   layout 'dashboard'
@@ -97,12 +96,5 @@ class Stores::ProductsController < ApplicationController
         :photo_id,
         :category_id
       )
-    end
-
-    def pilot_store
-      if !current_user.pilot?
-        flash[:error] = t('user.no_pilot')
-        redirect_to stores_subscribe_path
-      end
     end
 end
