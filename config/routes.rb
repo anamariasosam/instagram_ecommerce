@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     registrations: 'registrations'
   }
 
-  resources :products, only: [:show] do
+  resources :products, only: [:show, :index] do
     resources :orders do
       # the reference is fall out boy
       get 'thnks_fr_th_mmrs', :on => :collection
@@ -42,7 +42,6 @@ Rails.application.routes.draw do
   get 'customers/dashboard/orders', to: 'customers#orders'
 
   get '/:id' => "shortener/shortened_urls#show"
-  get 'catalog/view'
   get 'categories/:id', to: 'categories#show', as: 'category'
   get 'home/index'
   get 'legal/privacy_policy'
