@@ -13,6 +13,7 @@
 #  photo_id        :string
 #  category_id     :integer          default(1)
 #  store_id        :integer
+#  deleted_at      :datetime
 #
 
 class Product < ActiveRecord::Base
@@ -42,6 +43,9 @@ class Product < ActiveRecord::Base
   belongs_to :store, touch: true
   has_many :orders
 
+  before_update :product_quantity
+
+
   def slug
     store.slug.downcase.gsub(" ", "-") + "_"  + product_name.downcase.gsub(" ", "-")
   end
@@ -62,5 +66,11 @@ class Product < ActiveRecord::Base
     def magic
       Shortener::ShortenedUrl.generate("/products/#{self.id}", owner: self)
       self.save!
+    end
+
+    def product_quantity
+      if self.quantity < 0
+        self.quantity = 0
+      end
     end
 end

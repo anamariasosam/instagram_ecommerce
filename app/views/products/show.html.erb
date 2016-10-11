@@ -59,8 +59,13 @@
         <% end %>
       </header>
       <p class="product__avalability">
-        <b>Disponibles:</b>
-        <%= @product.quantity %>
+        <% if @product.quantity == 0 %>
+          <span class="label label-danger">No hay disponibles</span>
+        <% else %>
+          <b>Disponibles:</b>
+          <%= @product.quantity %>
+        <% end %>
+
       </p>
       <p>
         <b>Descripción:</b>
@@ -94,19 +99,10 @@
         </blockquote>
       <% else %>
         <hr>
-        <div class="js_callToAction">
-          <!-- <button class="btn btn-primary btn-block btn-lg js_togglePurchaseBtn" class="track" data-track='comprar'>Comprar</button> -->
-          <%= link_to 'Comprar', new_product_order_path(@product), class: 'btn btn-primary btn-lg btn-block' %>
-          <div class="sellerInfo hide">
-            <p>
-              <b>Cel:</b>
-              <a href="tel:<%= number_to_phone(@product.store.phone_number) %>" class="track" data-track='tel'>
-                <%= number_to_phone(@product.store.phone_number) %>
-              </a>
-              <br>
-              <%= t "product.purchase" %>
-            </p>
-          </div>
+        <div>
+          <% if @product.quantity > 0 %>
+            <%= link_to 'Comprar', new_product_order_path(@product), class: 'btn btn-primary btn-lg btn-block' %>
+          <% end %>
         </div>
       <% end %>
       <hr>
@@ -141,23 +137,6 @@
   </div>
 
 </section>
-
-<script>
-
-$('.js_callToAction').on('click', '.track', function(event){
-  $element = $(event.currentTarget);
-  data = $element.data('track');
-  ga('send', 'event', '<%= @product.store.name %>', data, '<%= @product.product_name %>');
-});
-
-$('.js_togglePurchaseBtn').on('click', function(event){
-  $(event.currentTarget)
-    .addClass('hide')
-    .next()
-    .removeClass('hide');
-});
-
-</script>
 
 <script
     type="text/javascript"

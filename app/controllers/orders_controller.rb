@@ -31,6 +31,8 @@ class OrdersController < ApplicationController
       end
 
       if @order.save
+        @product.update_attribute(:quantity, @product.quantity - 1)
+
         # order needs to be trackable
         @order.create_activity :create, owner: @order.store
         @order.create_activity :create, owner: @order.customer
