@@ -13,6 +13,7 @@
 #  photo_id        :string
 #  category_id     :integer          default(1)
 #  store_id        :integer
+#  deleted_at      :datetime
 #
 
 require 'rails_helper'

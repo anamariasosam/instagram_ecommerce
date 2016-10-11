@@ -13,6 +13,7 @@
 #  payment_method :string
 #  details        :text
 #  address        :string
+#  city           :string
 #
 
 class Order < ActiveRecord::Base
