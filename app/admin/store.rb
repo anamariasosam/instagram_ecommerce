@@ -5,7 +5,6 @@ ActiveAdmin.register Store do
     :image,
     :email,
     :slug,
-    :pilot,
     :user_token,
     :city,
     :country,

@@ -5,7 +5,6 @@ ActiveAdmin.register Customer do
     :image,
     :email,
     :slug,
-    :pilot,
     :user_token,
     :city,
     :country,

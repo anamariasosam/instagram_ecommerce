@@ -1,5 +1,5 @@
 <ul class="dashboard__list">
-  <% if current_user.type.eql?("Store") and current_user.pilot? %>
+  <% if current_user.type.eql?("Store") %>
     <%= render 'shared/menu/store_menu' %>
   <% else current_user.type == "Customer" %>
     <%= render 'shared/menu/customer_menu' %>
