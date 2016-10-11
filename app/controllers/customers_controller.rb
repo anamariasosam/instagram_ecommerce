@@ -4,10 +4,6 @@ class CustomersController < ApplicationController
 
   def dashboard
     if current_user.email?
-      if !session['super_token'].blank?
-        current_user.update(user_token: session['super_token'])
-      end
-
       @announcements = Announcement.current
       @activities = PublicActivity::Activity
         .order("created_at desc")
