@@ -44,17 +44,36 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, allow_blank: true, allow_nil: true
   validates_presence_of :city, :country,:email, :phone_number, :on => :update
   validates :phone_number, phone: { possible: true, types: :mobile } , :on => :update
-  
+
   def to_param
     slug
   end
 
   private
+    def self.fill_data(user, data)
+      details = Hash.new
+
+      if user.is_a?(Store)
+        details['info'] = data.bio
+        details['name'] = data.full_name
+        details['facebook'] = data.website.split('/')[-1] if data.website.include? "facebook"
+      else
+        details['full_name'] = data.full_name
+      end
+      details
+    end
 
     def self.from_omniauth(auth)
+      data = auth.extra.raw_info
+      details = Hash.new
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-        user.email = auth.info.email
-        user.password = Devise.friendly_token[0,20]
+        user.email = data.email
+        user.image = data.profile_picture
+        user.instagram_id =   data.id
+        user.instagram_account = data.username
+        user.slug =  data.username
+        user.user_token =  auth.credentials.token
+        user.details = fill_data(user, data)
       end
     end
 end

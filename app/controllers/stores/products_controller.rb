@@ -49,7 +49,7 @@ class Stores::ProductsController < ApplicationController
     respond_to do |format|
       if @product.update(product_params)
         @product.create_activity :update, owner: current_user
-        format.html { redirect_to @product, notice: 'El producto ha sido actualizado exitosamente' }
+        format.html { redirect_to stores_products_path , notice: 'El producto ha sido actualizado exitosamente' }
         format.json { render :show, status: :ok, location: @product }
       else
 
