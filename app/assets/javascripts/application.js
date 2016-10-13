@@ -13,6 +13,8 @@
 //= require jquery
 //= require bootstrap/modal
 //= require bootstrap/dropdown
+//= require bootstrap/collapse
+//= require bootstrap/transition
 //= require jquery_ujs
 //= require turbolinks
 //= require cookie/cookie.js
