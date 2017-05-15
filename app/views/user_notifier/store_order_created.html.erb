@@ -1,6 +1,6 @@
 <%= render partial: "email", locals: {
     is_store: true,
     name: @store.slug,
-    message: 'Acabas de vender un producto en Catlog, ingresa a<a href="http://catlog.co/stores/orders" target="_blank" title="Catlog"> <b>catlog.co</b>,</a> para ver más información de tu órdenes',
+    message: 'Acabas de vender un producto en Catlog, ingresa a <a href="http://catlog.herokuapp.com/stores/orders" target="_blank" title="Catlog"> <b>catlog.co</b>,</a> para ver más información de tu órdenes',
     action: 'Tienes una nueva orden pendiente en Catlog'
   } %>

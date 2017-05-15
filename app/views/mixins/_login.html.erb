@@ -5,13 +5,13 @@
       <div class="modal-body">
         <h3 class="modal__title">¿Qué tipo de usuario eres?</h3>
         <div class="modal__container col-sm-6">
-          <%= link_to user_omniauth_authorize_path(:instagram, model: 'customer'), class: "js_instagramLoad" do %>
+          <%= link_to user_instagram_omniauth_authorize_path(model: 'customer'), class: "js_instagramLoad" do %>
             <%= image_tag "fan.png", class: "modal__image img-responsive"%>
           <% end %>
           <h4>Comprador</h4>
         </div>
         <div class="modal__container col-sm-6">
-          <%= link_to user_omniauth_authorize_path(:instagram, model: 'store'), class: "js_instagramLoad" do %>
+          <%= link_to user_instagram_omniauth_authorize_path(model: 'store'), class: "js_instagramLoad" do %>
             <%= image_tag "store.png", class: "modal__image img-responsive"%>
           <% end %>
           <h4>Tienda</h4>

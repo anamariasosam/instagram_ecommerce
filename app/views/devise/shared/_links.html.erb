@@ -12,8 +12,8 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Ingresar con #{provider.to_s.titleize} como tienda", omniauth_authorize_path(resource_name, provider, model: 'store'), class: "button special" %><br />
-    <%= link_to "Ingresar con #{provider.to_s.titleize} como comprador", omniauth_authorize_path(resource_name, provider, model: 'customer'), class: "button special" %><br />
+    <%= link_to "Ingresar con #{provider.to_s.titleize} como tienda", user_instagram_omniauth_authorize_path(resource_name, provider, model: 'store'), class: "button special" %><br />
+    <%= link_to "Ingresar con #{provider.to_s.titleize} como comprador", user_instagram_omniauth_authorize_path(resource_name, provider, model: 'customer'), class: "button special" %><br />
 
   <% end -%>
 <% end -%>

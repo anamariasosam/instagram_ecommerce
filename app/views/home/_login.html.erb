@@ -6,7 +6,7 @@
   <% end %>
   <div class="row">
     <div class="col-sm-6">
-      <%= link_to user_omniauth_authorize_path(:instagram, model: 'customer'), class: "login__link js_instagramLoad" do %>
+      <%= link_to user_instagram_omniauth_authorize_path(model: 'customer'), class: "login__link js_instagramLoad" do %>
         <div class="panel login__box">
           <div class="panel-body text-center">
             <%= image_tag 'fan.png', class: 'img-responsive img-circle login__image', lazy: true %>
@@ -17,7 +17,7 @@
       <% end %>
     </div>
     <div class="col-sm-6">
-      <%= link_to user_omniauth_authorize_path(:instagram, model: 'store'), class: "login__link js_instagramLoad" do %>
+      <%= link_to user_instagram_omniauth_authorize_path(model: 'store'), class: "login__link js_instagramLoad" do %>
       <div class="panel login__box">
         <div class="panel-body text-center">
           <%= image_tag 'store.png', class: 'img-responsive img-circle login__image', lazy: true %>

@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
 
   acts_as_paranoid
 
-  after_create :magic
+  # after_create :magic
 
   has_shortened_urls
 
@@ -63,10 +63,10 @@ class Product < ActiveRecord::Base
   end
 
   private
-    def magic
-      Shortener::ShortenedUrl.generate("/products/#{self.id}", owner: self)
-      self.save!
-    end
+    # def magic
+    #   # Shortener::ShortenedUrl.generate("/products/#{self.id}", owner: self)
+    #   # self.save!
+    # end
 
     def product_quantity
       if self.quantity < 0

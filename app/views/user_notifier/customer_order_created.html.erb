@@ -1,6 +1,6 @@
 <%= render partial: "email", locals: {
     is_store: false,
     name: @customer.slug,
-    message: "Acabas de comprar un producto en <a href='http://catlog.co' target='_blank' title='Catlog'> <b>catlog.co</b>,</a> te estaremos informando cuando tu orden cambie de estado, actualmente se encuentra #{@order.status.downcase}",
+    message: "Acabas de comprar un producto en <a href='http://catlog.herokuapp.com/' target='_blank' title='Catlog'> <b>catlog.co</b>,</a> te estaremos informando cuando tu orden cambie de estado, actualmente se encuentra #{@order.status.downcase}",
     action: 'Acabas de comprar un producto en Catlog '
   } %>
