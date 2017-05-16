@@ -1,5 +1,5 @@
 class UserNotifier < ApplicationMailer
-  default :from => 'anamaria@catlog.co'
+  default :from => 'anamariasosam@gmail.com'
 
   def store_order_created(order)
     @order = order
