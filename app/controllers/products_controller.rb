@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
     @products = Product
                           .page(params[:page])
                           .per(24)
-                          .order('store_id asc')
                           .order('created_at DESC')
                           .includes(:store)
   end
