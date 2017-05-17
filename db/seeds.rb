@@ -1,4 +1,4 @@
-require 'factory_girl'
+# require 'factory_girl'
 
 # 5.times do
 #
@@ -11,4 +11,4 @@ require 'factory_girl'
 #
 # end
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'ana@catlog.co', password: '12345678', password_confirmation: '12345678')
