@@ -124,7 +124,7 @@ function center_modal() {
   dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
 }
 
-$(document).on('ready page:load', function() {
+$(document).on('ready turbolinks:load', function() {
   loader();
   add_class_active();
   description_text();
@@ -148,4 +148,4 @@ $(document).on('ready page:load', function() {
   $("img").lazyload();
 });
 
-$(document).on('ready page:load', sortProducts);
+$(document).on('ready turbolinks:load', sortProducts);

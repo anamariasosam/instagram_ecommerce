@@ -18,7 +18,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require cookie/cookie.js
-//= require lightbox
+//= require lightbox/lightbox.js
 //= require trix
 //= require lazyLoad/jquery.lazyload.js
 //= require footable/footable.js

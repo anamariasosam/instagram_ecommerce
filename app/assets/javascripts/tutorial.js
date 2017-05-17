@@ -11,7 +11,7 @@ var viewportOptions = {
   scrollHorizontal: false // Set to true if your website scrolls horizontal instead of vertical.
 }
 
-$(document).on('ready page:change page:load', function() {
+$(document).on('ready turbolinks:load', function() {
   $('.js_tutHeadline').viewportChecker(viewportOptions);
   $('.js_tutVideo').viewportChecker($.extend( viewportOptions, {offset: '5%'} ));
   $('.js_tutInstructions').viewportChecker($.extend( viewportOptions, {offset: '20%'} ));
