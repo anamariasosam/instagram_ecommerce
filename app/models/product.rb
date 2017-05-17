@@ -30,9 +30,10 @@ class Product < ActiveRecord::Base
   validates_presence_of :instagram_image,
                         :price,
                         :description,
-                        :product_name
-  validates_numericality_of :price, :quantity
-  validates :price, length: { minimum: 4 }
+                        :product_name,
+                        :store_id
+  validates_numericality_of :price, length: { minimum: 4 }
+  validates_numericality_of :quantity, greater_than: 0
   validates :description, length: { maximum: 500 }
   validates_length_of :product_name, :maximum => 40
 

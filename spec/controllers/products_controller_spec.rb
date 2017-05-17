@@ -3,36 +3,26 @@ require 'rails_helper'
 RSpec.describe ProductsController, type: :controller do
 
   describe "GET #show" do
-
-    it "assigns the requested product to @product" do
-      category = FactoryGirl.create(:category)
-      product = FactoryGirl.create(:product, category_id: category.id)
-      get :show, id: product.id
-      assigns(:product).should eq(product)
-    end
-
-
     it "renders the #show view" do
-      category = FactoryGirl.create(:category)
-      product = FactoryGirl.create(:product, category_id: category.id)
-      get :show, id: product.id
+      product = FactoryGirl.create(:product)
+      get :show, {id: product.id}
       response.should render_template :show
-
     end
   end
 
   describe "GET #index" do
-    it "returns http success" do
+    it "assigns @products" do
+      product = FactoryGirl.create(:product)
       get :index
+      expect(assigns(:products)).to eq([product])
     end
 
-    it "it shows product on products index" do
-      category = FactoryGirl.create(:category)
-      product = FactoryGirl.create(:product, category_id: category.id)
+    it "loads all of the products into @products" do
+      product1 FactoryGirl.create(:product)
+      product2 = FactoryGirl.create(:product)
       get :index
-      assigns(:products).should eq([product])
+
+      expect(assigns(:products)).to match_array([product1, product2])
     end
   end
-
-
 end

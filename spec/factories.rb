@@ -26,27 +26,24 @@ FactoryGirl.define do
 
     # TODO: fix model validation to accept real user typos
     # phone_number { Faker::PhoneNumber.cell_phone }
-    phone_number "1234567890"
+    phone_number { Faker::Number.number(10) }
     slug { Faker::Number.number(10) }
   end
 
+  factory :category do
+    name { Faker::Commerce.color }
+  end
+
   factory :product do
+    store = FactoryGirl.create(:store)
+    category = FactoryGirl.create(:category)
     product_name { Faker::Commerce.product_name }
     price { Faker::Number.number(5) }
     quantity { Faker::Number.number(1) }
     instagram_image { Faker::Placeholdit.image("500x500", 'jpg', Faker::Color.hex_color.to_s.sub(/^#/, '')) }
     description { Faker::Lorem.sentence }
     photo_id { Faker::Number.number(11) }
-  end
-
-  factory :user do
-    phone_number '1234567890'
-    details { Faker::Lorem.sentence }
-    city { Faker::Address.city }
-    country { Faker::Address.country }
-  end
-
-  factory :category do
-    name { Faker::Commerce.color }
+    store_id store.id
+    category_id category.id
   end
 end

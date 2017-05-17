@@ -53,12 +53,18 @@ RSpec.describe Store, type: :model do
     FactoryGirl.create(:store, email: nil).should_not be_valid
   end
 
-  it "is invalid without phone_number" do
+  it "is invalid without a phone number" do
     FactoryGirl.create(:store, phone_number: nil).should_not be_valid
   end
 
-  it "does not allow duplicate email for different users" do
+  it "does not allow duplicate email for different stores" do
     FactoryGirl.create(:store, email: "x@x.com")
     FactoryGirl.build(:store, email: "x@x.com").should_not be_valid
+  end
+
+  it 'returns product and store associations' do
+    store = FactoryGirl.create(:store)
+    product = FactoryGirl.create(:product, store_id: store.id)
+    store.products.size.should eql 1
   end
 end
