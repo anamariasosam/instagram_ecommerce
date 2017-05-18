@@ -31,7 +31,7 @@ module TwilioNotify
 
     body += " actualmente: #{status}"
 
-    # client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+    # client = Twilio::REST::Client.new ENV["TWILIO_SID"], ENV["TWILIO_TOKEN"]
     # message = client.messages.create from: '+12513016556', to: "+57#{phone}", body: body
   end
 end

@@ -18,11 +18,12 @@ RSpec.describe ProductsController, type: :controller do
     end
 
     it "loads all of the products into @products" do
-      product1 FactoryGirl.create(:product)
+      product1 = FactoryGirl.create(:product)
       product2 = FactoryGirl.create(:product)
       get :index
 
       expect(assigns(:products)).to match_array([product1, product2])
     end
+
   end
 end

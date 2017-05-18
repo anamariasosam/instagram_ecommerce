@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     @stores = Store.all
     @products =  Product.limit(4).order(created_at: :desc).includes(:store)
 
-    @category = Category.find_by_name('Bolsos')
+    @category = Category.find_by_name('Accesorios')
     @bags = @category.products.limit(4).includes(:store) if @category
 
     redirect_to "/#{@par.downcase}" if @par = params[:search]
