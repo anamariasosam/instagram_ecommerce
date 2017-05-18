@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @stores = Store.all
+    @stores = Store.joins(:products).group('id').order(created_at: :desc)
     @products =  Product.limit(4).order(created_at: :desc).includes(:store)
 
     @category = Category.find_by_name('Accesorios')
