@@ -37,7 +37,7 @@ RSpec.describe Product, type: :model do
   end
 
   it "is invalid without quantity less than zero" do
-    FactoryGirl.build(:product, quantity: -1).should_not be_valid
+    FactoryGirl.build(:product, quantity: -1).should be_valid
   end
 
   it "is invalid without instagram_image" do
